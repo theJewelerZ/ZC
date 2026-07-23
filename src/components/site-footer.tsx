@@ -11,7 +11,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="site-container footer-grid">
         <div className="footer-brand">
-          <Link aria-label="Zarka Construction home" href="/">
+          <Link href="/">
             <BrandMark surface="dark" />
           </Link>
           <p>{businessConfig.tagline}</p>

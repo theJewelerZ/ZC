@@ -58,6 +58,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const analyticsEnabled =
+    process.env.VERCEL === "1" &&
     process.env.NEXT_PUBLIC_ANALYTICS_ENABLED !== "false";
   const organizationData = getOrganizationStructuredData();
 
@@ -79,4 +80,3 @@ export default function RootLayout({
     </html>
   );
 }
-

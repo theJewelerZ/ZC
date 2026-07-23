@@ -26,7 +26,6 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="site-container header-inner">
         <Link
-          aria-label="Zarka Construction home"
           className="header-brand"
           href="/"
           onClick={() => setIsOpen(false)}
@@ -95,4 +94,3 @@ export function SiteHeader() {
     </header>
   );
 }
-

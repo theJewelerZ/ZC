@@ -12,7 +12,7 @@
   --navy: #0b1f33;
   --navy-light: #15324f;
   --orange: #f26a21;
-  --orange-dark: #ce4f0e;
+  --orange-ink: #a43a00;
   --structural: #f7f9fb;
   --steel: #66717d;
   --carbon: #121820;
@@ -292,7 +292,7 @@ a {
 
 .eyebrow {
   align-items: center;
-  color: var(--orange-dark);
+  color: var(--orange-ink);
   display: flex;
   font-size: 0.74rem;
   font-weight: 830;
@@ -337,6 +337,11 @@ a {
 .section-heading-dark h2,
 .section-heading-dark .section-heading-copy {
   color: var(--structural);
+}
+
+.section-heading-dark .eyebrow,
+.contact-cta-section .eyebrow {
+  color: var(--orange);
 }
 
 .section-heading-dark .section-heading-copy {
@@ -618,7 +623,7 @@ a {
 }
 
 .service-card-top svg {
-  color: var(--orange-dark);
+  color: var(--orange-ink);
 }
 
 .service-card h3 {
@@ -849,7 +854,7 @@ a {
 }
 
 .principle-card > span {
-  color: var(--orange-dark);
+  color: var(--orange-ink);
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.15em;
@@ -905,7 +910,7 @@ a {
 
 .capability-number,
 .capability-label {
-  color: var(--orange-dark);
+  color: var(--orange-ink);
   font-size: 0.68rem;
   font-weight: 790;
   letter-spacing: 0.14em;
@@ -1216,7 +1221,7 @@ a {
 }
 
 .contact-aside-number {
-  color: var(--orange-dark);
+  color: var(--orange-ink);
   font-size: 0.67rem;
   font-weight: 800;
   letter-spacing: 0.17em;
