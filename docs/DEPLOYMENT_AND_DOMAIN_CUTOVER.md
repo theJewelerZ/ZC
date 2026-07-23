@@ -206,6 +206,21 @@ was changed to `https://www.zarkaconstruction.com`, and Vercel remained the only
 hostname redirect owner. DNS, nameservers, MX, TXT, and email-related settings
 were not changed.
 
+Post-fix production verification for deployment
+`dpl_3j2Fevd5RN5hQbgZ4As93AiFS2D8`:
+
+| Request | Redirect result | Final response |
+| --- | --- | --- |
+| `http://zarkaconstruction.com` | HTTP→HTTPS apex, then apex→`www` | `https://www.zarkaconstruction.com/`, 200 |
+| `https://zarkaconstruction.com` | apex→`www` | `https://www.zarkaconstruction.com/`, 200 |
+| `http://www.zarkaconstruction.com` | HTTP→HTTPS `www` | `https://www.zarkaconstruction.com/`, 200 |
+| `https://www.zarkaconstruction.com` | no redirect | `https://www.zarkaconstruction.com/`, 200 |
+
+An apex `/contact?source=redirect-test` request retained both path and query at
+the final canonical `www` URL. Canonical/Open Graph metadata, all four sitemap
+entries, and robots host/sitemap output use `www`. Existing noindex/disallow
+behavior remains enabled pending a separate indexing decision.
+
 ## 9. Rollback
 
 Trigger rollback if Vercel cannot serve stable HTTPS, critical routes fail, the

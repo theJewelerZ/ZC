@@ -1,15 +1,16 @@
 # Progress
 
-**Current phase:** Phase 1 — Professional Launch MVP deployed and verified;
-production contact configuration and canonical-domain cutover remain pending
+**Current phase:** Phase 1 — canonical custom domain deployed and redirect
+verified; production contact, indexing approval, and remaining launch gates are
+pending
 
-**Canonical domain:** <https://zarkaconstruction.com>
+**Canonical domain:** <https://www.zarkaconstruction.com>
 
 **Temporary production URL:** <https://zarka-construction.vercel.app>
 
 **Deployment target:** Vercel project `zarka-construction`
 
-**Latest verified deployment:** `dpl_5DVNSkfYF5u8sS1ELa5HXqAer8eM`
+**Latest verified deployment:** `dpl_3j2Fevd5RN5hQbgZ4As93AiFS2D8`
 
 **Last updated:** July 23, 2026
 
@@ -43,14 +44,21 @@ production contact configuration and canonical-domain cutover remain pending
 - Redeployed the founder-supplied brand artwork integration and verified the
   stable Vercel alias, canonical metadata, temporary noindex state, favicon,
   touch icon, and public mark asset.
+- Diagnosed an opposing 308 loop: Vercel redirected apex to `www`, while
+  `next.config.ts` redirected `www` back to apex.
+- Removed the application hostname redirect, made Vercel the sole redirect
+  owner, and aligned metadata, sitemap, robots, structured data, tests, and the
+  non-secret Vercel site URL to `https://www.zarkaconstruction.com`.
 - Verified both confirmed external ecosystem URLs respond over HTTPS.
-- Made no GoDaddy, production-domain, nameserver, email-DNS, or product changes.
+- Made no GoDaddy DNS, nameserver, MX, TXT, email, or product changes while
+  resolving the redirect loop.
 
 ## Verification
 
 - `npm run lint`: pass
 - `npm run typecheck`: pass
-- `npm test`: 12 tests pass across four files
+- `npm test`: 13 tests pass across five files, including redirect-ownership
+  regression coverage
 - `npm run build`: pass; all marketing/legal routes statically rendered and
   `/api/contact` dynamic
 - `npm audit --json`: zero known vulnerabilities
@@ -59,6 +67,15 @@ production contact configuration and canonical-domain cutover remain pending
 - Headless Chrome desktop, narrow, and contact-page visual review: pass
 - Brand integration responsive review at 320, 375, 768, 1024, and 1440 CSS
   pixels: pass; no page-level horizontal overflow
+- Custom-domain redirect verification:
+  - `http://zarkaconstruction.com` → canonical `www`, 200, two redirects
+    including HTTP-to-HTTPS
+  - `https://zarkaconstruction.com` → canonical `www`, 200, one redirect
+  - `http://www.zarkaconstruction.com` → canonical HTTPS `www`, 200, one redirect
+  - `https://www.zarkaconstruction.com` → 200, zero redirects
+  - path and query preservation: pass
+- Canonical/OG metadata, all four sitemap URLs, and robots sitemap/host use
+  `www`; existing noindex/disallow behavior is preserved.
 - Lighthouse mobile:
   - Performance: 100
   - Accessibility: 100
@@ -79,7 +96,8 @@ production contact configuration and canonical-domain cutover remain pending
   configured; no visitor data is sent or stored.
 - Turnstile is inactive; honeypot, timing, validation, and best-effort rate
   limiting remain active at the API boundary.
-- Search indexing is disabled for the temporary Vercel production URL.
+- Search indexing remains disabled across the current production deployment
+  pending explicit approval to enable public indexing.
 
 ## Production configuration still required
 
@@ -100,33 +118,33 @@ production contact configuration and canonical-domain cutover remain pending
 
 Configure and verify the three Resend variables and the two Turnstile variables
 in the Vercel Production environment, redeploy, and submit a real inquiry through
-the temporary production URL. Do not add the custom domain until delivery,
-reply-to, abuse protection, privacy contact wording, and founder copy approval
-pass.
+the canonical `www` domain. Keep indexing disabled until the founder approves
+the remaining launch gates.
 
-## Remaining canonical-domain sequence
+## Remaining production-launch sequence
 
 1. Complete the authoritative GoDaddy DNS/product inventory and mail test.
 2. Configure/verify Resend sender DNS without modifying unrelated records.
-3. Configure Turnstile for the temporary alias and future canonical hosts.
+3. Configure Turnstile for the temporary alias and canonical `www` host.
 4. Replace the privacy/terms contact-method TODO through confirmed business config.
 5. Run a real form delivery/reply test and final founder review.
-6. Set `NEXT_PUBLIC_SEARCH_INDEXING_ENABLED=true` and redeploy only at the
-   approved cutover.
-7. Add apex and `www` to Vercel and capture exact project-specific DNS targets.
-8. Change only the confirmed apex/`www` website records in GoDaddy, then perform
-   the documented cutover, mail, SSL, redirect, analytics, and rollback checks.
+6. Set `NEXT_PUBLIC_SEARCH_INDEXING_ENABLED=true` and redeploy only after
+   explicit indexing approval.
+7. Repeat mail, SSL, redirect, analytics, and runtime monitoring without changing
+   the verified website DNS records.
+8. Treat any GoDaddy website-product cancellation as a separate,
+   founder-authorized action after all success gates pass.
 
 ## Next recommended prompt
 
 > Complete the Zarka Construction production-contact configuration and
-> canonical-domain readiness review. Read `AGENTS.md`, `progress.md`,
+> production-launch readiness review. Read `AGENTS.md`, `progress.md`,
 > `docs/OPEN_QUESTIONS.md`, `docs/LAUNCH_CHECKLIST.md`, and
 > `docs/DEPLOYMENT_AND_DOMAIN_CUTOVER.md`. Configure only founder-supplied
 > Resend, contact-recipient, public contact, and Turnstile values in Vercel;
 > never place secrets in the repository. Redeploy and verify real contact
 > delivery, visitor reply-to, Turnstile, analytics, all routes, and privacy
-> wording through the temporary production URL. Inventory GoDaddy DNS and
+> wording through `https://www.zarkaconstruction.com`. Inventory GoDaddy DNS and
 > products without changing them. Stop before any DNS or cancellation action
 > and report the exact cutover targets, rollback values, and remaining go/no-go
 > conditions.

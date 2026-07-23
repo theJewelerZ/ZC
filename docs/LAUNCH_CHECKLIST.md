@@ -146,9 +146,9 @@ an approved private location, not the public repository.
 
 ## Production smoke test
 
-- [ ] `www` serves the approved Vercel deployment over valid HTTPS.
-- [ ] Apex redirects once to `www` and preserves path/query.
-- [ ] All routes, sitemap, robots, 404, assets, metadata, and external links work.
+- [x] `www` serves the approved Vercel deployment over valid HTTPS.
+- [x] Apex redirects once to `www` and preserves path/query.
+- [x] All routes, sitemap, robots, 404, assets, metadata, and external links work.
 - [ ] Mobile, desktop, keyboard, and screen-reader smoke tests pass.
 - [ ] Contact form delivers to the intended inbox and reply-to works.
 - [ ] Analytics receives approved events with no PII.
