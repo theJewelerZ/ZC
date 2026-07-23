@@ -18,12 +18,10 @@ canonical metadata, public routes, generated SEO files, security headers, brand
 assets, responsive layout, and accessibility checks pass.
 
 Contact infrastructure and all required server-only Vercel environment
-variables are configured. A real production request reached the endpoint but
-Resend rejected delivery because `zarkaconstruction.com` is not a verified
-sender domain in the configured Resend account. The endpoint returned an honest
-502 response and did not claim delivery. Resend reports only `capproof.com` as a
-verified domain. Do not substitute that unrelated sender; verify the Zarka
-sender domain before enabling public reliance on the form.
+variables are configured. The `zarkaconstruction.com` sender domain and all
+three Resend DKIM/SPF records are verified. A real production submission
+returned HTTP 200, Resend accepted it, and Vercel recorded a privacy-safe
+`contact_delivery_accepted` event with a provider ID.
 
 ## Phase 1.5 work completed
 
@@ -77,9 +75,10 @@ sender domain before enabling public reliance on the form.
   - CLS: 0
 - Real production contact test:
   - Endpoint and validation path: reached
-  - Result: honest HTTP 502; message not accepted by Resend
-  - Cause: configured `zarkaconstruction.com` sender domain is not verified
-  - No visitor-facing false success and no sensitive log output
+  - Result: HTTP 200; Resend accepted the message
+  - Sender domain: `zarkaconstruction.com` verified
+  - Production log: `contact_delivery_accepted`, provider ID present
+  - No sensitive contact data or secrets in the log event
 
 ## Working fallbacks
 
@@ -93,20 +92,18 @@ sender domain before enabling public reliance on the form.
 - Public phone, email, service area, licensing, insurance, testimonials, and
   unsupported business facts remain omitted.
 
-## Launch blockers and remaining readiness items
+## Remaining readiness items
 
-1. Add and verify `zarkaconstruction.com` in the configured Resend account,
-   preserving all unrelated DNS and email records.
-2. Repeat a real production form submission and verify inbox receipt plus
-   visitor reply-to after Resend reports the sender domain verified.
-3. Configure production Turnstile site/secret keys for the canonical hostname,
+1. Confirm the labeled production test arrived in the intended inbox and
+   manually verify Reply-To behavior.
+2. Configure production Turnstile site/secret keys for the canonical hostname,
    then verify success and rejection paths.
-4. Verify approved analytics events in the Vercel dashboard without PII.
-5. Complete the 200% zoom/high-contrast and Firefox/WebKit smoke tests where
+3. Verify approved analytics events in the Vercel dashboard without PII.
+4. Complete the 200% zoom/high-contrast and Firefox/WebKit smoke tests where
    those environments are available.
-6. Obtain legal review of the starter privacy notice and website terms if the
+5. Obtain legal review of the starter privacy notice and website terms if the
    founder requires it.
-7. Configure founder-controlled Search Console and submit the sitemap.
+6. Configure founder-controlled Search Console and submit the sitemap.
 
 ## Phase 2 remains deferred
 
@@ -116,6 +113,8 @@ remain outside Phase 1.5.
 
 ## Immediate next action
 
-Verify the `zarkaconstruction.com` sender domain in Resend, then redeploy only if
-Vercel environment values change and repeat the real form delivery/reply-to
-test. Do not modify unrelated GoDaddy DNS records or cancel any GoDaddy product.
+Confirm receipt of the labeled production test in the intended inbox and use
+Reply to verify the response targets the submitted visitor address. Then
+configure Turnstile and complete the remaining cross-browser/assistive
+technology checks. Do not modify unrelated GoDaddy DNS records or cancel any
+GoDaddy product.

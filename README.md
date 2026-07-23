@@ -39,12 +39,13 @@ the legible text wordmark paired with the approved icon. A professionally
 recreated SVG and approved project photography remain future replacements.
 
 The linked Vercel Production project contains the server-only Resend recipient,
-sender, API key, and rate-limit configuration. A real production test is
-currently blocked at provider acceptance because `zarkaconstruction.com` is not
-yet a verified sender domain in the configured Resend account. The form fails
-honestly and does not claim delivery. Turnstile remains inactive until both
-credentials are configured. GoDaddy remains the registrar and DNS host; any
-sender-domain verification must preserve unrelated DNS and email records.
+sender, API key, and rate-limit configuration. The
+`zarkaconstruction.com` sender domain and its DKIM/SPF records are verified by
+Resend. A real production submission returned HTTP 200 and produced a
+privacy-safe `contact_delivery_accepted` event with a provider ID. Turnstile
+remains inactive until both credentials are configured. GoDaddy remains the
+registrar and DNS host; future DNS work must preserve unrelated website and
+email records.
 
 Production indexing is enabled on the canonical deployment. Preview and local
 builds remain non-indexable by default.

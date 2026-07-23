@@ -67,19 +67,18 @@ an approved private location, not the public repository.
 - [x] Validate required/optional fields and maximum lengths server-side.
 - [x] Reject unexpected/invalid service values.
 - [x] Verify HTML escaping and plain-text email.
-- [ ] Verify the configured `zarkaconstruction.com` sender domain in Resend.
-      Server-only recipient/sender values and visitor reply-to are implemented;
-      the July 23 production test was rejected because the sender domain is not
-      verified.
+- [x] Verify the configured `zarkaconstruction.com` sender domain, DKIM, and SPF
+      records in Resend. Server-only recipient/sender values and visitor
+      reply-to are implemented.
 - [ ] Verify Turnstile on server with production hostname configuration.
 - [x] Verify honeypot/timing checks and configurable best-effort rate limiting.
 - [x] Verify accessible pending, error summary, inline errors, success, and retry.
 - [x] Confirm errors/logs contain correlation data but no secrets/message-body PII.
 - [ ] Test provider success, timeout, duplicate action, and production abuse
       paths. Automated rejection/disabled/validation coverage passes.
-- [ ] Deliver a real production test message and verify reply behavior. The July
-      23 attempt reached production but returned an honest 502 after Resend
-      rejected the unverified sender domain.
+- [ ] Confirm inbox receipt and manually verify reply behavior. The July 23
+      production submission returned HTTP 200; Resend accepted it and Vercel
+      logged `contact_delivery_accepted` with a provider ID.
 - [x] Confirm truthful fallback when email delivery is unavailable.
 
 ## Accessibility
@@ -162,8 +161,8 @@ an approved private location, not the public repository.
 - [ ] Contact form delivers to the intended inbox and reply-to works.
 - [ ] Analytics receives approved events with no PII.
 - [ ] Domain email sends and receives; SPF/MX/verification services remain healthy.
-- [ ] Vercel logs are clean except the documented contact-provider rejection;
-      recheck after sender-domain verification.
+- [x] Vercel production logs confirm contact-provider acceptance without
+      logging contact details or secrets.
 - [ ] Go/no-go owner records launch acceptance or triggers rollback.
 
 ## GoDaddy website cancellation
