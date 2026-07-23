@@ -1,150 +1,121 @@
 # Progress
 
-**Current phase:** Phase 1 — canonical custom domain deployed and redirect
-verified; production contact, indexing approval, and remaining launch gates are
-pending
+**Current phase:** Phase 1.5 — Production Readiness
 
-**Canonical domain:** <https://www.zarkaconstruction.com>
-
-**Temporary production URL:** <https://zarka-construction.vercel.app>
+**Canonical production URL:** <https://www.zarkaconstruction.com>
 
 **Deployment target:** Vercel project `zarka-construction`
 
-**Latest verified deployment:** `dpl_3j2Fevd5RN5hQbgZ4As93AiFS2D8`
+**Latest verified deployment:** `dpl_9UMjS4azHyuaw3MPutdinqrPnPv5`
 
 **Last updated:** July 23, 2026
 
-## Work completed
+## Current production status
 
-- Initialized Git on `main` and created logical planning, foundation, marketing,
-  contact, legal/SEO, and accessibility commits.
-- Implemented Next.js 16 App Router, React 19, strict TypeScript, Tailwind 4,
-  ESLint, Vitest, and a locked npm dependency tree.
-- Built `/`, `/contact`, `/privacy`, `/terms`, generated sitemap/robots, browser
-  icons, an Open Graph asset, and a branded 404.
-- Built the complete responsive homepage with brand shell, hero, six services,
-  prominent simulator section, Why Zarka, capabilities, ecosystem, credibility,
-  contact CTA, and footer.
-- Implemented typed business/services/project/asset configuration. Unknown
-  phone, email, area, licensing, insurance, and social values remain null.
-- Integrated founder-supplied raster icon artwork through replaceable
-  configuration, paired it with the text wordmark in the shared shell, made it
-  the hero focal point, and generated deterministic favicon/touch derivatives.
-  No alternate logo geometry was fabricated.
-- Implemented `POST /api/contact` with strict validation, same-origin and body
-  checks, honeypot/timing checks, privacy-hashed best-effort rate limiting,
-  optional Turnstile, escaped HTML/plain-text Resend delivery, visitor reply-to,
-  correlation IDs, PII-minimized logs, and honest disabled/failure states.
-- Added Vercel Analytics and PII-free CTA/form/ecosystem event preparation.
-- Added factual `Organization` JSON-LD, per-route canonical metadata, social
-  metadata, and deliberate noindex/robots control for temporary production.
-- Deployed and smoke-tested <https://zarka-construction.vercel.app>. All public
-  routes return expected status codes; the disabled contact API returns 503
-  rather than pretending delivery.
-- Redeployed the founder-supplied brand artwork integration and verified the
-  stable Vercel alias, canonical metadata, temporary noindex state, favicon,
-  touch icon, and public mark asset.
-- Diagnosed an opposing 308 loop: Vercel redirected apex to `www`, while
-  `next.config.ts` redirected `www` back to apex.
-- Removed the application hostname redirect, made Vercel the sole redirect
-  owner, and aligned metadata, sitemap, robots, structured data, tests, and the
-  non-secret Vercel site URL to `https://www.zarkaconstruction.com`.
-- Verified both confirmed external ecosystem URLs respond over HTTPS.
-- Made no GoDaddy DNS, nameserver, MX, TXT, email, or product changes while
-  resolving the redirect loop.
+The Phase 1 marketing site is live on the canonical `www` domain. Search
+indexing is enabled only in Vercel Production. The apex redirect, HTTPS,
+canonical metadata, public routes, generated SEO files, security headers, brand
+assets, responsive layout, and accessibility checks pass.
+
+Contact infrastructure and all required server-only Vercel environment
+variables are configured. A real production request reached the endpoint but
+Resend rejected delivery because `zarkaconstruction.com` is not a verified
+sender domain in the configured Resend account. The endpoint returned an honest
+502 response and did not claim delivery. Resend reports only `capproof.com` as a
+verified domain. Do not substitute that unrelated sender; verify the Zarka
+sender domain before enabling public reliance on the form.
+
+## Phase 1.5 work completed
+
+- Reviewed every public route and removed internal MVP, placeholder, and
+  pre-cutover wording from capability, privacy, and terms content.
+- Preserved the approved positioning, CTA hierarchy, service scope, and brand
+  system without adding sections, routes, claims, or Phase 2 functionality.
+- Improved Resend email output with clear contact/project grouping, submission
+  timestamp, escaped HTML formatting, and a readable plain-text fallback.
+- Added automated verification of recipient, configured sender, visitor
+  `reply_to`, HTML/text payloads, provider rejection, disabled delivery, request
+  size limits, and production indexing behavior.
+- Hardened `POST /api/contact` to reject unsupported content types and oversized
+  bodies even when `Content-Length` is absent.
+- Configured existing non-empty Resend and rate-limit values in Vercel
+  Production without exposing or committing secrets.
+- Enabled `NEXT_PUBLIC_SEARCH_INDEXING_ENABLED=true` only in Vercel Production.
+- Corrected the contact layout at the 768px tablet breakpoint.
+- Added responsive image `sizes` so the small header mark no longer downloads a
+  desktop-scale raster. Lighthouse image-delivery waste dropped from about
+  103 KiB to zero.
+- Made no GoDaddy DNS, nameserver, MX, TXT, email-record, or product changes.
 
 ## Verification
 
 - `npm run lint`: pass
 - `npm run typecheck`: pass
-- `npm test`: 13 tests pass across five files, including redirect-ownership
-  regression coverage
-- `npm run build`: pass; all marketing/legal routes statically rendered and
-  `/api/contact` dynamic
-- `npm audit --json`: zero known vulnerabilities
-- Internal route, anchor, canonical metadata, sitemap, robots, 404, disabled
-  delivery, and external-link review: pass
-- Headless Chrome desktop, narrow, and contact-page visual review: pass
-- Brand integration responsive review at 320, 375, 768, 1024, and 1440 CSS
-  pixels: pass; no page-level horizontal overflow
-- Custom-domain redirect verification:
-  - `http://zarkaconstruction.com` → canonical `www`, 200, two redirects
-    including HTTP-to-HTTPS
-  - `https://zarkaconstruction.com` → canonical `www`, 200, one redirect
-  - `http://www.zarkaconstruction.com` → canonical HTTPS `www`, 200, one redirect
-  - `https://www.zarkaconstruction.com` → 200, zero redirects
-  - path and query preservation: pass
-- Canonical/OG metadata, all four sitemap URLs, and robots sitemap/host use
-  `www`; existing noindex/disallow behavior is preserved.
-- Lighthouse mobile:
-  - Performance: 100
+- `npm test`: 20 tests pass across seven files
+- Production build with indexing enabled: pass
+- Public `/`, `/contact`, `/privacy`, `/terms`, `robots.txt`, `sitemap.xml`,
+  Open Graph image, favicon, and Apple icon: HTTP 200
+- `robots.txt`: allows `/` and names the canonical `www` sitemap
+- Metadata: `index, follow`, canonical `www`, Open Graph/Twitter data present,
+  factual Organization JSON-LD present, and no temporary Vercel URL in public
+  HTML
+- Security headers: CSP, HSTS, `DENY` frame policy, MIME sniffing protection,
+  strict referrer policy, and restricted permissions policy present
+- Responsive review: 320, 375, 390, 414, 768, 1024, 1280, 1440, and 1920 CSS
+  pixels; no page-level horizontal overflow
+- Accessibility: Lighthouse 100; semantic landmarks, heading hierarchy, labels,
+  live error/status behavior, keyboard focus, skip link, mobile navigation, and
+  decorative-image treatment reviewed
+- Final Lighthouse mobile:
+  - Performance: 98
   - Accessibility: 100
   - Best Practices: 100
-  - SEO: 66 while noindex is intentionally enabled; `is-crawlable` is the
-    expected deduction until canonical-domain cutover
-  - FCP: 0.8 s, LCP: 1.7 s, CLS: 0, TBT: 10 ms in the local production audit
+  - SEO: 100
+  - FCP: 0.9 s
+  - LCP: 2.4 s
+  - TBT: 10 ms
+  - CLS: 0
+- Real production contact test:
+  - Endpoint and validation path: reached
+  - Result: honest HTTP 502; message not accepted by Resend
+  - Cause: configured `zarkaconstruction.com` sender domain is not verified
+  - No visitor-facing false success and no sensitive log output
 
-## Temporary fallbacks
+## Working fallbacks
 
-- The uploaded lockup is stacked rather than truly horizontal, so the header
-  pairs the approved icon with the typeset ZARKA / CONSTRUCTION fallback.
-- The supplied raster mark and favicon are temporary production assets pending
-  professionally recreated SVG variants and final small-size optical review.
-- Abstract structural presentation replaces unavailable approved project
-  photography.
-- Contact submission is visibly disabled because no recipient/sender/API key is
-  configured; no visitor data is sent or stored.
-- Turnstile is inactive; honeypot, timing, validation, and best-effort rate
-  limiting remain active at the API boundary.
-- Search indexing remains disabled across the current production deployment
-  pending explicit approval to enable public indexing.
+- The header uses the approved raster icon with the text-based ZARKA /
+  CONSTRUCTION lockup until purpose-built horizontal vector artwork is supplied.
+- Abstract structural presentation remains in place until approved project
+  photography is available.
+- Turnstile is inactive because its two credentials remain empty/unconfigured.
+  Honeypot, timing checks, server validation, same-origin enforcement, request
+  size limits, and best-effort rate limiting remain active.
+- Public phone, email, service area, licensing, insurance, testimonials, and
+  unsupported business facts remain omitted.
 
-## Production configuration still required
+## Launch blockers and remaining readiness items
 
-- `RESEND_API_KEY`
-- `CONTACT_RECIPIENT_EMAIL`
-- `CONTACT_FROM_EMAIL`
-- `NEXT_PUBLIC_TURNSTILE_SITE_KEY` and `TURNSTILE_SECRET_KEY` for production
-  cross-instance form abuse protection
-- Confirmed public contact/privacy-request method
-- Confirmed service area, if it should be published
-- Final professionally recreated SVG logo variants and optional project
-  photography
-- Founder-controlled GitHub repository destination and branch protection
-- GoDaddy access plus authoritative DNS/product inventory
-- Named launch copy and canonical-domain go/no-go approver
+1. Add and verify `zarkaconstruction.com` in the configured Resend account,
+   preserving all unrelated DNS and email records.
+2. Repeat a real production form submission and verify inbox receipt plus
+   visitor reply-to after Resend reports the sender domain verified.
+3. Configure production Turnstile site/secret keys for the canonical hostname,
+   then verify success and rejection paths.
+4. Verify approved analytics events in the Vercel dashboard without PII.
+5. Complete the 200% zoom/high-contrast and Firefox/WebKit smoke tests where
+   those environments are available.
+6. Obtain legal review of the starter privacy notice and website terms if the
+   founder requires it.
+7. Configure founder-controlled Search Console and submit the sitemap.
+
+## Phase 2 remains deferred
+
+Portfolio content, a CMS, Supabase, authentication, dashboards, a blog,
+uploads, scheduling, customer portals, AI features, and product integrations
+remain outside Phase 1.5.
 
 ## Immediate next action
 
-Configure and verify the three Resend variables and the two Turnstile variables
-in the Vercel Production environment, redeploy, and submit a real inquiry through
-the canonical `www` domain. Keep indexing disabled until the founder approves
-the remaining launch gates.
-
-## Remaining production-launch sequence
-
-1. Complete the authoritative GoDaddy DNS/product inventory and mail test.
-2. Configure/verify Resend sender DNS without modifying unrelated records.
-3. Configure Turnstile for the temporary alias and canonical `www` host.
-4. Replace the privacy/terms contact-method TODO through confirmed business config.
-5. Run a real form delivery/reply test and final founder review.
-6. Set `NEXT_PUBLIC_SEARCH_INDEXING_ENABLED=true` and redeploy only after
-   explicit indexing approval.
-7. Repeat mail, SSL, redirect, analytics, and runtime monitoring without changing
-   the verified website DNS records.
-8. Treat any GoDaddy website-product cancellation as a separate,
-   founder-authorized action after all success gates pass.
-
-## Next recommended prompt
-
-> Complete the Zarka Construction production-contact configuration and
-> production-launch readiness review. Read `AGENTS.md`, `progress.md`,
-> `docs/OPEN_QUESTIONS.md`, `docs/LAUNCH_CHECKLIST.md`, and
-> `docs/DEPLOYMENT_AND_DOMAIN_CUTOVER.md`. Configure only founder-supplied
-> Resend, contact-recipient, public contact, and Turnstile values in Vercel;
-> never place secrets in the repository. Redeploy and verify real contact
-> delivery, visitor reply-to, Turnstile, analytics, all routes, and privacy
-> wording through `https://www.zarkaconstruction.com`. Inventory GoDaddy DNS and
-> products without changing them. Stop before any DNS or cancellation action
-> and report the exact cutover targets, rollback values, and remaining go/no-go
-> conditions.
+Verify the `zarkaconstruction.com` sender domain in Resend, then redeploy only if
+Vercel environment values change and repeat the real form delivery/reply-to
+test. Do not modify unrelated GoDaddy DNS records or cancel any GoDaddy product.

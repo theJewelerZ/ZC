@@ -14,10 +14,13 @@
 - Avoid duplicate trailing-slash variants according to the chosen Next.js
   policy.
 
-Implementation note: `NEXT_PUBLIC_SEARCH_INDEXING_ENABLED=false` currently
-emits noindex metadata and a disallowing robots policy for the temporary
-<https://zarka-construction.vercel.app> production alias. Set it to `true` and
-redeploy only during the approved canonical-domain cutover.
+Implementation status (July 23, 2026):
+`NEXT_PUBLIC_SEARCH_INDEXING_ENABLED=true` is set only in Vercel Production.
+The canonical deployment emits `index, follow`; `robots.txt` allows `/` and
+names the `www` sitemap. Preview and local environments leave the variable
+absent or false so non-canonical builds remain non-indexable. Public metadata,
+sitemap URLs, robots host/sitemap values, Open Graph URLs, and structured data
+contain no temporary Vercel origin.
 
 ## Page metadata
 

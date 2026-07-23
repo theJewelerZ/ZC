@@ -11,7 +11,8 @@ an approved private location, not the public repository.
 - [ ] Confirm service area.
 - [x] Confirm public email and phone, or approve omission. Omitted for MVP.
 - [x] Confirm licensing and insurance wording, or approve omission. Omitted.
-- [ ] Confirm contact recipient, Resend sender, and response owner.
+- [ ] Confirm the long-term response owner. Recipient and sender values are
+      configured privately in Vercel Production.
 - [x] Supply temporary raster artwork; icon is active with text fallback.
 - [ ] Name final copy approver and launch go/no-go owner.
 
@@ -66,13 +67,19 @@ an approved private location, not the public repository.
 - [x] Validate required/optional fields and maximum lengths server-side.
 - [x] Reject unexpected/invalid service values.
 - [x] Verify HTML escaping and plain-text email.
-- [ ] Configure verified Resend sender, server-only recipient, and visitor reply-to.
+- [ ] Verify the configured `zarkaconstruction.com` sender domain in Resend.
+      Server-only recipient/sender values and visitor reply-to are implemented;
+      the July 23 production test was rejected because the sender domain is not
+      verified.
 - [ ] Verify Turnstile on server with production hostname configuration.
 - [x] Verify honeypot/timing checks and configurable best-effort rate limiting.
 - [x] Verify accessible pending, error summary, inline errors, success, and retry.
 - [x] Confirm errors/logs contain correlation data but no secrets/message-body PII.
-- [ ] Test provider success, rejection, timeout, duplicate action, and abuse paths.
-- [ ] Deliver a real production test message and verify reply behavior.
+- [ ] Test provider success, timeout, duplicate action, and production abuse
+      paths. Automated rejection/disabled/validation coverage passes.
+- [ ] Deliver a real production test message and verify reply behavior. The July
+      23 attempt reached production but returned an honest 502 after Resend
+      rejected the unverified sender domain.
 - [x] Confirm truthful fallback when email delivery is unavailable.
 
 ## Accessibility
@@ -105,17 +112,18 @@ an approved private location, not the public repository.
       hostname redirect remains.
 - [x] Open Graph image/data and icons render correctly.
 - [x] Sitemap contains the four canonical routes.
-- [ ] Robots allows canonical production. It intentionally disallows the
-      temporary Vercel URL until cutover.
+- [x] Robots allows canonical production and references the canonical `www`
+      sitemap; Preview and local builds remain non-indexable.
 - [x] JSON-LD uses `Organization` and no invented fields.
 - [x] Temporary `vercel.app` production is noindex/disallowed.
 - [x] Internal/external links and status codes are verified.
 
 ## Vercel deployment
 
-- [ ] Import repository into the approved account/team.
+- [x] Link and deploy the project in the active Vercel account/team.
 - [x] Confirm production branch, runtime, install, and build settings.
-- [x] Configure known non-secret Production environment values; secrets remain unset.
+- [x] Configure Production indexing, analytics, Resend, and rate-limit
+      environment values without exposing secrets.
 - [x] Deploy and smoke-test <https://zarka-construction.vercel.app>.
 - [x] Record the known-good deployment and commits for rollback.
 - [x] Add and verify both apex and `www` on the project.
@@ -149,11 +157,13 @@ an approved private location, not the public repository.
 - [x] `www` serves the approved Vercel deployment over valid HTTPS.
 - [x] Apex redirects once to `www` and preserves path/query.
 - [x] All routes, sitemap, robots, 404, assets, metadata, and external links work.
-- [ ] Mobile, desktop, keyboard, and screen-reader smoke tests pass.
+- [ ] Mobile, desktop, and keyboard smoke tests pass; complete a manual
+      screen-reader pass.
 - [ ] Contact form delivers to the intended inbox and reply-to works.
 - [ ] Analytics receives approved events with no PII.
 - [ ] Domain email sends and receives; SPF/MX/verification services remain healthy.
-- [ ] Vercel domain/runtime logs show no material error.
+- [ ] Vercel logs are clean except the documented contact-provider rejection;
+      recheck after sender-domain verification.
 - [ ] Go/no-go owner records launch acceptance or triggers rollback.
 
 ## GoDaddy website cancellation
@@ -175,4 +185,4 @@ an approved private location, not the public repository.
 - [ ] Configure founder-controlled Search Console and submit sitemap.
 - [ ] Preserve existing Google verification record.
 - [ ] Review indexing, structured-data reports, broken links, and Vercel billing.
-- [ ] Update `progress.md`, decisions, open questions, and roadmap priorities.
+- [x] Update `progress.md`, README, and this launch checklist for Phase 1.5.

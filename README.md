@@ -30,7 +30,7 @@ in `docs/DECISIONS.md`.
 
 ## Current status
 
-Phase 1.5 production readiness is in progress on the canonical deployment:
+Phase 1.5 production readiness is deployed on the canonical production site:
 <https://www.zarkaconstruction.com>.
 
 Founder-supplied raster brand artwork is integrated through the
@@ -38,11 +38,16 @@ configuration-driven logo component and browser icons; the narrow header keeps
 the legible text wordmark paired with the approved icon. A professionally
 recreated SVG and approved project photography remain future replacements.
 
-The contact form remains in safe disabled mode until the linked Vercel
-Production project contains the required Resend recipient, sender, and API-key
-variables. Turnstile remains inactive until both credentials are configured.
-GoDaddy remains the registrar and DNS host; production-readiness work must not
-alter DNS or email records.
+The linked Vercel Production project contains the server-only Resend recipient,
+sender, API key, and rate-limit configuration. A real production test is
+currently blocked at provider acceptance because `zarkaconstruction.com` is not
+yet a verified sender domain in the configured Resend account. The form fails
+honestly and does not claim delivery. Turnstile remains inactive until both
+credentials are configured. GoDaddy remains the registrar and DNS host; any
+sender-domain verification must preserve unrelated DNS and email records.
+
+Production indexing is enabled on the canonical deployment. Preview and local
+builds remain non-indexable by default.
 
 ## Documentation
 
@@ -92,11 +97,15 @@ exports.
 
 ### Production environment
 
-Required to enable contact delivery:
+Required for contact delivery:
 
 - `RESEND_API_KEY`
 - `CONTACT_RECIPIENT_EMAIL`
 - `CONTACT_FROM_EMAIL`
+
+The domain used by `CONTACT_FROM_EMAIL` must also be verified in the configured
+Resend account. Environment variables alone do not establish sender
+authorization.
 
 Optional Turnstile hardening:
 
