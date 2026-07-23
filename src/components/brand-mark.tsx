@@ -30,6 +30,11 @@ export function BrandMark({
         className={className}
         height={format === "icon" ? 781 : 56}
         priority
+        sizes={
+          format === "icon"
+            ? "(max-width: 600px) calc(100vw - 40px), (max-width: 960px) 560px, 470px"
+            : "220px"
+        }
         src={asset}
         width={format === "icon" ? 615 : 220}
       />
@@ -60,6 +65,7 @@ export function BrandMark({
           className="brand-lockup-mark"
           height={781}
           priority
+          sizes="48px"
           src={iconAsset}
           width={615}
         />
