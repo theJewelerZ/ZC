@@ -1,13 +1,15 @@
 # Progress
 
-**Current phase:** Phase 1 — Professional Launch MVP implemented; temporary
-production verification in progress
+**Current phase:** Phase 1 — Professional Launch MVP deployed and verified;
+production contact configuration and canonical-domain cutover remain pending
 
 **Canonical domain:** <https://zarkaconstruction.com>
 
 **Temporary production URL:** <https://zarka-construction.vercel.app>
 
 **Deployment target:** Vercel project `zarka-construction`
+
+**Latest verified deployment:** `dpl_5DVNSkfYF5u8sS1ELa5HXqAer8eM`
 
 **Last updated:** July 23, 2026
 
@@ -38,6 +40,9 @@ production verification in progress
 - Deployed and smoke-tested <https://zarka-construction.vercel.app>. All public
   routes return expected status codes; the disabled contact API returns 503
   rather than pretending delivery.
+- Redeployed the founder-supplied brand artwork integration and verified the
+  stable Vercel alias, canonical metadata, temporary noindex state, favicon,
+  touch icon, and public mark asset.
 - Verified both confirmed external ecosystem URLs respond over HTTPS.
 - Made no GoDaddy, production-domain, nameserver, email-DNS, or product changes.
 
