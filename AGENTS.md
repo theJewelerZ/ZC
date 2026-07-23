@@ -4,7 +4,7 @@
 
 Build and maintain the official Zarka Construction LLC website: a professional,
 mobile-first construction and specialty-installation front door at
-`https://zarkaconstruction.com`.
+`https://www.zarkaconstruction.com`.
 
 ## Start here
 
@@ -80,4 +80,3 @@ work, decisions, blockers, immediate next action, and next prompt.
 - Never cancel a GoDaddy product without explicit authorization. The unwanted
   website product can be canceled only after the complete production success
   gate; retain domain registration, DNS, and active email services.
-

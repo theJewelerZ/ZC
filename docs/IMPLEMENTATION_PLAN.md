@@ -180,8 +180,8 @@ Follow `DEPLOYMENT_AND_DOMAIN_CUTOVER.md` exactly:
 6. Cancel the unwanted GoDaddy website subscription only after the written
    success gate; retain registration, DNS, and active email.
 
-**Acceptance:** apex serves Vercel over HTTPS; `www` redirects to apex; mail and
-external services remain operational; rollback data is retained.
+**Acceptance:** `www` serves Vercel over HTTPS; the apex redirects once to
+`www`; mail and external services remain operational; rollback data is retained.
 
 **Verify:** independent DNS resolvers, browser/network checks, Vercel status,
 mail send/receive, form delivery, and at least one post-propagation recheck.

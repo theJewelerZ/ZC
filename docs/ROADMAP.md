@@ -38,7 +38,7 @@ domain transfer, nameserver migration.
 fallback approval; GitHub/Vercel/GoDaddy access; complete DNS inventory.
 
 **Exit criteria:** All required routes and checks pass at the canonical domain;
-form delivery is verified; `www` redirects to apex; mail/external DNS services
+form delivery is verified; apex redirects once to `www`; mail/external DNS services
 still work; unwanted GoDaddy website product is eligible for separate
 cancellation.
 
@@ -103,4 +103,3 @@ and support capacity.
 **Exit criteria:** A separately approved business and technical case defines
 customers, value, ownership, data policy, architecture, rollout, and measurable
 outcomes. This phase is not implied by completing earlier phases.
-

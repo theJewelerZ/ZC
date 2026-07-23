@@ -2,13 +2,15 @@
 
 ## Canonical strategy
 
-- Production origin: `https://zarkaconstruction.com`
+- Production origin: `https://www.zarkaconstruction.com`
 - Every indexable route declares an absolute self-canonical URL.
-- `www.zarkaconstruction.com` permanently redirects to the apex with path and
-  query preserved.
+- Vercel permanently redirects `zarkaconstruction.com` to
+  `www.zarkaconstruction.com` with path and query preserved.
+- Application code must not implement the hostname redirect; Vercel project
+  domain settings are the single source of truth.
 - Preview and `vercel.app` deployments must not compete in search; use Vercel
   deployment controls and noindex where appropriate.
-- Normalize internal links to the apex origin in metadata and generated files.
+- Normalize absolute metadata and generated files to the `www` origin.
 - Avoid duplicate trailing-slash variants according to the chosen Next.js
   policy.
 
@@ -152,7 +154,7 @@ After stable cutover:
 
 1. Use or create the appropriate Domain property with founder-controlled access.
 2. Preserve existing Google site-verification DNS.
-3. Submit `https://zarkaconstruction.com/sitemap.xml`.
+3. Submit `https://www.zarkaconstruction.com/sitemap.xml`.
 4. Inspect all four canonical routes and request indexing where appropriate.
 5. Monitor coverage, Core Web Vitals, structured-data issues, security/manual
    actions, and branded/non-branded queries.

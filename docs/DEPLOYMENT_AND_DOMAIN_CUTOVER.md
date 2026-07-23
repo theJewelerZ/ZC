@@ -31,8 +31,13 @@ Implementation record, July 23, 2026:
 - Temporary production alias:
   <https://zarka-construction.vercel.app>
 - Deployment status: Ready and smoke-tested
-- Custom domains: not added
-- GoDaddy/DNS changes: none
+- Custom domains: `zarkaconstruction.com` and
+  `www.zarkaconstruction.com` are added and verified
+- Canonical host: `https://www.zarkaconstruction.com`
+- Vercel domain redirect: apex permanently redirects to `www` with status 308;
+  `www` serves the application directly
+- Verified website DNS: apex A `216.150.1.1`; `www` CNAME
+  `1bdf9ac95a8504d1.vercel-dns-016.com`
 - Contact delivery/Turnstile secrets: not configured
 - Search indexing: explicitly disabled until canonical-domain cutover
 
@@ -50,7 +55,7 @@ Implementation record, July 23, 2026:
 
 Use the names defined in `TECHNICAL_ARCHITECTURE.md`. Verify:
 
-- Canonical site URL is the apex HTTPS URL in Production.
+- Canonical site URL is `https://www.zarkaconstruction.com` in Production.
 - Resend key belongs to the intended account and verified sender domain.
 - Contact recipient is correct and server-only.
 - Turnstile keys match allowed production and preview hostnames.
@@ -80,14 +85,19 @@ available.
 
 1. Add `zarkaconstruction.com` to the project.
 2. Add `www.zarkaconstruction.com` explicitly.
-3. Set `zarkaconstruction.com` as the primary production domain.
-4. Configure `www` as a permanent redirect to the apex in Vercel.
+3. Configure `www.zarkaconstruction.com` to serve the production deployment.
+4. Configure `zarkaconstruction.com` as a permanent redirect to `www` in
+   Vercel.
 5. Capture the exact ownership-verification and DNS records Vercel displays.
 
-Vercel’s documented general-purpose values are commonly an apex A record of
-`76.76.21.21` and a `www` CNAME of `cname.vercel-dns-0.com`. Project-specific
-targets may differ; **use the exact Vercel project instructions at cutover**.
-Do not point DNS based only on this document.
+Current project-specific values verified by Vercel are apex A `216.150.1.1` and
+`www` CNAME `1bdf9ac95a8504d1.vercel-dns-016.com`. Do not substitute generic
+Vercel targets or alter these records unless Vercel explicitly supplies new
+project-specific values and a separate DNS change is authorized.
+
+Vercel project domain settings are the single source of truth for the
+apex-to-`www` redirect. Do not duplicate or reverse this hostname redirect in
+`next.config.ts`, `vercel.json`, middleware, or route handlers.
 
 ## 6. Authoritative GoDaddy inventory
 
@@ -104,7 +114,7 @@ TTL, and purpose for every entry:
 - Delegated NS records and all known subdomains
 - GoDaddy forwarding, parking, Website Builder connections, and Dynamic DNS
 
-Public observation on July 22, 2026 found:
+Pre-cutover public observation on July 22, 2026 found:
 
 - GoDaddy nameservers `ns51.domaincontrol.com` and `ns52.domaincontrol.com`
 - Apex A records `76.223.105.230` and `13.248.243.5`
@@ -122,12 +132,21 @@ Public observation on July 22, 2026 found:
 This public check is incomplete and is not authority to delete or recreate
 records. Unknown DKIM selectors and non-public service configuration may exist.
 
+Current website records supplied and verified on July 23, 2026:
+
+- Apex A `216.150.1.1`
+- `www` CNAME `1bdf9ac95a8504d1.vercel-dns-016.com`
+
+These current values do not replace the requirement to preserve the complete
+authoritative MX/TXT/service inventory. No DNS change is required for the
+redirect-loop application fix.
+
 Create a private cutover table:
 
 | Host/type | Before | Purpose | Planned action | After | Verified |
 | --- | --- | --- | --- | --- | --- |
-| `@` A | Confirm in GoDaddy | Current website | Replace website values only | Exact Vercel value | |
-| `www` CNAME | Confirm in GoDaddy | Current website | Replace | Exact Vercel value | |
+| `@` A | Prior value retained in cutover record | Vercel website | No change for redirect-loop fix | `216.150.1.1` | Vercel verified |
+| `www` CNAME | Prior value retained in cutover record | Vercel website | No change for redirect-loop fix | `1bdf9ac95a8504d1.vercel-dns-016.com` | Vercel verified |
 | MX/TXT/etc. | Export all | Mail/services | Preserve | Unchanged | |
 
 If practical, reduce only the website-record TTL 24–48 hours before cutover.
@@ -155,10 +174,11 @@ do not justify deleting unrelated records.
 
 Check from at least two independent resolvers/networks where possible:
 
-- Apex returns the exact intended Vercel configuration.
-- `www` resolves and redirects once to the apex with path/query preserved.
+- Apex redirects once to `https://www.zarkaconstruction.com` with path/query
+  preserved.
+- `www` serves the intended Vercel production deployment directly.
 - Both hosts present valid certificates and no mixed content.
-- Apex is the canonical URL in headers, metadata, sitemap, JSON-LD, and social
+- `www` is the canonical URL in metadata, sitemap, robots, JSON-LD, and social
   metadata.
 - All four routes return expected status/content; nonexistent paths behave
   intentionally.
@@ -170,6 +190,21 @@ Check from at least two independent resolvers/networks where possible:
   production smoke check.
 
 Do not regard a single local browser result as full propagation verification.
+
+### Redirect-loop incident and resolution
+
+On July 23, 2026, authenticated Vercel project-domain configuration showed:
+
+- `zarkaconstruction.com` → `www.zarkaconstruction.com`, status 308
+- `www.zarkaconstruction.com` → no Vercel redirect
+
+At the same time, `next.config.ts` contained a host-conditioned permanent
+redirect from `www.zarkaconstruction.com` back to
+`https://zarkaconstruction.com/:path*`. The opposing redirects produced an
+alternating 308 loop. The application rule was removed, canonical configuration
+was changed to `https://www.zarkaconstruction.com`, and Vercel remained the only
+hostname redirect owner. DNS, nameservers, MX, TXT, and email-related settings
+were not changed.
 
 ## 9. Rollback
 

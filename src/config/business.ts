@@ -42,7 +42,7 @@ export type BusinessConfig = {
 export const businessConfig = {
   legalName: "Zarka Construction LLC",
   displayName: "Zarka Construction",
-  canonicalUrl: "https://zarkaconstruction.com",
+  canonicalUrl: "https://www.zarkaconstruction.com",
   tagline: "Built with precision. Delivered with integrity.",
   publicPhone: null,
   publicEmail: null,

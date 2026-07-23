@@ -6,7 +6,7 @@ The official website for Zarka Construction LLC: a Michigan-based construction
 and specialty installation company connecting decades of field experience with
 modern estimating, documentation, and construction technology.
 
-**Canonical production domain:** <https://zarkaconstruction.com>
+**Canonical production domain:** <https://www.zarkaconstruction.com>
 
 ## Immediate goal
 

@@ -264,7 +264,7 @@ Browser fields + Turnstile token
 Proposed names; confirm against the implemented libraries:
 
 ```text
-NEXT_PUBLIC_SITE_URL=https://zarkaconstruction.com
+NEXT_PUBLIC_SITE_URL=https://www.zarkaconstruction.com
 NEXT_PUBLIC_ANALYTICS_ENABLED=true
 NEXT_PUBLIC_SEARCH_INDEXING_ENABLED=false
 RESEND_API_KEY=

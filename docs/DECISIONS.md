@@ -22,7 +22,7 @@ Statuses:
 
 ## ADR-002 — Canonical apex domain
 
-- **Status:** Accepted
+- **Status:** Superseded by ADR-020
 - **Context:** The founder has designated the official domain.
 - **Decision:** Use `https://zarkaconstruction.com` as the canonical origin.
   Redirect `www` permanently to the apex while preserving path/query.
@@ -216,3 +216,20 @@ Statuses:
   later light/dark horizontal SVG replacement without page rewrites.
 - **Reconsider when:** Professionally recreated and rights-confirmed SVG
   deliverables are approved.
+
+## ADR-020 — Canonical www domain with Vercel-owned hostname redirect
+
+- **Status:** Accepted
+- **Context:** The founder designated `https://www.zarkaconstruction.com` as the
+  canonical origin. Vercel project-domain configuration already redirects the
+  apex to `www` with status 308. A legacy Next.js rule redirected `www` back to
+  the apex, creating an alternating 308 loop.
+- **Decision:** Use `https://www.zarkaconstruction.com` for canonical metadata,
+  sitemap, robots, structured data, and absolute URLs. Keep the Vercel project
+  domain setting as the sole apex-to-`www` redirect source. Do not duplicate
+  hostname redirects in Next.js, middleware, route handlers, or `vercel.json`.
+- **Consequences:** The apex redirects once at Vercel, while `www` serves the
+  application directly. Path and query preservation are controlled and tested
+  at the Vercel domain layer.
+- **Reconsider when:** Only through an explicit founder-approved canonical-host
+  change accompanied by coordinated Vercel, application, SEO, and test updates.

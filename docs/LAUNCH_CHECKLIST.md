@@ -100,8 +100,9 @@ an approved private location, not the public repository.
 
 ## SEO
 
-- [x] Unique title/description and apex self-canonical on every route.
-- [x] `www` redirect is implemented in code; custom-domain verification remains.
+- [x] Unique title/description and `www` self-canonical on every route.
+- [x] Delegate apex-to-`www` redirect exclusively to Vercel; no application
+      hostname redirect remains.
 - [x] Open Graph image/data and icons render correctly.
 - [x] Sitemap contains the four canonical routes.
 - [ ] Robots allows canonical production. It intentionally disallows the
@@ -117,9 +118,9 @@ an approved private location, not the public repository.
 - [x] Configure known non-secret Production environment values; secrets remain unset.
 - [x] Deploy and smoke-test <https://zarka-construction.vercel.app>.
 - [x] Record the known-good deployment and commits for rollback.
-- [ ] Add both apex and `www` to the project.
-- [ ] Set apex primary and `www` redirect.
-- [ ] Capture exact DNS values shown by Vercel.
+- [x] Add and verify both apex and `www` on the project.
+- [x] Configure `www` to serve production and apex to redirect once to `www`.
+- [x] Capture exact Vercel-verified website DNS values.
 
 ## GoDaddy DNS inventory
 
@@ -145,8 +146,8 @@ an approved private location, not the public repository.
 
 ## Production smoke test
 
-- [ ] Apex serves the approved Vercel deployment over valid HTTPS.
-- [ ] `www` redirects once to apex and preserves path/query.
+- [ ] `www` serves the approved Vercel deployment over valid HTTPS.
+- [ ] Apex redirects once to `www` and preserves path/query.
 - [ ] All routes, sitemap, robots, 404, assets, metadata, and external links work.
 - [ ] Mobile, desktop, keyboard, and screen-reader smoke tests pass.
 - [ ] Contact form delivers to the intended inbox and reply-to works.

@@ -111,8 +111,8 @@ field origin and links outward with clear external-link labels.
 - Page structure, contrast, keyboard behavior, labels, focus states, and motion
   preferences meet a high accessibility standard.
 - Images and fonts do not compromise Core Web Vitals.
-- Apex and `www` resolve predictably, HTTPS works, and `www` redirects to the
-  canonical apex.
+- Apex and `www` resolve predictably, HTTPS works, and the apex redirects once
+  to the canonical `www` host.
 - Existing mail and verification DNS records remain intact.
 
 ## Post-launch signals
@@ -131,4 +131,3 @@ Measure trends, not vanity totals:
 
 No metric target should be invented before a baseline and operating capacity
 are known.
-

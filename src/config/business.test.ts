@@ -9,7 +9,7 @@ import {
 describe("public business configuration", () => {
   it("uses the approved canonical domain and brand statement", () => {
     expect(businessConfig.canonicalUrl).toBe(
-      "https://zarkaconstruction.com",
+      "https://www.zarkaconstruction.com",
     );
     expect(businessConfig.tagline).toBe(
       "Built with precision. Delivered with integrity.",
@@ -49,4 +49,3 @@ describe("public business configuration", () => {
     }
   });
 });
-
