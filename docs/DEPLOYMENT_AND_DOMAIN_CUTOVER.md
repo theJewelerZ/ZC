@@ -24,6 +24,18 @@ delivery, analytics, and preserved DNS services have all been verified.**
 
 ## 2. Vercel project
 
+Implementation record, July 23, 2026:
+
+- Vercel scope: `matthews-projects-7e2a9d39`
+- Project: `zarka-construction`
+- Temporary production alias:
+  <https://zarka-construction.vercel.app>
+- Deployment status: Ready and smoke-tested
+- Custom domains: not added
+- GoDaddy/DNS changes: none
+- Contact delivery/Turnstile secrets: not configured
+- Search indexing: explicitly disabled until canonical-domain cutover
+
 1. Import the GitHub repository into the confirmed Vercel personal/team scope.
 2. Confirm framework, root directory, install, build, Node runtime, and
    production branch.
@@ -207,4 +219,3 @@ confirmation and verify the domain and email again afterward.
   delivery, and external verification services.
 - First week: Search Console setup/indexing, Core Web Vitals, broken links,
   contact quality/spam, provider delivery status, and unexpected GoDaddy billing.
-

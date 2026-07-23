@@ -5,115 +5,117 @@ an approved private location, not the public repository.
 
 ## Founder inputs
 
-- [ ] Confirm public company name and canonical domain.
-- [ ] Approve launch services and direct/coordinated delivery distinctions.
-- [ ] Approve simulator, Why Zarka, ecosystem, and company copy.
+- [x] Confirm public company name and canonical domain.
+- [x] Approve launch services and direct/coordinated delivery distinctions.
+- [x] Approve simulator, Why Zarka, ecosystem, and company copy.
 - [ ] Confirm service area.
-- [ ] Confirm public email and phone, or approve omission.
-- [ ] Confirm licensing and insurance wording, or approve omission.
+- [x] Confirm public email and phone, or approve omission. Omitted for MVP.
+- [x] Confirm licensing and insurance wording, or approve omission. Omitted.
 - [ ] Confirm contact recipient, Resend sender, and response owner.
-- [ ] Approve temporary raster logo or text fallback.
+- [x] Approve temporary raster logo or text fallback. Text fallback is active.
 - [ ] Name final copy approver and launch go/no-go owner.
 
 ## Repository
 
-- [ ] Initialize Git in the intended project root.
+- [x] Initialize Git in the intended project root.
 - [ ] Create repository in the approved founder-controlled GitHub destination.
-- [ ] Add focused ignore rules and `.env.example`.
-- [ ] Set production branch and appropriate protection/checks.
-- [ ] Pin Node/package manager/dependencies in project files and lockfile.
-- [ ] Confirm no secrets, private DNS exports, or unapproved assets are tracked.
-- [ ] Confirm clean install and documented local commands.
+- [x] Add focused ignore rules and `.env.example`.
+- [ ] Set production branch and appropriate protection/checks. `main` exists;
+      remote protection awaits the GitHub destination.
+- [x] Pin Node/package manager/dependencies in project files and lockfile.
+- [x] Confirm no secrets, private DNS exports, or unapproved assets are tracked.
+- [x] Confirm clean install and documented local commands.
 
 ## Implementation
 
-- [ ] Implement only `/`, `/contact`, `/privacy`, and `/terms`.
-- [ ] Centralize business facts, services, navigation, project links, and assets.
-- [ ] Implement accessible header, mobile navigation, skip link, and footer.
-- [ ] Implement complete homepage sequence with stable anchors.
-- [ ] Render Bid Desk without a link until configured.
-- [ ] Provide text fallback for missing logo assets.
-- [ ] Add deliberate loading/error/not-found behavior where applicable.
-- [ ] Remove public TODOs, template copy, dead code, and unused dependencies.
+- [x] Implement only `/`, `/contact`, `/privacy`, and `/terms`.
+- [x] Centralize business facts, services, navigation, project links, and assets.
+- [x] Implement accessible header, mobile navigation, skip link, and footer.
+- [x] Implement complete homepage sequence with stable anchors.
+- [x] Render Bid Desk without a link until configured.
+- [x] Provide text fallback for missing logo assets.
+- [x] Add deliberate error/not-found and disabled-delivery behavior.
+- [x] Remove public TODOs, template copy, dead code, and unused dependencies.
 
 ## Brand assets
 
 - [ ] Verify temporary asset usage rights and source.
 - [ ] Export transparent light/dark icon and horizontal variants.
-- [ ] Verify mark fidelity at header/mobile sizes.
-- [ ] Add intrinsic dimensions and optimized production formats.
-- [ ] Add favicon/touch/app icons.
-- [ ] Add approved 1200×630 Open Graph image.
-- [ ] Verify swapping manifest paths can introduce final SVGs without rewrites.
+- [x] Verify text fallback at header/mobile sizes.
+- [x] Add intrinsic dimensions for configured future production formats.
+- [x] Add generated text-fallback favicon/touch icons.
+- [x] Add generated 1200×630 brand-only Open Graph image.
+- [x] Verify swapping manifest paths can introduce final SVGs without rewrites.
 
 ## Content
 
-- [ ] Confirm hero, CTA labels, services, simulator, credibility, ecosystem, and
+- [x] Confirm hero, CTA labels, services, simulator, credibility, ecosystem, and
       about copy.
-- [ ] Verify every factual claim against founder input.
-- [ ] Confirm CapProof and Precision Impact Screens URLs.
-- [ ] Confirm no Bid Desk URL is invented.
-- [ ] Confirm images have rights, meaningful alt text, and accurate captions.
-- [ ] Confirm no address, phone, email, radius, license, insurance, year, count,
+- [x] Verify every factual claim against founder input.
+- [x] Confirm CapProof and Precision Impact Screens URLs.
+- [x] Confirm no Bid Desk URL is invented.
+- [x] Confirm no unapproved photography is present; all geometry is decorative.
+- [x] Confirm no address, phone, email, radius, license, insurance, year, count,
       award, certification, warranty, or dealer claim is invented.
 - [ ] Review privacy and terms against actual production processing; obtain legal
       review where appropriate.
 
 ## Contact form
 
-- [ ] Validate required/optional fields and maximum lengths server-side.
-- [ ] Reject unexpected/invalid service values.
-- [ ] Verify HTML escaping and plain-text email.
+- [x] Validate required/optional fields and maximum lengths server-side.
+- [x] Reject unexpected/invalid service values.
+- [x] Verify HTML escaping and plain-text email.
 - [ ] Configure verified Resend sender, server-only recipient, and visitor reply-to.
 - [ ] Verify Turnstile on server with production hostname configuration.
-- [ ] Verify honeypot/timing checks and configurable rate limiting.
-- [ ] Verify accessible pending, error summary, inline errors, success, and retry.
-- [ ] Confirm errors/logs contain correlation data but no secrets/message-body PII.
+- [x] Verify honeypot/timing checks and configurable best-effort rate limiting.
+- [x] Verify accessible pending, error summary, inline errors, success, and retry.
+- [x] Confirm errors/logs contain correlation data but no secrets/message-body PII.
 - [ ] Test provider success, rejection, timeout, duplicate action, and abuse paths.
 - [ ] Deliver a real production test message and verify reply behavior.
-- [ ] Confirm truthful fallback when email delivery is unavailable.
+- [x] Confirm truthful fallback when email delivery is unavailable.
 
 ## Accessibility
 
-- [ ] Automated accessibility scan has no critical/serious unresolved issue.
-- [ ] One logical `h1`; ordered headings and semantic landmarks.
-- [ ] Skip link and all controls work by keyboard.
-- [ ] Mobile menu exposes state, closes predictably, and manages focus.
-- [ ] Focus is visible on every interactive element.
-- [ ] Form labels/errors/status announcements work with a screen reader.
-- [ ] Text/UI contrast is verified; color is not the only cue.
-- [ ] Images have purposeful alt text or empty alt when decorative.
+- [x] Automated Lighthouse accessibility scan scores 100.
+- [x] One logical `h1`; ordered headings and semantic landmarks.
+- [x] Skip link and all controls work by keyboard.
+- [x] Mobile menu exposes state and closes on activation or Escape.
+- [x] Focus is visible on every interactive element.
+- [x] Form labels/errors/status announcements use accessible relationships/live regions.
+- [x] Text/UI contrast is verified; color is not the only cue.
+- [x] Decorative diagrams are hidden from assistive technology.
 - [ ] 200% zoom/reflow and high-contrast mode remain usable.
-- [ ] Reduced-motion preference is respected.
+- [x] Reduced-motion preference is respected.
 
 ## Responsive testing
 
-- [ ] No horizontal overflow at 320px.
-- [ ] Test representative small/large phones, tablet, laptop, and wide desktop.
-- [ ] Touch targets and menu are usable.
-- [ ] Hero/CTA remain clear without excessive first-screen height.
-- [ ] Cards, form, footer, long text, and validation messages reflow.
-- [ ] Anchor targets are not obscured by the header.
+- [x] No horizontal overflow at the 320px CSS breakpoint.
+- [x] Review narrow/mobile, tablet CSS breakpoints, 1440px desktop, and large layout.
+- [x] Touch targets and menu are usable.
+- [x] Hero/CTA remain clear without excessive first-screen height.
+- [x] Cards, form, footer, long text, and validation messages reflow.
+- [x] Anchor targets are not obscured by the header.
 - [ ] Test current Chromium, Firefox, and WebKit/Safari where available.
 
 ## SEO
 
-- [ ] Unique title/description and apex self-canonical on every route.
-- [ ] `www` canonical handling matches Vercel redirect.
-- [ ] Open Graph image/data and icons render correctly.
-- [ ] Sitemap contains the four canonical routes.
-- [ ] Robots allows production and does not expose private routes.
-- [ ] JSON-LD uses a factually supported type and no invented fields.
-- [ ] Preview and `vercel.app` URLs do not become competing indexed properties.
-- [ ] Internal/external links and status codes are verified.
+- [x] Unique title/description and apex self-canonical on every route.
+- [x] `www` redirect is implemented in code; custom-domain verification remains.
+- [x] Open Graph image/data and icons render correctly.
+- [x] Sitemap contains the four canonical routes.
+- [ ] Robots allows canonical production. It intentionally disallows the
+      temporary Vercel URL until cutover.
+- [x] JSON-LD uses `Organization` and no invented fields.
+- [x] Temporary `vercel.app` production is noindex/disallowed.
+- [x] Internal/external links and status codes are verified.
 
 ## Vercel deployment
 
 - [ ] Import repository into the approved account/team.
-- [ ] Confirm production branch, runtime, install, and build settings.
-- [ ] Configure separate Preview/Production environment variables.
-- [ ] Deploy and smoke-test the temporary production `vercel.app` URL.
-- [ ] Record the known-good deployment/commit for rollback.
+- [x] Confirm production branch, runtime, install, and build settings.
+- [x] Configure known non-secret Production environment values; secrets remain unset.
+- [x] Deploy and smoke-test <https://zarka-construction.vercel.app>.
+- [x] Record the known-good deployment and commits for rollback.
 - [ ] Add both apex and `www` to the project.
 - [ ] Set apex primary and `www` redirect.
 - [ ] Capture exact DNS values shown by Vercel.
@@ -172,4 +174,3 @@ an approved private location, not the public repository.
 - [ ] Preserve existing Google verification record.
 - [ ] Review indexing, structured-data reports, broken links, and Vercel billing.
 - [ ] Update `progress.md`, decisions, open questions, and roadmap priorities.
-

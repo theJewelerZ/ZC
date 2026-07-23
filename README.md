@@ -14,14 +14,14 @@ Ship a polished, fast, mobile-first marketing website that can be shared with
 prospects, contractors, vendors, and partners immediately. The first release is
 a focused professional front door, not a construction management application.
 
-## Proposed stack
+## Implemented stack
 
-- Next.js App Router with TypeScript
-- Tailwind CSS; shadcn/ui only where a primitive clearly reduces risk
+- Next.js 16 App Router with React 19 and strict TypeScript
+- Tailwind CSS 4 with project-owned accessible components
 - Static or server-rendered marketing pages on Vercel
-- Resend for contact email
-- Cloudflare Turnstile and lightweight rate limiting for form abuse
-- Vercel Analytics or an equivalent privacy-conscious analytics tool
+- Environment-driven Resend contact email through a Next.js route handler
+- Optional Cloudflare Turnstile, honeypot/timing checks, and rate limiting
+- Vercel Analytics with PII-free conversion events
 - Supabase only after a real persistence requirement is approved
 
 Use the current stable compatible versions when implementation begins. Pin
@@ -30,15 +30,19 @@ in `docs/DECISIONS.md`.
 
 ## Current status
 
-Phase 0 — Foundation and Decisions. The planning and architecture baseline is
-present; application implementation has not begun. The project root was empty
-and was not a Git repository when this baseline was created. No production logo
-files, brand-board image, or project photography are currently in the
-repository.
+Phase 1 — Professional Launch MVP is implemented and deployed to the temporary
+Vercel production URL:
+<https://zarka-construction.vercel.app>.
 
-Deployment target: Vercel. GoDaddy remains the registrar and DNS host during the
-initial launch. Website hosting migration and domain registration are separate
-operations.
+The contact form is in safe disabled mode until the Resend recipient/sender
+variables are supplied. Turnstile is prepared but inactive until its two
+credentials are supplied. Search indexing remains disabled until the canonical
+domain cutover. No production logo file or approved project photography is in
+the repository, so the site uses the documented text wordmark and generated
+brand-only metadata images.
+
+GoDaddy remains the registrar and DNS host. No DNS or GoDaddy product change has
+been made.
 
 ## Documentation
 
@@ -60,11 +64,48 @@ operations.
 
 ## Development setup
 
-Application setup is intentionally deferred to Phase 1. Once the Next.js
-project exists, replace this section with the exact prerequisites, install
-command, environment-file setup, development command, checks, and production
-build command. Do not publish real secrets in this file or commit `.env*`
-files containing secrets.
+Requirements: Node.js 24.x and npm.
+
+```powershell
+npm install
+Copy-Item .env.example .env.local
+npm run dev
+```
+
+Open <http://localhost:3000>. Configure only the environment values available
+to you; the site remains operational with contact delivery and Turnstile
+disabled.
+
+Quality and production commands:
+
+```powershell
+npm run lint
+npm run typecheck
+npm test
+npm run build
+npm run check
+npm run start
+```
+
+Never commit `.env.local`, Resend credentials, Turnstile secrets, or private DNS
+exports.
+
+### Production environment
+
+Required to enable contact delivery:
+
+- `RESEND_API_KEY`
+- `CONTACT_RECIPIENT_EMAIL`
+- `CONTACT_FROM_EMAIL`
+
+Optional Turnstile hardening:
+
+- `NEXT_PUBLIC_TURNSTILE_SITE_KEY`
+- `TURNSTILE_SECRET_KEY`
+
+Keep `NEXT_PUBLIC_SEARCH_INDEXING_ENABLED=false` on the temporary Vercel URL.
+Set it to `true` and redeploy only as part of the approved canonical-domain
+cutover. See [.env.example](.env.example) for the complete safe template.
 
 ## Scope constraints
 

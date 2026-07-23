@@ -1,5 +1,18 @@
 # Implementation Plan
 
+## Phase 1 implementation record — July 23, 2026
+
+Workstreams 0–5 are implemented and verified, except for founder-controlled
+GitHub remote setup, approved logo/photography, real Resend delivery, Turnstile
+credentials, and attorney/founder legal review. Workstream 6 is complete through
+temporary Vercel production deployment and smoke testing at
+<https://zarka-construction.vercel.app>. Custom domains were not added.
+Workstream 7 has not begun and remains separately authorized.
+
+The temporary deployment is intentionally non-indexable and the contact form is
+in honest disabled mode until production credentials are supplied. See
+`progress.md` and `LAUNCH_CHECKLIST.md` for the exact open gates.
+
 ## Workstream 0 — Inputs and repository foundation
 
 1. Resolve or explicitly omit launch-blocking business values in
@@ -203,4 +216,3 @@ mail send/receive, form delivery, and at least one post-propagation recheck.
 - Contact: disable the form CTA or show an approved confirmed email only if
   delivery cannot be restored; never claim receipt.
 - GoDaddy subscription: do not cancel it until rollback is no longer needed.
-

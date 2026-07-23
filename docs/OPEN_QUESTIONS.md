@@ -4,6 +4,20 @@ This is the founder-input queue. A launch-blocking item can be resolved by
 providing the value **or explicitly approving omission** where noted. Never put
 the TODO labels themselves on the public site.
 
+## Current implementation resolutions
+
+- Vercel project destination is
+  `matthews-projects-7e2a9d39/zarka-construction`.
+- Public phone, public email, service-area detail, licensing language, insurance
+  language, social links, address, testimonials, and project claims are omitted.
+- The text logo fallback and generated brand-only metadata assets are active.
+- Bid Desk renders as unlinked “Coming soon.”
+- Contact delivery and Turnstile remain disabled pending real values.
+- The GitHub destination and GoDaddy access/inventory remain unresolved.
+
+Items below are retained as the canonical founder-input record even where the
+safe MVP omission has already been implemented.
+
 ## Launch blocking
 
 | Priority | Question / decision | Why it matters | Safe resolution |
@@ -53,4 +67,3 @@ the TODO labels themselves on the public site.
 | Is content management needed? | Publishing owner, cadence, approvals, content model, migration case |
 | Should budget/preferred-contact fields be added? | Evidence that qualification value exceeds form friction |
 | Should a shared ecosystem identity/data layer exist? | Validated cross-product use case, privacy/security/legal review |
-

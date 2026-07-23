@@ -1,8 +1,10 @@
 # Asset Inventory
 
-No brand or photography files were present in the project root when this
-baseline was created. “Current” concept assets below are known from the founder
-brief but still need to be supplied, reviewed, and rights-confirmed.
+No approved brand or photography files were present in the project root when
+this baseline was created. Phase 1 therefore uses a high-quality text fallback
+through `BrandMark`; replacing it remains configuration-driven. “Current”
+concept assets below are known from the founder brief but still need to be
+supplied, reviewed, and rights-confirmed.
 
 ## Brand source and status
 
@@ -40,6 +42,11 @@ Each asset must be checked for:
 
 If clean exports are unavailable, launch with the text fallback.
 
+**Implemented MVP fallback:** `BrandMark` renders typeset `ZARKA /
+CONSTRUCTION` for horizontal use and a text `Z` only when icon format is
+requested. These are explicitly fallback treatments, not newly claimed logo
+artwork.
+
 ## Final vector deliverables
 
 A professional designer should provide:
@@ -72,6 +79,11 @@ Required temporary/final outputs:
 Use the icon only, simplify detail if professionally approved, and test on light
 and dark browser chrome. Do not reduce the full horizontal lockup into a favicon.
 
+**Implemented MVP fallback:** `src/app/icon.tsx` and
+`src/app/apple-icon.tsx` generate restrained Navy/Orange text icons through
+Next.js metadata conventions. Replace them when approved production artwork is
+available.
+
 ## Open Graph image
 
 - 1200×630 pixels, sRGB, compressed WebP or JPEG plus framework-compatible path
@@ -81,6 +93,10 @@ and dark browser chrome. Do not reduce the full horizontal lockup into a favicon
   service claims
 - Suggested name: `zarka-construction-og-1200x630.jpg`
 - Supply descriptive metadata alt text separately
+
+**Implemented MVP fallback:** `src/app/opengraph-image.tsx` generates a
+1200×630 brand-only image containing the text wordmark, approved statement, and
+capability categories. It contains no invented photography or vector logo.
 
 ## Photography needs
 
@@ -152,4 +168,3 @@ names, and camera-generated names.
 5. Confirm both light/dark surfaces and text fallback.
 6. Remove obsolete assets only after references and production deployment are
    verified; record the brand decision.
-

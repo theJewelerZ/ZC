@@ -10,7 +10,7 @@ Statuses:
 
 ## ADR-001 — Next.js and Vercel
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Context:** The site needs rapid delivery, static/server-rendered marketing
   pages, one secure server-side form, strong performance, and easy deployment.
 - **Decision:** Use stable Next.js App Router with TypeScript and Tailwind,
@@ -133,17 +133,19 @@ Statuses:
 
 ## ADR-013 — Server-side email contact with layered abuse protection
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Context:** The MVP needs reliable inquiries without a CRM/database.
-- **Decision:** Use one Next.js server boundary, strict schema validation,
-  Resend, Turnstile, honeypot/timing signals, and lightweight rate limiting.
+- **Decision:** Use `POST /api/contact`, strict schema validation, same-origin
+  checks, request limits, Resend, optional Turnstile, honeypot/timing signals,
+  and configurable best-effort request limiting. Disable the public submit
+  action honestly when Resend configuration is incomplete.
 - **Consequences:** Requires verified sender/recipient and production testing;
   the privacy page must reflect processors.
 - **Reconsider when:** Delivery/operations require durable queueing or a CRM.
 
 ## ADR-014 — Privacy-conscious first-party measurement
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Context:** Launch needs basic conversion and performance feedback.
 - **Decision:** Use Vercel Analytics initially with small, PII-free custom events.
 - **Consequences:** Reporting remains intentionally limited; implementation and
@@ -152,7 +154,7 @@ Statuses:
 
 ## ADR-015 — Conservative structured-data type
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Context:** Local-business details and general-contractor language are not
   confirmed.
 - **Decision:** Start with `Organization` or another factually supported type and
@@ -160,3 +162,39 @@ Statuses:
 - **Consequences:** Rich-result scope may be smaller but remains accurate.
 - **Reconsider when:** Public contact/service/licensing facts are confirmed.
 
+## ADR-016 — System font and text-only temporary brand assets
+
+- **Status:** Accepted
+- **Context:** No approved production logo raster/vector or project photography
+  is present, and remote font downloads add no necessary launch value.
+- **Decision:** Use a disciplined system sans-serif stack, a configuration-driven
+  text wordmark, generated text favicon/touch icons, and a brand-only generated
+  Open Graph image.
+- **Consequences:** The launch is fast and visually coherent without inventing a
+  logo. Approved assets can replace paths/components at the existing seams.
+- **Reconsider when:** Professionally approved logo exports and image rights are
+  supplied.
+
+## ADR-017 — Temporary production URL remains non-indexable
+
+- **Status:** Accepted
+- **Context:** The site is live at a temporary `vercel.app` production alias
+  before the canonical GoDaddy cutover.
+- **Decision:** Default `NEXT_PUBLIC_SEARCH_INDEXING_ENABLED` to `false`, emit
+  noindex metadata, and disallow crawling until the canonical domain is ready.
+- **Consequences:** Temporary testing does not compete with the current canonical
+  website; Lighthouse SEO is intentionally reduced during this state.
+- **Reconsider when:** Immediately before the approved domain cutover, set the
+  value to `true`, redeploy, and verify canonical/robots behavior.
+
+## ADR-018 — In-process rate limiting is defense in depth
+
+- **Status:** Accepted
+- **Context:** The MVP has no database or durable rate-limit store, and Vercel
+  functions may run across multiple instances.
+- **Decision:** Use a privacy-hashed configurable in-process window alongside
+  validation, timing, and honeypot controls. Treat Turnstile and a Vercel
+  Firewall/WAF rule as the production cross-instance protections.
+- **Consequences:** The local limiter reduces repeat abuse per warm instance but
+  is not represented as globally durable.
+- **Reconsider when:** Inquiry volume or abuse justifies a shared store.

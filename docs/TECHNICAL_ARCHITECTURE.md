@@ -147,10 +147,9 @@ assets unless publication rights and purpose are approved.
 
 ### Transport
 
-Prefer a Next.js server action for direct progressive-enhancement ergonomics.
-Use `POST /api/contact` instead if Turnstile integration, tests, or the chosen
-client form library are materially clearer with an HTTP boundary. Do not
-implement both.
+The implemented boundary is `POST /api/contact`. This single JSON route keeps
+Turnstile verification, same-origin enforcement, schema tests, request sizing,
+and provider failure behavior explicit. A second server action is not present.
 
 Flow:
 
@@ -192,10 +191,12 @@ Browser fields + Turnstile token
 
 - Cloudflare Turnstile invisible/managed mode, verified server-side.
 - Hidden honeypot and minimum-fill-time signal as low-friction secondary checks.
-- Rate limit by a privacy-reduced request fingerprint, not permanent raw IP
-  storage. A Vercel-supported durable limiter is preferred if available.
-- Initial policy is conservative and configurable; select the numeric threshold
-  during implementation based on the provider chosen and document it.
+- Rate limit by a SHA-256 privacy-reduced request fingerprint, not permanent raw
+  IP storage. The MVP uses a configurable five-request/15-minute in-process
+  window as best-effort defense in depth.
+- Serverless instances do not share this memory. Turnstile and a Vercel
+  Firewall/WAF rate rule are the production cross-instance controls; a durable
+  limiter may replace the local layer when operating volume justifies it.
 - Return a generic retry response for limits; do not expose detection rules.
 
 ### Failure behavior
@@ -210,7 +211,8 @@ Browser fields + Turnstile token
 
 ## Analytics and diagnostics
 
-- Use Vercel Analytics initially; enable Speed Insights only if its runtime and
+- Vercel Analytics is implemented and loaded only on Vercel when
+  `NEXT_PUBLIC_ANALYTICS_ENABLED` is not `false`. Enable Speed Insights only if its runtime and
   privacy tradeoffs are accepted.
 - Track CTA, form state, successful conversion, and ecosystem link events
   defined in `SEO_AND_ANALYTICS.md`.
@@ -263,15 +265,16 @@ Proposed names; confirm against the implemented libraries:
 
 ```text
 NEXT_PUBLIC_SITE_URL=https://zarkaconstruction.com
+NEXT_PUBLIC_ANALYTICS_ENABLED=true
+NEXT_PUBLIC_SEARCH_INDEXING_ENABLED=false
 RESEND_API_KEY=
 CONTACT_FROM_EMAIL=
-CONTACT_TO_EMAIL=
-CONTACT_REPLY_TO_FALLBACK=        # optional; never replaces visitor reply-to
+CONTACT_RECIPIENT_EMAIL=
 NEXT_PUBLIC_TURNSTILE_SITE_KEY=
 TURNSTILE_SECRET_KEY=
-CONTACT_RATE_LIMIT_NAMESPACE=
-CONTACT_RATE_LIMIT_SECRET=        # only if provider requires it
-NEXT_PUBLIC_ANALYTICS_ENABLED=true
+CONTACT_RATE_LIMIT_SECRET=
+CONTACT_RATE_LIMIT_MAX=5
+CONTACT_RATE_LIMIT_WINDOW_MS=900000
 ```
 
 Use separate Preview and Production values. `.env.example` contains names and
@@ -293,4 +296,3 @@ Start with typed local content and optimized local images. Move to MDX or a CMS
 only when non-developers must publish regularly, approval workflow is clear,
 and migration value exceeds operational cost. Preserve stable project slugs and
 separate content data from layout components.
-

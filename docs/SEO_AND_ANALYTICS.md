@@ -12,6 +12,11 @@
 - Avoid duplicate trailing-slash variants according to the chosen Next.js
   policy.
 
+Implementation note: `NEXT_PUBLIC_SEARCH_INDEXING_ENABLED=false` currently
+emits noindex metadata and a disallowing robots policy for the temporary
+<https://zarka-construction.vercel.app> production alias. Set it to `true` and
+redeploy only during the approved canonical-domain cutover.
+
 ## Page metadata
 
 Create unique, factual titles and descriptions:
@@ -81,7 +86,7 @@ service radius. Validate JSON-LD syntax and compare it with visible content.
 
 ## Analytics recommendation
 
-Use Vercel Analytics for the MVP because it fits the hosting stack and avoids a
+Vercel Analytics is implemented for the MVP because it fits the hosting stack and avoids a
 large client analytics dependency. Confirm current data-processing, retention,
 cookie, and consent behavior before enabling it and reflect actual practice in
 the privacy page. Add another product only when a defined reporting need cannot
@@ -95,6 +100,9 @@ Analytics configuration must:
 - exclude development and unintended preview traffic;
 - be verified in production;
 - have a named owner for periodic review.
+
+The integration is loaded only in Vercel deployments and is disabled when
+`NEXT_PUBLIC_ANALYTICS_ENABLED=false`.
 
 ## Events
 
@@ -150,4 +158,3 @@ After stable cutover:
    actions, and branded/non-branded queries.
 6. Keep access assigned to founder-controlled accounts, not only an agency or
    individual developer.
-
