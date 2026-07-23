@@ -26,9 +26,8 @@ export function CapabilitiesSection() {
           <SectionHeading
             description={
               <p>
-                Until approved project photography and case-study facts are
-                available, the work is represented by the capabilities Zarka
-                Construction brings to a project.
+                A capability-led view of the practical skill, coordination, and
+                project thinking Zarka Construction brings to the work.
               </p>
             }
             eyebrow="Selected capabilities"
@@ -59,4 +58,3 @@ export function CapabilitiesSection() {
     </section>
   );
 }
-

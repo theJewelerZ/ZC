@@ -6,7 +6,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = createPageMetadata({
   title: "Website Terms",
   description:
-    "Starter website terms for information and inquiries submitted through the Zarka Construction website.",
+    "Website terms for information and inquiries submitted through the Zarka Construction website.",
   path: "/terms",
 });
 
@@ -22,10 +22,9 @@ export default function TermsPage() {
       </header>
       <article className="site-container legal-content">
         <p className="legal-intro">
-          These starter terms explain the intended use of this marketing
-          website. They are easy to revise as production contact details and
-          business policies are confirmed and are not presented as
-          attorney-reviewed legal advice.
+          These terms explain the intended use of the Zarka Construction
+          marketing website. They are not presented as attorney-reviewed legal
+          advice.
         </p>
 
         <h2>Informational purpose</h2>
@@ -80,13 +79,11 @@ export default function TermsPage() {
 
         <h2>Updates</h2>
         <p>
-          These terms may change when production contact information, business
-          policies, or website functions are finalized. A confirmed public
-          contact method for terms-related questions must be added before the
-          production-domain cutover.
+          These terms may change when business policies or website functions
+          materially change. The effective date above identifies the current
+          published version.
         </p>
       </article>
     </main>
   );
 }
-

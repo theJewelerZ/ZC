@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
   const origin = request.headers.get("origin");
   const host = request.headers.get("host");
 
-  if (!contentType.includes("application/json") || contentLength > 32_768) {
+  if (!contentType.includes("application/json")) {
     return NextResponse.json(
       {
         ok: false,
@@ -40,6 +40,17 @@ export async function POST(request: NextRequest) {
         correlationId,
       },
       { status: 415 },
+    );
+  }
+
+  if (contentLength > 32_768) {
+    return NextResponse.json(
+      {
+        ok: false,
+        message: "The submitted request is too large.",
+        correlationId,
+      },
+      { status: 413 },
     );
   }
 
@@ -67,9 +78,34 @@ export async function POST(request: NextRequest) {
     }
   }
 
+  let rawBody: string;
+  try {
+    rawBody = await request.text();
+  } catch {
+    return NextResponse.json(
+      {
+        ok: false,
+        message: "The submitted request could not be read.",
+        correlationId,
+      },
+      { status: 400 },
+    );
+  }
+
+  if (rawBody.length > 32_768) {
+    return NextResponse.json(
+      {
+        ok: false,
+        message: "The submitted request is too large.",
+        correlationId,
+      },
+      { status: 413 },
+    );
+  }
+
   let body: unknown;
   try {
-    body = await request.json();
+    body = JSON.parse(rawBody);
   } catch {
     return NextResponse.json(
       {

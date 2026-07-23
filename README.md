@@ -30,20 +30,19 @@ in `docs/DECISIONS.md`.
 
 ## Current status
 
-Phase 1 — Professional Launch MVP is implemented and deployed to the temporary
-Vercel production URL:
-<https://zarka-construction.vercel.app>.
+Phase 1.5 production readiness is in progress on the canonical deployment:
+<https://www.zarkaconstruction.com>.
 
-The contact form is in safe disabled mode until the Resend recipient/sender
-variables are supplied. Turnstile is prepared but inactive until its two
-credentials are supplied. Search indexing remains disabled until the canonical
-domain cutover. Founder-supplied raster brand artwork is integrated through the
+Founder-supplied raster brand artwork is integrated through the
 configuration-driven logo component and browser icons; the narrow header keeps
 the legible text wordmark paired with the approved icon. A professionally
 recreated SVG and approved project photography remain future replacements.
 
-GoDaddy remains the registrar and DNS host. No DNS or GoDaddy product change has
-been made.
+The contact form remains in safe disabled mode until the linked Vercel
+Production project contains the required Resend recipient, sender, and API-key
+variables. Turnstile remains inactive until both credentials are configured.
+GoDaddy remains the registrar and DNS host; production-readiness work must not
+alter DNS or email records.
 
 ## Documentation
 
@@ -104,9 +103,10 @@ Optional Turnstile hardening:
 - `NEXT_PUBLIC_TURNSTILE_SITE_KEY`
 - `TURNSTILE_SECRET_KEY`
 
-Keep `NEXT_PUBLIC_SEARCH_INDEXING_ENABLED=false` on the temporary Vercel URL.
-Set it to `true` and redeploy only as part of the approved canonical-domain
-cutover. See [.env.example](.env.example) for the complete safe template.
+Set `NEXT_PUBLIC_SEARCH_INDEXING_ENABLED=true` only in the canonical Vercel
+Production environment. Leave it absent or `false` in Preview and local
+environments so non-canonical deployments remain non-indexable. See
+[.env.example](.env.example) for the complete safe template.
 
 ## Scope constraints
 

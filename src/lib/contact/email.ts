@@ -18,10 +18,6 @@ function escapeHtml(value: string) {
     .replaceAll("'", "&#039;");
 }
 
-function optionalLine(label: string, value: string) {
-  return value ? `${label}: ${value}\n` : "";
-}
-
 export function buildContactEmail(
   payload: ContactPayload,
   correlationId: string,
@@ -32,28 +28,31 @@ export function buildContactEmail(
   const timelineLabel =
     timelineOptions.find((option) => option.value === payload.timeline)?.label ||
     payload.timeline;
+  const submittedAt = new Date().toISOString();
   const subject = `New Zarka Construction inquiry — ${correlationId.slice(0, 8)}`;
   const text = [
     "New consultation request",
-    "",
     `Reference: ${correlationId}`,
-    `Submitted: ${new Date().toISOString()}`,
+    `Submitted: ${submittedAt}`,
+    "",
+    "Contact and project details",
     `Name: ${payload.name}`,
     `Email: ${payload.email}`,
-    optionalLine("Phone", payload.phone).trimEnd(),
+    ...(payload.phone ? [`Phone: ${payload.phone}`] : []),
     `General location: ${payload.location}`,
     `Service: ${serviceLabel}`,
     `Timeline: ${timelineLabel}`,
-    optionalLine("Referral source", payload.referralSource).trimEnd(),
+    ...(payload.referralSource
+      ? [`Referral source: ${payload.referralSource}`]
+      : []),
     "",
     "Project description",
     payload.description,
-  ]
-    .filter((line) => line !== "")
-    .join("\n");
+  ].join("\n");
 
   const rows = [
     ["Reference", correlationId],
+    ["Submitted", submittedAt],
     ["Name", payload.name],
     ["Email", payload.email],
     ...(payload.phone ? [["Phone", payload.phone]] : []),
@@ -66,8 +65,8 @@ export function buildContactEmail(
   ];
 
   const html = `
-    <div style="font-family:Arial,sans-serif;color:#121820;line-height:1.55">
-      <h1 style="color:#0B1F33;font-size:24px">New consultation request</h1>
+    <div style="font-family:Arial,sans-serif;color:#121820;line-height:1.55;max-width:720px;margin:0 auto">
+      <h1 style="color:#0B1F33;font-size:24px;margin:0 0 20px">New consultation request</h1>
       <table style="border-collapse:collapse;width:100%;max-width:680px">
         ${rows
           .map(
@@ -80,7 +79,7 @@ export function buildContactEmail(
           .join("")}
       </table>
       <h2 style="color:#0B1F33;font-size:18px;margin-top:28px">Project description</h2>
-      <p style="white-space:pre-wrap">${escapeHtml(payload.description)}</p>
+      <p style="white-space:pre-wrap;margin-bottom:0">${escapeHtml(payload.description)}</p>
     </div>`;
 
   return { subject, text, html };

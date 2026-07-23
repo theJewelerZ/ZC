@@ -22,10 +22,10 @@ export default function PrivacyPage() {
       </header>
       <article className="site-container legal-content">
         <p className="legal-intro">
-          This starter privacy notice describes the current website
-          implementation. It is designed to be revised as business contact
-          details and production services are finalized, and it has not been
-          represented as attorney-reviewed legal advice.
+          This notice explains how the Zarka Construction website handles
+          information submitted through the consultation form, website
+          analytics, and supporting service providers. It is not presented as
+          attorney-reviewed legal advice.
         </p>
 
         <h2>Information you choose to provide</h2>
@@ -47,10 +47,10 @@ export default function PrivacyPage() {
 
         <h2>Delivery and security providers</h2>
         <p>
-          The website is hosted by Vercel. When the required production
-          configuration is active, Resend processes contact email delivery.
-          Cloudflare Turnstile may process technical request information to
-          reduce automated abuse when its production credentials are enabled.
+          The website is hosted by Vercel. When online contact delivery is
+          available, Resend processes contact email delivery. Cloudflare
+          Turnstile may process technical request information to reduce
+          automated abuse when its production credentials are enabled.
           The form also uses server validation, a hidden anti-spam field,
           timing checks, and a limited request-rate control.
         </p>
@@ -71,23 +71,21 @@ export default function PrivacyPage() {
 
         <h2>Retention and sharing</h2>
         <p>
-          This MVP does not include a lead database. Delivered inquiries may
-          remain in the configured recipient&apos;s email system according to
-          that system&apos;s operating and retention practices. Information is
-          not sold through this website. Service providers process information
-          only as needed to host, secure, measure, or deliver the website.
+          The website does not currently store inquiries in a separate lead
+          database. Delivered inquiries may remain in the configured
+          recipient&apos;s email system according to that system&apos;s operating
+          and retention practices. Information is not sold through this
+          website. Service providers process information only as needed to
+          host, secure, measure, or deliver the website.
         </p>
 
-        <h2>Your choices and updates</h2>
+        <h2>Notice updates</h2>
         <p>
-          Public contact information for privacy requests has not yet been
-          approved for publication. This section must be updated with a
-          confirmed contact method before the production domain is connected.
-          This notice will also be revised if the form, analytics, storage, or
-          service providers materially change.
+          This notice may be revised when the form, analytics, storage,
+          providers, or business contact practices materially change. The
+          effective date above identifies the current published version.
         </p>
       </article>
     </main>
   );
 }
-
