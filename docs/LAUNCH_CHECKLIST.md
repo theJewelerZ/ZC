@@ -12,7 +12,7 @@ an approved private location, not the public repository.
 - [x] Confirm public email and phone, or approve omission. Omitted for MVP.
 - [x] Confirm licensing and insurance wording, or approve omission. Omitted.
 - [ ] Confirm contact recipient, Resend sender, and response owner.
-- [x] Approve temporary raster logo or text fallback. Text fallback is active.
+- [x] Supply temporary raster artwork; icon is active with text fallback.
 - [ ] Name final copy approver and launch go/no-go owner.
 
 ## Repository
@@ -33,17 +33,18 @@ an approved private location, not the public repository.
 - [x] Implement accessible header, mobile navigation, skip link, and footer.
 - [x] Implement complete homepage sequence with stable anchors.
 - [x] Render Bid Desk without a link until configured.
-- [x] Provide text fallback for missing logo assets.
+- [x] Provide text fallback for unavailable horizontal/vector logo assets.
 - [x] Add deliberate error/not-found and disabled-delivery behavior.
 - [x] Remove public TODOs, template copy, dead code, and unused dependencies.
 
 ## Brand assets
 
-- [ ] Verify temporary asset usage rights and source.
-- [ ] Export transparent light/dark icon and horizontal variants.
+- [ ] Verify publication rights for the founder-supplied temporary raster files.
+- [x] Verify supplied transparent icon and stacked lockup exports.
+- [ ] Obtain purpose-built horizontal light/dark variants.
 - [x] Verify text fallback at header/mobile sizes.
 - [x] Add intrinsic dimensions for configured future production formats.
-- [x] Add generated text-fallback favicon/touch icons.
+- [x] Add favicon/touch icons derived from the supplied favicon artwork.
 - [x] Add generated 1200×630 brand-only Open Graph image.
 - [x] Verify swapping manifest paths can introduce final SVGs without rewrites.
 

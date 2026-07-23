@@ -164,7 +164,8 @@ Statuses:
 
 ## ADR-016 — System font and text-only temporary brand assets
 
-- **Status:** Accepted
+- **Status:** Superseded by ADR-019 for logo artwork; system-font decision remains
+  accepted
 - **Context:** No approved production logo raster/vector or project photography
   is present, and remote font downloads add no necessary launch value.
 - **Decision:** Use a disciplined system sans-serif stack, a configuration-driven
@@ -198,3 +199,20 @@ Statuses:
 - **Consequences:** The local limiter reduces repeat abuse per warm instance but
   is not represented as globally durable.
 - **Reconsider when:** Inquiry volume or abuse justifies a shared store.
+
+## ADR-019 — Founder-supplied raster artwork as the temporary production mark
+
+- **Status:** Accepted
+- **Context:** The founder supplied transparent raster exports of the approved
+  impossible-geometry mark, stacked lockup, and favicon concept. The supplied
+  “horizontal” file is visually stacked and is not suitable for a narrow header.
+- **Decision:** Preserve source files under `assets/brand-source`, publish
+  lossless trimmed derivatives under `public/brand`, use the approved mark with
+  the typeset wordmark in the shared shell and hero, and derive metadata icons
+  deterministically from the supplied favicon. Do not redraw or claim vector
+  status.
+- **Consequences:** The real approved concept is now visible without squeezing a
+  stacked presentation into the header. The configuration seam still supports
+  later light/dark horizontal SVG replacement without page rewrites.
+- **Reconsider when:** Professionally recreated and rights-confirmed SVG
+  deliverables are approved.

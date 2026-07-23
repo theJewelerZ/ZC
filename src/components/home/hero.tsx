@@ -1,22 +1,23 @@
+import { BrandMark } from "@/components/brand-mark";
 import { ArrowRightIcon } from "@/components/icons";
 import { TrackedLink } from "@/components/tracked-link";
 import { businessConfig } from "@/config/business";
 
-function StructuralDiagram() {
+function BrandArtwork() {
   return (
     <div aria-hidden="true" className="structural-diagram">
       <div className="diagram-frame">
+        <div className="brand-artwork-halo" />
         <div className="diagram-axis diagram-axis-x" />
         <div className="diagram-axis diagram-axis-y" />
-        <div className="diagram-member diagram-member-a" />
-        <div className="diagram-member diagram-member-b" />
-        <div className="diagram-member diagram-member-c" />
-        <div className="diagram-node diagram-node-a" />
-        <div className="diagram-node diagram-node-b" />
-        <div className="diagram-label diagram-label-a">01 / PLAN</div>
-        <div className="diagram-label diagram-label-b">02 / BUILD</div>
-        <div className="diagram-label diagram-label-c">03 / PROVE</div>
-        <div className="diagram-coordinate">42°18&apos; / FIELD SYSTEM</div>
+        <BrandMark
+          className="hero-brand-mark"
+          format="icon"
+          surface="dark"
+        />
+        <div className="diagram-label diagram-label-a">ENGINEERED FORM</div>
+        <div className="diagram-label diagram-label-b">FIELD / SYSTEM</div>
+        <div className="diagram-coordinate">ZARKA CONSTRUCTION</div>
       </div>
       <p>
         Integrated thinking for the room, the finish, and the work behind it.
@@ -62,9 +63,8 @@ export function Hero() {
           </div>
           <p className="hero-tagline">{businessConfig.tagline}</p>
         </div>
-        <StructuralDiagram />
+        <BrandArtwork />
       </div>
     </section>
   );
 }
-

@@ -13,24 +13,25 @@ export function BrandMark({
   format = "horizontal",
   className = "",
 }: BrandMarkProps) {
-  const asset =
-    format === "icon"
-      ? surface === "dark"
-        ? businessConfig.logo.iconOnDark
-        : businessConfig.logo.iconOnLight
-      : surface === "dark"
-        ? businessConfig.logo.horizontalOnDark
-        : businessConfig.logo.horizontalOnLight;
+  const iconAsset =
+    surface === "dark"
+      ? businessConfig.logo.iconOnDark
+      : businessConfig.logo.iconOnLight;
+  const horizontalAsset =
+    surface === "dark"
+      ? businessConfig.logo.horizontalOnDark
+      : businessConfig.logo.horizontalOnLight;
+  const asset = format === "icon" ? iconAsset : horizontalAsset;
 
   if (asset) {
     return (
       <Image
         alt={businessConfig.displayName}
         className={className}
-        height={format === "icon" ? 48 : 56}
+        height={format === "icon" ? 781 : 56}
         priority
         src={asset}
-        width={format === "icon" ? 48 : 220}
+        width={format === "icon" ? 615 : 220}
       />
     );
   }
@@ -50,12 +51,23 @@ export function BrandMark({
   return (
     <span
       aria-label={businessConfig.displayName}
-      className={`brand-wordmark ${className}`}
+      className={`brand-lockup ${className}`}
       role="img"
     >
-      <span className="brand-wordmark-primary">ZARKA</span>
-      <span className="brand-wordmark-secondary">CONSTRUCTION</span>
+      {iconAsset ? (
+        <Image
+          alt=""
+          className="brand-lockup-mark"
+          height={781}
+          priority
+          src={iconAsset}
+          width={615}
+        />
+      ) : null}
+      <span className="brand-wordmark">
+        <span className="brand-wordmark-primary">ZARKA</span>
+        <span className="brand-wordmark-secondary">CONSTRUCTION</span>
+      </span>
     </span>
   );
 }
-

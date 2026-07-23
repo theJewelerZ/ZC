@@ -37,9 +37,10 @@ Vercel production URL:
 The contact form is in safe disabled mode until the Resend recipient/sender
 variables are supplied. Turnstile is prepared but inactive until its two
 credentials are supplied. Search indexing remains disabled until the canonical
-domain cutover. No production logo file or approved project photography is in
-the repository, so the site uses the documented text wordmark and generated
-brand-only metadata images.
+domain cutover. Founder-supplied raster brand artwork is integrated through the
+configuration-driven logo component and browser icons; the narrow header keeps
+the legible text wordmark paired with the approved icon. A professionally
+recreated SVG and approved project photography remain future replacements.
 
 GoDaddy remains the registrar and DNS host. No DNS or GoDaddy product change has
 been made.

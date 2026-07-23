@@ -17,15 +17,17 @@ production verification in progress
   contact, legal/SEO, and accessibility commits.
 - Implemented Next.js 16 App Router, React 19, strict TypeScript, Tailwind 4,
   ESLint, Vitest, and a locked npm dependency tree.
-- Built `/`, `/contact`, `/privacy`, `/terms`, generated sitemap/robots,
-  generated favicon/touch/Open Graph assets, and a branded 404.
+- Built `/`, `/contact`, `/privacy`, `/terms`, generated sitemap/robots, browser
+  icons, an Open Graph asset, and a branded 404.
 - Built the complete responsive homepage with brand shell, hero, six services,
   prominent simulator section, Why Zarka, capabilities, ecosystem, credibility,
   contact CTA, and footer.
 - Implemented typed business/services/project/asset configuration. Unknown
-  phone, email, area, licensing, insurance, social, and logo paths remain null.
-- Implemented the text logo fallback; no raster/vector logo or photography was
-  fabricated.
+  phone, email, area, licensing, insurance, and social values remain null.
+- Integrated founder-supplied raster icon artwork through replaceable
+  configuration, paired it with the text wordmark in the shared shell, made it
+  the hero focal point, and generated deterministic favicon/touch derivatives.
+  No alternate logo geometry was fabricated.
 - Implemented `POST /api/contact` with strict validation, same-origin and body
   checks, honeypot/timing checks, privacy-hashed best-effort rate limiting,
   optional Turnstile, escaped HTML/plain-text Resend delivery, visitor reply-to,
@@ -50,6 +52,8 @@ production verification in progress
 - Internal route, anchor, canonical metadata, sitemap, robots, 404, disabled
   delivery, and external-link review: pass
 - Headless Chrome desktop, narrow, and contact-page visual review: pass
+- Brand integration responsive review at 320, 375, 768, 1024, and 1440 CSS
+  pixels: pass; no page-level horizontal overflow
 - Lighthouse mobile:
   - Performance: 100
   - Accessibility: 100
@@ -60,11 +64,12 @@ production verification in progress
 
 ## Temporary fallbacks
 
-- Typeset ZARKA / CONSTRUCTION wordmark and text icon replace missing approved
-  logo exports.
-- Generated brand-only favicon, touch icon, and Open Graph image replace missing
-  production artwork.
-- Abstract structural geometry replaces unavailable approved project photography.
+- The uploaded lockup is stacked rather than truly horizontal, so the header
+  pairs the approved icon with the typeset ZARKA / CONSTRUCTION fallback.
+- The supplied raster mark and favicon are temporary production assets pending
+  professionally recreated SVG variants and final small-size optical review.
+- Abstract structural presentation replaces unavailable approved project
+  photography.
 - Contact submission is visibly disabled because no recipient/sender/API key is
   configured; no visitor data is sent or stored.
 - Turnstile is inactive; honeypot, timing, validation, and best-effort rate
@@ -80,7 +85,8 @@ production verification in progress
   cross-instance form abuse protection
 - Confirmed public contact/privacy-request method
 - Confirmed service area, if it should be published
-- Final approved logo assets and optional project photography
+- Final professionally recreated SVG logo variants and optional project
+  photography
 - Founder-controlled GitHub repository destination and branch protection
 - GoDaddy access plus authoritative DNS/product inventory
 - Named launch copy and canonical-domain go/no-go approver

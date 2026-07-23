@@ -54,8 +54,8 @@ export const businessConfig = {
   logo: {
     horizontalOnLight: null,
     horizontalOnDark: null,
-    iconOnLight: null,
-    iconOnDark: null,
+    iconOnLight: "/brand/zarka-construction-mark.webp",
+    iconOnDark: "/brand/zarka-construction-mark.webp",
   },
   effectiveDate: "July 22, 2026",
 } as const satisfies BusinessConfig;
@@ -151,4 +151,3 @@ export const timelineOptions = [
   { value: "six-plus-months", label: "More than 6 months out" },
   { value: "planning", label: "Early planning / not sure yet" },
 ] as const;
-

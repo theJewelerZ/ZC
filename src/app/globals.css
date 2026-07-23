@@ -127,6 +127,18 @@ a {
   text-decoration: none;
 }
 
+.brand-lockup {
+  align-items: center;
+  display: inline-flex;
+  gap: 10px;
+}
+
+.brand-lockup-mark {
+  height: 48px;
+  object-fit: contain;
+  width: auto;
+}
+
 .brand-wordmark {
   display: inline-flex;
   flex-direction: column;
@@ -485,49 +497,24 @@ a {
   width: 1px;
 }
 
-.diagram-member {
-  background: var(--structural);
-  box-shadow: 12px 12px 0 rgba(242, 106, 33, 0.82);
-  height: 28px;
+.brand-artwork-halo {
+  background: radial-gradient(
+    circle,
+    rgba(242, 106, 33, 0.12),
+    transparent 64%
+  );
+  inset: 10%;
   position: absolute;
-  transform-origin: left center;
-  width: 62%;
 }
 
-.diagram-member-a {
-  left: 18%;
-  top: 26%;
-  transform: rotate(31deg);
-}
-
-.diagram-member-b {
-  left: 36%;
-  top: 68%;
-  transform: rotate(-59deg);
-}
-
-.diagram-member-c {
-  left: 17%;
-  top: 72%;
-  transform: rotate(-4deg);
-  width: 66%;
-}
-
-.diagram-node {
-  background: var(--orange);
-  height: 10px;
+.hero-brand-mark {
+  height: 76%;
+  left: 50%;
+  object-fit: contain;
   position: absolute;
-  width: 10px;
-}
-
-.diagram-node-a {
-  left: 13%;
-  top: 48%;
-}
-
-.diagram-node-b {
-  right: 12%;
-  top: 18%;
+  top: 49%;
+  transform: translate(-50%, -50%);
+  width: 76%;
 }
 
 .diagram-label,
@@ -546,12 +533,7 @@ a {
 
 .diagram-label-b {
   right: 5%;
-  top: 54%;
-}
-
-.diagram-label-c {
-  bottom: 7%;
-  left: 7%;
+  top: 8%;
 }
 
 .diagram-coordinate {

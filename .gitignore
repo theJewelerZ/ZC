@@ -17,6 +17,7 @@
 
 # tests and tooling
 /coverage
+/.tmp
 *.tsbuildinfo
 next-env.d.ts
 

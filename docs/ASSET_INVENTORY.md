@@ -1,19 +1,29 @@
 # Asset Inventory
 
-No approved brand or photography files were present in the project root when
-this baseline was created. Phase 1 therefore uses a high-quality text fallback
-through `BrandMark`; replacing it remains configuration-driven. “Current”
-concept assets below are known from the founder brief but still need to be
-supplied, reviewed, and rights-confirmed.
+The founder supplied three transparent raster concept exports on July 23, 2026.
+Original files are preserved under `assets/brand-source`; deterministic,
+lossless-trimmed web copies live under `public/brand`. The mark is now integrated
+through `BrandMark`, while the header retains a typeset wordmark because the
+supplied full lockup is stacked rather than horizontal. Publication rights still
+require explicit launch confirmation. No project photography has been supplied.
 
 ## Brand source and status
 
 | Asset | Current status | Production use |
 | --- | --- | --- |
-| Approved brand-board image | Exists outside repository as an AI-generated presentation; source file not supplied | Reference only; never use the whole board as the header logo |
-| Impossible-geometry icon concept | Approved visual direction, not a verified vector | Requires clean reviewed raster export for temporary use |
-| ZARKA / CONSTRUCTION lockup | Concept only; font/source unknown | Do not fabricate the typeface; use reviewed export or text fallback |
+| `assets/brand-source/zarka-construction-mark.png` | Supplied transparent 1536×1024 raster canvas; approved concept, not a verified vector | Active source for the site mark |
+| `assets/brand-source/zarka-construction-logo-horizontal.png` | Supplied transparent 1536×1024 raster canvas; artwork is a stacked lockup despite the source name | Retained as source; not squeezed into the header |
+| `assets/brand-source/zarka-construction-favicon.png` | Supplied transparent 1536×1024 raster canvas; not browser-sized as supplied | Source for deterministic browser-icon exports |
 | Brand statement | Approved text: “Built with precision. Delivered with integrity.” | May be typeset using site typography |
+
+### Active production derivatives
+
+| Path | Role | Dimensions / status |
+| --- | --- | --- |
+| `public/brand/zarka-construction-mark.webp` | Shared-shell and hero mark | 567×720, transparent lossless WebP |
+| `public/brand/zarka-construction-logo-lockup.webp` | Preserved stacked lockup derivative | 657×718, transparent lossless WebP; not currently rendered |
+| `src/app/icon.png` | Browser/application icon | 512×512 transparent PNG with safe padding |
+| `src/app/apple-icon.png` | Apple touch icon | 180×180 transparent PNG |
 
 ## Temporary production exports
 
@@ -40,12 +50,10 @@ Each asset must be checked for:
 - No embedded board labels, mockup shadows, texture, or invented `LLC`
 - Confirmed permission for production publication
 
-If clean exports are unavailable, launch with the text fallback.
-
-**Implemented MVP fallback:** `BrandMark` renders typeset `ZARKA /
-CONSTRUCTION` for horizontal use and a text `Z` only when icon format is
-requested. These are explicitly fallback treatments, not newly claimed logo
-artwork.
+If a configured image fails or a future asset is removed, `BrandMark` retains a
+text fallback. The active narrow lockup combines the supplied icon with typeset
+`ZARKA / CONSTRUCTION`; it is a temporary production treatment, not a claim that
+the embedded concept typeface has been recreated.
 
 ## Final vector deliverables
 
@@ -79,10 +87,10 @@ Required temporary/final outputs:
 Use the icon only, simplify detail if professionally approved, and test on light
 and dark browser chrome. Do not reduce the full horizontal lockup into a favicon.
 
-**Implemented MVP fallback:** `src/app/icon.tsx` and
-`src/app/apple-icon.tsx` generate restrained Navy/Orange text icons through
-Next.js metadata conventions. Replace them when approved production artwork is
-available.
+**Implemented temporary production assets:** `src/app/icon.png` and
+`src/app/apple-icon.png` are deterministic crops/resizes of the supplied favicon
+artwork and use Next.js metadata conventions. Replace them when professionally
+prepared small-size artwork is available.
 
 ## Open Graph image
 
