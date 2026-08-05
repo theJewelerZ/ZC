@@ -230,3 +230,28 @@ marketing claim until factually approved.
 Configuration should omit unresolved public values rather than render TODO text
 to visitors.
 
+## Phase 2 simulator construction page
+
+Route: `/simulator-construction`
+
+**Purpose:** Generate qualified inquiries by explaining the simulator room as a
+coordinated built environment rather than an equipment purchase.
+
+**Approved message sequence:** branded room-system hero; why simulator
+construction differs; room feasibility and player clearances; framing and
+finish scope; impact-screen/enclosure context; protective wall and ceiling
+systems; turf/hitting-area/flooring coordination; projector, lighting,
+electrical, and technology coordination; four-step project process; factual
+relationship to Precision Impact Screens; FAQ; simulator-preselected
+consultation CTA.
+
+Zarka is positioned as the room-construction and specialty-installation expert.
+Technology purchasing and licensed trade responsibilities are confirmed per
+project and are never implied. The page contains no prices, turnaround claims,
+project counts, geography, warranties, certifications, dealers, or manufacturer
+relationships.
+
+Four typed image slots preserve future layout positions. Their sources remain
+`null`; approved descriptive alt text is ready for later real project images.
+Until then, the public page renders decorative architectural schematics rather
+than fake photography.

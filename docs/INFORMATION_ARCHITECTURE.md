@@ -134,3 +134,24 @@ Potential routes, added only with sufficient approved content:
 Future routes must preserve existing section links or add redirects. Do not
 create thin SEO pages, a CMS, or dynamic project routes in Phase 1.
 
+## Phase 2 current sitemap addition
+
+```text
+/simulator-construction
+```
+
+`/simulator-construction` is the canonical focused simulator page. Header,
+footer, and homepage simulator links route directly to it. The original
+`#simulator-construction` homepage section remains a concise introduction and
+internal discovery path.
+
+Simulator conversion flow:
+
+```text
+Landing or search -> /simulator-construction -> planning and scope details
+-> /contact?service=simulator-construction -> validated submission
+-> accessible confirmation
+```
+
+The dedicated page remains static and factual, adds no new backend, and uses the
+existing contact service option and API.

@@ -103,3 +103,13 @@ and support capacity.
 **Exit criteria:** A separately approved business and technical case defines
 customers, value, ownership, data policy, architecture, rollout, and measurable
 outcomes. This phase is not implied by completing earlier phases.
+
+## Phase 2 current focused increment
+
+The first Phase 2 increment is limited to `/simulator-construction`: a factual,
+static, configuration-led service page with room planning, construction,
+protection, enclosure, turf, technology coordination, process, FAQ, and
+Precision Impact Screens context. It reuses the Phase 1 contact backend with the
+simulator service preselected. Photography remains configuration-driven and
+unpublished until approved assets and usage rights exist. Portfolio, CMS,
+database, authentication, and unrelated Phase 2 work remain excluded.

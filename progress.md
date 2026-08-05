@@ -1,120 +1,85 @@
 # Progress
 
-**Current phase:** Phase 1.5 — Production Readiness
+**Current phase:** Phase 2 - focused simulator construction increment
 
 **Canonical production URL:** <https://www.zarkaconstruction.com>
 
-**Deployment target:** Vercel project `zarka-construction`
+**Repository:** <https://github.com/theJewelerZ/ZC>
 
-**Latest verified deployment:** `dpl_9UMjS4azHyuaw3MPutdinqrPnPv5`
+**Feature branch:** `phase-2/simulator-construction`
 
-**Last updated:** July 23, 2026
+**Last updated:** August 4, 2026
 
 ## Current production status
 
-The Phase 1 marketing site is live on the canonical `www` domain. Search
-indexing is enabled only in Vercel Production. The apex redirect, HTTPS,
-canonical metadata, public routes, generated SEO files, security headers, brand
-assets, responsive layout, and accessibility checks pass.
+Phase 1 and the Phase 1.5 readiness work remain live. Redirects, contact
+delivery and visitor Reply-To, Cloudflare Turnstile, contact rate limiting,
+search indexing, canonical metadata, and the existing public routes are
+confirmed. No database, CMS, authentication, or Supabase is present.
 
-Contact infrastructure and all required server-only Vercel environment
-variables are configured. The `zarkaconstruction.com` sender domain and all
-three Resend DKIM/SPF records are verified. A real production submission
-returned HTTP 200, Resend accepted it, and Vercel recorded a privacy-safe
-`contact_delivery_accepted` event with a provider ID.
+Before Phase 2 implementation, the previously empty GitHub repository was
+configured as `origin` and the complete local `main` history was pushed. Local
+and remote `main` matched at `53ff306bd7ed59df7e10a6b82553f943db657a41`
+before the feature branch was created.
 
-## Phase 1.5 work completed
+## Focused Phase 2 implementation
 
-- Reviewed every public route and removed internal MVP, placeholder, and
-  pre-cutover wording from capability, privacy, and terms content.
-- Preserved the approved positioning, CTA hierarchy, service scope, and brand
-  system without adding sections, routes, claims, or Phase 2 functionality.
-- Improved Resend email output with clear contact/project grouping, submission
-  timestamp, escaped HTML formatting, and a readable plain-text fallback.
-- Added automated verification of recipient, configured sender, visitor
-  `reply_to`, HTML/text payloads, provider rejection, disabled delivery, request
-  size limits, and production indexing behavior.
-- Hardened `POST /api/contact` to reject unsupported content types and oversized
-  bodies even when `Content-Length` is absent.
-- Configured existing non-empty Resend and rate-limit values in Vercel
-  Production without exposing or committing secrets.
-- Enabled `NEXT_PUBLIC_SEARCH_INDEXING_ENABLED=true` only in Vercel Production.
-- Corrected the contact layout at the 768px tablet breakpoint.
-- Added responsive image `sizes` so the small header mark no longer downloads a
-  desktop-scale raster. Lighthouse image-delivery waste dropped from about
-  103 KiB to zero.
-- Made no GoDaddy DNS, nameserver, MX, TXT, email-record, or product changes.
+- Added the static `/simulator-construction` route.
+- Covered room feasibility, player clearances, framing/finish scope, impact
+  screen and enclosure context, wall/ceiling protection, turf and hitting area,
+  projector/lighting/technology coordination, maintenance access, process, FAQ,
+  Precision Impact Screens context, and consultation CTA.
+- Kept Zarka positioned as the room-construction and specialty-installation
+  expert without claiming equipment manufacturing, sales, certification,
+  warranty, dealer, or manufacturer relationships.
+- Added four typed, configuration-driven image slots with approved future alt
+  text. All sources remain `null`; the page renders decorative architectural
+  schematics and no fake project photography.
+- Added canonical/Open Graph/Twitter metadata, factual Service and FAQ JSON-LD,
+  and sitemap inclusion.
+- Updated primary navigation, footer navigation, and the homepage simulator
+  section to link to the dedicated route.
+- Reused the existing contact route and backend with
+  `?service=simulator-construction` safely preselecting the configured service.
+- Added regression coverage for the new sitemap route, service query guard, and
+  null photography configuration.
+- Added no dependencies, database, Supabase, CMS, authentication, new backend,
+  or unrelated Phase 2 features.
 
 ## Verification
 
 - `npm run lint`: pass
 - `npm run typecheck`: pass
-- `npm test`: 20 tests pass across seven files
+- `npm run test`: 23 tests pass across eight files
 - Production build with indexing enabled: pass
-- Public `/`, `/contact`, `/privacy`, `/terms`, `robots.txt`, `sitemap.xml`,
-  Open Graph image, favicon, and Apple icon: HTTP 200
-- `robots.txt`: allows `/` and names the canonical `www` sitemap
-- Metadata: `index, follow`, canonical `www`, Open Graph/Twitter data present,
-  factual Organization JSON-LD present, and no temporary Vercel URL in public
-  HTML
-- Security headers: CSP, HSTS, `DENY` frame policy, MIME sniffing protection,
-  strict referrer policy, and restricted permissions policy present
-- Responsive review: 320, 375, 390, 414, 768, 1024, 1280, 1440, and 1920 CSS
-  pixels; no page-level horizontal overflow
-- Accessibility: Lighthouse 100; semantic landmarks, heading hierarchy, labels,
-  live error/status behavior, keyboard focus, skip link, mobile navigation, and
-  decorative-image treatment reviewed
-- Final Lighthouse mobile:
-  - Performance: 98
-  - Accessibility: 100
-  - Best Practices: 100
-  - SEO: 100
-  - FCP: 0.9 s
-  - LCP: 2.4 s
-  - TBT: 10 ms
-  - CLS: 0
-- Real production contact test:
-  - Endpoint and validation path: reached
-  - Result: HTTP 200; Resend accepted the message
-  - Sender domain: `zarkaconstruction.com` verified
-  - Production log: `contact_delivery_accepted`, provider ID present
-  - No sensitive contact data or secrets in the log event
+- `/simulator-construction`: static route, HTTP 200
+- `/contact?service=simulator-construction`: HTTP 200 and simulator option
+  selected in server-rendered markup
+- Sitemap: five canonical public URLs including the simulator route
+- Metadata: canonical `www` URL, Open Graph/Twitter values, one H1, factual
+  Service JSON-LD, visible-content FAQ JSON-LD
+- Photography audit: only approved shared brand-mark images render; simulator
+  image slots remain null
+- Lighthouse mobile: Performance 98, Accessibility 100, Best Practices 100,
+  SEO 100; FCP 0.8 s, LCP 2.4 s, TBT 20 ms, CLS 0
+- Responsive Lighthouse captures reviewed at 320, 375, 768, 1024, and 1440 CSS
+  pixels; header, hero, CTAs, and breakpoint changes fit without visible
+  horizontal overflow
+- In-app interactive browser was unavailable in this environment; Lighthouse
+  artifacts and route/markup checks were used instead. A final human preview
+  review remains part of deployment acceptance.
 
-## Working fallbacks
+## Missing founder content
 
-- The header uses the approved raster icon with the text-based ZARKA /
-  CONSTRUCTION lockup until purpose-built horizontal vector artwork is supplied.
-- Abstract structural presentation remains in place until approved project
-  photography is available.
-- Turnstile is inactive because its two credentials remain empty/unconfigured.
-  Honeypot, timing checks, server validation, same-origin enforcement, request
-  size limits, and best-effort rate limiting remain active.
-- Public phone, email, service area, licensing, insurance, testimonials, and
-  unsupported business facts remain omitted.
-
-## Remaining readiness items
-
-1. Confirm the labeled production test arrived in the intended inbox and
-   manually verify Reply-To behavior.
-2. Configure production Turnstile site/secret keys for the canonical hostname,
-   then verify success and rejection paths.
-3. Verify approved analytics events in the Vercel dashboard without PII.
-4. Complete the 200% zoom/high-contrast and Firefox/WebKit smoke tests where
-   those environments are available.
-5. Obtain legal review of the starter privacy notice and website terms if the
-   founder requires it.
-6. Configure founder-controlled Search Console and submit the sitemap.
-
-## Phase 2 remains deferred
-
-Portfolio content, a CMS, Supabase, authentication, dashboards, a blog,
-uploads, scheduling, customer portals, AI features, and product integrations
-remain outside Phase 1.5.
+- Approved real simulator project photography and publication rights
+- Final crop choices and context-specific alt text after images are selected
+- Confirmed service-area language, if it should be published
+- Any future manufacturer, product, warranty, or equipment relationship facts;
+  none are currently claimed
 
 ## Immediate next action
 
-Confirm receipt of the labeled production test in the intended inbox and use
-Reply to verify the response targets the submitted visitor address. Then
-configure Turnstile and complete the remaining cross-browser/assistive
-technology checks. Do not modify unrelated GoDaddy DNS records or cancel any
-GoDaddy product.
+Commit the implementation and documentation, push the feature branch, deploy a
+Vercel preview, and complete a human review of the preview before any production
+promotion. Do not begin portfolio, CMS, database, authentication, or unrelated
+Phase 2 work.

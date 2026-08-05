@@ -135,3 +135,9 @@ environments so non-canonical deployments remain non-indexable. See
 - Do not change DNS or cancel a GoDaddy product until the production deployment,
   domain records, mail records, SSL, redirects, and rollback plan have been
   verified.
+## Focused Phase 2 route
+
+`/simulator-construction` is the first bounded Phase 2 improvement. It is a
+static, configuration-led indoor golf simulator construction page that reuses
+the existing contact backend with the simulator service preselected. It adds no
+CMS, database, authentication, Supabase, or unrelated Phase 2 functionality.

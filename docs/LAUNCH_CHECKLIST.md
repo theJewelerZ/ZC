@@ -70,7 +70,7 @@ an approved private location, not the public repository.
 - [x] Verify the configured `zarkaconstruction.com` sender domain, DKIM, and SPF
       records in Resend. Server-only recipient/sender values and visitor
       reply-to are implemented.
-- [ ] Verify Turnstile on server with production hostname configuration.
+- [x] Verify Turnstile on server with production hostname configuration.
 - [x] Verify honeypot/timing checks and configurable best-effort rate limiting.
 - [x] Verify accessible pending, error summary, inline errors, success, and retry.
 - [x] Confirm errors/logs contain correlation data but no secrets/message-body PII.
@@ -158,7 +158,7 @@ an approved private location, not the public repository.
 - [x] All routes, sitemap, robots, 404, assets, metadata, and external links work.
 - [ ] Mobile, desktop, and keyboard smoke tests pass; complete a manual
       screen-reader pass.
-- [ ] Contact form delivers to the intended inbox and reply-to works.
+- [x] Contact form delivers to the intended inbox and reply-to works.
 - [ ] Analytics receives approved events with no PII.
 - [ ] Domain email sends and receives; SPF/MX/verification services remain healthy.
 - [x] Vercel production logs confirm contact-provider acceptance without
@@ -185,3 +185,18 @@ an approved private location, not the public repository.
 - [ ] Preserve existing Google verification record.
 - [ ] Review indexing, structured-data reports, broken links, and Vercel billing.
 - [x] Update `progress.md`, README, and this launch checklist for Phase 1.5.
+
+## Phase 2 simulator construction route
+
+- [x] Add `/simulator-construction` without redesigning the homepage.
+- [x] Cover room feasibility, player clearances, construction, enclosure,
+      protection, turf, projection, lighting, technology, and maintenance access.
+- [x] Distinguish Zarka room construction from technology manufacturing/sales.
+- [x] Add null-safe, configuration-driven image slots; publish no fake photography.
+- [x] Link from homepage, primary navigation, footer, sitemap, and canonical metadata.
+- [x] Preselect Indoor golf simulator construction through the existing contact flow.
+- [x] Add factual Service and FAQ structured data matching visible content.
+- [x] Verify lint, strict TypeScript, tests, production build, route markup,
+      responsive captures, and Lighthouse.
+- [ ] Replace schematic image slots only after real photography, usage rights,
+      crops, and final alt text are approved.
