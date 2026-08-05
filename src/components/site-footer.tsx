@@ -1,10 +1,8 @@
 import Link from "next/link";
 
-import { ArrowUpRightIcon } from "@/components/icons";
-import { businessConfig, relatedProjects } from "@/config/business";
-import { legalNavigation, primaryNavigation } from "@/config/navigation";
 import { BrandMark } from "@/components/brand-mark";
-import { TrackedLink } from "@/components/tracked-link";
+import { businessConfig } from "@/config/business";
+import { legalNavigation, primaryNavigation } from "@/config/navigation";
 
 export function SiteFooter() {
   return (
@@ -32,33 +30,19 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <p className="footer-heading">Field-built tools</p>
+          <p className="footer-heading">Plan an environment</p>
           <ul className="footer-links">
-            {relatedProjects.map((project) => (
-              <li key={project.slug}>
-                {project.href ? (
-                  <TrackedLink
-                    eventName="ecosystem_link_click"
-                    eventProperties={{
-                      project: project.slug,
-                      placement: "footer",
-                    }}
-                    href={project.href}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    {project.name}
-                    <ArrowUpRightIcon />
-                    <span className="sr-only"> (opens another website)</span>
-                  </TrackedLink>
-                ) : (
-                  <span>
-                    {project.name}
-                    {project.status ? ` — ${project.status}` : ""}
-                  </span>
-                )}
-              </li>
-            ))}
+            <li>
+              <Link href="/simulator-construction">Simulator environment construction</Link>
+            </li>
+            <li>
+              <Link href="/#planning-process">Planning process</Link>
+            </li>
+            <li>
+              <Link href="/contact?service=simulator-construction">
+                Request a consultation
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -78,7 +62,7 @@ export function SiteFooter() {
           © {new Date().getFullYear()} {businessConfig.legalName}. All rights
           reserved.
         </p>
-        <p>Construction experience. Modern project execution.</p>
+        <p>Golf simulator construction specialists. Every project begins with a defined scope.</p>
       </div>
     </footer>
   );

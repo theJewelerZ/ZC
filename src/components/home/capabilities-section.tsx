@@ -1,56 +1,26 @@
 import { SectionHeading } from "@/components/section-heading";
+import { SimulatorMedia } from "@/components/simulator/simulator-media";
+import { simulatorImageSlots } from "@/config/simulator";
 
-const capabilities = [
-  {
-    label: "Specialty environments",
-    title: "Simulator rooms built as complete spaces",
-    copy: "Spatial planning, protection, enclosure, finish, and installation decisions coordinated around the room.",
-  },
-  {
-    label: "Finish + installation",
-    title: "Details that make the work feel resolved",
-    copy: "Carpentry, custom-built elements, interior improvements, and specialty installations handled with care.",
-  },
-  {
-    label: "Project support",
-    title: "Better decisions before and during the work",
-    copy: "Estimating support, opportunity review, field documentation, and communication practices grounded in construction.",
-  },
-];
+const projectStages = [
+  { label: "Planning", title: "The idea takes shape", copy: "The room, the people who will play, and the experience they want guide the earliest decisions." },
+  { label: "Craft", title: "The room comes together", copy: "Real construction progress reveals the care behind the surfaces, transitions, protection, and finish details." },
+  { label: "Play", title: "The finished experience", copy: "Approved project photography will show completed spaces ready for practice, a round with friends, and time well spent." },
+] as const;
 
 export function CapabilitiesSection() {
   return (
-    <section className="section capabilities-section" id="work">
+    <section className="section capabilities-section project-proof-section" id="projects">
       <div className="site-container">
         <div className="section-intro-grid">
-          <SectionHeading
-            description={
-              <p>
-                A capability-led view of the practical skill, coordination, and
-                project thinking Zarka Construction brings to the work.
-              </p>
-            }
-            eyebrow="Selected capabilities"
-            title="Practical skill. Connected thinking."
-          />
-          <div className="capability-statement">
-            <span>PLAN</span>
-            <span>BUILD</span>
-            <span>DOCUMENT</span>
-          </div>
+          <SectionHeading description={<p>Good work deserves honest proof. As Zarka&apos;s simulator rooms move from planning through construction, founder-owned photography will tell each project&apos;s real story.</p>} eyebrow="Real work" title="The craft behind the experience." />
+          <p className="section-side-note">Only approved photographs from actual Zarka projects will appear here as the body of finished work grows.</p>
         </div>
-
-        <div className="capabilities-list">
-          {capabilities.map((capability, index) => (
-            <article className="capability-row" key={capability.label}>
-              <p className="capability-number">
-                {String(index + 1).padStart(2, "0")}
-              </p>
-              <div>
-                <p className="capability-label">{capability.label}</p>
-                <h3>{capability.title}</h3>
-              </div>
-              <p className="capability-copy">{capability.copy}</p>
+        <div className="project-proof-grid">
+          {projectStages.map((stage, index) => (
+            <article className="project-proof-card" key={stage.label}>
+              <SimulatorMedia label={`${stage.label.toUpperCase()} / ${String(index + 1).padStart(2, "0")}`} slot={simulatorImageSlots[index === 2 ? 3 : index]} />
+              <div><p className="capability-label">{stage.label}</p><h3>{stage.title}</h3><p>{stage.copy}</p></div>
             </article>
           ))}
         </div>

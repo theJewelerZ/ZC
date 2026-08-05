@@ -4,26 +4,21 @@ export function AboutSection() {
   return (
     <section className="section about-section" id="about">
       <div className="site-container about-grid">
-        <div className="about-marker" aria-hidden="true">
-          <span>ZC</span>
-          <p>FIELD / CRAFT / SYSTEM</p>
-        </div>
+        <div className="about-marker" aria-hidden="true"><span>ZC</span><p>GOLF / ROOM / CRAFT</p></div>
         <div>
-          <SectionHeading
-            eyebrow="Construction knowledge, carried forward"
-            title="A company grounded in the field."
-          />
+          <SectionHeading eyebrow="About Zarka" title="Construction experience, focused on better golf spaces." />
           <div className="about-copy">
             <p>
-              Zarka Construction is grounded in decades of hands-on
-              construction, carpentry, specialty installation, renovation,
-              painting, and project support.
+              Zarka Construction brings decades of hands-on construction
+              experience, attention to detail, craftsmanship, and a genuine love
+              of golf to the work of creating simulator environments.
             </p>
             <p>
-              That same field perspective shapes how the company approaches
-              estimating, documentation, client communication, and specialized
-              simulator environments. The technology is connected to the work
-              because it was built from the work.
+              The approach is straightforward: listen to how the customer wants
+              to use the space, study the room carefully, communicate what is
+              practical, and complete the agreed work with care. When a project
+              needs equipment expertise or a qualified trade outside Zarka&apos;s
+              scope, that responsibility is identified rather than overstated.
             </p>
           </div>
         </div>
@@ -31,4 +26,3 @@ export function AboutSection() {
     </section>
   );
 }
-

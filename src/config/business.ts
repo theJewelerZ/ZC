@@ -7,15 +7,6 @@ export type Service = {
   deliveryMode: DeliveryMode;
 };
 
-export type RelatedProject = {
-  slug: "capproof" | "bid-desk" | "precision-impact-screens";
-  name: string;
-  category: string;
-  description: string;
-  href: string | null;
-  status?: string;
-};
-
 export type LogoAssets = {
   horizontalOnLight: string | null;
   horizontalOnDark: string | null;
@@ -62,92 +53,84 @@ export const businessConfig = {
 
 export const services = [
   {
-    slug: "construction-renovation",
-    title: "Construction and renovation support",
+    slug: "custom-simulator-environments",
+    title: "Custom Simulator Environments",
     description:
-      "Practical planning and hands-on support for interior construction, renovation, and improvement work.",
+      "Defined specialty-construction scopes that bring the playing area, impact environment, protection, turf, and finished details together for the individual space.",
     deliveryMode: "coordinated",
   },
   {
-    slug: "finish-carpentry",
-    title: "Finish carpentry and specialty installation",
+    slug: "simulator-room-preparation",
+    title: "Room Preparation & Framing",
     description:
-      "Detail-driven finish work, custom-built elements, and specialty installation shaped to the space.",
+      "Room preparation and framing for simulator environments, including screen structures, attachment needs, clearances, and approved finish conditions.",
     deliveryMode: "direct",
   },
   {
-    slug: "painting-interiors",
-    title: "Painting and interior improvements",
+    slug: "impact-screen-environments",
+    title: "Impact Screen Environments",
     description:
-      "Careful preparation, painting, and interior upgrades delivered within the approved project scope.",
+      "Impact-screen structures, custom layered impact screens, curtains, and related enclosure details planned for the room and intended use.",
     deliveryMode: "direct",
   },
   {
-    slug: "simulator-construction",
-    title: "Indoor golf simulator construction",
+    slug: "wall-ceiling-protection",
+    title: "Wall & Ceiling Protection",
     description:
-      "Room planning, enclosure environments, protection systems, finish integration, and installation coordination.",
-    deliveryMode: "coordinated",
+      "Protective wall and ceiling systems developed around missed-shot coverage, durability, access, and integration with adjacent finishes.",
+    deliveryMode: "direct",
   },
   {
-    slug: "estimating-support",
-    title: "Construction estimating and project support",
+    slug: "turf-hitting-surfaces",
+    title: "Turf & Hitting Surfaces",
     description:
-      "Organized opportunity review, estimating support, and practical coordination for better project decisions.",
-    deliveryMode: "coordinated",
+      "Turf, stance areas, hitting surfaces, seams, and floor transitions coordinated with player position and the finished room.",
+    deliveryMode: "direct",
   },
   {
-    slug: "field-documentation",
-    title: "Field documentation and project reporting",
+    slug: "finish-carpentry-detailing",
+    title: "Finish Carpentry & Detailing",
     description:
-      "Clear field evidence, organized project records, and professional reporting built around the work.",
+      "Finish carpentry, trim, curtains, transitions, and final detailing that help the simulator environment feel considered and complete.",
+    deliveryMode: "direct",
+  },
+  {
+    slug: "planning-trade-coordination",
+    title: "Planning & Trade Coordination",
+    description:
+      "Construction planning, documented assumptions, and coordination with equipment providers or qualified trades when the agreed scope requires it.",
     deliveryMode: "coordinated",
   },
 ] as const satisfies ReadonlyArray<Service>;
 
-export const relatedProjects = [
-  {
-    slug: "capproof",
-    name: "CapProof",
-    category: "Field documentation software",
-    description:
-      "Field evidence capture, project documentation, professional reporting, and proof of completed work.",
-    href: "https://capproof.com",
-  },
-  {
-    slug: "bid-desk",
-    name: "Bid Desk",
-    category: "Estimating and bid workflow",
-    description:
-      "A construction opportunity review and estimating workflow designed to make bid decisions more organized.",
-    href: null,
-    status: "Coming soon",
-  },
-  {
-    slug: "precision-impact-screens",
-    name: "Precision Impact Screens",
-    category: "Simulator environments",
-    description:
-      "Indoor golf simulator screens, enclosure solutions, room construction, and installation support.",
-    href: "https://precisionimpactscreens.com",
-  },
-] as const satisfies ReadonlyArray<RelatedProject>;
-
 export const serviceOptions = [
-  { value: "construction-renovation", label: "Construction and renovation support" },
-  { value: "finish-carpentry", label: "Finish carpentry and specialty installation" },
-  { value: "painting-interiors", label: "Painting and interior improvements" },
-  { value: "simulator-construction", label: "Indoor golf simulator construction" },
-  { value: "estimating-support", label: "Estimating and project support" },
-  { value: "field-documentation", label: "Field documentation and reporting" },
-  { value: "business-inquiry", label: "Business or partnership inquiry" },
-  { value: "other", label: "Something else" },
+  { value: "simulator-construction", label: "Custom simulator environment construction" },
+  { value: "residential-simulator-room", label: "Residential simulator environment" },
+  { value: "commercial-simulator-space", label: "Commercial simulator environment" },
+  { value: "simulator-room-conversion", label: "Existing room preparation or conversion" },
+  { value: "simulator-planning", label: "Room evaluation and construction planning" },
+  { value: "simulator-room-improvement", label: "Existing simulator environment improvement" },
+  { value: "other-construction-inquiry", label: "Other simulator-environment inquiry" },
 ] as const;
+
+export type ServiceOptionValue = (typeof serviceOptions)[number]["value"];
+
+export function isServiceOptionValue(value: string): value is ServiceOptionValue {
+  return serviceOptions.some((option) => option.value === value);
+}
+
+export const consultationOptions = [
+  { value: "on-site-consultation", label: "On-site consultation" },
+  { value: "guided-remote-review", label: "Guided remote room review" },
+] as const;
+
+export type ConsultationOptionValue =
+  (typeof consultationOptions)[number]["value"];
 
 export const timelineOptions = [
   { value: "asap", label: "As soon as practical" },
-  { value: "one-three-months", label: "Within 1–3 months" },
-  { value: "three-six-months", label: "Within 3–6 months" },
+  { value: "one-three-months", label: "Within 1-3 months" },
+  { value: "three-six-months", label: "Within 3-6 months" },
   { value: "six-plus-months", label: "More than 6 months out" },
   { value: "planning", label: "Early planning / not sure yet" },
 ] as const;

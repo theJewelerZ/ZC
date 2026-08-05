@@ -44,7 +44,7 @@ export function SiteHeader() {
             className="button button-primary button-compact"
             eventName="consultation_cta_click"
             eventProperties={{ placement: "header" }}
-            href="/contact"
+            href="/contact?service=simulator-construction"
           >
             Request a Consultation
           </TrackedLink>
@@ -84,7 +84,7 @@ export function SiteHeader() {
             className="button button-primary"
             eventName="consultation_cta_click"
             eventProperties={{ placement: "mobile_navigation" }}
-            href="/contact"
+            href="/contact?service=simulator-construction"
             onClick={() => setIsOpen(false)}
           >
             Request a Consultation

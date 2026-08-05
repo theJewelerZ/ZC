@@ -2,7 +2,8 @@ import { describe, expect, it } from "vitest";
 
 import {
   businessConfig,
-  relatedProjects,
+  consultationOptions,
+  isServiceOptionValue,
   services,
 } from "@/config/business";
 
@@ -24,16 +25,31 @@ describe("public business configuration", () => {
     expect(businessConfig.insuranceLanguage).toBeNull();
   });
 
-  it("keeps Bid Desk unlinked while preserving confirmed project URLs", () => {
-    const projects = Object.fromEntries(
-      relatedProjects.map((project) => [project.slug, project]),
+  it("keeps the public service model focused on current simulator-environment work", () => {
+    expect(services).toHaveLength(7);
+    expect(services.map((service) => service.slug)).toEqual(
+      expect.arrayContaining([
+        "custom-simulator-environments",
+        "simulator-room-preparation",
+        "impact-screen-environments",
+        "wall-ceiling-protection",
+        "turf-hitting-surfaces",
+        "finish-carpentry-detailing",
+        "planning-trade-coordination",
+      ]),
     );
+  });
 
-    expect(projects["bid-desk"].href).toBeNull();
-    expect(projects.capproof.href).toBe("https://capproof.com");
-    expect(projects["precision-impact-screens"].href).toBe(
-      "https://precisionimpactscreens.com",
-    );
+  it("recognizes only configured contact service values", () => {
+    expect(isServiceOptionValue("simulator-construction")).toBe(true);
+    expect(isServiceOptionValue("not-a-service")).toBe(false);
+  });
+
+  it("offers only the two approved room-review approaches", () => {
+    expect(consultationOptions.map((option) => option.value)).toEqual([
+      "on-site-consultation",
+      "guided-remote-review",
+    ]);
   });
 
   it("contains only documented service delivery modes", () => {

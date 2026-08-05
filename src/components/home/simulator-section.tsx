@@ -1,101 +1,82 @@
-import { ArrowUpRightIcon, CheckIcon } from "@/components/icons";
-import { SectionHeading } from "@/components/section-heading";
-import { TrackedLink } from "@/components/tracked-link";
+import Link from "next/link";
 
-const simulatorCapabilities = [
-  "Room feasibility and spatial planning",
-  "Right- and left-handed clearance considerations",
-  "Framing, finish work, and enclosure environments",
-  "Impact-screen, blackout fabric, and netting planning",
-  "Protective wall and ceiling treatments",
-  "Turf, hitting-area, lighting, and technology coordination",
-  "Custom trim and finished-room integration",
-  "Installation support",
-];
+import { ArrowRightIcon, CheckIcon } from "@/components/icons";
+import { SectionHeading } from "@/components/section-heading";
+
+const planningFactors = [
+  { title: "Support a comfortable swing", copy: "Player position, handedness, and finished room dimensions shape the usable swing area." },
+  { title: "Coordinate the image with the room", copy: "Screen proportions, viewing distance, and known projection requirements need to be considered together." },
+  { title: "Plan for off-center shots", copy: "Impact-screen construction, curtains, wall protection, and ceiling protection should address the anticipated use." },
+  { title: "Create practical floor transitions", copy: "Stance areas, hitting surfaces, turf, doors, and adjacent flooring affect use and finished appearance." },
+  { title: "Keep responsibilities visible", copy: "Equipment, qualified trades, permits, and specialty-construction responsibilities should be assigned before work proceeds." },
+] as const;
 
 function RoomDiagram() {
   return (
     <div aria-hidden="true" className="room-diagram">
       <div className="room-perspective">
-        <div className="room-screen">IMPACT PLANE</div>
-        <div className="room-player">PLAYER ZONE</div>
+        <div className="room-screen">THE GAME</div>
+        <div className="room-player">YOUR POSITION</div>
         <div className="room-line room-line-one" />
         <div className="room-line room-line-two" />
-        <span className="room-measure room-measure-a">CLEARANCE</span>
-        <span className="room-measure room-measure-b">PROJECTION</span>
-        <span className="room-measure room-measure-c">FINISH ENVELOPE</span>
+        <span className="room-measure room-measure-a">SWING FREELY</span>
+        <span className="room-measure room-measure-b">SEE EVERY SHOT</span>
+        <span className="room-measure room-measure-c">ENJOY THE ROOM</span>
       </div>
-      <div className="room-diagram-footer">
-        <span>ROOM</span>
-        <span>SCREEN</span>
-        <span>FINISH</span>
-      </div>
+      <div className="room-diagram-footer"><span>PLAYER</span><span>GAME</span><span>SPACE</span></div>
     </div>
   );
 }
 
 export function SimulatorSection() {
   return (
-    <section
-      className="section simulator-section"
-      id="simulator-construction"
-    >
+    <section className="section simulator-section" id="planning">
       <div className="site-container">
         <div className="simulator-heading-grid">
           <SectionHeading
             description={
               <p>
-                Player clearance, screen geometry, protection, lighting,
-                projection, turf, and finish details all affect how the space
-                performs. The room has to work as one system.
+                A strong simulator environment depends on the room dimensions,
+                player position, impact area, protection, surfaces, lighting,
+                and known technology requirements being considered together.
               </p>
             }
-            eyebrow="Indoor golf simulator construction"
-            title="A simulator room is more than the equipment."
+            eyebrow="Room evaluation and planning"
+            title="Why every strong simulator environment starts with careful planning."
             tone="dark"
           />
-          <p className="simulator-index">SPECIALTY / 01</p>
+          <p className="simulator-index">PLANNING / 01</p>
         </div>
 
         <div className="simulator-content-grid">
           <RoomDiagram />
           <div className="simulator-capabilities">
             <p className="simulator-lead">
-              Zarka Construction helps bring the construction, protection, and
-              finished-room decisions together around the space and the way it
-              will actually be used.
+              Planning cannot guarantee every outcome, but it can identify
+              conflicts early, clarify responsibilities, and support a
+              simulator space that feels considered rather than improvised.
             </p>
             <ul>
-              {simulatorCapabilities.map((capability) => (
-                <li key={capability}>
+              {planningFactors.map((factor) => (
+                <li key={factor.title}>
                   <CheckIcon />
-                  <span>{capability}</span>
+                  <span><strong>{factor.title}</strong><small>{factor.copy}</small></span>
                 </li>
               ))}
             </ul>
             <p className="simulator-qualifier">
-              Equipment selection and licensed trade work are coordinated
-              separately when required by the project.
+              Zarka&apos;s scope does not include equipment sales, architectural
+              or engineering services, permit authority, or responsibility for
+              an entire facility. Responsibilities are confirmed in writing.
             </p>
-            <TrackedLink
-              className="simulator-external-link"
-              eventName="ecosystem_link_click"
-              eventProperties={{
-                project: "precision-impact-screens",
-                placement: "simulator_section",
-              }}
-              href="https://precisionimpactscreens.com"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Explore Precision Impact Screens
-              <ArrowUpRightIcon />
-              <span className="sr-only"> (opens another website)</span>
-            </TrackedLink>
+            <div className="simulator-section-actions">
+              <Link className="simulator-detail-link" href="/simulator-construction">
+                Explore the specialist scope <ArrowRightIcon />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
 }
-

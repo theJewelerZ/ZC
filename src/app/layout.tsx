@@ -8,7 +8,7 @@ import { businessConfig } from "@/config/business";
 import { getOrganizationStructuredData } from "@/lib/structured-data";
 
 const description =
-  "Zarka Construction combines hands-on craftsmanship, specialty installation, indoor golf simulator construction, and modern project support.";
+  "Zarka Construction specializes in planning and specialty construction for premium golf simulator environments.";
 
 const searchIndexingEnabled =
   process.env.NEXT_PUBLIC_SEARCH_INDEXING_ENABLED === "true";
@@ -16,7 +16,7 @@ const searchIndexingEnabled =
 export const metadata: Metadata = {
   metadataBase: new URL(businessConfig.canonicalUrl),
   title: {
-    default: `${businessConfig.displayName} | ${businessConfig.tagline}`,
+    default: `Golf Simulator Construction Specialist | ${businessConfig.displayName}`,
     template: `%s | ${businessConfig.displayName}`,
   },
   description,
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: `${businessConfig.displayName} | ${businessConfig.tagline}`,
+    title: `Golf Simulator Construction Specialist | ${businessConfig.displayName}`,
     description,
     url: businessConfig.canonicalUrl,
     siteName: businessConfig.displayName,
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${businessConfig.displayName} | ${businessConfig.tagline}`,
+    title: `Golf Simulator Construction Specialist | ${businessConfig.displayName}`,
     description,
   },
   robots: searchIndexingEnabled

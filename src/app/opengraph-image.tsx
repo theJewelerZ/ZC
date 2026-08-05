@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Zarka Construction — Built with precision. Delivered with integrity.";
+  "Zarka Construction — Golf Simulator Construction Specialist";
 export const size = {
   width: 1200,
   height: 630,
@@ -70,9 +70,9 @@ export default function OpenGraphImage() {
                 lineHeight: 1.02,
               }}
             >
-              Built with precision.
+              We Build the Room
               <br />
-              Delivered with integrity.
+              Around the Game.
             </span>
             <span
               style={{
@@ -81,7 +81,7 @@ export default function OpenGraphImage() {
                 marginTop: 24,
               }}
             >
-              Construction · Specialty Installation · Simulator Environments
+              Premium simulator environments built around the space and the game
             </span>
           </div>
         </div>

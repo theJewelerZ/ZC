@@ -10,18 +10,12 @@ function BrandArtwork() {
         <div className="brand-artwork-halo" />
         <div className="diagram-axis diagram-axis-x" />
         <div className="diagram-axis diagram-axis-y" />
-        <BrandMark
-          className="hero-brand-mark"
-          format="icon"
-          surface="dark"
-        />
-        <div className="diagram-label diagram-label-a">ENGINEERED FORM</div>
-        <div className="diagram-label diagram-label-b">FIELD / SYSTEM</div>
-        <div className="diagram-coordinate">ZARKA CONSTRUCTION</div>
+        <BrandMark className="hero-brand-mark" format="icon" surface="dark" />
+        <div className="diagram-label diagram-label-a">SPACE TO PRACTICE</div>
+        <div className="diagram-label diagram-label-b">ROOM TO PLAY</div>
+        <div className="diagram-coordinate">BUILT AROUND THE GAME</div>
       </div>
-      <p>
-        Integrated thinking for the room, the finish, and the work behind it.
-      </p>
+      <p>A simulator environment considered around the space and the way it will be used.</p>
     </div>
   );
 }
@@ -32,33 +26,23 @@ export function Hero() {
       <div className="hero-grid-overlay" />
       <div className="site-container hero-grid">
         <div className="hero-copy">
-          <p className="hero-kicker">Construction · Specialty installation</p>
-          <h1>
-            Construction experience.
-            <span>Modern project execution.</span>
-          </h1>
+          <p className="hero-kicker">Golf Simulator Construction Specialist</p>
+          <h1>We Build the Room<span>Around the Game.</span></h1>
           <p className="hero-description">
-            Zarka Construction combines hands-on craftsmanship, specialty
-            installation, and modern construction tools to plan, document, and
-            deliver better projects.
+            Premium golf simulator environments begin with a careful understanding
+            of the space, the people who will play, and the experience they want.
+          </p>
+          <p className="hero-credibility">
+            Zarka&apos;s specialty includes room evaluation, construction
+            planning, simulator framing, impact and protection systems, turf,
+            finish carpentry, and coordination within a clearly defined scope.
           </p>
           <div className="hero-actions">
-            <TrackedLink
-              className="button button-primary"
-              eventName="consultation_cta_click"
-              eventProperties={{ placement: "hero" }}
-              href="/contact"
-            >
-              Request a Consultation
-              <ArrowRightIcon />
+            <TrackedLink className="button button-primary" eventName="consultation_cta_click" eventProperties={{ placement: "hero" }} href="/contact?service=simulator-construction">
+              Request a Simulator Consultation <ArrowRightIcon />
             </TrackedLink>
-            <TrackedLink
-              className="button button-secondary"
-              eventName="explore_work_click"
-              eventProperties={{ placement: "hero" }}
-              href="/#work"
-            >
-              Explore Our Work
+            <TrackedLink className="button button-secondary" eventName="what_we_build_click" eventProperties={{ placement: "hero" }} href="/#what-we-build">
+              See What We Build
             </TrackedLink>
           </div>
           <p className="hero-tagline">{businessConfig.tagline}</p>

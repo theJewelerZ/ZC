@@ -63,8 +63,7 @@ export default function PrivacyPage() {
         <p>
           The website uses Vercel Web Analytics when enabled to understand
           aggregate page use and a small set of events such as consultation CTA
-          activation, successful form delivery, and visits to related project
-          websites. Custom analytics events are not designed to include names,
+          activation and successful form delivery. Custom analytics events are not designed to include names,
           email addresses, phone numbers, project descriptions, or exact
           locations.
         </p>

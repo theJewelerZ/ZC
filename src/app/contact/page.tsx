@@ -1,16 +1,26 @@
 import type { Metadata } from "next";
 
 import { ContactForm } from "@/components/contact/contact-form";
+import { isServiceOptionValue } from "@/config/business";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Request a Consultation",
+  title: "Request a Simulator Consultation",
   description:
-    "Share your construction, specialty installation, or indoor golf simulator project with Zarka Construction.",
+    "Start a conversation about the space, intended use, and potential specialty-construction scope for a golf simulator environment.",
   path: "/contact",
 });
 
-export default function ContactPage() {
+type ContactPageProps = {
+  searchParams: Promise<{ service?: string | string[] }>;
+};
+
+export default async function ContactPage({ searchParams }: ContactPageProps) {
+  const requestedService = (await searchParams).service;
+  const initialService =
+    typeof requestedService === "string" && isServiceOptionValue(requestedService)
+      ? requestedService
+      : "simulator-construction";
   const deliveryEnabled = Boolean(
     process.env.RESEND_API_KEY &&
       process.env.CONTACT_RECIPIENT_EMAIL &&
@@ -26,11 +36,7 @@ export default function ContactPage() {
     console.warn(
       JSON.stringify({
         event: "contact_delivery_configuration_missing",
-        required: [
-          "RESEND_API_KEY",
-          "CONTACT_RECIPIENT_EMAIL",
-          "CONTACT_FROM_EMAIL",
-        ],
+        required: ["RESEND_API_KEY", "CONTACT_RECIPIENT_EMAIL", "CONTACT_FROM_EMAIL"],
       }),
     );
   }
@@ -49,28 +55,40 @@ export default function ContactPage() {
       <section className="contact-hero">
         <div className="site-container contact-hero-grid">
           <div>
-            <p className="eyebrow">Request a consultation</p>
-            <h1>Start with the space, the work, and the constraints.</h1>
+            <p className="eyebrow">Request a simulator consultation</p>
+            <h1>Every project begins with understanding the space.</h1>
           </div>
           <p>
-            Share enough context to begin a useful conversation. Zarka
-            Construction will review the project type, general location,
-            timeline, and scope before discussing fit or next steps.
+            Tell us how the simulator environment will be used, who will play,
+            what conditions already exist, and what equipment is being
+            considered. The purpose is to begin a practical conversation—not to
+            sell a package or quote equipment.
           </p>
         </div>
       </section>
 
-      <section className="section contact-form-section">
+      <section className="section contact-form-section" id="review-options">
         <div className="site-container contact-layout">
           <aside className="contact-aside">
-            <p className="contact-aside-number">01 / PROJECT CONTEXT</p>
-            <h2>What helps at the start</h2>
-            <ul>
-              <li>The kind of space or project</li>
-              <li>The general project location</li>
-              <li>Your approximate timing</li>
-              <li>The result or problem you are working toward</li>
-            </ul>
+            <p className="contact-aside-number">01 / INITIAL ROOM REVIEW</p>
+            <h2>Two ways a conversation can begin</h2>
+            <div className="contact-review-option">
+              <h3>On-site consultation</h3>
+              <p>
+                When location and potential scope make a visit appropriate,
+                Zarka can review existing conditions, intended use, constraints,
+                and the simulator-environment work being considered.
+              </p>
+            </div>
+            <div className="contact-review-option">
+              <h3>Guided remote room review</h3>
+              <p>
+                A remote review can begin with guided measurements, photographs,
+                intended players, and known equipment information shared during
+                follow-up. It is an initial evaluation, not a final feasibility
+                or construction commitment.
+              </p>
+            </div>
             <p id="contact-disabled-context">
               Do not include payment information, account credentials, or other
               highly sensitive information.
@@ -79,6 +97,7 @@ export default function ContactPage() {
           <div>
             <ContactForm
               deliveryEnabled={deliveryEnabled}
+              initialService={initialService}
               turnstileSiteKey={turnstileSiteKey}
             />
           </div>
@@ -87,4 +106,3 @@ export default function ContactPage() {
     </main>
   );
 }
-

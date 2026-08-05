@@ -1,133 +1,131 @@
 # Product Brief
 
-## Business context
+## Strategic direction
 
-Zarka Construction LLC is entering a new stage: one professional website must
-represent practical construction capability, specialty installation expertise,
-indoor golf simulator construction, and a related group of tools and businesses
-that grew from field experience.
+Zarka Construction is a **Golf Simulator Construction Specialist** focused on
+creating premium simulator environments while accurately representing its
+present capabilities.
 
-The website must make these activities feel connected. CapProof, Bid Desk, and
-Precision Impact Screens are evidence that real project problems led to focused
-solutions—not an unrelated directory of ventures.
-
-## Target audiences and visitor needs
-
-| Audience | Primary need | Evidence the site should provide |
-| --- | --- | --- |
-| Property owners and project customers | Determine fit, credibility, and how to start | Clear capabilities, service boundaries, local context, direct consultation path |
-| Indoor golf simulator customers | Understand the room-construction problem beyond equipment | Planning and build considerations, finished-room integration, specialty experience |
-| Contractors and trade partners | Understand how Zarka can support delivery | Honest capability categories, project support, specialty installation, reliable contact |
-| Vendors and manufacturers | Evaluate professional alignment | Disciplined brand, clear business focus, relevant ecosystem links |
-| Technology and business partners | Understand why the software products exist | Field-derived narrative connecting documentation, estimating, and execution |
-| Referrals and existing contacts | Quickly validate the company and share it | Mobile clarity, canonical domain, credible copy, dependable contact experience |
-
-## Goals
-
-### Immediate
-
-1. Establish a credible official presence at `zarkaconstruction.com`.
-2. Explain what Zarka Construction does in one scan.
-3. Generate qualified project and business inquiries.
-4. Give simulator construction prominent, concrete treatment.
-5. Introduce related businesses without diluting the core company.
-6. Replace the existing GoDaddy-hosted website safely.
-
-### Long term
-
-- Publish selected project work and deeper service content.
-- Improve lead qualification without making the first interaction burdensome.
-- Connect field documentation, bid workflow, and specialty product offerings
-  where those integrations create clear customer value.
-- Become the professional front door to a broader construction-intelligence
-  platform while retaining a credible construction-company identity.
-
-## Conversion actions
-
-- **Primary:** Request a Consultation, leading to `/contact` or the contact form.
-- **Secondary:** Explore Our Work, leading to selected capabilities/project work
-  on the homepage until a portfolio route exists.
-- **Supporting:** External visits to CapProof and Precision Impact Screens.
-  These are measured exploration events, not competing primary CTAs.
-
-Avoid placing multiple equal-weight CTAs in one section.
+The website should leave a homeowner, golf-facility owner, licensed general
+contractor, equipment provider, and qualified trade with the same understanding:
+Zarka evaluates and performs defined specialty-construction work for the golf
+simulator environment. Zarka is not presented as an equipment dealer or as the
+party responsible for an entire home or commercial facility.
 
 ## Positioning
 
-**Working position:** Zarka Construction is a Michigan-based construction and
-specialty installation company combining decades of hands-on field experience
-with modern project documentation, estimating, and construction technology.
+**Category phrase:** Golf Simulator Construction Specialist
 
-**Approved brand statement:** Built with precision. Delivered with integrity.
+**Positioning sentence:** Zarka Construction evaluates, plans, prepares, and
+completes defined specialty-construction scopes for premium golf simulator
+environments in homes and commercial golf settings.
 
-### Differentiators
+**Protected philosophy:** We don't build golf simulators. We build the spaces
+where great golf happens.
 
-- Decisions are grounded in hands-on construction and installation experience.
-- Simulator rooms are approached as integrated built environments, not merely
-  equipment purchases.
-- Project documentation, estimating, communication, and execution are treated
-  as connected parts of delivery.
-- Related tools and businesses address problems encountered in the field.
-- The brand can speak to craft and technical systems without adopting generic
-  contractor imagery or startup hype.
+**Hero idea:** We Build the Room Around the Game.
 
-These are positioning themes, not permission to make unverified claims about
-licenses, years, capacity, performance, or customers.
+**Brand statement:** Built with precision. Delivered with integrity.
 
-## Digital ecosystem
+Confidence comes from specificity, careful planning, craftsmanship, honest
+boundaries, and professional communication—not broad claims.
 
-Section framing: **Tools and businesses built from field experience.**
+## Present public scope
 
-- **CapProof** — field evidence capture, documentation, client reporting, and
-  project proof. Confirmed URL: <https://capproof.com>.
-- **Bid Desk** — construction opportunity review, estimating, and bid workflow.
-  The public URL is unconfirmed and must remain absent/configured as `null`.
-- **Precision Impact Screens** — impact screens, enclosures, simulator-room
-  construction, installation, and related products. Confirmed URL:
-  <https://precisionimpactscreens.com>.
+Subject to room review and a written project scope, Zarka's work may include:
 
-Each product remains externally distinct. The Zarka site explains the common
-field origin and links outward with clear external-link labels.
+- room evaluation;
+- simulator and construction planning;
+- simulator-room preparation and framing;
+- impact-screen structures;
+- custom layered impact screens;
+- curtains and enclosure details;
+- wall and ceiling protection systems;
+- turf, stance areas, and hitting surfaces;
+- finish carpentry, trim, transitions, and finish detailing;
+- coordination with equipment providers or qualified trades when required.
 
-## Non-goals for the MVP
+The site does not represent Zarka as providing equipment sales, manufacturer or
+dealer relationships, architectural or engineering services, permit authority,
+complete commercial-facility construction, or responsibility outside the
+written scope.
 
-- Customer accounts, portals, authentication, dashboards, or online estimating
-- A CMS, CRM, database-backed lead pipeline, or live product integration
-- Scheduling, payments, e-commerce, uploads, AI chat, or automated quoting
-- Comprehensive portfolio or long-form service-area SEO pages
-- Claims about licensing, insurance, dealer status, warranties, certifications,
-  manufacturer approval, staffing, or full trade coverage without evidence
-- A logo redesign or an unverified vector trace
+## Settings served
 
-## MVP success criteria
+Simulator-environment work may be considered within:
 
-- All four required routes are usable at the canonical domain.
-- A mobile visitor can understand the company, simulator specialty, and next
-  action without opening navigation.
-- Contact submissions are validated, protected from basic abuse, delivered, and
-  tested from production with accessible success/error feedback.
-- CapProof and Precision Impact Screens links are correct; Bid Desk has no
-  fabricated URL.
-- Page structure, contrast, keyboard behavior, labels, focus states, and motion
-  preferences meet a high accessibility standard.
-- Images and fonts do not compromise Core Web Vitals.
-- Apex and `www` resolve predictably, HTTPS works, and the apex redirects once
-  to the canonical `www` host.
-- Existing mail and verification DNS records remain intact.
+- homes;
+- teaching studios;
+- commercial golf spaces;
+- entertainment venues;
+- simulator businesses;
+- country clubs;
+- training environments.
 
-## Post-launch signals
+These are project settings, not claims that Zarka constructs an entire facility.
+Project fit and exact responsibility are confirmed individually.
 
-Measure trends, not vanity totals:
+## Customer value
 
-- `consultation_cta_click` by placement
-- `contact_form_start`, `contact_form_submit`, `contact_form_success`, and
-  `contact_form_error`
-- Qualified inquiries and valid delivery rate, reviewed manually
-- `ecosystem_link_click` by project
-- Engagement with the simulator and capabilities sections
-- Search impressions, branded queries, indexed pages, and crawl issues after
-  Search Console setup
-- Core Web Vitals, production error rate, and form abuse/rejection rate
+Prospects are creating a place to practice, improve, play, teach, gather, or
+operate a golf-focused experience. Zarka's contribution is a simulator
+environment prepared around the actual space, intended use, known equipment
+requirements, and agreed construction responsibilities.
 
-No metric target should be invented before a baseline and operating capacity
-are known.
+## Target audiences
+
+| Audience | What they need to understand | Website response |
+| --- | --- | --- |
+| Homeowner | Whether the room and desired experience may fit | Invite a conversation, explain evaluation, and define specialty scope honestly |
+| Golf facility owner | Whether Zarka can create the simulator environment inside a facility | Show commercial relevance without claiming complete facility construction |
+| Licensed general contractor | Where Zarka's specialty begins and ends | Identify simulator-environment work and qualified-trade coordination clearly |
+| Equipment provider | How the room and construction relate to known equipment needs | Present Zarka as the environment specialist, not a competing dealer |
+| Qualified trade | Which requirements may need coordination | State that licensed or professional responsibilities are assigned separately |
+
+## Visitor needs
+
+- Recognize the Golf Simulator Construction Specialist category immediately.
+- Understand what Zarka performs today.
+- Understand what Zarka does not claim.
+- See why the room should be evaluated before a scope is proposed.
+- Understand that equipment selection and simulator construction are different responsibilities.
+- Begin an on-site consultation or guided remote review without sales pressure.
+- See only authentic, founder-owned project evidence when approved.
+
+## Conversion actions
+
+- **Primary:** Request a Simulator Consultation.
+- **Secondary:** See What We Build / See How the Space Is Evaluated.
+- **Contact choice:** On-site consultation or guided remote room review.
+
+A request begins a conversation. It is not an equipment quote, feasibility
+guarantee, design engagement, permit commitment, or construction agreement.
+
+## Differentiators
+
+- Focus on the environment that allows simulator technology to work in the space.
+- Practical construction experience applied to a specialized use.
+- Impact-screen structures, protection, surfaces, carpentry, curtains, and finish integration considered together.
+- Clearly documented assumptions, scope boundaries, and remaining responsibilities.
+- Willingness to identify work that belongs with equipment providers or qualified trades.
+
+## Non-goals and prohibited implications
+
+- Equipment dealership, package sales, product catalog, or manufacturer relationship
+- Architectural, engineering, or other licensed-design services
+- Automatic permit responsibility or permit management
+- Representation as general contractor for an entire home or commercial facility
+- Unassigned electrical, mechanical, structural, or other licensed-trade responsibility
+- Unsupported warranty, certification, insurance, licensing, geography, capacity, price, or schedule claims
+- CMS, Supabase, database, authentication, portal, uploads, estimator, or shopping cart
+- Stock, AI-generated, staged, or fictional project imagery
+
+## Success criteria
+
+- The homepage identifies Zarka as a Golf Simulator Construction Specialist before scrolling.
+- Residential and commercial visitors both recognize relevant simulator-environment settings.
+- No sentence implies complete facility construction or responsibility outside a written scope.
+- Services match work Zarka presently performs.
+- Equipment sales, professional design, permit authority, and licensed-trade boundaries are explicit.
+- A homeowner feels invited, a facility owner sees a relevant specialist, and a general contractor sees a credible defined-scope partner.
+- Contact, accessibility, performance, analytics, and canonical behavior remain healthy.

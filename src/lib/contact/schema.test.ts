@@ -10,6 +10,7 @@ const validPayload = {
   phone: "(555) 000-0000",
   location: "  Southeast Michigan ",
   service: "simulator-construction",
+  consultationPreference: "guided-remote-review",
   timeline: "three-six-months",
   description:
     "I am planning a simulator room and want to review the room dimensions and finish work.",
@@ -64,6 +65,7 @@ describe("validateContactPayload", () => {
         phone: "call me",
         location: "",
         service: "invented-service",
+        consultationPreference: "email-me",
         timeline: "tomorrow",
         description: "Too short",
       },
@@ -78,6 +80,7 @@ describe("validateContactPayload", () => {
         phone: expect.any(String),
         location: expect.any(String),
         service: expect.any(String),
+        consultationPreference: expect.any(String),
         timeline: expect.any(String),
         description: expect.any(String),
       });

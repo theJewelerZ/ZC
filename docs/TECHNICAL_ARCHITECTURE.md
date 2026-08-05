@@ -31,7 +31,7 @@ generated defaults.
   Turnstile widget, and narrowly scoped analytics.
 - Use Server Components for page structure, configured content, metadata, and
   JSON-LD.
-- Do not add runtime data fetching for business copy or ecosystem cards.
+- Do not add runtime data fetching for business copy, services, planning steps, or project-image slots.
 - Use Next.js image and font pipelines where they improve performance; never
   upscale temporary logo artwork.
 
@@ -49,13 +49,13 @@ app/
   sitemap.ts
 components/
   layout/                    # header, mobile navigation, footer, container
-  sections/                  # hero, services, simulator, why, work, ecosystem
+  sections/                  # hero, simulator solutions, planning, proof, credibility
   contact/                   # form, field, status/fallback
   ui/                        # small project-owned primitives
 config/
   business.ts
   navigation.ts
-  projects.ts
+  simulator.ts
   assets.ts
 lib/
   contact/                   # schema, delivery, anti-spam, rate limit
@@ -81,7 +81,7 @@ tests with code if the selected test tooling benefits.
 - Dedicated homepage section components that own semantics and layout
 - `ContactForm` with server-owned validation and accessible response handling
 - `BrandMark` consuming an asset variant and always retaining a text fallback
-- `ExternalLink` that consistently exposes external behavior
+- `SimulatorMedia` that renders only approved configured photography and otherwise uses a decorative schematic
 
 Prefer semantic HTML and normal links over generalized “design system”
 abstractions.
@@ -117,22 +117,17 @@ delivery classification:
 Only currently approved public entries render. The classification should guide
 copy and review; do not necessarily show the raw enum to visitors.
 
-### Related projects
+### Simulator strategy configuration
 
-```ts
-type RelatedProject = {
-  slug: "capproof" | "bid-desk" | "precision-impact-screens";
-  name: string;
-  category: string;
-  description: string;
-  href: string | null;
-  status?: string;
-};
-```
+Public service configuration contains simulator-room outcomes rather than a
+trade directory. Stable contact enums cover simulator project type and the two
+approved room-review methods. `simulator.ts` owns the planning process, FAQ,
+and future image slots.
 
-CapProof and Precision Impact Screens receive their confirmed HTTPS URLs. Bid
-Desk has `href: null`; its card must remain valid and non-interactive. Rendering
-and tracking must derive from this same object.
+Public business configuration contains no related-product directory. CapProof
+is a single documentation-process mention in page content; Bid Desk is not
+rendered. Precision Impact Screens is absent from public configuration and
+components.
 
 ## Asset strategy
 
@@ -169,7 +164,7 @@ Browser fields + Turnstile token
 
 - Normalize whitespace and email case where safe.
 - Reject unexpected fields and enforce conservative maximum lengths.
-- Required: name, email, location, service, timeline, description, Turnstile.
+- Required: name, email, location, simulator project type, room-review preference, timeline, description, and Turnstile.
 - Optional: phone and referral source.
 - Validate service against configured values, not arbitrary strings.
 - Do not trust client validation or Turnstile success without server verification.
@@ -214,7 +209,7 @@ Browser fields + Turnstile token
 - Vercel Analytics is implemented and loaded only on Vercel when
   `NEXT_PUBLIC_ANALYTICS_ENABLED` is not `false`. Enable Speed Insights only if its runtime and
   privacy tradeoffs are accepted.
-- Track CTA, form state, successful conversion, and ecosystem link events
+- Track CTA, planning-process interest, form state, and successful conversion events
   defined in `SEO_AND_ANALYTICS.md`.
 - Never attach message text, name, email, phone, exact location, or Turnstile
   token to analytics.

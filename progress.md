@@ -1,120 +1,141 @@
 # Progress
 
-**Current phase:** Phase 1.5 — Production Readiness
+**Current phase:** Phase 2 — final specialist-positioning review
 
 **Canonical production URL:** <https://www.zarkaconstruction.com>
 
-**Deployment target:** Vercel project `zarka-construction`
+**Repository:** <https://github.com/theJewelerZ/ZC>
 
-**Latest verified deployment:** `dpl_9UMjS4azHyuaw3MPutdinqrPnPv5`
+**Feature branch:** `phase-2/simulator-construction`
 
-**Last updated:** July 23, 2026
+**Last updated:** August 4, 2026
 
-## Current production status
+## Production status
 
-The Phase 1 marketing site is live on the canonical `www` domain. Search
-indexing is enabled only in Vercel Production. The apex redirect, HTTPS,
-canonical metadata, public routes, generated SEO files, security headers, brand
-assets, responsive layout, and accessibility checks pass.
+The existing production release remains live and unchanged. This final trust and
+positioning pass has not been merged, promoted, or connected to production.
+DNS, nameservers, email records, GoDaddy products, and Vercel domain settings
+were not changed.
 
-Contact infrastructure and all required server-only Vercel environment
-variables are configured. The `zarkaconstruction.com` sender domain and all
-three Resend DKIM/SPF records are verified. A real production submission
-returned HTTP 200, Resend accepted it, and Vercel recorded a privacy-safe
-`contact_delivery_accepted` event with a provider ID.
+## Accepted positioning
 
-## Phase 1.5 work completed
+Zarka Construction is positioned as a **Golf Simulator Construction Specialist
+focused on creating premium simulator environments while accurately
+representing its present capabilities**.
 
-- Reviewed every public route and removed internal MVP, placeholder, and
-  pre-cutover wording from capability, privacy, and terms content.
-- Preserved the approved positioning, CTA hierarchy, service scope, and brand
-  system without adding sections, routes, claims, or Phase 2 functionality.
-- Improved Resend email output with clear contact/project grouping, submission
-  timestamp, escaped HTML formatting, and a readable plain-text fallback.
-- Added automated verification of recipient, configured sender, visitor
-  `reply_to`, HTML/text payloads, provider rejection, disabled delivery, request
-  size limits, and production indexing behavior.
-- Hardened `POST /api/contact` to reject unsupported content types and oversized
-  bodies even when `Content-Length` is absent.
-- Configured existing non-empty Resend and rate-limit values in Vercel
-  Production without exposing or committing secrets.
-- Enabled `NEXT_PUBLIC_SEARCH_INDEXING_ENABLED=true` only in Vercel Production.
-- Corrected the contact layout at the 768px tablet breakpoint.
-- Added responsive image `sizes` so the small header mark no longer downloads a
-  desktop-scale raster. Lighthouse image-delivery waste dropped from about
-  103 KiB to zero.
-- Made no GoDaddy DNS, nameserver, MX, TXT, email-record, or product changes.
+The website preserves the experience-led idea:
 
-## Verification
+> We Build the Room Around the Game.
 
-- `npm run lint`: pass
-- `npm run typecheck`: pass
-- `npm test`: 20 tests pass across seven files
-- Production build with indexing enabled: pass
-- Public `/`, `/contact`, `/privacy`, `/terms`, `robots.txt`, `sitemap.xml`,
-  Open Graph image, favicon, and Apple icon: HTTP 200
-- `robots.txt`: allows `/` and names the canonical `www` sitemap
-- Metadata: `index, follow`, canonical `www`, Open Graph/Twitter data present,
-  factual Organization JSON-LD present, and no temporary Vercel URL in public
-  HTML
-- Security headers: CSP, HSTS, `DENY` frame policy, MIME sniffing protection,
-  strict referrer policy, and restricted permissions policy present
-- Responsive review: 320, 375, 390, 414, 768, 1024, 1280, 1440, and 1920 CSS
-  pixels; no page-level horizontal overflow
-- Accessibility: Lighthouse 100; semantic landmarks, heading hierarchy, labels,
-  live error/status behavior, keyboard focus, skip link, mobile navigation, and
-  decorative-image treatment reviewed
-- Final Lighthouse mobile:
-  - Performance: 98
-  - Accessibility: 100
-  - Best Practices: 100
-  - SEO: 100
-  - FCP: 0.9 s
-  - LCP: 2.4 s
-  - TBT: 10 ms
-  - CLS: 0
-- Real production contact test:
-  - Endpoint and validation path: reached
-  - Result: HTTP 200; Resend accepted the message
-  - Sender domain: `zarkaconstruction.com` verified
-  - Production log: `contact_delivery_accepted`, provider ID present
-  - No sensitive contact data or secrets in the log event
+It now defines Zarka's work through specific simulator-environment scope rather
+than broad room or facility claims. ADR-023 records this decision.
 
-## Working fallbacks
+## Present public scope
 
-- The header uses the approved raster icon with the text-based ZARKA /
-  CONSTRUCTION lockup until purpose-built horizontal vector artwork is supplied.
-- Abstract structural presentation remains in place until approved project
-  photography is available.
-- Turnstile is inactive because its two credentials remain empty/unconfigured.
-  Honeypot, timing checks, server validation, same-origin enforcement, request
-  size limits, and best-effort rate limiting remain active.
-- Public phone, email, service area, licensing, insurance, testimonials, and
-  unsupported business facts remain omitted.
+Depending on room review and written scope, work may include:
 
-## Remaining readiness items
+- room evaluation and simulator construction planning;
+- simulator-room preparation and framing;
+- impact-screen structures and custom layered impact screens;
+- curtains and enclosure details;
+- wall and ceiling protection;
+- turf, stance areas, and hitting surfaces;
+- finish carpentry, trim, transitions, and detailing;
+- coordination with equipment providers or qualified trades when required.
 
-1. Confirm the labeled production test arrived in the intended inbox and
-   manually verify Reply-To behavior.
-2. Configure production Turnstile site/secret keys for the canonical hostname,
-   then verify success and rejection paths.
-3. Verify approved analytics events in the Vercel dashboard without PII.
-4. Complete the 200% zoom/high-contrast and Firefox/WebKit smoke tests where
-   those environments are available.
-5. Obtain legal review of the starter privacy notice and website terms if the
-   founder requires it.
-6. Configure founder-controlled Search Console and submit the sitemap.
+The site does not claim equipment sales, manufacturer or dealer relationships,
+architectural or engineering services, permit authority, complete facility
+construction, or responsibility outside the written scope.
 
-## Phase 2 remains deferred
+## Trust refinements completed
 
-Portfolio content, a CMS, Supabase, authentication, dashboards, a blog,
-uploads, scheduling, customer portals, AI features, and product integrations
-remain outside Phase 1.5.
+- Replaced “Golf Simulator Room Builder” with “Golf Simulator Construction
+  Specialist” in public category, metadata, Open Graph, structured data, and documentation.
+- Replaced broad residential/commercial room cards with seven specific,
+  currently performed simulator-environment service categories.
+- Added careful commercial settings: teaching studios, commercial golf spaces,
+  entertainment venues, simulator businesses, country clubs, and training
+  environments.
+- Clarified that commercial references concern the simulator environment within
+  a facility, not construction of the complete facility.
+- Strengthened the differentiator to: “We Don't Simply Install Equipment. We
+  Prepare the Environment for Great Simulator Experiences.”
+- Rewrote the process around initial evaluation, defined scope, agreed specialty
+  work, and remaining responsibilities.
+- Rewrote About with a humble emphasis on experience, love of golf,
+  craftsmanship, listening, clear communication, and identifying outside scope.
+- Reframed Contact as a conversation about the space, not an equipment package
+  or quote.
+- Added direct Terms language for business scope, equipment, permits,
+  architectural or engineering work, licensed trades, commercial settings, and
+  no website-created warranty or agreement.
+- Documented every current photography placeholder by intended image, story,
+  construction state, residential/commercial relevance, and framing.
+- Added no route, layout, feature, animation, database, CMS, Supabase,
+  authentication, upload, store, estimator, or production change.
+
+## Three-audience accuracy review
+
+- **Homeowner:** sees a specialist who begins with the room, explains the work
+  that may be included, and invites a practical conversation without selling equipment.
+- **Golf facility owner:** sees relevant commercial simulator settings and
+  specialty capability without a claim to construct the entire facility.
+- **Licensed general contractor:** sees a defined simulator-environment scope,
+  written responsibilities, and explicit separation of permits, professional
+  design, equipment, and licensed trades.
+
+All three audiences should leave with an accurate understanding of Zarka's
+present role.
+
+## Verification completed
+
+- `npm run check`: pass
+  - ESLint: pass
+  - TypeScript: pass
+  - Vitest: 24 tests pass across 8 files
+  - Production build: pass; all 13 routes generated
+- HTTP 200 verified for `/`, `/simulator-construction`, simulator-preselected
+  `/contact`, `/privacy`, `/terms`, `/sitemap.xml`, and `/robots.txt`.
+- Public trust assertions pass for specialist category, present services,
+  custom layered impact screens, commercial settings, complete-facility
+  boundary, equipment boundary, permit boundary, professional-design boundary,
+  contact framing, canonical metadata, and prohibited-reference removal.
+- Responsive review completed at true 320px, 768px, 1024px, and 1440px.
+  Long specialist and scope language wraps without clipped CTAs or overflow.
+- Lighthouse:
+  - Homepage: Performance 99, Accessibility 100, Best Practices 100, SEO 100
+  - True 320px homepage: Performance 100, Accessibility 100, Best Practices 100, SEO 100
+  - Simulator page: Performance 100, Accessibility 100, Best Practices 100, SEO 100
+  - Contact page: Performance 100, Accessibility 100, Best Practices 100, SEO 100
+  - CLS: 0 on every audited route
+- Lighthouse can emit a Windows temporary-folder cleanup `EPERM` after writing
+  valid reports; the reports and scores above are complete.
+
+## Git and protected preview
+
+- Application commit: `a98c069` — Clarify simulator construction specialist scope
+- Documentation commit: `c3519f1` — Document accurate specialist positioning
+- Both commits are pushed to `origin/phase-2/simulator-construction`.
+- Protected preview deployment: `dpl_EgYXk2SUoKxanqJ98j5o2JDR6vok`
+- Preview URL:
+  <https://zarka-construction-qcl16xk68-matthews-projects-7e2a9d39.vercel.app>
+- Deployment target: preview; status: Ready.
+- Authenticated preview assertions pass for public category, current services,
+  commercial and legal boundaries, contact positioning, canonical metadata,
+  preview noindex, and removal of prohibited product references.
+
+## Remaining founder review
+
+- Approve or request changes to the final specialist positioning.
+- Confirm that every service listed reflects work presently offered.
+- Confirm the wording “custom layered impact screens.”
+- Confirm the intended commercial settings.
+- Approve founder-owned project photography and publication rights when real
+  project images become available.
+- Provide any future verified licensing, permit, insurance, equipment,
+  manufacturer, dealer, warranty, or service-area information before it is claimed.
 
 ## Immediate next action
 
-Confirm receipt of the labeled production test in the intended inbox and use
-Reply to verify the response targets the submitted visitor address. Then
-configure Turnstile and complete the remaining cross-browser/assistive
-technology checks. Do not modify unrelated GoDaddy DNS records or cancel any
-GoDaddy product.
+Founder review of the protected preview. Do not merge or promote to production
+until explicit founder approval is received.

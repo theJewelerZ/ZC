@@ -114,15 +114,14 @@ The integration is loaded only in Vercel deployments and is disabled when
 | Event | When | Allowed properties |
 | --- | --- | --- |
 | `consultation_cta_click` | Primary CTA activation | `placement` |
-| `explore_work_click` | Secondary CTA activation | `placement` |
+| `planning_process_click` | Room-planning CTA activation | `placement` |
 | `contact_form_start` | First meaningful form interaction | `source` |
 | `contact_form_submit` | Valid client attempt reaches server | `service_category` |
 | `contact_form_success` | Email provider accepts submission | `service_category` |
 | `contact_form_error` | Submission fails | broad `error_class` only |
-| `ecosystem_link_click` | Confirmed external project link | `project`, `placement` |
 
 Do not track raw field values. Prevent duplicate success events on refresh or
-client re-render. Use the configured project slug for ecosystem events.
+client re-render.
 
 ## Conversion reporting
 
@@ -135,7 +134,7 @@ Monitor:
 - CTA-to-start and start-to-success progression
 - broad service category mix
 - provider/form error trend
-- ecosystem outbound interest
+- room-planning CTA engagement and review-method selection
 - Core Web Vitals and route errors
 
 Do not establish performance targets until enough baseline traffic exists.
@@ -163,3 +162,15 @@ After stable cutover:
    actions, and branded/non-branded queries.
 6. Keep access assigned to founder-controlled accounts, not only an agency or
    individual developer.
+
+## Simulator-room-builder SEO direction
+
+Use “Golf Simulator Room Builder” as the primary category phrase and support it
+with natural language about custom residential and commercial simulator rooms,
+room feasibility, geometry, construction, protection, turf, lighting, and
+finish integration. Do not publish product catalogs, equipment-sales language,
+unconfirmed geography, or thin keyword variants.
+
+Precision Impact Screens has no metadata, structured-data, sitemap, analytics,
+link, or SEO role. CapProof and Bid Desk are not SEO topics. Preview deployments
+remain noindex until founder approval and production promotion.

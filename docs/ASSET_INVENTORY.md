@@ -176,3 +176,29 @@ names, and camera-generated names.
 5. Confirm both light/dark surfaces and text fallback.
 6. Remove obsolete assets only after references and production deployment are
    verified; record the brand decision.
+
+## Simulator-first project-photo gate
+
+- Use founder-owned simulator-room photography only.
+- Do not use AI-generated, stock, staged, or fictional project imagery.
+- Do not publish the secured upcoming project before actual construction begins.
+- Keep typed image sources `null` until publication rights, project context,
+  crop, dimensions, and alt text are approved.
+- Preserve planning, construction-progress, impact-environment, and completed-room
+  slots so approved photography can replace schematics without component rewrites.
+
+## Specialist-positioning photography assignments
+
+The current layouts remain unchanged. These assignments define what should replace each schematic only after authentic founder-owned photography and publication rights are available.
+
+| Placement | Image assignment | Story and trust requirement |
+| --- | --- | --- |
+| Simulator page hero | Wide finished simulator environment; residential or commercial; active screen; clean architecture; optional golfer | Demonstrate the quality of the environment without implying equipment sales or complete-facility construction |
+| Homepage planning card | Founder evaluating an existing room or intended player position | Show that scope begins with understanding actual conditions |
+| Homepage craft card | Real framing, impact-screen structure, protection, turf, carpentry, curtain, trim, or detailing work | Show a specific Zarka-performed specialty task in context |
+| Homepage play card | Approved finished environment ready for use | Show the result without claiming work outside Zarka's documented scope |
+| Simulator page evaluation | Founder and intended player reviewing dimensions, position, and constraints | Show collaborative, room-specific planning rather than sales activity |
+| Simulator page playing surface | Low-angle detail of turf, stance area, hitting surface, and adjacent trim | Show how specialty construction supports use and finish quality |
+| Simulator page room review | Founder listening, measuring, or documenting existing conditions | Show professional communication and an honest first step |
+
+For every published image, the project record must identify what Zarka performed, what was supplied by the customer or equipment provider, what qualified trades performed, and what remains outside the public claim. Do not use stock photography or AI-generated project imagery.

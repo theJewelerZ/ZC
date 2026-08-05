@@ -133,7 +133,7 @@ logo and critical mobile layouts; record the selection in `DECISIONS.md`.
 ## Components
 
 - **Primary button:** Orange focal action, strong contrast, short label, visible
-  focus ring. Reserve for “Request a Consultation.”
+  focus ring. Reserve for “Plan a Simulator Room,” “Start Your Room Review,” or the equivalent primary consultation action.
 - **Secondary button:** Navy/Carbon outline or quiet neutral fill. Use for
   “Explore Our Work.”
 - **Text link:** Underline or a persistent non-color cue. External links include
@@ -154,3 +154,11 @@ animation libraries, playful illustrations, generic contractor templates,
 startup hype, or visual effects that obscure content. Animation must be subtle,
 optional under reduced motion, and justified by comprehension.
 
+
+## Simulator-room-builder application
+
+The brand now leads with the category phrase “Golf Simulator Room Builder.”
+Architectural geometry should communicate room planning, clearance, impact
+planes, construction sequencing, and finish integration. Construction imagery
+supports simulator expertise; it must not pull the experience back toward a
+generic contractor template or an equipment storefront.

@@ -233,3 +233,45 @@ Statuses:
   at the Vercel domain layer.
 - **Reconsider when:** Only through an explicit founder-approved canonical-host
   change accompanied by coordinated Vercel, application, SEO, and test updates.
+
+## ADR-021 — Simulator-room-builder-first public positioning
+
+- **Status:** Accepted
+- **Context:** The founder approved a deliberate change from broad construction
+  positioning to a focused category position built around custom indoor golf
+  simulator rooms. General construction capability now supports credibility;
+  it no longer competes with the primary offer. Precision Impact Screens is no
+  longer part of the public website, while CapProof and Bid Desk operate only as
+  internal advantages in documentation, estimating, scopes, and assumptions.
+- **Decision:** Position Zarka Construction publicly as a **Golf Simulator Room
+  Builder**. Lead with residential and commercial custom simulator rooms, room
+  feasibility, planning, construction, protection, finish integration, and
+  coordination. Use the existing `/simulator-construction` route and feature
+  branch as the foundation. Remove all public Precision Impact Screens and
+  software-product cards. Mention CapProof only as part of the professional
+  documentation process; express Bid Desk only through organized scopes,
+  estimating, and documented assumptions without naming it publicly. Guide
+  inquiries toward an on-site consultation or guided remote room review.
+- **Consequences:** The homepage, navigation, contact flow, metadata, structured
+  data, legal copy, analytics vocabulary, and canonical documentation must tell
+  one simulator-room-builder story. Existing general construction services
+  remain secondary evidence. No product catalog, equipment sales, uploads,
+  database, CMS, authentication, estimator, or customer portal is added.
+- **Reconsider when:** Only after founder approval supported by qualified-lead
+  evidence or a material change to the company’s intended business model.
+
+## ADR-022 — Experience-first simulator-room storytelling
+
+- **Status:** Accepted
+- **Context:** Simulator-room-builder positioning established the correct category, but construction tasks and equipment relationships still carried too much of the public narrative. Prospects are ultimately creating a place to practice, play, gather, entertain, and enjoy golf throughout the year.
+- **Decision:** Sell the experience of a professionally built golf simulator room. Golf and the life around the room lead the story; construction, planning, and technical coordination serve as evidence of how Zarka delivers it. Protect the philosophy: “We don't build golf simulators. We build the spaces where great golf happens.” Use technical details to explain why the room plays and feels right, without presenting Zarka as an equipment seller or reducing the offer to an installation checklist.
+- **Consequences:** Homepage hierarchy, service descriptions, simulator-page copy, contact language, metadata, and social imagery must emphasize the finished experience while preserving truthful scope boundaries. Project imagery remains founder-owned only, and missing photography remains an intentional editorial state rather than fabricated proof.
+- **Reconsider when:** Only through an explicit founder-approved positioning change supported by customer evidence.
+
+## ADR-023 — Golf Simulator Construction Specialist scope
+
+- **Status:** Accepted
+- **Context:** Premium residential and commercial prospects need a precise understanding of Zarka's present role. Broad phrases such as “complete room” can unintentionally imply general-contracting, permit, architectural, engineering, equipment-dealer, or complete-facility responsibility.
+- **Decision:** Position Zarka Construction as a **Golf Simulator Construction Specialist focused on creating premium simulator environments while accurately representing its present capabilities**. Public scope may include room evaluation, simulator and construction planning, simulator-environment framing, impact-screen structures and custom layered screens, curtains, wall and ceiling protection, turf and hitting surfaces, finish carpentry, trim, finish detailing, room preparation, and coordination with qualified trades where required. Every project has a defined written scope. Do not imply equipment sales, manufacturer or dealer relationships, architectural or engineering services, permit authority, licensed-general-contractor status, complete commercial-facility construction, or responsibility outside that scope.
+- **Consequences:** Residential and commercial settings remain welcome, but commercial language describes simulator environments within facilities rather than complete facility construction. Confidence comes from specificity, careful planning, craftsmanship, honest boundaries, and professional communication.
+- **Reconsider when:** Founder-verified licenses, services, partnerships, or operating responsibilities materially change.
