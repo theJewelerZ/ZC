@@ -62,20 +62,24 @@ canonical Vercel domain were not changed.
 
 ## Protected Preview
 
-Deployment ID: dpl_ADDDhWM8Rd3rmVpqnAwNYtpWTdae
+Deployment ID: dpl_Bc5UfB1DxK2x5b5tDvNG8HA87T5z
 
 URL:
-<https://zarka-construction-kxeshnmj3-matthews-projects-7e2a9d39.vercel.app>
+<https://zarka-construction-9c2xbf5rn-matthews-projects-7e2a9d39.vercel.app>
 
-Status: Ready; target: Preview. Branch-scoped Supabase and rate-limit variables
-are configured without exposing values. Production variables were not changed.
+Status: Ready; target: Preview. Branch-scoped Supabase, founder allowlist, and
+rate-limit variables are active without exposing values. A deployed invalid-code
+probe returned error=signin rather than error=configuration, confirming callback
+configuration is loaded. Production variables were not changed.
 
 ## Remaining founder setup and review
 
 - Founder Auth user, Preview callback allowlisting, and ADMIN_ALLOWED_EMAILS are
   confirmed configured.
-- Deploy this callback-cookie repair to a protected Preview and retest a new
-  magic link, refresh, second tab, and sign-out.
+- Response-bound callback repair is deployed to the protected Preview. Retest a
+  new magic link, refresh, second tab, and sign-out.
+- Interactive retest remains founder-owned because no connected authorized browser
+  session was available to the implementation agent.
 - Complete authenticated list/detail/photo/status/notes review.
 - Verify an authenticated but non-allowlisted account is denied.
 - Complete manual responsive review at 320, 375, 768, 1024, and 1440px. The
@@ -86,6 +90,6 @@ are configured without exposing values. Production variables were not changed.
 
 ## Immediate next action
 
-Deploy the response-bound auth-cookie repair to a protected Preview. The founder
-then completes the newest-link, persistence, second-tab, and sign-out retest.
-Do not merge or promote.
+Founder opens the protected Preview in the same browser used to request the newest
+magic link, verifies `/admin`, refresh, second-tab persistence, and POST sign-out.
+Do not merge or promote until this succeeds.
