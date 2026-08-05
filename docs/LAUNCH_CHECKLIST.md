@@ -259,13 +259,17 @@ an approved private location, not the public repository.
 - [x] Implement post-persistence founder and customer notifications.
 - [x] Implement founder-only authenticated list/detail/status/notes.
 - [x] Exclude /admin, /auth, and /api from indexing.
-- [ ] Configure ADMIN_ALLOWED_EMAILS for branch Preview.
-- [ ] Create/invite matching Supabase Auth founder user.
-- [ ] Add protected Preview Auth callback URL.
+- [x] Configure ADMIN_ALLOWED_EMAILS for branch Preview.
+- [x] Create/invite matching Supabase Auth founder user.
+- [ ] Add and verify the exact stable branch Preview Auth callback URL.
 - [x] Verify bucket restrictions and anonymous table/storage denial behavior.
 - [x] Submit a no-photo Preview inquiry and verify durable storage and both notification acceptances.
 - [x] Submit a photo Preview inquiry and verify signed upload, private Storage, metadata, and notification acceptance.
 - [x] Verify anonymous dashboard access renders no consultation data.
+- [x] Add discreet Founder Login utility links to the footer and mobile navigation.
+- [x] Pin Preview login and callbacks to the stable Vercel Git branch alias.
+- [x] Add privacy-safe auth-stage diagnostics and specific founder-facing errors.
+- [ ] Confirm Supabase preserves the stable callback instead of substituting the Production Site URL.
 - [ ] Verify an authenticated but non-allowlisted user is denied in Preview.
 - [ ] Verify five-minute signed image access and refresh behavior.
 - [x] Run Lighthouse/accessibility review on homepage, contact, and founder login.

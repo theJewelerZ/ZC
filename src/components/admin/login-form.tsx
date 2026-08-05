@@ -3,7 +3,15 @@
 import { FormEvent, useState } from "react";
 import { createSupabaseBrowserClient } from "@/lib/supabase/browser";
 
-export function AdminLoginForm({ url, publishableKey }: { url: string; publishableKey: string }) {
+export function AdminLoginForm({
+  callbackUrl,
+  url,
+  publishableKey,
+}: {
+  callbackUrl: string;
+  url: string;
+  publishableKey: string;
+}) {
   const [state, setState] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [message, setMessage] = useState("");
   async function submit(event: FormEvent<HTMLFormElement>) {
@@ -14,7 +22,7 @@ export function AdminLoginForm({ url, publishableKey }: { url: string; publishab
     const client = createSupabaseBrowserClient(url, publishableKey);
     const { error } = await client.auth.signInWithOtp({
       email,
-      options: { emailRedirectTo: `${window.location.origin}/auth/callback`, shouldCreateUser: false },
+      options: { emailRedirectTo: callbackUrl, shouldCreateUser: false },
     });
     if (error) {
       setState("error");
@@ -22,7 +30,7 @@ export function AdminLoginForm({ url, publishableKey }: { url: string; publishab
       return;
     }
     setState("sent");
-    setMessage("If this email belongs to the authorized founder account, a sign-in link is on its way.");
+    setMessage("If this email belongs to the authorized founder account, a sign-in link is on its way. Open only the newest email in this same browser and device.");
   }
   return <form className="admin-login-form" onSubmit={submit}>
     <label htmlFor="admin-email">Founder email</label>

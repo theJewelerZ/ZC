@@ -1,6 +1,6 @@
 # Progress
 
-**Current phase:** Phase 3 — protected consultation-system review
+**Current phase:** Phase 3 — protected consultation-system authentication review
 
 **Canonical production URL:** <https://www.zarkaconstruction.com>
 
@@ -18,78 +18,69 @@ canonical Vercel domain were not changed.
 
 ## Implemented
 
-- Supabase SSR/browser/server clients with strict service-secret separation.
-- Additive migration 20260805000100 applied to the confirmed Zarka project.
-- consultations and consultation_photos constraints, indexes, updated-at
-  trigger, forced RLS, revoked browser privileges, service-only transactional
-  finalization, and private consultation-photos bucket.
-- Validated pending consultation sessions, one-object signed direct uploads,
-  stored-object/signature checks, atomic completion, cancellation, and 24-hour
-  abandoned-session cleanup.
-- Optional JPEG/PNG/WebP photos: 10 files, 15 MiB each, 75 MiB combined,
-  thumbnails, captions, remove controls, progress, errors, and retry.
-- Resend founder notification and customer confirmation after persistence.
-  Failed or partial notification state preserves the lead.
-- Supabase magic-link Auth, no public registration, server email allowlist,
-  private /admin list/detail, five-minute signed images, status, and notes.
-- Accurate privacy, robots, CSP, private cache/noindex, environment, setup, data,
-  retention, and operating documentation.
-- Legacy email-only POST endpoint retired so it cannot bypass persistence.
+- Durable Supabase consultation records, private direct photo uploads, Resend
+  notifications, Turnstile/rate limiting, and founder-only dashboard remain in
+  place without widening the CRM scope.
+- Response-bound PKCE callback and sign-out handlers preserve Supabase cookies.
+- Preview founder authentication now uses the stable Git branch hostname instead
+  of deployment-specific Preview hostnames.
+- Branch-scoped `ADMIN_AUTH_ORIGIN` is configured in Vercel Preview; Production
+  remains request-origin based.
+- Privacy-safe callback and admin-guard stages distinguish origin mismatch,
+  missing verifier, expired/used link, configuration, session-cookie, user, and
+  allowlist outcomes without logging PII, codes, tokens, URLs, or cookie values.
+- A discreet `Founder Login` link is present in the public footer and mobile
+  navigation. Responsive navigation now presents a visible Menu/Close label.
+- Login errors provide useful, bounded founder-facing recovery instructions.
+
+## Root cause confirmed
+
+A server-only Supabase `generateLink` diagnostic requested the stable Preview
+callback without sending or exposing a magic link. Supabase returned the
+Production site root instead of the requested callback. This confirms the stable
+Preview callback is not currently accepted by Auth URL Configuration, or the
+Magic Link template ignores `RedirectTo`. The resulting cross-host return cannot
+carry the Preview PKCE verifier cookie and causes the apparent login loop.
+
+Required exact Supabase Additional Redirect URL:
+
+`https://zarka-construction-git-phase-9e8031-matthews-projects-7e2a9d39.vercel.app/auth/callback`
 
 ## Verification
 
-- Full npm run check passes: ESLint, TypeScript, 41 Vitest tests across 15 files,
-  and Next.js 16.3.0 production build.
-- npm audit: zero known vulnerabilities after targeted stable security updates.
-- Supabase db lint: no schema errors.
-- Remote local/history match; exactly the two expected empty tables exist.
-- Publishable key gets 401 for table reads; service credential gets 200.
-- Anonymous private-bucket listing exposes no objects; server bucket access works.
-- Controlled no-photo and signed-photo Preview submissions stored successfully;
-  both notification pairs were accepted as sent.
-- The two synthetic records and generated test object were removed; database and
-  private bucket returned to an empty state and metadata cascade was verified.
-- Anonymous /admin renders no consultation table; /admin/login shows the
-  magic-link form and no-registration copy.
-- Lighthouse:
-  - homepage: Performance 98, Accessibility 100, Best Practices 100, SEO 100
-  - contact: Performance 98, Accessibility 100, Best Practices 100, SEO 100
-  - founder login: Performance 98, Accessibility 100, Best Practices 100;
-    private-route SEO 69 is intentional because the route is noindex
-  - CLS 0 on all audited routes
-- Lighthouse reports completed despite the known Windows temporary-folder
-  cleanup EPERM warning.
+- ESLint passes.
+- TypeScript passes.
+- 67 Vitest tests across 21 files pass, including contact-flow regressions.
+- Callback coverage includes stable-origin selection, missing verifier, expired
+  code, session-cookie write, allowlist, host-only cookies, and open redirects.
+- Navigation coverage confirms the shared root header/footer, public routes, one
+  Founder Login utility destination, and visible responsive menu label.
+- Previous controlled Preview checks verified durable no-photo and photo
+  consultations, private Storage metadata, both notification acceptances, and
+  cleanup. Authenticated dashboard/photo review must be repeated after login.
 
-## Protected Preview
+## Stable protected Preview
 
-Deployment ID: dpl_Bc5UfB1DxK2x5b5tDvNG8HA87T5z
+Branch URL:
+<https://zarka-construction-git-phase-9e8031-matthews-projects-7e2a9d39.vercel.app>
 
-URL:
-<https://zarka-construction-9c2xbf5rn-matthews-projects-7e2a9d39.vercel.app>
+Founder login:
+<https://zarka-construction-git-phase-9e8031-matthews-projects-7e2a9d39.vercel.app/admin/login>
 
-Status: Ready; target: Preview. Branch-scoped Supabase, founder allowlist, and
-rate-limit variables are active without exposing values. A deployed invalid-code
-probe returned error=signin rather than error=configuration, confirming callback
-configuration is loaded. Production variables were not changed.
+The next Git push will update this stable alias without changing its hostname.
 
-## Remaining founder setup and review
+## Merge blockers
 
-- Founder Auth user, Preview callback allowlisting, and ADMIN_ALLOWED_EMAILS are
-  confirmed configured.
-- Response-bound callback repair is deployed to the protected Preview. Retest a
-  new magic link, refresh, second tab, and sign-out.
-- Interactive retest remains founder-owned because no connected authorized browser
-  session was available to the implementation agent.
-- Complete authenticated list/detail/photo/status/notes review.
-- Verify an authenticated but non-allowlisted account is denied.
-- Complete manual responsive review at 320, 375, 768, 1024, and 1440px. The
-  connected browser runtime was unavailable during implementation; automated
-  accessibility and Lighthouse checks passed.
-- Confirm received Preview founder/customer emails if desired.
-- Approve or request changes. Do not merge or promote without explicit approval.
+- Add and verify the exact stable callback in Supabase Auth URL Configuration.
+- Verify the Magic Link email template honors the requested redirect.
+- Founder completes newest-link login, refresh, second-tab, and sign-out checks.
+- Founder verifies dashboard list/detail, status/notes, and signed photo view.
+- Repeat one no-photo and one photo consultation on the final Preview and confirm
+  durable persistence plus founder/customer notifications.
+- Complete founder responsive review at 320, 375, 768, 1024, and 1440px.
 
 ## Immediate next action
 
-Founder opens the protected Preview in the same browser used to request the newest
-magic link, verifies `/admin`, refresh, second-tab persistence, and POST sign-out.
-Do not merge or promote until this succeeds.
+Deploy the current branch through the Vercel Git integration. Add the exact stable
+callback in Supabase, verify it is preserved, then complete the founder login and
+consultation workflow. Do not merge or promote until every merge blocker passes.

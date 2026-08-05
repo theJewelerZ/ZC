@@ -35,3 +35,26 @@ Missing configuration, incomplete links, expired/used links, and unauthorized
 accounts return distinct non-sensitive messages at /admin/login. Unauthorized
 sessions are signed out and their auth cookies cleared. Sign-out is a POST route
 that likewise clears cookies on its actual 303 redirect response.
+
+## Stable Preview authentication origin
+
+Preview login is pinned to the stable Git branch URL rather than a commit URL:
+
+`https://zarka-construction-git-phase-9e8031-matthews-projects-7e2a9d39.vercel.app`
+
+`ADMIN_AUTH_ORIGIN` provides the branch-scoped server override. When it is absent,
+Vercel Preview uses `VERCEL_BRANCH_URL`; Production remains on the request's
+production origin. `/admin/login` redirects from a commit-specific Preview host
+to the stable branch host before creating the PKCE verifier. The email callback
+therefore returns to the host that owns the verifier cookie.
+
+The public site exposes one discreet `Founder Login` utility link in the footer
+and mobile navigation. It does not expose data or create customer accounts.
+
+## Privacy-safe diagnostics
+
+Authentication logs contain stage names, the callback hostname, and a bounded
+reason category only. They never contain email addresses, authorization codes,
+tokens, cookie values, magic-link URLs, or service credentials. Failure messages
+distinguish callback-host mismatch, missing PKCE verifier, expired/used link,
+unauthorized email, missing configuration, and missing session-cookie writes.

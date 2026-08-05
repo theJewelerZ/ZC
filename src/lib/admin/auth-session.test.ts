@@ -2,6 +2,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const state = vi.hoisted(() => ({ email: "founder@example.com", error: false }));
 
+vi.mock("@/lib/admin/auth-diagnostics", () => ({ logAdminAuthStage: vi.fn() }));
+
 vi.mock("@/lib/supabase/server", () => ({
   createSupabaseReadOnlyServerClient: async () => ({
     auth: {

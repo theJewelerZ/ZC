@@ -15,4 +15,12 @@ describe("private dashboard security boundary", () => {
     expect(actions).toContain("internal_notes");
     expect(actions).not.toContain(".delete()");
   });
+  it("keeps Preview magic links on the server-selected stable auth origin", () => {
+    const form = readFileSync("src/components/admin/login-form.tsx", "utf8");
+    const login = readFileSync("src/app/admin/login/page.tsx", "utf8");
+    expect(form).toContain("emailRedirectTo: callbackUrl");
+    expect(form).not.toContain("window.location.origin");
+    expect(login).toContain("getAdminAuthOrigin");
+    expect(login).toContain("/auth/callback");
+  });
 });

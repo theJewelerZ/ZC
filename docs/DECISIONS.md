@@ -317,3 +317,21 @@ Statuses:
   callback; unauthorized users and sign-out clear cookies on the response that
   actually reaches the browser. The generic Server Component client no longer
   silently catches mutation failures.
+
+## ADR-027 — Stable branch origin for Preview magic links
+
+- **Status:** Accepted
+- **Context:** Commit-specific Vercel Preview hostnames change after every
+  deployment. Supabase was substituting the production Site URL when asked to
+  redirect to the unallowlisted stable Preview callback, so the callback arrived
+  on a host that did not own the browser's PKCE verifier cookie.
+- **Decision:** Use the Vercel Git branch alias as the single Preview auth origin.
+  Redirect `/admin/login` from commit hosts to that alias before requesting a
+  link, pass its exact callback to Supabase, configure it through the
+  branch-scoped `ADMIN_AUTH_ORIGIN`, and require that exact callback in Supabase
+  Auth URL Configuration. Keep Production request-origin based. Add bounded,
+  stage-only diagnostics and one discreet public `Founder Login` utility link.
+- **Consequences:** Preview deployments may change without changing the auth
+  hostname. Callback failures become actionable without exposing credentials or
+  PII. The branch cannot merge or promote until the exact redirect is allowlisted
+  and the founder completes authentication and consultation review.

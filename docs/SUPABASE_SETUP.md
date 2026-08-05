@@ -66,3 +66,22 @@ short-lived and one-time.
 After callback, verify /admin loads, survives refresh, remains authenticated in
 a second tab, and returns to /admin/login after POST sign-out. Preview and
 production use host-only cookies; do not configure a shared cookie Domain.
+
+## Required stable Preview redirect
+
+Add this exact Additional Redirect URL in Supabase Auth > URL Configuration:
+
+`https://zarka-construction-git-phase-9e8031-matthews-projects-7e2a9d39.vercel.app/auth/callback`
+
+The production Site URL remains `https://www.zarkaconstruction.com`. Do not
+replace it with a Preview URL. As an alternative for future Preview branches,
+Supabase supports a Vercel wildcard such as
+`https://*-matthews-projects-7e2a9d39.vercel.app/**`, but the exact stable branch
+callback is preferred for this founder-only review.
+
+Verification must use a server-only `generateLink` check or a newly requested
+email. The returned redirect destination must equal the stable callback. If
+Supabase substitutes the production site root, the Preview callback is not
+allowlisted or the email template ignores `RedirectTo`. The Magic Link template
+must use `{{ .ConfirmationURL }}` (or a correctly constructed link based on
+`{{ .RedirectTo }}`), not a fixed `{{ .SiteURL }}` destination.

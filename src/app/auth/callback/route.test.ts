@@ -7,7 +7,9 @@ const state = vi.hoisted(() => ({
   allowed: true,
   exchangeError: false,
   userError: false,
+  writeSessionCookie: true,
   signOutCalls: 0,
+  expectedOrigin: null as string | null,
   requestCookieNames: [] as string[],
 }));
 
@@ -22,6 +24,12 @@ vi.mock("@/lib/admin/auth", () => ({
   isAllowedAdminEmail: () => state.allowed,
 }));
 
+vi.mock("@/lib/admin/auth-origin", () => ({
+  getAdminAuthOrigin: (requestOrigin: string) => state.expectedOrigin || requestOrigin,
+}));
+
+vi.mock("@/lib/admin/auth-diagnostics", () => ({ logAdminAuthStage: vi.fn() }));
+
 vi.mock("@supabase/ssr", () => ({
   createServerClient: (_url: string, _key: string, options: {
     cookies: {
@@ -34,11 +42,13 @@ vi.mock("@supabase/ssr", () => ({
       auth: {
         exchangeCodeForSession: async () => {
           if (state.exchangeError) return { error: new Error("invalid code") };
-          options.cookies.setAll([{
-            name: "sb-project-auth-token",
-            value: "stored-session",
-            options: { httpOnly: true, path: "/", sameSite: "lax", secure: true },
-          }]);
+          if (state.writeSessionCookie) {
+            options.cookies.setAll([{
+              name: "sb-project-auth-token",
+              value: "stored-session",
+              options: { httpOnly: true, path: "/", sameSite: "lax", secure: true },
+            }]);
+          }
           return { error: null };
         },
         getUser: async () => state.userError
@@ -60,9 +70,9 @@ vi.mock("@supabase/ssr", () => ({
 
 import { GET } from "@/app/auth/callback/route";
 
-function callbackRequest(origin: string, query = "?code=one-time-code") {
+function callbackRequest(origin: string, query = "?code=one-time-code", withVerifier = true) {
   return new NextRequest(`${origin}/auth/callback${query}`, {
-    headers: { cookie: "sb-project-code-verifier=verifier" },
+    headers: withVerifier ? { cookie: "sb-project-code-verifier=verifier" } : undefined,
   });
 }
 
@@ -73,7 +83,9 @@ describe("Supabase auth callback", () => {
     state.allowed = true;
     state.exchangeError = false;
     state.userError = false;
+    state.writeSessionCookie = true;
     state.signOutCalls = 0;
+    state.expectedOrigin = null;
     state.requestCookieNames = [];
   });
 
@@ -103,7 +115,17 @@ describe("Supabase auth callback", () => {
   it("rejects a callback without an authorization code", async () => {
     const response = await GET(callbackRequest("https://preview.example.vercel.app", ""));
     expect(response.headers.get("location")).toBe("https://preview.example.vercel.app/admin/login?error=missing-code");
-    expect(response.headers.get("set-cookie")).toBeNull();
+  });
+
+  it("distinguishes a mismatched Preview callback hostname", async () => {
+    state.expectedOrigin = "https://stable-branch.example.vercel.app";
+    const response = await GET(callbackRequest("https://old-deployment.example.vercel.app"));
+    expect(response.headers.get("location")).toBe("https://old-deployment.example.vercel.app/admin/login?error=callback-mismatch");
+  });
+
+  it("distinguishes a missing PKCE verifier cookie", async () => {
+    const response = await GET(callbackRequest("https://preview.example.vercel.app", "?code=one-time-code", false));
+    expect(response.headers.get("location")).toBe("https://preview.example.vercel.app/admin/login?error=pkce");
   });
 
   it("reports invalid or expired codes without exposing them", async () => {
@@ -111,8 +133,15 @@ describe("Supabase auth callback", () => {
     const response = await GET(callbackRequest("https://preview.example.vercel.app", "?code=secret-code"));
     const location = response.headers.get("location") || "";
 
-    expect(location).toBe("https://preview.example.vercel.app/admin/login?error=signin");
+    expect(location).toBe("https://preview.example.vercel.app/admin/login?error=expired");
     expect(location).not.toContain("secret-code");
+  });
+
+  it("reports a successful exchange that did not write a session cookie", async () => {
+    state.writeSessionCookie = false;
+    const response = await GET(callbackRequest("https://preview.example.vercel.app"));
+    expect(response.headers.get("location")).toBe("https://preview.example.vercel.app/admin/login?error=session-cookie");
+    expect(state.signOutCalls).toBe(1);
   });
 
   it("reports missing Supabase or allowlist configuration", async () => {

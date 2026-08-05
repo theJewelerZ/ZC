@@ -2,6 +2,7 @@ import "server-only";
 
 import { redirect } from "next/navigation";
 
+import { logAdminAuthStage } from "@/lib/admin/auth-diagnostics";
 import { createSupabaseReadOnlyServerClient } from "@/lib/supabase/server";
 
 export function getAdminAllowlist() {
@@ -14,9 +15,23 @@ export function isAllowedAdminEmail(email: string | null | undefined, configured
 
 export async function getAdminUser() {
   const client = await createSupabaseReadOnlyServerClient();
-  if (!client) return null;
+  if (!client) {
+    logAdminAuthStage("admin_guard_no_session", { reason: "configuration" });
+    return null;
+  }
+
   const { data, error } = await client.auth.getUser();
-  if (error || !data.user || !isAllowedAdminEmail(data.user.email)) return null;
+  if (error || !data.user) {
+    logAdminAuthStage("admin_guard_no_session", { reason: "session" });
+    return null;
+  }
+
+  if (!isAllowedAdminEmail(data.user.email)) {
+    logAdminAuthStage("allowlist_rejected", { reason: "unauthorized" });
+    return null;
+  }
+
+  logAdminAuthStage("admin_guard_authenticated");
   return data.user;
 }
 
