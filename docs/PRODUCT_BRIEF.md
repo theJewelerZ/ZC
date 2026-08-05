@@ -129,3 +129,15 @@ guarantee, design engagement, permit commitment, or construction agreement.
 - Equipment sales, professional design, permit authority, and licensed-trade boundaries are explicit.
 - A homeowner feels invited, a facility owner sees a relevant specialist, and a general contractor sees a credible defined-scope partner.
 - Contact, accessibility, performance, analytics, and canonical behavior remain healthy.
+
+
+## Phase 3 consultation operations
+
+Qualified prospects may now submit the existing simulator-specific information
+plus optional room context, approximate dimensions, and up to ten private room
+photographs. This supports a better initial conversation; it does not provide
+online feasibility, estimating, equipment selection, or project acceptance.
+
+The founder receives a private, authenticated review surface for durable
+inquiries, photo review, lead status, and internal notes. There are no customer
+accounts, proposals, scheduling, automations, or CRM expansion.

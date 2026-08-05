@@ -174,3 +174,14 @@ unconfirmed geography, or thin keyword variants.
 Precision Impact Screens has no metadata, structured-data, sitemap, analytics,
 link, or SEO role. CapProof and Bid Desk are not SEO topics. Preview deployments
 remain noindex until founder approval and production promotion.
+
+## Private consultation routes
+
+/admin and /auth are excluded in robots, carry noindex/noarchive metadata or
+headers, and never appear in the sitemap. API routes are also disallowed. Do not
+track consultation IDs, contact data, descriptions, dimensions, filenames,
+captions, photo content, status, or notes.
+
+contact_form_success now means the consultation was durably completed in
+Supabase. Notification acceptance is recorded operationally in the database and
+is not sent as a PII-bearing analytics event.

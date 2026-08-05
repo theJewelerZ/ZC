@@ -6,16 +6,14 @@ import { useEffect, useState } from "react";
 import { BrandMark } from "@/components/brand-mark";
 import { CloseIcon, MenuIcon } from "@/components/icons";
 import { TrackedLink } from "@/components/tracked-link";
-import { primaryNavigation } from "@/config/navigation";
+import { primaryNavigation, utilityNavigation } from "@/config/navigation";
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     function closeOnEscape(event: KeyboardEvent) {
-      if (event.key === "Escape") {
-        setIsOpen(false);
-      }
+      if (event.key === "Escape") setIsOpen(false);
     }
 
     window.addEventListener("keydown", closeOnEscape);
@@ -25,19 +23,13 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="site-container header-inner">
-        <Link
-          className="header-brand"
-          href="/"
-          onClick={() => setIsOpen(false)}
-        >
+        <Link className="header-brand" href="/" onClick={() => setIsOpen(false)}>
           <BrandMark surface="light" />
         </Link>
 
         <nav aria-label="Primary navigation" className="desktop-nav">
           {primaryNavigation.map((item) => (
-            <Link href={item.href} key={item.href}>
-              {item.label}
-            </Link>
+            <Link href={item.href} key={item.href}>{item.label}</Link>
           ))}
           <Link href="/contact">Contact</Link>
           <TrackedLink
@@ -59,6 +51,7 @@ export function SiteHeader() {
           type="button"
         >
           {isOpen ? <CloseIcon /> : <MenuIcon />}
+          <span>{isOpen ? "Close" : "Menu"}</span>
         </button>
       </div>
 
@@ -69,17 +62,11 @@ export function SiteHeader() {
       >
         <div className="site-container mobile-nav-inner">
           {primaryNavigation.map((item) => (
-            <Link
-              href={item.href}
-              key={item.href}
-              onClick={() => setIsOpen(false)}
-            >
+            <Link href={item.href} key={item.href} onClick={() => setIsOpen(false)}>
               {item.label}
             </Link>
           ))}
-          <Link href="/contact" onClick={() => setIsOpen(false)}>
-            Contact
-          </Link>
+          <Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link>
           <TrackedLink
             className="button button-primary"
             eventName="consultation_cta_click"
@@ -89,6 +76,13 @@ export function SiteHeader() {
           >
             Request a Consultation
           </TrackedLink>
+          <div className="mobile-nav-utility" aria-label="Utility navigation">
+            {utilityNavigation.map((item) => (
+              <Link href={item.href} key={item.href} onClick={() => setIsOpen(false)}>
+                {item.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </nav>
     </header>

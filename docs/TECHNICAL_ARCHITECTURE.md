@@ -291,3 +291,23 @@ Start with typed local content and optimized local images. Move to MDX or a CMS
 only when non-developers must publish regularly, approval workflow is clear,
 and migration value exceeds operational cost. Preserve stable project slugs and
 separate content data from layout components.
+
+
+## Accepted Phase 3 consultation architecture
+
+Supabase Postgres now provides durable consultation persistence and Supabase
+Storage holds optional private room photos. The browser never directly inserts
+or reads consultation rows. A server-only service client performs validated
+writes and founder-authorized reads; public/authenticated table privileges are
+revoked and RLS is forced.
+
+The public workflow is start, signed direct upload, finalize, then Resend
+notification. Finalization verifies expected object metadata and file signatures
+and calls a service-only transactional database function. Pending records expire
+after 24 hours and are removed with their objects by bounded cleanup.
+
+Supabase Auth magic links use SSR cookies. /admin requires a valid session plus
+the ADMIN_ALLOWED_EMAILS server allowlist before any query, mutation, or signed
+photo URL. Private routes are dynamic, no-store, and noindex. See
+CONSULTATION_BACKEND.md, DATA_MODEL.md, ADMIN_DASHBOARD.md, and
+SUPABASE_SETUP.md.

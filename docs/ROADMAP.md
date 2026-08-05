@@ -99,3 +99,24 @@ security decisions, and explicit founder approval.
 
 **Exit criteria:** Each addition solves a documented operational problem and has
 clear ownership, consent, security, observability, and rollback.
+
+## Phase 3A — Consultation System (active)
+
+**Objective:** Make qualified simulator inquiries durable and reviewable without
+building a CRM.
+
+**Scope:** Supabase system of record, private optional room photos, direct signed
+uploads, founder/customer email notifications, magic-link founder access,
+consultation list/detail, status, and private notes.
+
+**Exclusions:** Customer accounts, proposals, estimates, contracts, invoices,
+scheduling, SMS, automation, employee roles, analytics dashboards, project
+management, CapProof/Bid Desk sync, or pipeline boards.
+
+**Dependencies:** Supabase migration, Preview credentials, founder Auth user and
+allowlist, Auth callback URLs, private bucket/RLS verification, and protected
+preview acceptance.
+
+**Exit criteria:** No-photo and photo inquiries persist; notification failure
+does not lose data; anonymous/unauthorized access fails; signed images expire;
+founder status/notes work; privacy/security/quality gates pass.

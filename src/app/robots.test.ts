@@ -11,7 +11,7 @@ describe("robots", () => {
     vi.stubEnv("NEXT_PUBLIC_SEARCH_INDEXING_ENABLED", "true");
 
     expect(robots()).toMatchObject({
-      rules: { userAgent: "*", allow: "/" },
+      rules: { userAgent: "*", allow: "/", disallow: ["/admin", "/auth", "/api"] },
       sitemap: "https://www.zarkaconstruction.com/sitemap.xml",
       host: "https://www.zarkaconstruction.com",
     });

@@ -1,141 +1,92 @@
 # Progress
 
-**Current phase:** Phase 2 — final specialist-positioning review
+**Current phase:** Phase 3 — protected consultation-system authentication review
 
 **Canonical production URL:** <https://www.zarkaconstruction.com>
 
 **Repository:** <https://github.com/theJewelerZ/ZC>
 
-**Feature branch:** `phase-2/simulator-construction`
+**Feature branch:** phase-3/consultation-dashboard
 
-**Last updated:** August 4, 2026
+**Last updated:** August 5, 2026
 
 ## Production status
 
-The existing production release remains live and unchanged. This final trust and
-positioning pass has not been merged, promoted, or connected to production.
-DNS, nameservers, email records, GoDaddy products, and Vercel domain settings
-were not changed.
+Production remains on the prior approved release. This branch is not merged or
+promoted. DNS, nameservers, GoDaddy products, production email DNS, and the
+canonical Vercel domain were not changed.
 
-## Accepted positioning
+## Implemented
 
-Zarka Construction is positioned as a **Golf Simulator Construction Specialist
-focused on creating premium simulator environments while accurately
-representing its present capabilities**.
+- Durable Supabase consultation records, private direct photo uploads, Resend
+  notifications, Turnstile/rate limiting, and founder-only dashboard remain in
+  place without widening the CRM scope.
+- Response-bound PKCE callback and sign-out handlers preserve Supabase cookies.
+- Preview founder authentication now uses the stable Git branch hostname instead
+  of deployment-specific Preview hostnames.
+- Branch-scoped `ADMIN_AUTH_ORIGIN` is configured in Vercel Preview; Production
+  remains request-origin based.
+- Privacy-safe callback and admin-guard stages distinguish origin mismatch,
+  missing verifier, expired/used link, configuration, session-cookie, user, and
+  allowlist outcomes without logging PII, codes, tokens, URLs, or cookie values.
+- A discreet `Founder Login` link is present in the public footer and mobile
+  navigation. Responsive navigation now presents a visible Menu/Close label.
+- Login errors provide useful, bounded founder-facing recovery instructions.
 
-The website preserves the experience-led idea:
+## Root cause confirmed
 
-> We Build the Room Around the Game.
+A server-only Supabase `generateLink` diagnostic requested the stable Preview
+callback without sending or exposing a magic link. Supabase returned the
+Production site root instead of the requested callback. This confirms the stable
+Preview callback is not currently accepted by Auth URL Configuration, or the
+Magic Link template ignores `RedirectTo`. The resulting cross-host return cannot
+carry the Preview PKCE verifier cookie and causes the apparent login loop.
 
-It now defines Zarka's work through specific simulator-environment scope rather
-than broad room or facility claims. ADR-023 records this decision.
+Required exact Supabase Additional Redirect URL:
 
-## Present public scope
+`https://zarka-construction-git-phase-9e8031-matthews-projects-7e2a9d39.vercel.app/auth/callback`
 
-Depending on room review and written scope, work may include:
+## Verification
 
-- room evaluation and simulator construction planning;
-- simulator-room preparation and framing;
-- impact-screen structures and custom layered impact screens;
-- curtains and enclosure details;
-- wall and ceiling protection;
-- turf, stance areas, and hitting surfaces;
-- finish carpentry, trim, transitions, and detailing;
-- coordination with equipment providers or qualified trades when required.
+- ESLint passes.
+- TypeScript passes.
+- 67 Vitest tests across 21 files pass, including contact-flow regressions.
+- Callback coverage includes stable-origin selection, missing verifier, expired
+  code, session-cookie write, allowlist, host-only cookies, and open redirects.
+- Navigation coverage confirms the shared root header/footer, public routes, one
+  Founder Login utility destination, and visible responsive menu label.
+- Previous controlled Preview checks verified durable no-photo and photo
+  consultations, private Storage metadata, both notification acceptances, and
+  cleanup. Authenticated dashboard/photo review must be repeated after login.
 
-The site does not claim equipment sales, manufacturer or dealer relationships,
-architectural or engineering services, permit authority, complete facility
-construction, or responsibility outside the written scope.
+## Stable protected Preview
 
-## Trust refinements completed
+Branch URL:
+<https://zarka-construction-git-phase-9e8031-matthews-projects-7e2a9d39.vercel.app>
 
-- Replaced “Golf Simulator Room Builder” with “Golf Simulator Construction
-  Specialist” in public category, metadata, Open Graph, structured data, and documentation.
-- Replaced broad residential/commercial room cards with seven specific,
-  currently performed simulator-environment service categories.
-- Added careful commercial settings: teaching studios, commercial golf spaces,
-  entertainment venues, simulator businesses, country clubs, and training
-  environments.
-- Clarified that commercial references concern the simulator environment within
-  a facility, not construction of the complete facility.
-- Strengthened the differentiator to: “We Don't Simply Install Equipment. We
-  Prepare the Environment for Great Simulator Experiences.”
-- Rewrote the process around initial evaluation, defined scope, agreed specialty
-  work, and remaining responsibilities.
-- Rewrote About with a humble emphasis on experience, love of golf,
-  craftsmanship, listening, clear communication, and identifying outside scope.
-- Reframed Contact as a conversation about the space, not an equipment package
-  or quote.
-- Added direct Terms language for business scope, equipment, permits,
-  architectural or engineering work, licensed trades, commercial settings, and
-  no website-created warranty or agreement.
-- Documented every current photography placeholder by intended image, story,
-  construction state, residential/commercial relevance, and framing.
-- Added no route, layout, feature, animation, database, CMS, Supabase,
-  authentication, upload, store, estimator, or production change.
+Founder login:
+<https://zarka-construction-git-phase-9e8031-matthews-projects-7e2a9d39.vercel.app/admin/login>
 
-## Three-audience accuracy review
+Current verified code deployment: `dpl_4QCVexPcfuWT9znzXTY18hVdsJbi`.
+The stable alias updates on every branch push without changing its hostname.
 
-- **Homeowner:** sees a specialist who begins with the room, explains the work
-  that may be included, and invites a practical conversation without selling equipment.
-- **Golf facility owner:** sees relevant commercial simulator settings and
-  specialty capability without a claim to construct the entire facility.
-- **Licensed general contractor:** sees a defined simulator-environment scope,
-  written responsibilities, and explicit separation of permits, professional
-  design, equipment, and licensed trades.
+Live route checks returned 200 for `/`, `/simulator-construction`, `/contact`,
+`/privacy`, `/terms`, and `/admin/login`. The live shell contains the Founder
+Login link and responsive Menu label. A commit-host callback is rejected as a
+callback mismatch; the stable callback reports a missing verifier distinctly.
 
-All three audiences should leave with an accurate understanding of Zarka's
-present role.
+## Merge blockers
 
-## Verification completed
-
-- `npm run check`: pass
-  - ESLint: pass
-  - TypeScript: pass
-  - Vitest: 24 tests pass across 8 files
-  - Production build: pass; all 13 routes generated
-- HTTP 200 verified for `/`, `/simulator-construction`, simulator-preselected
-  `/contact`, `/privacy`, `/terms`, `/sitemap.xml`, and `/robots.txt`.
-- Public trust assertions pass for specialist category, present services,
-  custom layered impact screens, commercial settings, complete-facility
-  boundary, equipment boundary, permit boundary, professional-design boundary,
-  contact framing, canonical metadata, and prohibited-reference removal.
-- Responsive review completed at true 320px, 768px, 1024px, and 1440px.
-  Long specialist and scope language wraps without clipped CTAs or overflow.
-- Lighthouse:
-  - Homepage: Performance 99, Accessibility 100, Best Practices 100, SEO 100
-  - True 320px homepage: Performance 100, Accessibility 100, Best Practices 100, SEO 100
-  - Simulator page: Performance 100, Accessibility 100, Best Practices 100, SEO 100
-  - Contact page: Performance 100, Accessibility 100, Best Practices 100, SEO 100
-  - CLS: 0 on every audited route
-- Lighthouse can emit a Windows temporary-folder cleanup `EPERM` after writing
-  valid reports; the reports and scores above are complete.
-
-## Git and protected preview
-
-- Application commit: `a98c069` — Clarify simulator construction specialist scope
-- Documentation commit: `c3519f1` — Document accurate specialist positioning
-- Both commits are pushed to `origin/phase-2/simulator-construction`.
-- Protected preview deployment: `dpl_EgYXk2SUoKxanqJ98j5o2JDR6vok`
-- Preview URL:
-  <https://zarka-construction-qcl16xk68-matthews-projects-7e2a9d39.vercel.app>
-- Deployment target: preview; status: Ready.
-- Authenticated preview assertions pass for public category, current services,
-  commercial and legal boundaries, contact positioning, canonical metadata,
-  preview noindex, and removal of prohibited product references.
-
-## Remaining founder review
-
-- Approve or request changes to the final specialist positioning.
-- Confirm that every service listed reflects work presently offered.
-- Confirm the wording “custom layered impact screens.”
-- Confirm the intended commercial settings.
-- Approve founder-owned project photography and publication rights when real
-  project images become available.
-- Provide any future verified licensing, permit, insurance, equipment,
-  manufacturer, dealer, warranty, or service-area information before it is claimed.
+- Add and verify the exact stable callback in Supabase Auth URL Configuration.
+- Verify the Magic Link email template honors the requested redirect.
+- Founder completes newest-link login, refresh, second-tab, and sign-out checks.
+- Founder verifies dashboard list/detail, status/notes, and signed photo view.
+- Repeat one no-photo and one photo consultation on the final Preview and confirm
+  durable persistence plus founder/customer notifications.
+- Complete founder responsive review at 320, 375, 768, 1024, and 1440px.
 
 ## Immediate next action
 
-Founder review of the protected preview. Do not merge or promote to production
-until explicit founder approval is received.
+Deploy the current branch through the Vercel Git integration. Add the exact stable
+callback in Supabase, verify it is preserved, then complete the founder login and
+consultation workflow. Do not merge or promote until every merge blocker passes.

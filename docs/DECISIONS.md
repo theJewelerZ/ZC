@@ -275,3 +275,63 @@ Statuses:
 - **Decision:** Position Zarka Construction as a **Golf Simulator Construction Specialist focused on creating premium simulator environments while accurately representing its present capabilities**. Public scope may include room evaluation, simulator and construction planning, simulator-environment framing, impact-screen structures and custom layered screens, curtains, wall and ceiling protection, turf and hitting surfaces, finish carpentry, trim, finish detailing, room preparation, and coordination with qualified trades where required. Every project has a defined written scope. Do not imply equipment sales, manufacturer or dealer relationships, architectural or engineering services, permit authority, licensed-general-contractor status, complete commercial-facility construction, or responsibility outside that scope.
 - **Consequences:** Residential and commercial settings remain welcome, but commercial language describes simulator environments within facilities rather than complete facility construction. Confidence comes from specificity, careful planning, craftsmanship, honest boundaries, and professional communication.
 - **Reconsider when:** Founder-verified licenses, services, partnerships, or operating responsibilities materially change.
+
+
+## ADR-024 — Supabase consultation system of record
+
+- **Status:** Accepted
+- **Decision:** Persist validated simulator consultations in Supabase Postgres
+  and optional images in private Supabase Storage. Resend runs after persistence
+  and is notification only. Use pending 24-hour sessions, generated one-object
+  signed direct uploads, server verification, transactional finalization, and
+  bounded abandoned-session cleanup.
+- **Consequences:** Durable storage failure cannot report success. Email failure
+  preserves the consultation and is visible to the founder. Privacy disclosures
+  now include Supabase and private photographs.
+
+## ADR-025 — Founder magic-link access plus server allowlist
+
+- **Status:** Accepted
+- **Decision:** Use Supabase magic-link Auth for a pre-created founder user and
+  check ADMIN_ALLOWED_EMAILS server-side on every admin route and mutation.
+  Direct anon/authenticated table/storage privileges remain denied; a separate
+  server-only service client runs only after authorization.
+- **Consequences:** There is no registration or customer login. /admin is
+  dynamic, private, no-store, noindex, and intentionally limited to list,
+  detail, signed photos, status, and notes.
+
+## ADR-026 — Response-bound Supabase auth cookies
+
+- **Status:** Accepted
+- **Context:** The PKCE callback exchanged a valid magic-link code through a
+  generic Server Component cookie helper and then created a separate redirect.
+  Cookie-write failures were swallowed, so the redirect to `/admin` could arrive
+  without a server-readable session and immediately return to `/admin/login`.
+- **Decision:** Route Handlers that establish or clear authentication create one
+  redirect response and bind the `@supabase/ssr` cookie adapter directly to that
+  response. Preserve Supabase cookie options, use host-only cookies without a
+  hard-coded Domain, verify the user and server allowlist after exchange, and
+  expose only fixed, non-sensitive login error states.
+- **Consequences:** Preview and production authentication remain isolated by
+  hostname; `/admin` can read the session on the request immediately following
+  callback; unauthorized users and sign-out clear cookies on the response that
+  actually reaches the browser. The generic Server Component client no longer
+  silently catches mutation failures.
+
+## ADR-027 — Stable branch origin for Preview magic links
+
+- **Status:** Accepted
+- **Context:** Commit-specific Vercel Preview hostnames change after every
+  deployment. Supabase was substituting the production Site URL when asked to
+  redirect to the unallowlisted stable Preview callback, so the callback arrived
+  on a host that did not own the browser's PKCE verifier cookie.
+- **Decision:** Use the Vercel Git branch alias as the single Preview auth origin.
+  Redirect `/admin/login` from commit hosts to that alias before requesting a
+  link, pass its exact callback to Supabase, configure it through the
+  branch-scoped `ADMIN_AUTH_ORIGIN`, and require that exact callback in Supabase
+  Auth URL Configuration. Keep Production request-origin based. Add bounded,
+  stage-only diagnostics and one discreet public `Founder Login` utility link.
+- **Consequences:** Preview deployments may change without changing the auth
+  hostname. Callback failures become actionable without exposing credentials or
+  PII. The branch cannot merge or promote until the exact redirect is allowlisted
+  and the founder completes authentication and consultation review.

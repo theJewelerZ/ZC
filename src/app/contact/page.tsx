@@ -3,106 +3,36 @@ import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/contact-form";
 import { isServiceOptionValue } from "@/config/business";
 import { createPageMetadata } from "@/lib/metadata";
+import { getSupabasePublicConfig, isConsultationBackendConfigured } from "@/lib/supabase/config";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Request a Simulator Consultation",
-  description:
-    "Start a conversation about the space, intended use, and potential specialty-construction scope for a golf simulator environment.",
+  description: "Start a secure conversation about the space, intended use, and potential specialty-construction scope for a golf simulator environment.",
   path: "/contact",
 });
 
-type ContactPageProps = {
-  searchParams: Promise<{ service?: string | string[] }>;
-};
+type ContactPageProps = { searchParams: Promise<{ service?: string | string[] }> };
 
 export default async function ContactPage({ searchParams }: ContactPageProps) {
   const requestedService = (await searchParams).service;
-  const initialService =
-    typeof requestedService === "string" && isServiceOptionValue(requestedService)
-      ? requestedService
-      : "simulator-construction";
-  const deliveryEnabled = Boolean(
-    process.env.RESEND_API_KEY &&
-      process.env.CONTACT_RECIPIENT_EMAIL &&
-      process.env.CONTACT_FROM_EMAIL,
-  );
-  const turnstileSiteKey =
-    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY &&
-    process.env.TURNSTILE_SECRET_KEY
-      ? process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
-      : null;
+  const initialService = typeof requestedService === "string" && isServiceOptionValue(requestedService)
+    ? requestedService : "simulator-construction";
+  const deliveryEnabled = isConsultationBackendConfigured();
+  const supabaseConfig = deliveryEnabled ? getSupabasePublicConfig() : null;
+  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && process.env.TURNSTILE_SECRET_KEY
+    ? process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY : null;
 
-  if (!deliveryEnabled) {
-    console.warn(
-      JSON.stringify({
-        event: "contact_delivery_configuration_missing",
-        required: ["RESEND_API_KEY", "CONTACT_RECIPIENT_EMAIL", "CONTACT_FROM_EMAIL"],
-      }),
-    );
-  }
+  if (!deliveryEnabled) console.warn(JSON.stringify({
+    event: "consultation_backend_configuration_missing",
+    required: ["NEXT_PUBLIC_SUPABASE_URL", "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY", "SUPABASE_SERVICE_ROLE_KEY"],
+  }));
+  if (!turnstileSiteKey) console.warn(JSON.stringify({
+    event: "contact_turnstile_configuration_missing",
+    protection: "honeypot_timing_validation_and_best_effort_rate_limit",
+  }));
 
-  if (!turnstileSiteKey) {
-    console.warn(
-      JSON.stringify({
-        event: "contact_turnstile_configuration_missing",
-        protection: "honeypot_timing_validation_and_best_effort_rate_limit",
-      }),
-    );
-  }
-
-  return (
-    <main className="contact-page" id="main-content">
-      <section className="contact-hero">
-        <div className="site-container contact-hero-grid">
-          <div>
-            <p className="eyebrow">Request a simulator consultation</p>
-            <h1>Every project begins with understanding the space.</h1>
-          </div>
-          <p>
-            Tell us how the simulator environment will be used, who will play,
-            what conditions already exist, and what equipment is being
-            considered. The purpose is to begin a practical conversation—not to
-            sell a package or quote equipment.
-          </p>
-        </div>
-      </section>
-
-      <section className="section contact-form-section" id="review-options">
-        <div className="site-container contact-layout">
-          <aside className="contact-aside">
-            <p className="contact-aside-number">01 / INITIAL ROOM REVIEW</p>
-            <h2>Two ways a conversation can begin</h2>
-            <div className="contact-review-option">
-              <h3>On-site consultation</h3>
-              <p>
-                When location and potential scope make a visit appropriate,
-                Zarka can review existing conditions, intended use, constraints,
-                and the simulator-environment work being considered.
-              </p>
-            </div>
-            <div className="contact-review-option">
-              <h3>Guided remote room review</h3>
-              <p>
-                A remote review can begin with guided measurements, photographs,
-                intended players, and known equipment information shared during
-                follow-up. It is an initial evaluation, not a final feasibility
-                or construction commitment.
-              </p>
-            </div>
-            <p id="contact-disabled-context">
-              Do not include payment information, account credentials, or other
-              highly sensitive information.
-            </p>
-          </aside>
-          <div>
-            <ContactForm
-              deliveryEnabled={deliveryEnabled}
-              initialService={initialService}
-              turnstileSiteKey={turnstileSiteKey}
-            />
-          </div>
-        </div>
-      </section>
-    </main>
-  );
+  return <main className="contact-page" id="main-content">
+    <section className="contact-hero"><div className="site-container contact-hero-grid"><div><p className="eyebrow">Request a simulator consultation</p><h1>Every project begins with understanding the space.</h1></div><p>Tell us how the simulator environment will be used, who will play, what conditions already exist, and what equipment is being considered. The purpose is to begin a practical conversation—not to sell a package or quote equipment.</p></div></section>
+    <section className="section contact-form-section" id="review-options"><div className="site-container contact-layout"><aside className="contact-aside"><p className="contact-aside-number">01 / INITIAL ROOM REVIEW</p><h2>Two ways a conversation can begin</h2><div className="contact-review-option"><h3>On-site consultation</h3><p>When location and potential scope make a visit appropriate, Zarka can review existing conditions, intended use, constraints, and the simulator-environment work being considered.</p></div><div className="contact-review-option"><h3>Guided remote room review</h3><p>A remote review can begin with guided measurements, optional room photographs, intended players, and known equipment information. It is an initial evaluation, not a final feasibility or construction commitment.</p></div><p id="contact-disabled-context">Do not include payment information, account credentials, private documents, or photographs of people without permission.</p></aside><div><ContactForm deliveryEnabled={deliveryEnabled} initialService={initialService} supabaseConfig={supabaseConfig} turnstileSiteKey={turnstileSiteKey} /></div></div></section>
+  </main>;
 }

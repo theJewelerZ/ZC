@@ -10,3 +10,7 @@ export const legalNavigation = [
   { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
 ] as const;
+
+export const utilityNavigation = [
+  { label: "Founder Login", href: "/admin/login" },
+] as const;

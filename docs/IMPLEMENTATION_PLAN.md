@@ -216,3 +216,22 @@ mail send/receive, form delivery, and at least one post-propagation recheck.
 - Contact: disable the form CTA or show an approved confirmed email only if
   delivery cannot be restored; never claim receipt.
 - GoDaddy subscription: do not cancel it until rollback is no longer needed.
+
+
+## Phase 3 — Narrow consultation operations
+
+1. Version and dry-run the additive consultation schema, forced RLS, least
+   privileges, transaction function, and private bucket.
+2. Preserve public form validation/Turnstile/rate limiting, then create pending
+   durable rows only after those checks.
+3. Issue generated-path, one-object signed uploads; verify stored objects and
+   signatures before atomic finalization.
+4. Attempt founder/customer Resend messages only after storage; persist partial
+   and failed notification results.
+5. Protect /admin with Supabase Auth plus server email allowlist; implement only
+   list, search/filter, detail, signed photos, status, and private notes.
+6. Update privacy, environment/setup documentation, tests, and protected-preview
+   verification. Do not merge or promote without founder approval.
+
+Rollback keeps Production on its prior Vercel deployment and preserves stored
+consultations; no automatic schema/bucket destruction is allowed.

@@ -80,3 +80,15 @@ work, decisions, blockers, immediate next action, and next prompt.
 - Never cancel a GoDaddy product without explicit authorization. The unwanted
   website product can be canceled only after the complete production success
   gate; retain domain registration, DNS, and active email services.
+
+
+## Phase 3 consultation boundaries
+
+Supabase consultation persistence, private optional room-photo uploads, and the
+founder-only /admin review surface are explicitly approved on
+phase-3/consultation-dashboard. Supabase is the system of record; Resend is a
+notification channel. Do not expand this into a CRM, customer account, portal,
+estimate, proposal, invoice, scheduler, employee-role system, or cross-product
+integration. Keep all consultation reads and mutations server-authorized, keep
+the service credential out of browser/SSR clients, preserve forced RLS/private
+Storage, and never place PII in analytics or routine logs.
