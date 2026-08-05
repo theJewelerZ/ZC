@@ -247,3 +247,25 @@ an approved private location, not the public repository.
 - [ ] Merge and promote only after explicit approval.
 - [x] Leave `main`, production, DNS, nameservers, and GoDaddy products unchanged
   during preview work.
+
+## Phase 3 protected-preview gate
+
+- [x] Create and dry-run additive migration.
+- [x] Verify remote public schema has no name collisions.
+- [x] Apply migration and confirm matching local/remote history.
+- [x] Confirm consultation tables were created empty.
+- [x] Version forced RLS, revoked browser table access, and private bucket.
+- [x] Implement pending/direct-upload/finalize/cancel flow.
+- [x] Implement post-persistence founder and customer notifications.
+- [x] Implement founder-only authenticated list/detail/status/notes.
+- [x] Exclude /admin, /auth, and /api from indexing.
+- [ ] Configure ADMIN_ALLOWED_EMAILS for branch Preview.
+- [ ] Create/invite matching Supabase Auth founder user.
+- [ ] Add protected Preview Auth callback URL.
+- [ ] Verify bucket restrictions and anonymous/authenticated denial behavior.
+- [ ] Submit a no-photo Preview inquiry and verify both emails/database.
+- [ ] Submit a photo Preview inquiry and verify private Storage/metadata.
+- [ ] Verify unauthorized authenticated and anonymous dashboard denial.
+- [ ] Verify five-minute signed image access and refresh behavior.
+- [ ] Run responsive/accessibility/Lighthouse review on protected Preview.
+- [ ] Obtain founder approval before merge or production promotion.

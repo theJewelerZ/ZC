@@ -39,3 +39,18 @@
 - No CMS, Supabase, database, authentication, portal, dashboard, uploads,
   configurator, estimator, store, catalog, or equipment sales without explicit
   future approval.
+
+## Phase 3 launch-blocking founder inputs
+
+- **Launch blocking:** Exact founder email(s) for ADMIN_ALLOWED_EMAILS.
+- **Launch blocking:** Create/invite the matching Supabase Auth user.
+- **Launch blocking:** Add the protected preview /auth/callback URL in Supabase.
+- **Launch blocking:** Confirm Preview Turnstile behavior/domain or accept the
+  documented protected-preview fallback for review.
+- **Launch blocking:** Complete real no-photo and photo submissions and verify
+  founder/customer inbox delivery and dashboard visibility.
+- **Temporary placeholder acceptable:** No fixed completed-inquiry deletion
+  schedule; use the documented business/legal-need retention statement pending
+  formal legal review.
+- **Post-launch:** Scheduled cleanup may replace submission-triggered bounded
+  cleanup if traffic is insufficient. This is not a CRM or automation backlog.

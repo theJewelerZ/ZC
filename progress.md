@@ -1,141 +1,72 @@
 # Progress
 
-**Current phase:** Phase 2 — final specialist-positioning review
+**Current phase:** Phase 3 — consultation system implementation
 
 **Canonical production URL:** <https://www.zarkaconstruction.com>
 
 **Repository:** <https://github.com/theJewelerZ/ZC>
 
-**Feature branch:** `phase-2/simulator-construction`
+**Feature branch:** phase-3/consultation-dashboard
 
-**Last updated:** August 4, 2026
+**Last updated:** August 5, 2026
 
 ## Production status
 
-The existing production release remains live and unchanged. This final trust and
-positioning pass has not been merged, promoted, or connected to production.
-DNS, nameservers, email records, GoDaddy products, and Vercel domain settings
-were not changed.
+Production remains on the prior approved release. This branch has not been
+merged or promoted. DNS, nameservers, GoDaddy products, production email DNS,
+and the canonical Vercel domain were not changed.
 
-## Accepted positioning
+## Completed
 
-Zarka Construction is positioned as a **Golf Simulator Construction Specialist
-focused on creating premium simulator environments while accurately
-representing its present capabilities**.
+- Updated local main to origin/main at 4a5a1ef and created the feature branch.
+- Added official Supabase SSR/browser/server clients with strict secret
+  separation.
+- Created and applied additive migration 20260805000100 to the confirmed Zarka
+  Construction project.
+- Created consultations and consultation_photos with constraints, indexes,
+  updated_at trigger, forced RLS, revoked browser privileges, transactional
+  finalization, and private consultation-photos bucket.
+- Replaced the public form flow with pending durable records, direct one-object
+  signed uploads, stored-object/signature checks, atomic finalization, and
+  cancellation/expiration cleanup.
+- Added optional JPEG/PNG/WebP room photos: 10 files, 15 MiB each, 75 MiB total,
+  thumbnails, captions, remove controls, progress states, errors, and retry.
+- Added Resend founder notification and customer confirmation after persistence.
+  Partial/failed notification state remains visible without losing the lead.
+- Added Supabase magic-link Auth, no public registration, server email allowlist,
+  private /admin list/detail, short-lived signed images, status, and notes.
+- Updated privacy, robots, CSP, no-store/noindex behavior, environment template,
+  and backend/admin/data/retention/setup documentation.
+- TypeScript and production build pass. Vitest: 47 tests pass across 16 files.
+- Remote migration history and table creation verified. Both new tables are
+  empty pending preview testing.
 
-The website preserves the experience-led idea:
+## Security decisions
 
-> We Build the Room Around the Game.
+- Supabase is the consultation system of record; Resend is notification only.
+- Direct anonymous table and storage access is denied.
+- Public writes use server validation and a server-only service credential.
+- Founder access requires both a valid Supabase session and
+  ADMIN_ALLOWED_EMAILS membership on every page and mutation.
+- Private photos use generated paths, one-object signed uploads, and five-minute
+  signed dashboard reads.
+- No consultation PII is sent to analytics or routine logs.
 
-It now defines Zarka's work through specific simulator-environment scope rather
-than broad room or facility claims. ADR-023 records this decision.
+## Current blockers
 
-## Present public scope
-
-Depending on room review and written scope, work may include:
-
-- room evaluation and simulator construction planning;
-- simulator-room preparation and framing;
-- impact-screen structures and custom layered impact screens;
-- curtains and enclosure details;
-- wall and ceiling protection;
-- turf, stance areas, and hitting surfaces;
-- finish carpentry, trim, transitions, and detailing;
-- coordination with equipment providers or qualified trades when required.
-
-The site does not claim equipment sales, manufacturer or dealer relationships,
-architectural or engineering services, permit authority, complete facility
-construction, or responsibility outside the written scope.
-
-## Trust refinements completed
-
-- Replaced “Golf Simulator Room Builder” with “Golf Simulator Construction
-  Specialist” in public category, metadata, Open Graph, structured data, and documentation.
-- Replaced broad residential/commercial room cards with seven specific,
-  currently performed simulator-environment service categories.
-- Added careful commercial settings: teaching studios, commercial golf spaces,
-  entertainment venues, simulator businesses, country clubs, and training
-  environments.
-- Clarified that commercial references concern the simulator environment within
-  a facility, not construction of the complete facility.
-- Strengthened the differentiator to: “We Don't Simply Install Equipment. We
-  Prepare the Environment for Great Simulator Experiences.”
-- Rewrote the process around initial evaluation, defined scope, agreed specialty
-  work, and remaining responsibilities.
-- Rewrote About with a humble emphasis on experience, love of golf,
-  craftsmanship, listening, clear communication, and identifying outside scope.
-- Reframed Contact as a conversation about the space, not an equipment package
-  or quote.
-- Added direct Terms language for business scope, equipment, permits,
-  architectural or engineering work, licensed trades, commercial settings, and
-  no website-created warranty or agreement.
-- Documented every current photography placeholder by intended image, story,
-  construction state, residential/commercial relevance, and framing.
-- Added no route, layout, feature, animation, database, CMS, Supabase,
-  authentication, upload, store, estimator, or production change.
-
-## Three-audience accuracy review
-
-- **Homeowner:** sees a specialist who begins with the room, explains the work
-  that may be included, and invites a practical conversation without selling equipment.
-- **Golf facility owner:** sees relevant commercial simulator settings and
-  specialty capability without a claim to construct the entire facility.
-- **Licensed general contractor:** sees a defined simulator-environment scope,
-  written responsibilities, and explicit separation of permits, professional
-  design, equipment, and licensed trades.
-
-All three audiences should leave with an accurate understanding of Zarka's
-present role.
-
-## Verification completed
-
-- `npm run check`: pass
-  - ESLint: pass
-  - TypeScript: pass
-  - Vitest: 24 tests pass across 8 files
-  - Production build: pass; all 13 routes generated
-- HTTP 200 verified for `/`, `/simulator-construction`, simulator-preselected
-  `/contact`, `/privacy`, `/terms`, `/sitemap.xml`, and `/robots.txt`.
-- Public trust assertions pass for specialist category, present services,
-  custom layered impact screens, commercial settings, complete-facility
-  boundary, equipment boundary, permit boundary, professional-design boundary,
-  contact framing, canonical metadata, and prohibited-reference removal.
-- Responsive review completed at true 320px, 768px, 1024px, and 1440px.
-  Long specialist and scope language wraps without clipped CTAs or overflow.
-- Lighthouse:
-  - Homepage: Performance 99, Accessibility 100, Best Practices 100, SEO 100
-  - True 320px homepage: Performance 100, Accessibility 100, Best Practices 100, SEO 100
-  - Simulator page: Performance 100, Accessibility 100, Best Practices 100, SEO 100
-  - Contact page: Performance 100, Accessibility 100, Best Practices 100, SEO 100
-  - CLS: 0 on every audited route
-- Lighthouse can emit a Windows temporary-folder cleanup `EPERM` after writing
-  valid reports; the reports and scores above are complete.
-
-## Git and protected preview
-
-- Application commit: `a98c069` — Clarify simulator construction specialist scope
-- Documentation commit: `c3519f1` — Document accurate specialist positioning
-- Both commits are pushed to `origin/phase-2/simulator-construction`.
-- Protected preview deployment: `dpl_EgYXk2SUoKxanqJ98j5o2JDR6vok`
-- Preview URL:
-  <https://zarka-construction-qcl16xk68-matthews-projects-7e2a9d39.vercel.app>
-- Deployment target: preview; status: Ready.
-- Authenticated preview assertions pass for public category, current services,
-  commercial and legal boundaries, contact positioning, canonical metadata,
-  preview noindex, and removal of prohibited product references.
-
-## Remaining founder review
-
-- Approve or request changes to the final specialist positioning.
-- Confirm that every service listed reflects work presently offered.
-- Confirm the wording “custom layered impact screens.”
-- Confirm the intended commercial settings.
-- Approve founder-owned project photography and publication rights when real
-  project images become available.
-- Provide any future verified licensing, permit, insurance, equipment,
-  manufacturer, dealer, warranty, or service-area information before it is claimed.
+- Founder must supply the exact ADMIN_ALLOWED_EMAILS value.
+- The same email must exist as a Supabase Auth user.
+- Supabase Auth redirect URL must include the final protected preview callback.
+- Branch-specific Vercel Preview variables can be added after this branch is
+  pushed; the first attempt correctly failed because the branch did not yet
+  exist remotely.
+- A real no-photo/photo submission and both email deliveries require the
+  configured preview and founder Auth setup.
+- Lighthouse and responsive browser review remain to be completed on the
+  protected preview.
 
 ## Immediate next action
 
-Founder review of the protected preview. Do not merge or promote to production
-until explicit founder approval is received.
+Complete documentation/quality checks, commit and push this branch, configure
+branch-scoped Preview variables without exposing values, deploy a protected
+preview, then perform authenticated founder review. Do not merge or promote.

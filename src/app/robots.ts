@@ -1,17 +1,13 @@
 import type { MetadataRoute } from "next";
-
 import { businessConfig } from "@/config/business";
 
 export default function robots(): MetadataRoute.Robots {
-  const indexingEnabled =
-    process.env.NEXT_PUBLIC_SEARCH_INDEXING_ENABLED === "true";
-
+  const indexingEnabled = process.env.NEXT_PUBLIC_SEARCH_INDEXING_ENABLED === "true";
   return {
     rules: indexingEnabled
-      ? { userAgent: "*", allow: "/" }
+      ? { userAgent: "*", allow: "/", disallow: ["/admin", "/auth", "/api"] }
       : { userAgent: "*", disallow: "/" },
     sitemap: `${businessConfig.canonicalUrl}/sitemap.xml`,
     host: businessConfig.canonicalUrl,
   };
 }
-
