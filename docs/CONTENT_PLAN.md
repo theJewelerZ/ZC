@@ -1,43 +1,65 @@
 # Content Plan
 
+## Editorial principle
+
+**Protected philosophy:** We don't build golf simulators. We build the spaces
+where great golf happens.
+
+This is the editorial test for every public sentence. Golf and the experience of
+the room lead. Construction and technology explain how Zarka makes that
+experience possible.
+
 ## Voice
 
-Expert, direct, practical, and room-specific. Explain the physical relationships
-that make simulator construction different. Avoid handyman language, generic
-contractor slogans, equipment-shopping language, startup hype, and unsupported
-superlatives.
+Experienced, confident, premium, intentional, understated, and human. Help the
+visitor imagine practicing, playing, gathering, and enjoying the room before
+introducing technical constraints.
 
-Use **simulator room builder** as the primary category. Use “installation” only
-for a specific installation task, not as the company's main identity.
+Use **Golf Simulator Room Builder** as the category. Use “installation” only for
+a specific task. Avoid contractor-brochure language, checklist-led sections,
+equipment-shopping language, hype, and unsupported superlatives.
 
-## Homepage narrative ratio
+## Homepage narrative
 
-- Approximately 80% simulator-room planning and construction
-- Approximately 15% construction credibility
-- Approximately 5% supporting project systems
+### Hero
 
-## Hero
+- **Eyebrow:** Golf Simulator Room Builder
+- **Headline:** We Build the Room Around the Game.
+- **Support:** Every great simulator begins with a room designed to play beautifully.
+- **Positioning:** Zarka plans and builds custom simulator environments where
+  craftsmanship, construction, and technology become one seamless experience.
+- **Primary CTA:** Request a Simulator Consultation
+- **Secondary CTA:** See What We Build
 
-**Eyebrow:** Golf Simulator Room Builder
+### It's more than a simulator
 
-**Headline:** We Build the Room Around the Technology.
+Help visitors imagine:
 
-**Support:** Custom indoor golf simulator rooms designed around your space, your
-equipment, and the way you play.
+- focused practice on their schedule;
+- a round after dinner;
+- time with family and friends;
+- a setting for clients;
+- improvement and enjoyment throughout the year.
 
-**Credibility line:** From room feasibility and framing to impact protection,
-finish work, turf, lighting, and installation coordination, Zarka Construction
-delivers the complete build environment.
+Keep these possibilities elegant rather than promotional. Place the protected
+philosophy prominently in this section.
 
-**Primary CTA:** Plan Your Simulator Room
+### Why every great room starts with good planning
 
-**Secondary CTA:** How Room Planning Works
+Lead with benefits:
 
-## Homepage sections
+- swing freely with confidence;
+- see an image that feels natural;
+- stay focused on the shot;
+- move comfortably through the room;
+- enjoy a finished environment.
 
-### Custom simulator solutions
+Use player position, dimensions, screen relationships, projection, protection,
+turf, lighting, and access as supporting explanations.
 
-Organize around customer outcomes rather than construction trades:
+### What we build
+
+Organize complete simulator solutions around customer outcomes:
 
 - Residential Simulator Rooms
 - Commercial Simulator Bays
@@ -47,102 +69,94 @@ Organize around customer outcomes rather than construction trades:
 - Room Planning
 - Construction Coordination
 
-Explain that exact equipment and licensed-trade responsibilities are confirmed
-per project.
+Do not organize the primary offer as a list of trades. Confirm equipment,
+licensed-trade, and scope boundaries per room.
 
-### Room feasibility and planning
+### How we build it
 
-Core message: the screen cannot be selected independently from the room.
-Explain the dependency chain among:
+Strong differentiator heading:
 
-- finished width, depth, and ceiling height;
-- player handedness, position, and swing envelope;
-- screen size, aspect ratio, setback, and enclosure depth;
-- projector throw path and obstructions;
-- wall, ceiling, opening, and ricochet protection;
-- turf, hitting surface, stance area, and floor transitions;
-- lighting, power, data, ventilation, and service access.
+> We Don't Install Golf Simulators. We Build Golf Simulator Rooms.
 
-Construction must be considered before technology positions and finish details
-are locked.
+Explain that equipment can be assembled, but a room must be understood. The
+environment is planned around how people swing, see, move, gather, and play.
+Construction supports the experience. Technology fits into the room—not the
+other way around.
 
-### Planning process
+Process:
 
-1. Understand the room.
-2. Coordinate the system.
-3. Build and finish the approved scope.
-4. Review the completed environment.
+1. Understand how the customer wants to play.
+2. Plan the room around the game.
+3. Build the approved scope with purpose.
+4. Prepare and review the space for play.
 
-Present two entry paths:
+Present on-site and guided remote review paths without promising availability,
+geography, or response time. Remote follow-up uses measurements and photographs;
+the website does not accept uploads.
 
-- **On-site consultation:** in-person documentation of the room when location
-  and scope make it appropriate.
-- **Guided remote room review:** guided measurements, photographs, intended
-  users, and known equipment information shared during follow-up.
+### Real work
 
-The website does not accept uploads. Do not promise a response time or that
-either review method is available in every geography.
+Use founder-owned photography only. No AI images, stock scenes, staged rooms,
+fake projects, or work published before it begins and permission is approved.
+Until photography exists, retain the restrained configured media states and
+describe the journey from idea to craft to finished play without development
+language in the public UI.
 
-### Projects
+### Construction experience behind every simulator room
 
-Use founder-owned photographs only. Do not use AI images, stock photography,
-staged scenes, fake projects, or the secured upcoming project before actual
-construction begins. Until approved imagery exists, use the configuration-led
-architectural schematic slots and truthful process descriptions.
+Construction experience is proof, not a competing offer. Explain how hands-on
+field work leads to:
 
-Each future project requires approved publication rights, title, broad location
-if publishable, room constraints, Zarka scope, coordinated work boundaries,
-photography, alt text, and founder approval.
+- a room planned for golf;
+- craft that can be felt without distracting from play;
+- organized scopes and clear responsibilities;
+- professional documentation and communication.
 
-### Construction credibility
-
-Use construction, finish carpentry, renovation, painting, commercial
-maintenance, and project-support experience only to explain why Zarka can plan
-and execute simulator rooms. Do not turn these into equal primary service
-funnels.
-
-### Supporting systems
-
-CapProof may appear once as part of the professional field-documentation
-process. Do not create a card or external product CTA. Bid Desk must not be named
-publicly; its value appears through organized scopes, estimating, and documented
-assumptions.
-
-Precision Impact Screens must not appear publicly in copy, links, navigation,
-footer, cards, metadata, structured data, sitemap, analytics, or SEO content.
+CapProof may appear once in process context. Bid Desk is not named publicly.
+Precision Impact Screens never appears publicly.
 
 ### About
 
 Approved direction:
 
-> Zarka Construction plans and builds custom indoor golf simulator rooms for
-> residential and commercial spaces. Hands-on construction, carpentry,
-> specialty installation, renovation, painting, and project-support experience
-> informs how each room is planned, scoped, documented, and finished.
+> After decades of building and renovating spaces, the founder came to see
+> simulator projects differently: the equipment is only part of what makes the
+> room worth returning to.
 
-Do not add founder name, dates, counts, licensing, insurance, certifications, or
-project claims until approved.
+Follow with Zarka's focus on creating an environment for practice, play,
+gathering, and enjoyment over time. Do not add a founder name, dates, project
+counts, credentials, service geography, or other unverified facts.
 
-### Contact CTA
+### Contact
 
-**Heading:** Every simulator room needs to be evaluated before it is built.
+Lead with the room the prospect wants to create, then the room review needed to
+make it practical.
 
-**Action:** Start Your Room Review
+- **Heading:** Tell us about the room you want to create.
+- **Final homepage heading:** Start with the golf experience you want to create.
+- **Action:** Request a Simulator Consultation.
 
-Ask for project type, review preference, general location, timing, room and
+Keep project type, review preference, general location, timing, room context,
 known equipment context, and optional phone/referral source. Do not add uploads,
 budget tools, scheduling, payments, or automated estimates.
 
 ## Dedicated simulator page
 
-`/simulator-construction` remains the detailed canonical service route. Preserve
-its room-system structure while leading with “Golf Simulator Room Builder.”
-Cover feasibility, construction, impact environments, protection, turf,
-projection, lighting, process, consultation choices, FAQ, and final CTA.
+The detailed route keeps technical depth but reframes each section around the
+golfer's result:
 
-Do not imply that Zarka manufactures or sells every technology component.
-Equipment selection, purchasing, manufacturer requirements, and licensed trades
-remain separately confirmed unless included in a written scope.
+- a better golf experience starts with the room;
+- plan for a confident, comfortable swing;
+- build a room that feels intentional;
+- make every shot feel natural;
+- integrate protection into the room;
+- connect the playing surface;
+- make technology recede into the plan;
+- move from an idea to a room ready for golf.
+
+Repeat the protected philosophy once. Preserve equipment-purchasing and
+licensed-trade boundaries. Do not imply manufacturing, dealer status,
+certification, warranty coverage, or equipment partnerships.
 
 ## Prohibited claims
 

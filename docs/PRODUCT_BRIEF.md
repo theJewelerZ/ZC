@@ -2,13 +2,12 @@
 
 ## Strategic direction
 
-Zarka Construction is a **Golf Simulator Room Builder**. The company plans and
-builds custom indoor golf simulator rooms for residential and commercial spaces.
-The website must represent the business Zarka intends to build, not distribute
-attention evenly across every construction capability the company possesses.
+Zarka Construction is a **Golf Simulator Room Builder**. The website sells the
+experience created by a professionally planned and built simulator room—not a
+list of construction tasks or technology components.
 
-A visitor should leave the homepage with one clear belief: Zarka Construction
-specializes in building golf simulator rooms as complete environments.
+A visitor should leave with one clear belief: Zarka understands how to create a
+room where golf feels natural, inviting, and worth returning to.
 
 ## Positioning
 
@@ -17,115 +16,125 @@ specializes in building golf simulator rooms as complete environments.
 **Positioning sentence:** Zarka Construction plans and builds custom indoor golf
 simulator rooms for residential and commercial spaces.
 
+**Protected philosophy:** We don't build golf simulators. We build the spaces
+where great golf happens.
+
+**Hero idea:** We Build the Room Around the Game.
+
 **Brand statement:** Built with precision. Delivered with integrity.
 
-**Core idea:** The room must be planned around the player, screen, enclosure,
-technology, protection, playing surface, access, and finished environment.
-Equipment cannot be planned independently from room geometry and construction.
+Golf is the story. Construction, craftsmanship, planning, and coordination are
+the evidence behind the result. Technology belongs within the room plan; Zarka
+does not present itself as an equipment seller, dealer, or manufacturer.
+
+## Customer value
+
+Prospects are creating:
+
+- a place to practice on their schedule;
+- a room that makes improvement easier to pursue;
+- a place to play after dinner or throughout the year;
+- a setting for family, friends, or clients;
+- a finished environment they can enjoy for years.
+
+Room dimensions, player clearances, protection, projection, turf, lighting, and
+access remain essential. Public copy explains why they matter to the experience
+before describing how they are built.
 
 ## Public business hierarchy
 
-1. **Primary:** Custom simulator rooms, feasibility, planning, construction,
-   impact environments, finish integration, and coordination.
-2. **Secondary:** Construction, finish carpentry, painting, renovation,
-   commercial maintenance, and general field experience as credibility for the
-   simulator work.
-3. **Supporting systems:** Professional documentation, organized estimating,
-   clear scopes, and documented assumptions. CapProof may be named only as part
-   of the documentation process. Bid Desk is not named publicly.
+1. **Primary:** Custom residential and commercial golf simulator rooms and the
+   experience they create.
+2. **Supporting expertise:** Room planning, feasibility, construction, finish
+   integration, impact environments, and coordination.
+3. **Credibility:** Construction, finish carpentry, renovation, painting,
+   commercial maintenance, organized scopes, and field documentation.
 
-Precision Impact Screens is excluded from every public surface. There are no
-product cards, external-product links, catalogs, or ecosystem narrative.
+CapProof may be named once as part of the documentation process. Bid Desk is not
+named publicly. Precision Impact Screens is excluded from every public surface.
 
 ## Target audiences
 
-| Audience | Need | Website response |
+| Audience | Desired experience | Website response |
 | --- | --- | --- |
-| Residential simulator prospects | Know whether an existing or planned room can work | Explain dimensions, player clearances, room review, construction, and finish integration |
-| Commercial simulator operators | Understand bay construction and coordination | Explain durable impact environments, circulation, access, repeat use, and trade coordination without unsupported capacity claims |
-| Homeowners planning a conversion | Understand what must happen before equipment is selected | Lead with room feasibility, geometry, and construction constraints |
-| Architects, contractors, and technology providers | Understand Zarka's role | Define room-construction and specialty-integration responsibility without implying equipment manufacturing or universal trade coverage |
-| Referrals and business contacts | Validate category, credibility, and next step quickly | Clear simulator-room-builder positioning, construction experience, and direct consultation path |
+| Residential prospects | Practice, play, and gather at home | Help them imagine the room, then explain the review and planning needed |
+| Commercial prospects | Create a compelling, durable place for people to play | Lead with the guest experience while defining coordination boundaries |
+| Room-conversion prospects | Turn existing space into somewhere worth using | Explain feasibility through comfort, swing confidence, and room integration |
+| Architects, contractors, and technology providers | Understand Zarka's role | Define Zarka as the room builder without implying equipment manufacturing |
+| Referrals and business contacts | Validate expertise and next step | Clear category, honest proof, and direct consultation path |
 
 ## Visitor needs
 
-- Understand immediately that Zarka builds custom golf simulator rooms.
-- Learn why every room requires evaluation.
-- Understand the difference between an on-site consultation and guided remote
-  room review.
-- See the scope of room planning and construction without reading an equipment
-  catalog.
-- Know that remote reviews require measurements and photographs shared during
-  follow-up; the website does not accept uploads.
-- Start a direct conversation with Zarka Construction.
+- Recognize Zarka as a golf simulator room builder immediately.
+- Imagine how the room could change the way they experience golf.
+- Understand why a simulator room is different from assembled equipment.
+- Learn why every room needs thoughtful planning and evaluation.
+- Choose an on-site consultation or guided remote room review.
+- See honest project evidence as founder-owned photography becomes available.
+- Start a direct conversation without shopping, configuring, or estimating online.
 
 ## Goals
 
 ### Immediate
 
 1. Own the category phrase “Golf Simulator Room Builder.”
-2. Generate qualified residential and commercial simulator-room inquiries.
-3. Make room feasibility and planning a visible differentiator.
-4. Position construction experience as proof, not a competing service menu.
-5. Preserve production contact reliability, accessibility, performance, and SEO.
+2. Generate qualified residential and commercial room-building inquiries.
+3. Make the finished golf experience the emotional center of every page.
+4. Use planning and construction expertise as differentiating proof.
+5. Preserve contact reliability, accessibility, performance, and SEO.
 
 ### Long term
 
-- Publish founder-owned project photography and factual case studies after work
-  begins and publication is approved.
-- Develop useful simulator-room project proof and local discovery content.
-- Improve qualification based on real inquiry patterns without introducing
-  self-service estimation or configuration.
+- Publish founder-owned room photography and factual case studies after approval.
+- Develop useful, experience-led project proof and local discovery content.
+- Refine qualification using real inquiry patterns without self-service tools.
 
 ## Conversion actions
 
-- **Primary:** Start Your Room Review / Plan Your Simulator Room.
-- **Secondary:** How Room Planning Works / Explore Simulator Room Construction.
+- **Primary:** Request a Simulator Consultation.
+- **Secondary:** See What We Build / See How the Room Is Planned.
 - **Contact choice:** On-site consultation or guided remote room review.
 
-The site generates conversations. It does not sell equipment, accept orders, or
-promise feasibility before a room review.
+The site generates conversations. It does not sell equipment, accept orders,
+promise feasibility, or offer an automated room design.
 
 ## Differentiators
 
-- Room-first planning before equipment positions or finishes are locked.
-- Player position, screen geometry, projection, protection, floor layers,
-  lighting, and service access considered as one system.
-- Carpenter-led construction and finish integration.
-- Organized scopes, documented assumptions, and explicit trade responsibilities.
-- Professional field documentation through the company's working process.
+- The room is designed around the player and the experience before construction.
+- Craftsmanship makes technology feel integrated instead of added afterward.
+- Technical relationships are coordinated so the golfer can focus on the game.
+- Carpenter-led construction and finish work create a resolved environment.
+- Organized scopes and field documentation support a professional experience.
 
 These themes do not authorize claims about certifications, manufacturers,
 dealers, warranties, service area, prices, schedules, counts, or geography.
 
 ## Non-goals
 
-- Equipment store, catalog, dealer directory, shopping cart, or online purchase
-- Configurator, automated estimator, instant feasibility result, or quote tool
+- Equipment store, catalog, shopping cart, online purchase, or product selection
+- Configurator, estimator, instant feasibility result, or quote tool
 - CMS, Supabase, database, authentication, portal, dashboard, or uploads
 - Stock, AI-generated, staged, or fictional project imagery
-- Public software ecosystem, software product cards, or cross-product funnel
-- Unsupported licensing, insurance, warranty, manufacturer, price, schedule, or
-  performance claims
+- Public software ecosystem or software product cards
+- Unsupported licensing, insurance, warranty, manufacturer, price, schedule,
+  capacity, geography, or outcome claims
 
 ## Success criteria
 
-- A mobile visitor can identify Zarka as a golf simulator room builder before
-  scrolling.
-- At least 80% of homepage narrative weight supports simulator-room planning and
-  construction.
-- Navigation prioritizes Simulator Rooms, Capabilities, Planning Process,
-  Projects, About, and Contact.
-- Contact requests capture project type and one of the two room-review methods.
+- A mobile visitor identifies Zarka as a golf simulator room builder before scrolling.
+- The homepage leads with golf, aspiration, and room experience before technical detail.
+- The protected philosophy appears prominently and is supported across public pages.
+- Technical detail explains benefits rather than becoming a contractor checklist.
+- Contact requests capture project type and one of two room-review methods.
 - No public Precision Impact Screens, Bid Desk, or software-product cards remain.
-- CapProof appears only as documentation-process context and has no product card.
+- CapProof appears only as documentation-process context.
 - Real-project slots remain empty until founder-owned work is approved.
-- Accessibility, Core Web Vitals, canonical SEO, protected contact delivery, and
-  preview noindex behavior remain healthy.
+- Accessibility, Core Web Vitals, canonical SEO, contact protection, and preview
+  noindex behavior remain healthy.
 
 ## Signals
 
-Monitor consultation CTA clicks, planning-process clicks, contact starts,
-validated submissions, delivery success/error, selected project category, and
-selected review approach. Never send measurements, photos, descriptions,
+Monitor consultation CTA clicks, “what we build” exploration, planning-process
+interest, contact starts, validated submissions, delivery outcomes, project
+category, and review approach. Never send descriptions, measurements, photos,
 locations, or contact data to analytics.

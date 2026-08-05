@@ -259,3 +259,11 @@ Statuses:
   database, CMS, authentication, estimator, or customer portal is added.
 - **Reconsider when:** Only after founder approval supported by qualified-lead
   evidence or a material change to the company’s intended business model.
+
+## ADR-022 — Experience-first simulator-room storytelling
+
+- **Status:** Accepted
+- **Context:** Simulator-room-builder positioning established the correct category, but construction tasks and equipment relationships still carried too much of the public narrative. Prospects are ultimately creating a place to practice, play, gather, entertain, and enjoy golf throughout the year.
+- **Decision:** Sell the experience of a professionally built golf simulator room. Golf and the life around the room lead the story; construction, planning, and technical coordination serve as evidence of how Zarka delivers it. Protect the philosophy: “We don't build golf simulators. We build the spaces where great golf happens.” Use technical details to explain why the room plays and feels right, without presenting Zarka as an equipment seller or reducing the offer to an installation checklist.
+- **Consequences:** Homepage hierarchy, service descriptions, simulator-page copy, contact language, metadata, and social imagery must emphasize the finished experience while preserving truthful scope boundaries. Project imagery remains founder-owned only, and missing photography remains an intentional editorial state rather than fabricated proof.
+- **Reconsider when:** Only through an explicit founder-approved positioning change supported by customer evidence.
