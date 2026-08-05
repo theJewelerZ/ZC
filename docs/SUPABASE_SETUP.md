@@ -54,3 +54,15 @@ expiry, status, and notes. Test unauthorized and anonymous /admin access.
 Keep Production on its prior deployment. Disable the protected preview or its
 Preview variables if needed. Do not drop tables or the bucket automatically.
 No DNS, nameserver, GoDaddy, or production email-DNS change belongs to this phase.
+
+## Magic-link callback verification
+
+The callback URL must match the exact browser origin used to request the link.
+For a protected Preview, authorize through Vercel first, request the link from
+that Preview hostname, and open only the newest email in the same browser and
+device so the PKCE verifier cookie is available. Do not reuse a link: the code is
+short-lived and one-time.
+
+After callback, verify /admin loads, survives refresh, remains authenticated in
+a second tab, and returns to /admin/login after POST sign-out. Preview and
+production use host-only cookies; do not configure a shared cookie Domain.

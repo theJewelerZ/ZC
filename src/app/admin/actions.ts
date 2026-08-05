@@ -1,7 +1,6 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 
 import { requireAdmin } from "@/lib/admin/auth";
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
@@ -25,11 +24,3 @@ export async function updateConsultationAction(formData: FormData) {
   revalidatePath("/admin");
   revalidatePath(`/admin/consultations/${id}`);
 }
-
-export async function signOutAction() {
-  const client = await createSupabaseServerClient();
-  await client?.auth.signOut();
-  redirect("/admin/login");
-}
-
-import { createSupabaseServerClient } from "@/lib/supabase/server";

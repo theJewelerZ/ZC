@@ -6,7 +6,7 @@ import { cookies } from "next/headers";
 import type { Database } from "@/lib/supabase/database.types";
 import { getSupabasePublicConfig } from "@/lib/supabase/config";
 
-export async function createSupabaseServerClient() {
+export async function createSupabaseReadOnlyServerClient() {
   const config = getSupabasePublicConfig();
   if (!config) return null;
   const cookieStore = await cookies();
@@ -15,14 +15,9 @@ export async function createSupabaseServerClient() {
       getAll() {
         return cookieStore.getAll();
       },
-      setAll(cookiesToSet) {
-        try {
-          cookiesToSet.forEach(({ name, value, options }) =>
-            cookieStore.set(name, value, options),
-          );
-        } catch {
-          // Server Components cannot write cookies. Proxy refreshes sessions.
-        }
+      setAll() {
+        // Server Components are read-only. The request proxy owns session
+        // refresh writes; Route Handlers use response-bound clients instead.
       },
     },
   });

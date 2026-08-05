@@ -299,3 +299,21 @@ Statuses:
 - **Consequences:** There is no registration or customer login. /admin is
   dynamic, private, no-store, noindex, and intentionally limited to list,
   detail, signed photos, status, and notes.
+
+## ADR-026 — Response-bound Supabase auth cookies
+
+- **Status:** Accepted
+- **Context:** The PKCE callback exchanged a valid magic-link code through a
+  generic Server Component cookie helper and then created a separate redirect.
+  Cookie-write failures were swallowed, so the redirect to `/admin` could arrive
+  without a server-readable session and immediately return to `/admin/login`.
+- **Decision:** Route Handlers that establish or clear authentication create one
+  redirect response and bind the `@supabase/ssr` cookie adapter directly to that
+  response. Preserve Supabase cookie options, use host-only cookies without a
+  hard-coded Domain, verify the user and server allowlist after exchange, and
+  expose only fixed, non-sensitive login error states.
+- **Consequences:** Preview and production authentication remain isolated by
+  hostname; `/admin` can read the session on the request immediately following
+  callback; unauthorized users and sign-out clear cookies on the response that
+  actually reaches the browser. The generic Server Component client no longer
+  silently catches mutation failures.

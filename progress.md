@@ -72,9 +72,10 @@ are configured without exposing values. Production variables were not changed.
 
 ## Remaining founder setup and review
 
-- Supply the exact email for ADMIN_ALLOWED_EMAILS.
-- Create or invite that same Supabase Auth user.
-- Add the protected Preview /auth/callback URL in Supabase Auth.
+- Founder Auth user, Preview callback allowlisting, and ADMIN_ALLOWED_EMAILS are
+  confirmed configured.
+- Deploy this callback-cookie repair to a protected Preview and retest a new
+  magic link, refresh, second tab, and sign-out.
 - Complete authenticated list/detail/photo/status/notes review.
 - Verify an authenticated but non-allowlisted account is denied.
 - Complete manual responsive review at 320, 375, 768, 1024, and 1440px. The
@@ -85,5 +86,6 @@ are configured without exposing values. Production variables were not changed.
 
 ## Immediate next action
 
-Founder supplies the admin email and completes the exact protected-preview review
-in docs/SUPABASE_SETUP.md. Do not merge or promote.
+Deploy the response-bound auth-cookie repair to a protected Preview. The founder
+then completes the newest-link, persistence, second-tab, and sign-out retest.
+Do not merge or promote.

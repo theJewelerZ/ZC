@@ -21,3 +21,17 @@ click-to-call/mail, consultation ID, captions, and five-minute signed photo
 views. The founder may update only constrained status and private notes. There
 are no charts, pipeline board, scoring, deletion controls, automations, employee
 roles, or CRM widgets.
+
+## Magic-link session transport
+
+The browser requests the magic link with an exact-origin redirect to
+/auth/callback. The callback exchanges the one-time PKCE code and writes every
+Supabase session cookie directly onto the same NextResponse that redirects to
+/admin. It then verifies the authoritative Supabase user and the server-only
+email allowlist. Cookies remain host-scoped: no shared hard-coded Domain is used,
+so protected Preview and production hosts authenticate independently.
+
+Missing configuration, incomplete links, expired/used links, and unauthorized
+accounts return distinct non-sensitive messages at /admin/login. Unauthorized
+sessions are signed out and their auth cookies cleared. Sign-out is a POST route
+that likewise clears cookies on its actual 303 redirect response.

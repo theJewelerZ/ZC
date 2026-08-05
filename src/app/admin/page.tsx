@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { signOutAction } from "@/app/admin/actions";
 import { requireAdmin } from "@/lib/admin/auth";
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import type { ConsultationStatus } from "@/lib/supabase/database.types";
@@ -41,7 +40,7 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
   }
 
   return <main className="admin-shell" id="main-content">
-    <div className="admin-heading"><div><p className="eyebrow">Founder dashboard</p><h1>Consultations</h1><p>Private inquiry records. Email is a notification channel; this list is the system of record.</p></div><form action={signOutAction}><button className="button button-outline" type="submit">Sign out</button></form></div>
+    <div className="admin-heading"><div><p className="eyebrow">Founder dashboard</p><h1>Consultations</h1><p>Private inquiry records. Email is a notification channel; this list is the system of record.</p></div><form action="/auth/signout" method="post"><button className="button button-outline" type="submit">Sign out</button></form></div>
     <form className="admin-filters" method="get"><div><label htmlFor="q">Search name, email, or location</label><input defaultValue={params.q || ""} id="q" maxLength={100} name="q" type="search" /></div><div><label htmlFor="status">Status</label><select defaultValue={status} id="status" name="status">{statuses.map((item) => <option key={item.value || "all"} value={item.value}>{item.label}</option>)}</select></div><button className="button button-primary" type="submit">Apply filters</button></form>
     {filtered.length ? <div className="admin-table-wrap"><table className="admin-table"><caption className="sr-only">Consultations newest first</caption><thead><tr><th>Received</th><th>Customer</th><th>Project</th><th>Review</th><th>Status</th><th>Photos</th></tr></thead><tbody>{filtered.map((item) => <tr key={item.id}><td>{formatDate(item.created_at)}</td><td><Link href={`/admin/consultations/${item.id}`}><strong>{item.name}</strong></Link><a href={`mailto:${item.email}`}>{item.email}</a>{item.phone ? <a href={`tel:${item.phone}`}>{item.phone}</a> : null}</td><td>{item.project_location}<span>{item.project_setting}</span></td><td>{item.review_preference}</td><td><span className={`status-badge status-${item.status}`}>{item.status.replace("_", " ")}</span></td><td>{photoCounts.get(item.id) || 0}</td></tr>)}</tbody></table></div> : <div className="admin-empty"><h2>No consultations match this view.</h2><p>Clear the filters or check again after a new request is stored.</p></div>}
   </main>;
