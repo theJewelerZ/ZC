@@ -2,19 +2,23 @@
 
 ## Strategic direction
 
-Zarka Construction is a **Golf Simulator Room Builder**. The website sells the
-experience created by a professionally planned and built simulator room—not a
-list of construction tasks or technology components.
+Zarka Construction is a **Golf Simulator Construction Specialist** focused on
+creating premium simulator environments while accurately representing its
+present capabilities.
 
-A visitor should leave with one clear belief: Zarka understands how to create a
-room where golf feels natural, inviting, and worth returning to.
+The website should leave a homeowner, golf-facility owner, licensed general
+contractor, equipment provider, and qualified trade with the same understanding:
+Zarka evaluates and performs defined specialty-construction work for the golf
+simulator environment. Zarka is not presented as an equipment dealer or as the
+party responsible for an entire home or commercial facility.
 
 ## Positioning
 
-**Category phrase:** Golf Simulator Room Builder
+**Category phrase:** Golf Simulator Construction Specialist
 
-**Positioning sentence:** Zarka Construction plans and builds custom indoor golf
-simulator rooms for residential and commercial spaces.
+**Positioning sentence:** Zarka Construction evaluates, plans, prepares, and
+completes defined specialty-construction scopes for premium golf simulator
+environments in homes and commercial golf settings.
 
 **Protected philosophy:** We don't build golf simulators. We build the spaces
 where great golf happens.
@@ -23,118 +27,105 @@ where great golf happens.
 
 **Brand statement:** Built with precision. Delivered with integrity.
 
-Golf is the story. Construction, craftsmanship, planning, and coordination are
-the evidence behind the result. Technology belongs within the room plan; Zarka
-does not present itself as an equipment seller, dealer, or manufacturer.
+Confidence comes from specificity, careful planning, craftsmanship, honest
+boundaries, and professional communication—not broad claims.
+
+## Present public scope
+
+Subject to room review and a written project scope, Zarka's work may include:
+
+- room evaluation;
+- simulator and construction planning;
+- simulator-room preparation and framing;
+- impact-screen structures;
+- custom layered impact screens;
+- curtains and enclosure details;
+- wall and ceiling protection systems;
+- turf, stance areas, and hitting surfaces;
+- finish carpentry, trim, transitions, and finish detailing;
+- coordination with equipment providers or qualified trades when required.
+
+The site does not represent Zarka as providing equipment sales, manufacturer or
+dealer relationships, architectural or engineering services, permit authority,
+complete commercial-facility construction, or responsibility outside the
+written scope.
+
+## Settings served
+
+Simulator-environment work may be considered within:
+
+- homes;
+- teaching studios;
+- commercial golf spaces;
+- entertainment venues;
+- simulator businesses;
+- country clubs;
+- training environments.
+
+These are project settings, not claims that Zarka constructs an entire facility.
+Project fit and exact responsibility are confirmed individually.
 
 ## Customer value
 
-Prospects are creating:
-
-- a place to practice on their schedule;
-- a room that makes improvement easier to pursue;
-- a place to play after dinner or throughout the year;
-- a setting for family, friends, or clients;
-- a finished environment they can enjoy for years.
-
-Room dimensions, player clearances, protection, projection, turf, lighting, and
-access remain essential. Public copy explains why they matter to the experience
-before describing how they are built.
-
-## Public business hierarchy
-
-1. **Primary:** Custom residential and commercial golf simulator rooms and the
-   experience they create.
-2. **Supporting expertise:** Room planning, feasibility, construction, finish
-   integration, impact environments, and coordination.
-3. **Credibility:** Construction, finish carpentry, renovation, painting,
-   commercial maintenance, organized scopes, and field documentation.
-
-CapProof may be named once as part of the documentation process. Bid Desk is not
-named publicly. Precision Impact Screens is excluded from every public surface.
+Prospects are creating a place to practice, improve, play, teach, gather, or
+operate a golf-focused experience. Zarka's contribution is a simulator
+environment prepared around the actual space, intended use, known equipment
+requirements, and agreed construction responsibilities.
 
 ## Target audiences
 
-| Audience | Desired experience | Website response |
+| Audience | What they need to understand | Website response |
 | --- | --- | --- |
-| Residential prospects | Practice, play, and gather at home | Help them imagine the room, then explain the review and planning needed |
-| Commercial prospects | Create a compelling, durable place for people to play | Lead with the guest experience while defining coordination boundaries |
-| Room-conversion prospects | Turn existing space into somewhere worth using | Explain feasibility through comfort, swing confidence, and room integration |
-| Architects, contractors, and technology providers | Understand Zarka's role | Define Zarka as the room builder without implying equipment manufacturing |
-| Referrals and business contacts | Validate expertise and next step | Clear category, honest proof, and direct consultation path |
+| Homeowner | Whether the room and desired experience may fit | Invite a conversation, explain evaluation, and define specialty scope honestly |
+| Golf facility owner | Whether Zarka can create the simulator environment inside a facility | Show commercial relevance without claiming complete facility construction |
+| Licensed general contractor | Where Zarka's specialty begins and ends | Identify simulator-environment work and qualified-trade coordination clearly |
+| Equipment provider | How the room and construction relate to known equipment needs | Present Zarka as the environment specialist, not a competing dealer |
+| Qualified trade | Which requirements may need coordination | State that licensed or professional responsibilities are assigned separately |
 
 ## Visitor needs
 
-- Recognize Zarka as a golf simulator room builder immediately.
-- Imagine how the room could change the way they experience golf.
-- Understand why a simulator room is different from assembled equipment.
-- Learn why every room needs thoughtful planning and evaluation.
-- Choose an on-site consultation or guided remote room review.
-- See honest project evidence as founder-owned photography becomes available.
-- Start a direct conversation without shopping, configuring, or estimating online.
-
-## Goals
-
-### Immediate
-
-1. Own the category phrase “Golf Simulator Room Builder.”
-2. Generate qualified residential and commercial room-building inquiries.
-3. Make the finished golf experience the emotional center of every page.
-4. Use planning and construction expertise as differentiating proof.
-5. Preserve contact reliability, accessibility, performance, and SEO.
-
-### Long term
-
-- Publish founder-owned room photography and factual case studies after approval.
-- Develop useful, experience-led project proof and local discovery content.
-- Refine qualification using real inquiry patterns without self-service tools.
+- Recognize the Golf Simulator Construction Specialist category immediately.
+- Understand what Zarka performs today.
+- Understand what Zarka does not claim.
+- See why the room should be evaluated before a scope is proposed.
+- Understand that equipment selection and simulator construction are different responsibilities.
+- Begin an on-site consultation or guided remote review without sales pressure.
+- See only authentic, founder-owned project evidence when approved.
 
 ## Conversion actions
 
 - **Primary:** Request a Simulator Consultation.
-- **Secondary:** See What We Build / See How the Room Is Planned.
+- **Secondary:** See What We Build / See How the Space Is Evaluated.
 - **Contact choice:** On-site consultation or guided remote room review.
 
-The site generates conversations. It does not sell equipment, accept orders,
-promise feasibility, or offer an automated room design.
+A request begins a conversation. It is not an equipment quote, feasibility
+guarantee, design engagement, permit commitment, or construction agreement.
 
 ## Differentiators
 
-- The room is designed around the player and the experience before construction.
-- Craftsmanship makes technology feel integrated instead of added afterward.
-- Technical relationships are coordinated so the golfer can focus on the game.
-- Carpenter-led construction and finish work create a resolved environment.
-- Organized scopes and field documentation support a professional experience.
+- Focus on the environment that allows simulator technology to work in the space.
+- Practical construction experience applied to a specialized use.
+- Impact-screen structures, protection, surfaces, carpentry, curtains, and finish integration considered together.
+- Clearly documented assumptions, scope boundaries, and remaining responsibilities.
+- Willingness to identify work that belongs with equipment providers or qualified trades.
 
-These themes do not authorize claims about certifications, manufacturers,
-dealers, warranties, service area, prices, schedules, counts, or geography.
+## Non-goals and prohibited implications
 
-## Non-goals
-
-- Equipment store, catalog, shopping cart, online purchase, or product selection
-- Configurator, estimator, instant feasibility result, or quote tool
-- CMS, Supabase, database, authentication, portal, dashboard, or uploads
+- Equipment dealership, package sales, product catalog, or manufacturer relationship
+- Architectural, engineering, or other licensed-design services
+- Automatic permit responsibility or permit management
+- Representation as general contractor for an entire home or commercial facility
+- Unassigned electrical, mechanical, structural, or other licensed-trade responsibility
+- Unsupported warranty, certification, insurance, licensing, geography, capacity, price, or schedule claims
+- CMS, Supabase, database, authentication, portal, uploads, estimator, or shopping cart
 - Stock, AI-generated, staged, or fictional project imagery
-- Public software ecosystem or software product cards
-- Unsupported licensing, insurance, warranty, manufacturer, price, schedule,
-  capacity, geography, or outcome claims
 
 ## Success criteria
 
-- A mobile visitor identifies Zarka as a golf simulator room builder before scrolling.
-- The homepage leads with golf, aspiration, and room experience before technical detail.
-- The protected philosophy appears prominently and is supported across public pages.
-- Technical detail explains benefits rather than becoming a contractor checklist.
-- Contact requests capture project type and one of two room-review methods.
-- No public Precision Impact Screens, Bid Desk, or software-product cards remain.
-- CapProof appears only as documentation-process context.
-- Real-project slots remain empty until founder-owned work is approved.
-- Accessibility, Core Web Vitals, canonical SEO, contact protection, and preview
-  noindex behavior remain healthy.
-
-## Signals
-
-Monitor consultation CTA clicks, “what we build” exploration, planning-process
-interest, contact starts, validated submissions, delivery outcomes, project
-category, and review approach. Never send descriptions, measurements, photos,
-locations, or contact data to analytics.
+- The homepage identifies Zarka as a Golf Simulator Construction Specialist before scrolling.
+- Residential and commercial visitors both recognize relevant simulator-environment settings.
+- No sentence implies complete facility construction or responsibility outside a written scope.
+- Services match work Zarka presently performs.
+- Equipment sales, professional design, permit authority, and licensed-trade boundaries are explicit.
+- A homeowner feels invited, a facility owner sees a relevant specialist, and a general contractor sees a credible defined-scope partner.
+- Contact, accessibility, performance, analytics, and canonical behavior remain healthy.

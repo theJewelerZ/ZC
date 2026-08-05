@@ -5,162 +5,168 @@
 **Protected philosophy:** We don't build golf simulators. We build the spaces
 where great golf happens.
 
-This is the editorial test for every public sentence. Golf and the experience of
-the room lead. Construction and technology explain how Zarka makes that
-experience possible.
+The public category is **Golf Simulator Construction Specialist**. Golf and the
+experience lead; specific construction capability proves how Zarka contributes.
+Every claim must fit a project-specific written scope.
 
 ## Voice
 
-Experienced, confident, premium, intentional, understated, and human. Help the
-visitor imagine practicing, playing, gathering, and enjoying the room before
-introducing technical constraints.
+Experienced, confident, humble, precise, collaborative, and understated.
 
-Use **Golf Simulator Room Builder** as the category. Use “installation” only for
-a specific task. Avoid contractor-brochure language, checklist-led sections,
-equipment-shopping language, hype, and unsupported superlatives.
+- Replace certainty with confidence.
+- Replace sales language with a practical invitation.
+- Replace broad capability claims with specific present work.
+- Say “may include,” “can consider,” or “when included in the written scope”
+  when responsibility varies by project.
+- Avoid “turnkey,” “full-service,” “complete facility,” “we handle everything,”
+  or any language that implies universal feasibility.
+
+## Scope vocabulary
+
+Preferred terms:
+
+- simulator environment;
+- specialty construction;
+- room evaluation;
+- construction planning;
+- room preparation;
+- simulator-environment framing;
+- impact-screen structure;
+- custom layered impact screen;
+- wall and ceiling protection;
+- turf and hitting surface;
+- finish carpentry, trim, curtains, and detailing;
+- defined or agreed scope;
+- coordination with appropriate qualified trades.
+
+Do not imply equipment sales, architectural or engineering services, permit
+authority, complete facility construction, manufacturer relationships, dealer
+status, or warranties.
 
 ## Homepage narrative
 
 ### Hero
 
-- **Eyebrow:** Golf Simulator Room Builder
+- **Eyebrow:** Golf Simulator Construction Specialist
 - **Headline:** We Build the Room Around the Game.
-- **Support:** Every great simulator begins with a room designed to play beautifully.
-- **Positioning:** Zarka plans and builds custom simulator environments where
-  craftsmanship, construction, and technology become one seamless experience.
+- **Support:** Premium environments begin with an understanding of the space,
+  intended players, and desired experience.
+- **Proof:** Name room evaluation, planning, framing, impact and protection
+  systems, turf, finish carpentry, and coordination.
 - **Primary CTA:** Request a Simulator Consultation
 - **Secondary CTA:** See What We Build
 
-### It's more than a simulator
+### Experience
 
-Help visitors imagine:
+Keep the emotional value of practice, play, gathering, and year-round golf.
+Do not suggest that every room is feasible or that Zarka supplies the technology.
 
-- focused practice on their schedule;
-- a round after dinner;
-- time with family and friends;
-- a setting for clients;
-- improvement and enjoyment throughout the year.
+### Evaluation and planning
 
-Keep these possibilities elegant rather than promotional. Place the protected
-philosophy prominently in this section.
+Explain that planning identifies conflicts and helps define responsibilities.
+It does not guarantee feasibility and is not represented as architectural or
+engineering design.
 
-### Why every great room starts with good planning
+### What Zarka builds
 
-Lead with benefits:
+The service cards describe present work:
 
-- swing freely with confidence;
-- see an image that feels natural;
-- stay focused on the shot;
-- move comfortably through the room;
-- enjoy a finished environment.
+1. Custom Simulator Environments
+2. Room Preparation & Framing
+3. Impact Screen Environments
+4. Wall & Ceiling Protection
+5. Turf & Hitting Surfaces
+6. Finish Carpentry & Detailing
+7. Planning & Trade Coordination
 
-Use player position, dimensions, screen relationships, projection, protection,
-turf, lighting, and access as supporting explanations.
+Commercial relevance is expressed through the settings where this work may
+occur: teaching studios, commercial golf spaces, entertainment venues,
+simulator businesses, country clubs, and training environments. Never imply
+construction of the entire facility.
 
-### What we build
+### Specialist difference
 
-Organize complete simulator solutions around customer outcomes:
+Use:
 
-- Residential Simulator Rooms
-- Commercial Simulator Bays
-- Room Conversions
-- Impact Environments
-- Finish Integration
-- Room Planning
-- Construction Coordination
+> We Don't Simply Install Equipment. We Prepare the Environment for Great
+> Simulator Experiences.
 
-Do not organize the primary offer as a list of trades. Confirm equipment,
-licensed-trade, and scope boundaries per room.
+Explain that Zarka's scope is the simulator environment. Equipment purchasing,
+permits, professional design, and qualified-trade responsibilities remain
+separate unless expressly assigned in writing.
 
-### How we build it
+### Process and room review
 
-Strong differentiator heading:
+A project **can** begin with an on-site consultation or guided remote review;
+neither path is guaranteed for every location. Both are initial evaluations.
+Commitments are established only after project-specific review and written scope.
 
-> We Don't Install Golf Simulators. We Build Golf Simulator Rooms.
+### Construction credibility
 
-Explain that equipment can be assembled, but a room must be understood. The
-environment is planned around how people swing, see, move, gather, and play.
-Construction supports the experience. Technology fits into the room—not the
-other way around.
-
-Process:
-
-1. Understand how the customer wants to play.
-2. Plan the room around the game.
-3. Build the approved scope with purpose.
-4. Prepare and review the space for play.
-
-Present on-site and guided remote review paths without promising availability,
-geography, or response time. Remote follow-up uses measurements and photographs;
-the website does not accept uploads.
-
-### Real work
-
-Use founder-owned photography only. No AI images, stock scenes, staged rooms,
-fake projects, or work published before it begins and permission is approved.
-Until photography exists, retain the restrained configured media states and
-describe the journey from idea to craft to finished play without development
-language in the public UI.
-
-### Construction experience behind every simulator room
-
-Construction experience is proof, not a competing offer. Explain how hands-on
-field work leads to:
-
-- a room planned for golf;
-- craft that can be felt without distracting from play;
-- organized scopes and clear responsibilities;
-- professional documentation and communication.
-
-CapProof may appear once in process context. Bid Desk is not named publicly.
-Precision Impact Screens never appears publicly.
+Construction experience supports specialty judgment. Avoid implying that Zarka
+assumes the role of general contractor for the surrounding property or facility.
 
 ### About
 
-Approved direction:
-
-> After decades of building and renovating spaces, the founder came to see
-> simulator projects differently: the equipment is only part of what makes the
-> room worth returning to.
-
-Follow with Zarka's focus on creating an environment for practice, play,
-gathering, and enjoyment over time. Do not add a founder name, dates, project
-counts, credentials, service geography, or other unverified facts.
+Communicate hands-on experience, attention to detail, love of golf,
+craftsmanship, practical planning, professional communication, and working
+alongside the customer. The tone should feel approachable and honest. Identify
+outside responsibilities instead of overstating them.
 
 ### Contact
 
-Lead with the room the prospect wants to create, then the room review needed to
-make it practical.
+The contact experience begins with understanding the space and intended use.
+It does not sell packages, quote equipment, guarantee feasibility, or create a
+project agreement.
 
-- **Heading:** Tell us about the room you want to create.
-- **Final homepage heading:** Start with the golf experience you want to create.
-- **Action:** Request a Simulator Consultation.
+## Dedicated simulator-construction page
 
-Keep project type, review preference, general location, timing, room context,
-known equipment context, and optional phone/referral source. Do not add uploads,
-budget tools, scheduling, payments, or automated estimates.
+Preserve detailed education while using these trust boundaries:
 
-## Dedicated simulator page
+- Room evaluation shapes a potential scope; it is not architectural or engineering design.
+- Specialty construction may include preparation, framing, impact screens,
+  protection, turf, hitting surfaces, curtains, carpentry, trim, and detailing.
+- Commercial references describe simulator work within a facility.
+- Zarka does not claim responsibility for the entire facility.
+- Equipment purchasing remains separate.
+- Permit, professional-design, electrical, mechanical, and licensed-trade
+  responsibilities are assigned separately in writing.
+- FAQ answers should address commercial settings, equipment sales, trades,
+  permits, and future equipment without making promises.
 
-The detailed route keeps technical depth but reframes each section around the
-golfer's result:
+## Photography placeholders
 
-- a better golf experience starts with the room;
-- plan for a confident, comfortable swing;
-- build a room that feels intentional;
-- make every shot feel natural;
-- integrate protection into the room;
-- connect the playing surface;
-- make technology recede into the plan;
-- move from an idea to a room ready for golf.
+Use founder-owned photography only after publication approval. No stock,
+AI-generated, staged, or fictional project imagery.
 
-Repeat the protected philosophy once. Preserve equipment-purchasing and
-licensed-trade boundaries. Do not imply manufacturing, dealer status,
-certification, warranty coverage, or equipment partnerships.
+| Current placement | Ideal image | Story | Type / setting | Framing |
+| --- | --- | --- | --- | --- |
+| Simulator-page hero | Strongest finished environment, active screen, architecture visible | Zarka creates a resolved simulator environment | Finished room; residential or commercial; no people required | Wide landscape hero with copy-safe negative space |
+| Homepage “Planning” project card | Founder evaluating player position or existing room conditions | Work begins by understanding the space | Planning; golfer/customer may appear with permission | Landscape documentary view |
+| Homepage “Craft” project card | Framing, impact-screen structure, protection, turf, or finish work in progress | The environment is constructed, not merely assembled | Construction detail; residential or commercial | Medium landscape with real room context |
+| Homepage “Play” project card | Approved finished room ready for actual use | The specialty work supports the golf experience | Finished room with golfer or quiet empty room | Wide landscape, truthful proportions |
+| Simulator-page room evaluation | Founder and intended player reviewing position, dimensions, and constraints | Planning is human and room-specific | Planning; residential or commercial | Landscape side or three-quarter view |
+| Simulator-page playing surface | Turf, stance area, hitting surface, and trim transition | Performance and finish meet underfoot | Finished detail | Landscape or square, low camera angle |
+| Simulator-page room review | Founder listening to customer and documenting the space | The first interaction is collaborative, not a package sale | Planning; people with releases | Landscape environmental photograph |
+
+Photography must distinguish Zarka's completed work from equipment-provider or
+trade-partner work in captions and project records. Do not show third-party
+logos in a way that implies a relationship.
+
+## Legal and trust language
+
+The Terms page must state that website content does not represent Zarka as:
+
+- an equipment dealer or manufacturer;
+- an architect or engineer;
+- general contractor for an entire home or commercial facility;
+- automatically responsible for permits;
+- responsible for every licensed trade;
+- providing a warranty or project commitment through the website.
 
 ## Prohibited claims
 
-No invented address, phone, email, service radius, license, insurance, years,
-staff, customers, reviews, projects, awards, certifications, dealer status,
+No invented address, phone, email, service radius, license, insurance, staff,
+customers, reviews, project counts, awards, certifications, dealer status,
 manufacturer approval, warranty, price, turnaround time, capacity, geographic
-coverage, or guaranteed outcome.
+coverage, guaranteed outcome, or professional responsibility.

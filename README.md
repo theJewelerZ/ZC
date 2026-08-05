@@ -3,24 +3,25 @@
 ## Project purpose
 
 The official website for Zarka Construction LLC, positioned publicly as a
-**Golf Simulator Room Builder**.
+**Golf Simulator Construction Specialist**.
 
-Zarka Construction plans and builds custom indoor golf simulator rooms for
-residential and commercial spaces. Construction, carpentry, renovation,
-painting, maintenance, estimating, and documentation experience support that
-specialty rather than compete with it.
+Zarka Construction evaluates, plans, prepares, and completes defined
+specialty-construction scopes for premium simulator environments in homes and
+commercial golf settings. The website does not present the company as an
+equipment dealer or as responsible for an entire home or commercial facility.
 
 **Canonical production domain:** <https://www.zarkaconstruction.com>
 
 ## Current objective
 
-The active Phase 2 branch repositions the existing production-quality website
-around simulator-room planning and construction. The customer journey begins
-with room feasibility and leads to either an on-site consultation or guided
-remote room review.
+The active Phase 2 branch presents Zarka's current simulator-environment
+specialty accurately and builds trust before founder approval. The customer
+journey begins with the space and leads to either an on-site consultation or
+guided remote room review when appropriate.
 
 This is a conversation-generating marketing website. It is not an equipment
-store, configurator, estimator, portal, or software-product directory.
+store, configurator, estimator, portal, professional-design service, permit
+service, or software-product directory.
 
 ## Stack
 
@@ -34,39 +35,41 @@ store, configurator, estimator, portal, or software-product directory.
 
 ## Public routes
 
-- `/` — simulator-room-builder homepage
-- `/simulator-construction` — detailed planning and construction page
-- `/contact` — simulator project inquiry and room-review selection
+- `/` — simulator-construction-specialist homepage
+- `/simulator-construction` — detailed scope and room-evaluation page
+- `/contact` — simulator-environment inquiry and review selection
 - `/privacy`
 - `/terms`
 - generated `/sitemap.xml` and `/robots.txt`
 
 ## Current branch status
 
-Work continues on `phase-2/simulator-construction`. The branch is based on the
-existing simulator feature and must not be merged or promoted until founder
-approval of a protected Vercel preview.
+Work continues on `phase-2/simulator-construction`. Do not merge or promote
+until founder approval of a protected Vercel preview.
 
 The production domain remains live with the prior approved release. DNS,
 GoDaddy, Vercel domain settings, and production deployment are not changed by
-the repositioning work.
+this positioning work.
 
 ## Strategic boundaries
 
-- Lead with “Golf Simulator Room Builder.”
-- Keep approximately 80% of homepage emphasis on simulator rooms, 15% on
-  construction credibility, and 5% on supporting systems.
-- Organize services around residential rooms, commercial bays, conversions,
-  impact environments, finish integration, room planning, and coordination.
-- Explain why dimensions, player position, screen geometry, projection,
-  protection, turf, lighting, and construction must be coordinated.
+- Lead with “Golf Simulator Construction Specialist.”
+- Keep the golf experience emotional and the construction claims specific.
+- Present current work: room evaluation, construction planning, preparation and
+  framing, impact-screen structures and custom layered screens, curtains, wall
+  and ceiling protection, turf and hitting surfaces, finish carpentry, trim,
+  detailing, and qualified-trade coordination where required.
+- Commercial relevance includes simulator environments within teaching studios,
+  commercial golf spaces, entertainment venues, simulator businesses, country
+  clubs, and training environments.
+- Never imply responsibility for an entire commercial facility.
+- Never imply equipment sales, architectural or engineering services, permit
+  authority, or unassigned professional or licensed-trade responsibilities.
 - Use founder-owned project photography only after work begins and publication
   is approved.
 - CapProof may appear only as part of the field-documentation process.
-- Bid Desk is not named publicly; organized estimates, scopes, and documented
-  assumptions express its operational value.
-- Precision Impact Screens has no public copy, link, card, footer entry,
-  metadata, structured data, sitemap, analytics, or SEO role.
+- Bid Desk is not named publicly.
+- Precision Impact Screens has no public role.
 - Do not invent service area, address, phone, email, licensing, insurance,
   certifications, dealer status, warranties, prices, timing, counts, or projects.
 
