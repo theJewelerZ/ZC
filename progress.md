@@ -68,6 +68,16 @@ before the feature branch was created.
 - In-app interactive browser was unavailable in this environment; Lighthouse
   artifacts and route/markup checks were used instead. A final human preview
   review remains part of deployment acceptance.
+- Implementation commit: `dc6a796` (`Add simulator construction service page`)
+- Documentation commit: `3d3983b` (`Document focused Phase 2 simulator increment`)
+- Feature branch pushed to GitHub and confirmed to track
+  `origin/phase-2/simulator-construction`.
+- Vercel preview deployment `dpl_8Zsg6dGVS9Weiq4ZtKxjBudNixDY`: ready at
+  <https://zarka-construction-ng22g9wkb-matthews-projects-7e2a9d39.vercel.app>
+- Authenticated preview assertions passed for the simulator route, canonical
+  metadata, preview noindex behavior, Service/FAQ structured data, homepage
+  internal link, sitemap entry, and simulator contact preselection.
+- Production was not promoted or changed during this focused increment.
 
 ## Missing founder content
 
@@ -79,7 +89,6 @@ before the feature branch was created.
 
 ## Immediate next action
 
-Commit the implementation and documentation, push the feature branch, deploy a
-Vercel preview, and complete a human review of the preview before any production
-promotion. Do not begin portfolio, CMS, database, authentication, or unrelated
-Phase 2 work.
+Complete a human review of the protected Vercel preview, then merge or promote
+only after approval. Do not begin portfolio, CMS, database, authentication, or
+unrelated Phase 2 work.
