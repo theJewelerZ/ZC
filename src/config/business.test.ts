@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   businessConfig,
+  isServiceOptionValue,
   relatedProjects,
   services,
 } from "@/config/business";
@@ -36,6 +37,10 @@ describe("public business configuration", () => {
     );
   });
 
+  it("recognizes only configured contact service values", () => {
+    expect(isServiceOptionValue("simulator-construction")).toBe(true);
+    expect(isServiceOptionValue("not-a-service")).toBe(false);
+  });
   it("contains only documented service delivery modes", () => {
     const allowedModes = new Set([
       "direct",

@@ -11,11 +11,16 @@ import {
   useState,
 } from "react";
 
-import { serviceOptions, timelineOptions } from "@/config/business";
+import {
+  serviceOptions,
+  timelineOptions,
+  type ServiceOptionValue,
+} from "@/config/business";
 import type { ContactField } from "@/lib/contact/schema";
 
 type ContactFormProps = {
   deliveryEnabled: boolean;
+  initialService?: ServiceOptionValue | "";
   turnstileSiteKey: string | null;
 };
 
@@ -29,6 +34,7 @@ const initialStatus: FormStatus = { state: "idle", message: "" };
 
 export function ContactForm({
   deliveryEnabled,
+  initialService = "",
   turnstileSiteKey,
 }: ContactFormProps) {
   const [status, setStatus] = useState<FormStatus>(initialStatus);
@@ -264,7 +270,12 @@ export function ContactForm({
               </FormField>
 
               <FormField error={errors.service} label="Service needed" required>
-                <select defaultValue="" id="service" name="service" required>
+                <select
+                  defaultValue={initialService}
+                  id="service"
+                  name="service"
+                  required
+                >
                   <option disabled value="">
                     Choose a service
                   </option>

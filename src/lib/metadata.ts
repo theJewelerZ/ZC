@@ -5,7 +5,12 @@ import { businessConfig } from "@/config/business";
 type PageMetadataInput = {
   title: string;
   description: string;
-  path: "/" | "/contact" | "/privacy" | "/terms";
+  path:
+    | "/"
+    | "/contact"
+    | "/privacy"
+    | "/simulator-construction"
+    | "/terms";
 };
 
 export function createPageMetadata({

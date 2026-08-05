@@ -1,4 +1,6 @@
-import { ArrowUpRightIcon, CheckIcon } from "@/components/icons";
+import Link from "next/link";
+
+import { ArrowRightIcon, ArrowUpRightIcon, CheckIcon } from "@/components/icons";
 import { SectionHeading } from "@/components/section-heading";
 import { TrackedLink } from "@/components/tracked-link";
 
@@ -77,21 +79,30 @@ export function SimulatorSection() {
               Equipment selection and licensed trade work are coordinated
               separately when required by the project.
             </p>
-            <TrackedLink
-              className="simulator-external-link"
-              eventName="ecosystem_link_click"
-              eventProperties={{
-                project: "precision-impact-screens",
-                placement: "simulator_section",
-              }}
-              href="https://precisionimpactscreens.com"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Explore Precision Impact Screens
-              <ArrowUpRightIcon />
-              <span className="sr-only"> (opens another website)</span>
-            </TrackedLink>
+            <div className="simulator-section-actions">
+              <Link
+                className="simulator-detail-link"
+                href="/simulator-construction"
+              >
+                Explore simulator construction
+                <ArrowRightIcon />
+              </Link>
+              <TrackedLink
+                className="simulator-external-link"
+                eventName="ecosystem_link_click"
+                eventProperties={{
+                  project: "precision-impact-screens",
+                  placement: "simulator_section",
+                }}
+                href="https://precisionimpactscreens.com"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Precision Impact Screens
+                <ArrowUpRightIcon />
+                <span className="sr-only"> (opens another website)</span>
+              </TrackedLink>
+            </div>
           </div>
         </div>
       </div>

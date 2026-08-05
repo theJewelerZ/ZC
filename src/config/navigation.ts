@@ -1,6 +1,6 @@
 export const primaryNavigation = [
   { label: "Services", href: "/#services" },
-  { label: "Simulator Construction", href: "/#simulator-construction" },
+  { label: "Simulator Construction", href: "/simulator-construction" },
   { label: "Capabilities", href: "/#work" },
   { label: "Field-Built Tools", href: "/#field-built-tools" },
   { label: "About", href: "/#about" },

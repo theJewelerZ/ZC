@@ -144,6 +144,12 @@ export const serviceOptions = [
   { value: "other", label: "Something else" },
 ] as const;
 
+export type ServiceOptionValue = (typeof serviceOptions)[number]["value"];
+
+export function isServiceOptionValue(value: string): value is ServiceOptionValue {
+  return serviceOptions.some((option) => option.value === value);
+}
+
 export const timelineOptions = [
   { value: "asap", label: "As soon as practical" },
   { value: "one-three-months", label: "Within 1–3 months" },

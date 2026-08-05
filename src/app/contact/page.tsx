@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { ContactForm } from "@/components/contact/contact-form";
+import { isServiceOptionValue } from "@/config/business";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
@@ -10,7 +11,16 @@ export const metadata: Metadata = createPageMetadata({
   path: "/contact",
 });
 
-export default function ContactPage() {
+type ContactPageProps = {
+  searchParams: Promise<{ service?: string | string[] }>;
+};
+
+export default async function ContactPage({ searchParams }: ContactPageProps) {
+  const requestedService = (await searchParams).service;
+  const initialService =
+    typeof requestedService === "string" && isServiceOptionValue(requestedService)
+      ? requestedService
+      : "";
   const deliveryEnabled = Boolean(
     process.env.RESEND_API_KEY &&
       process.env.CONTACT_RECIPIENT_EMAIL &&
@@ -79,6 +89,7 @@ export default function ContactPage() {
           <div>
             <ContactForm
               deliveryEnabled={deliveryEnabled}
+              initialService={initialService}
               turnstileSiteKey={turnstileSiteKey}
             />
           </div>
