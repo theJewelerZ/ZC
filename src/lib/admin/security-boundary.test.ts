@@ -19,7 +19,8 @@ describe("private dashboard security boundary", () => {
     const form = readFileSync("src/components/admin/login-form.tsx", "utf8");
     const login = readFileSync("src/app/admin/login/page.tsx", "utf8");
     expect(form).toContain("emailRedirectTo: callbackUrl");
-    expect(form).not.toContain("window.location.origin");
+    expect(form).toContain("window.location.replace");
+    expect(form).toContain("window.location.origin !== authOrigin");
     expect(login).toContain("getAdminAuthOrigin");
     expect(login).toContain("/auth/callback");
   });

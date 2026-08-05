@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { createSupabaseBrowserClient } from "@/lib/supabase/browser";
 
 export function AdminLoginForm({
@@ -14,8 +14,23 @@ export function AdminLoginForm({
 }) {
   const [state, setState] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    const authOrigin = new URL(callbackUrl).origin;
+    if (window.location.origin !== authOrigin) {
+      window.location.replace(`${authOrigin}/admin/login`);
+      return;
+    }
+  }, [callbackUrl]);
+
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const authOrigin = new URL(callbackUrl).origin;
+    if (window.location.origin !== authOrigin) {
+      window.location.replace(`${authOrigin}/admin/login`);
+      return;
+    }
+
     const form = new FormData(event.currentTarget);
     const email = String(form.get("email") || "").trim().toLowerCase();
     setState("sending");
@@ -32,6 +47,8 @@ export function AdminLoginForm({
     setState("sent");
     setMessage("If this email belongs to the authorized founder account, a sign-in link is on its way. Open only the newest email in this same browser and device.");
   }
+
+
   return <form className="admin-login-form" onSubmit={submit}>
     <label htmlFor="admin-email">Founder email</label>
     <input autoComplete="email" id="admin-email" name="email" required type="email" />
