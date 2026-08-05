@@ -233,3 +233,29 @@ Statuses:
   at the Vercel domain layer.
 - **Reconsider when:** Only through an explicit founder-approved canonical-host
   change accompanied by coordinated Vercel, application, SEO, and test updates.
+
+## ADR-021 — Simulator-room-builder-first public positioning
+
+- **Status:** Accepted
+- **Context:** The founder approved a deliberate change from broad construction
+  positioning to a focused category position built around custom indoor golf
+  simulator rooms. General construction capability now supports credibility;
+  it no longer competes with the primary offer. Precision Impact Screens is no
+  longer part of the public website, while CapProof and Bid Desk operate only as
+  internal advantages in documentation, estimating, scopes, and assumptions.
+- **Decision:** Position Zarka Construction publicly as a **Golf Simulator Room
+  Builder**. Lead with residential and commercial custom simulator rooms, room
+  feasibility, planning, construction, protection, finish integration, and
+  coordination. Use the existing `/simulator-construction` route and feature
+  branch as the foundation. Remove all public Precision Impact Screens and
+  software-product cards. Mention CapProof only as part of the professional
+  documentation process; express Bid Desk only through organized scopes,
+  estimating, and documented assumptions without naming it publicly. Guide
+  inquiries toward an on-site consultation or guided remote room review.
+- **Consequences:** The homepage, navigation, contact flow, metadata, structured
+  data, legal copy, analytics vocabulary, and canonical documentation must tell
+  one simulator-room-builder story. Existing general construction services
+  remain secondary evidence. No product catalog, equipment sales, uploads,
+  database, CMS, authentication, estimator, or customer portal is added.
+- **Reconsider when:** Only after founder approval supported by qualified-lead
+  evidence or a material change to the company’s intended business model.

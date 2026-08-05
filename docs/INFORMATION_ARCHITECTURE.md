@@ -1,157 +1,142 @@
 # Information Architecture
 
-## MVP sitemap
+## Public sitemap
 
 ```text
 /
-├── #services
-├── #simulator-construction
-├── #why-zarka
-├── #work
-├── #field-built-tools
+├── #simulator-rooms
+├── #planning
+├── #planning-process
+├── #projects
+├── #capabilities
 ├── #about
 └── #contact-cta
+/simulator-construction
 /contact
 /privacy
 /terms
 ```
 
-The homepage is the main narrative. Legal and contact pages are first-class,
-indexable routes. Hash targets use stable IDs and account for the sticky header.
+The homepage owns the simulator-room-builder narrative. The dedicated simulator
+route provides deeper planning and construction detail. No new public route is
+required for this repositioning.
 
 ## Homepage sequence
 
-1. **Header** — brand, concise navigation, consultation CTA.
-2. **Hero** — positioning, approved statement, primary and secondary CTA.
-3. **Core services** — honest service categories and delivery boundaries.
-4. **Indoor golf simulator construction** — prominent specialty explanation.
-5. **Why Zarka Construction** — field experience, precision, communication,
-   and integrated thinking without unsupported statistics.
-6. **Selected capabilities or project work** — capability-led presentation
-   until approved portfolio assets exist.
-7. **Tools and businesses built from field experience** — CapProof, Bid Desk,
-   and Precision Impact Screens in one coherent narrative.
-8. **Founder and company credibility** — concise, factual company context.
-9. **Contact CTA** — one decisive route into consultation.
-10. **Footer** — navigation, business identity, external projects, legal links.
+1. **Header** — simulator-first navigation and one project CTA.
+2. **Hero** — “Golf Simulator Room Builder” category and complete-room promise.
+3. **Custom simulator solutions** — residential, commercial, conversion,
+   impact, finish, planning, and coordination outcomes.
+4. **Room feasibility and planning** — geometry and system dependencies.
+5. **Planning process** — evaluation, coordination, construction, review, and
+   the two consultation approaches.
+6. **Projects** — future founder-owned photography slots; no invented proof.
+7. **Construction credibility** — field experience supporting simulator work.
+8. **About** — concise simulator-room-builder position and practical foundation.
+9. **Contact CTA** — start an on-site or guided remote room review.
+10. **Footer** — simulator navigation, project entry, and legal links.
 
-## Navigation behavior
+This sequence targets approximately 80% simulator content, 15% construction
+credibility, and 5% supporting systems.
 
-### Desktop header
+## Navigation
 
-- Logo links to `/`.
-- Primary items: Services, Simulator Construction, Work, Field-Built Tools,
-  About, Contact.
-- Homepage section links use `/#section-id` so they work from every route.
-- “Request a Consultation” is the only button treatment.
-- Header may become compact/sticky after scroll; it must not obscure anchors or
-  keyboard focus.
+Desktop and mobile order:
 
-### Mobile header
+1. Simulator Rooms → `/simulator-construction`
+2. Capabilities → `/#capabilities`
+3. Planning Process → `/#planning-process`
+4. Projects → `/#projects`
+5. About → `/#about`
+6. Contact → `/contact`
 
-- Brand and menu button remain visible.
-- Menu uses a native button with `aria-expanded`, `aria-controls`, descriptive
-  label, logical focus behavior, Escape close, and adequate hit targets.
-- Navigation order matches desktop. The CTA appears once in the menu.
-- Prevent background interaction while a modal-style menu is open, or use an
-  inline expanding panel that avoids modal complexity.
-- Close after route/anchor activation and restore focus appropriately.
+The primary button is **Plan a Simulator Room** and links to
+`/contact?service=simulator-construction`. Homepage anchors use root-qualified
+paths so they work from every route. Mobile behavior retains accessible button,
+expanded state, Escape handling, keyboard order, and adequate touch targets.
 
 ## Footer
 
-Four conceptual groups, collapsed responsively:
+- Brand and approved statement
+- Primary navigation
+- Simulator construction, planning process, and room-review links
+- Privacy and terms
+- Legal identity and simulator-room positioning
 
-1. Brand statement and text/logo fallback.
-2. Primary navigation and consultation link.
-3. Related businesses with clear external treatment; omit Bid Desk link until
-   configured.
-4. Privacy, terms, copyright year, and confirmed contact details only.
+No product directory, ecosystem links, public software cards, placeholder phone,
+email, address, or unconfirmed service area.
 
-Do not publish a placeholder phone number, street address, or email. A labeled
-service region may appear only after founder confirmation.
-
-## External project links
-
-- Store URLs and statuses in typed configuration.
-- CapProof: external, confirmed.
-- Precision Impact Screens: external, confirmed.
-- Bid Desk: URL `null`; show an accurate status label or non-linked card.
-- External links visually include an external-link icon and accessible context.
-- If opening a new tab, use `rel="noopener noreferrer"` and announce the
-  behavior; same-tab navigation is acceptable and often simpler on mobile.
-- Track the project slug and link placement without sending form or visitor PII.
-
-## Visitor flows
-
-### Primary conversion
+## Primary visitor flow
 
 ```text
-Referral/search → hero or relevant section → Request a Consultation
-→ /contact → validated submission → accessible confirmation
+Referral or search
+→ simulator-first homepage or /simulator-construction
+→ room-planning explanation
+→ Plan Your Simulator Room
+→ /contact?service=simulator-construction
+→ choose on-site consultation or guided remote review
+→ validated, protected submission
+→ accessible confirmation
 ```
 
-The path must work without visiting the portfolio or ecosystem cards. If email
-delivery is unavailable, the page gives a truthful retry/fallback message using
-only confirmed business contact information.
-
-### Simulator inquiry
+## Residential flow
 
 ```text
-Landing → simulator section → scope considerations/capabilities
-→ consultation CTA with simulator preselected where practical → /contact
+Hero → Residential Simulator Rooms → planning dependencies
+→ room review → contact
 ```
 
-### Ecosystem exploration
+The visitor should understand that equipment choice alone does not establish
+room feasibility.
+
+## Commercial flow
 
 ```text
-Landing → field-built tools context → project card
-→ confirmed external site
+Hero → Commercial Simulator Bays → impact/durability/access coordination
+→ detailed simulator page → room review → contact
 ```
 
-This remains secondary: ecosystem cards follow core credibility and simulator
-content, and do not use the orange primary-button treatment.
+Do not imply commercial capacity, operating geography, code responsibility, or
+licensed-trade coverage beyond a confirmed scope.
 
-### Contractor or partner
+## Project-proof flow
 
 ```text
-Landing → services/why/about → consultation/contact
+Homepage Projects → real planning / construction / completed-room evidence
+→ simulator detail → contact
 ```
 
-Contact service options should include a neutral project/business inquiry option
-without creating a separate partner funnel.
+Project images remain absent until founder-owned work is underway, publication
+rights are confirmed, and context/alt text are approved. The upcoming secured
+project is not published before construction begins.
+
+## Contact architecture
+
+The existing `/api/contact` backend remains the single delivery path. The form
+adds a required, validated review preference:
+
+- `on-site-consultation`
+- `guided-remote-review`
+
+Remote review copy explains that measurements and photographs are required in
+follow-up. No upload field, storage, database, or scheduling system is added.
+
+## Supporting systems
+
+CapProof can be named only in a sentence describing professional field
+documentation. Bid Desk remains invisible publicly; its operational value is
+expressed through organized estimating, scopes, and assumptions. Precision
+Impact Screens has no public IA node, link, card, footer entry, metadata entry,
+or conversion path.
 
 ## Future expansion
 
-Potential routes, added only with sufficient approved content:
+Add only after factual content and founder approval:
 
-- `/work` and `/work/[project]`
-- `/services` and focused service pages
-- `/indoor-golf-simulators`
-- `/about`
-- `/service-areas/[area]` when real operating boundaries and unique content exist
-- `/insights` only after an editorial owner and publishing process exist
+- `/projects` and `/projects/[project]` with founder-owned media
+- focused residential/commercial simulator pages when each has distinct value
+- real service-area pages with confirmed operating boundaries
+- useful planning guidance with an editorial owner
 
-Future routes must preserve existing section links or add redirects. Do not
-create thin SEO pages, a CMS, or dynamic project routes in Phase 1.
-
-## Phase 2 current sitemap addition
-
-```text
-/simulator-construction
-```
-
-`/simulator-construction` is the canonical focused simulator page. Header,
-footer, and homepage simulator links route directly to it. The original
-`#simulator-construction` homepage section remains a concise introduction and
-internal discovery path.
-
-Simulator conversion flow:
-
-```text
-Landing or search -> /simulator-construction -> planning and scope details
--> /contact?service=simulator-construction -> validated submission
--> accessible confirmation
-```
-
-The dedicated page remains static and factual, adds no new backend, and uses the
-existing contact service option and API.
+Do not add a CMS, database, configurator, estimator, store, portal, dashboard,
+authentication, or equipment catalog merely to support these paths.

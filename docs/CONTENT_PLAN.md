@@ -2,256 +2,151 @@
 
 ## Voice
 
-Direct, specific, grounded, and confident. Use construction language that a
-customer can understand. Prefer concrete project considerations over adjectives.
-Avoid contractor clichés, startup hype, unsupported superlatives, and claims
-that broaden the company’s legal or operational scope.
+Expert, direct, practical, and room-specific. Explain the physical relationships
+that make simulator construction different. Avoid handyman language, generic
+contractor slogans, equipment-shopping language, startup hype, and unsupported
+superlatives.
+
+Use **simulator room builder** as the primary category. Use “installation” only
+for a specific installation task, not as the company's main identity.
+
+## Homepage narrative ratio
+
+- Approximately 80% simulator-room planning and construction
+- Approximately 15% construction credibility
+- Approximately 5% supporting project systems
 
 ## Hero
 
-### Recommended direction
+**Eyebrow:** Golf Simulator Room Builder
 
-**Eyebrow:** Michigan construction and specialty installation
+**Headline:** We Build the Room Around the Technology.
 
-**Headline:** Built with precision. Delivered with integrity.
+**Support:** Custom indoor golf simulator rooms designed around your space, your
+equipment, and the way you play.
 
-**Supporting copy:** Zarka Construction brings hands-on construction,
-renovation, specialty installation, and project-support experience to spaces
-that demand careful planning and dependable execution—including complete indoor
-golf simulator environments.
+**Credibility line:** From room feasibility and framing to impact protection,
+finish work, turf, lighting, and installation coordination, Zarka Construction
+delivers the complete build environment.
 
-**Actions:** Request a Consultation · Explore Our Work
+**Primary CTA:** Plan Your Simulator Room
 
-This copy remains provisional until services and service area are approved. The
-word “complete” refers to room integration, not unconfirmed dealer relationships
-or responsibility for every technology product.
+**Secondary CTA:** How Room Planning Works
 
-### Alternate headline options
+## Homepage sections
 
-1. **Construction experience, applied with precision.**
-2. **Field-built expertise for demanding spaces and projects.**
-3. **Craft, coordination, and clearer project delivery.**
+### Custom simulator solutions
 
-Retain the approved brand statement elsewhere if an alternate becomes the hero.
-Do not combine multiple headline options in production.
+Organize around customer outcomes rather than construction trades:
 
-## Section objectives and working messages
+- Residential Simulator Rooms
+- Commercial Simulator Bays
+- Room Conversions
+- Impact Environments
+- Finish Integration
+- Room Planning
+- Construction Coordination
 
-### Core construction and installation services
+Explain that exact equipment and licensed-trade responsibilities are confirmed
+per project.
 
-**Objective:** Establish the company’s practical scope without implying every
-trade is self-performed.
+### Room feasibility and planning
 
-Working introduction:
+Core message: the screen cannot be selected independently from the room.
+Explain the dependency chain among:
 
-> Practical construction support shaped around the space, the finish, and the
-> work required to deliver it well.
+- finished width, depth, and ceiling height;
+- player handedness, position, and swing envelope;
+- screen size, aspect ratio, setback, and enclosure depth;
+- projector throw path and obstructions;
+- wall, ceiling, opening, and ricochet protection;
+- turf, hitting surface, stance area, and floor transitions;
+- lighting, power, data, ventilation, and service access.
 
-Initial categories:
+Construction must be considered before technology positions and finish details
+are locked.
 
-- **Construction and renovation support** — Planning and hands-on support for
-  interior construction and improvement work. Final language must distinguish
-  self-performed work from partner-coordinated trades.
-- **Finish carpentry and specialty installation** — Detail-driven installation,
-  trim, finish work, and custom-built elements.
-- **Painting and interior improvements** — Preparation, painting, and interior
-  updates within the currently approved operating scope.
-- **Indoor golf simulator construction** — Room planning, protection systems,
-  enclosures, finish integration, and installation coordination.
-- **Estimating and project support** — Construction opportunity review,
-  estimating support, and workflow assistance; confirm what is client-facing.
-- **Field documentation and reporting** — Clear evidence and project reporting
-  practices; distinguish Zarka services from the CapProof software product.
+### Planning process
 
-Each card may carry a delivery label configured from:
-`direct`, `coordinated`, `software`, or `future`. Do not publish internal labels
-without customer-friendly copy.
+1. Understand the room.
+2. Coordinate the system.
+3. Build and finish the approved scope.
+4. Review the completed environment.
 
-### Indoor golf simulator construction
+Present two entry paths:
 
-**Objective:** Show why the built room is a system and why early planning matters.
+- **On-site consultation:** in-person documentation of the room when location
+  and scope make it appropriate.
+- **Guided remote room review:** guided measurements, photographs, intended
+  users, and known equipment information shared during follow-up.
 
-Working heading: **A simulator room is more than the equipment.**
+The website does not accept uploads. Do not promise a response time or that
+either review method is available in every geography.
 
-Working message:
+### Projects
 
-> Player clearance, screen geometry, enclosure depth, protection, lighting,
-> projection, turf, and finished-room details all affect how the space performs.
-> Zarka Construction helps bring those decisions together around the room and
-> the way it will actually be used.
+Use founder-owned photographs only. Do not use AI images, stock photography,
+staged scenes, fake projects, or the secured upcoming project before actual
+construction begins. Until approved imagery exists, use the configuration-led
+architectural schematic slots and truthful process descriptions.
 
-Potential capability list, published only within approved scope:
+Each future project requires approved publication rights, title, broad location
+if publishable, room constraints, Zarka scope, coordinated work boundaries,
+photography, alt text, and founder approval.
 
-- Room feasibility and spatial planning
-- Right- and left-handed player clearances
-- Framing, finish carpentry, and enclosure construction
-- Impact-screen, blackout-fabric, netting, wall, and ceiling protection planning
-- Turf and hitting-area coordination
-- Lighting, projector, and technology coordination
-- Custom trim and finished-room integration
-- Installation support
+### Construction credibility
 
-Required qualifier: equipment selection, electrical work, HVAC, and other
-licensed trades must be described as coordinated when not directly performed.
-Do not claim dealer status, manufacturer approval, performance warranties,
-certifications, or launch-monitor expertise not supplied by the founder.
+Use construction, finish carpentry, renovation, painting, commercial
+maintenance, and project-support experience only to explain why Zarka can plan
+and execute simulator rooms. Do not turn these into equal primary service
+funnels.
 
-### Why Zarka Construction
+### Supporting systems
 
-**Objective:** Establish credibility through approach rather than invented
-statistics.
+CapProof may appear once as part of the professional field-documentation
+process. Do not create a card or external product CTA. Bid Desk must not be named
+publicly; its value appears through organized scopes, estimating, and documented
+assumptions.
 
-Themes:
+Precision Impact Screens must not appear publicly in copy, links, navigation,
+footer, cards, metadata, structured data, sitemap, analytics, or SEO content.
 
-- **Field-tested judgment** — decisions informed by real construction and
-  installation conditions.
-- **Precision in the details** — spatial, finish, and handoff details considered
-  before they become jobsite problems.
-- **Clearer project proof** — documentation and communication support better
-  decisions and client confidence.
-- **Craft and technology together** — tools serve delivery; they do not replace
-  practical construction judgment.
+### About
 
-Avoid “best,” “leading,” “award-winning,” “fully licensed and insured,” exact
-years, counts, or guaranteed outcomes without evidence.
+Approved direction:
 
-### Selected capabilities or work
+> Zarka Construction plans and builds custom indoor golf simulator rooms for
+> residential and commercial spaces. Hands-on construction, carpentry,
+> specialty installation, renovation, painting, and project-support experience
+> informs how each room is planned, scoped, documented, and finished.
 
-**Objective:** Make work tangible before a full portfolio exists.
-
-If approved project photos and facts are unavailable, publish a capability-led
-band with simulator rooms, finish/specialty installation, interior improvement,
-and project support. Do not create fictional case studies, locations, budgets,
-testimonials, or before/after stories.
-
-Once assets exist, each project requires: approved title, broad location,
-challenge, Zarka scope, direct versus partner work, outcome stated without
-inflation, image rights, alt text, and founder approval.
-
-### Tools and businesses built from field experience
-
-**Objective:** Explain the common origin before introducing individual cards.
-
-Working introduction:
-
-> Repeated field problems—unclear estimates, missing documentation, difficult
-> client handoffs, and highly specialized installations—led to focused tools and
-> businesses designed around the work itself.
-
-- **CapProof**  
-  Category: Field documentation software  
-  Copy: Capture field evidence, organize project documentation, and create
-  clearer client-ready proof.  
-  URL: <https://capproof.com>
-
-- **Bid Desk**  
-  Category: Estimating and bid workflow  
-  Copy: A construction opportunity review and estimating workflow designed to
-  make bid decisions more organized.  
-  URL: not confirmed; render without a link. Status language requires approval.
-
-- **Precision Impact Screens**  
-  Category: Indoor golf simulator products and construction  
-  Copy: Impact screens, enclosures, room construction, installation, and related
-  products for purpose-built simulator environments.  
-  URL: <https://precisionimpactscreens.com>
-
-No unsupported customer, adoption, performance, or market claims.
-
-### Founder and company credibility
-
-**Objective:** Connect the company’s past, present, and technical direction.
-
-Working structure:
-
-> Zarka Construction is grounded in hands-on construction, master carpentry,
-> specialty installation, renovation, painting, and project support. That field
-> perspective also informs tools for estimating, documentation, and specialized
-> simulator environments.
-
-“Master carpentry” and every other scope phrase require founder confirmation
-before launch. Add a personal founder name, chronology, years, licenses, or
-portrait only after those facts/assets are supplied and approved.
+Do not add founder name, dates, counts, licensing, insurance, certifications, or
+project claims until approved.
 
 ### Contact CTA
 
-**Heading:** Let’s talk about the space, the work, and what comes next.
+**Heading:** Every simulator room needs to be evaluated before it is built.
 
-**Copy:** Share the project type, location, and timeline. Zarka Construction will
-review the details and follow up using the confirmed business contact process.
+**Action:** Start Your Room Review
 
-**Action:** Request a Consultation
+Ask for project type, review preference, general location, timing, room and
+known equipment context, and optional phone/referral source. Do not add uploads,
+budget tools, scheduling, payments, or automated estimates.
 
-Do not promise a response time until the founder commits to one.
+## Dedicated simulator page
 
-## Form copy and fields
+`/simulator-construction` remains the detailed canonical service route. Preserve
+its room-system structure while leading with “Golf Simulator Room Builder.”
+Cover feasibility, construction, impact environments, protection, turf,
+projection, lighting, process, consultation choices, FAQ, and final CTA.
 
-Required fields: name, email, service needed, general location/project city,
-approximate timeline, and project description. Phone and referral source are
-optional. Exact address, uploads, budget, preferred contact method, and
-scheduling are deferred.
+Do not imply that Zarka manufactures or sells every technology component.
+Equipment selection, purchasing, manufacturer requirements, and licensed trades
+remain separately confirmed unless included in a written scope.
 
-Use concise helper text and explicit required indicators. Success copy confirms
-receipt, not acceptance or scheduling. Error copy must not falsely say a message
-was received.
+## Prohibited claims
 
-## CTA hierarchy
-
-1. Orange: Request a Consultation
-2. Neutral/outline: Explore Our Work
-3. Text links: learn about a capability or visit a related external site
-
-Header, hero, simulator section, and final CTA may repeat the primary action,
-but no section should present multiple orange actions.
-
-## Prohibited or unsupported claims
-
-Do not publish an unconfirmed address, phone, email, service radius, license
-number/status, insurance statement, years-in-business number, employee/customer/
-review counts, awards, memberships, certifications, dealer relationships,
-warranties, manufacturer approvals, availability, response time, or universal
-trade coverage. Do not use “general contractor” as a structured-data type or
-marketing claim until factually approved.
-
-## Founder-input placeholders
-
-- `TODO(CONTACT_EMAIL)` and `TODO(FORM_RECIPIENT)`
-- `TODO(PHONE_DISPLAY_DECISION)`
-- `TODO(SERVICE_AREA)`
-- `TODO(CURRENT_SERVICES_AND_DELIVERY_MODE)`
-- `TODO(LICENSING_LANGUAGE_OR_OMISSION)`
-- `TODO(INSURANCE_LANGUAGE_OR_OMISSION)`
-- `TODO(FOUNDER_NAME_AND_BIO)`
-- `TODO(BID_DESK_URL_AND_STATUS)`
-- `TODO(PROJECTS_AND_IMAGE_RIGHTS)`
-- `TODO(TESTIMONIALS_AND_PERMISSION)`
-- `TODO(SOCIAL_LINKS)`
-
-Configuration should omit unresolved public values rather than render TODO text
-to visitors.
-
-## Phase 2 simulator construction page
-
-Route: `/simulator-construction`
-
-**Purpose:** Generate qualified inquiries by explaining the simulator room as a
-coordinated built environment rather than an equipment purchase.
-
-**Approved message sequence:** branded room-system hero; why simulator
-construction differs; room feasibility and player clearances; framing and
-finish scope; impact-screen/enclosure context; protective wall and ceiling
-systems; turf/hitting-area/flooring coordination; projector, lighting,
-electrical, and technology coordination; four-step project process; factual
-relationship to Precision Impact Screens; FAQ; simulator-preselected
-consultation CTA.
-
-Zarka is positioned as the room-construction and specialty-installation expert.
-Technology purchasing and licensed trade responsibilities are confirmed per
-project and are never implied. The page contains no prices, turnaround claims,
-project counts, geography, warranties, certifications, dealers, or manufacturer
-relationships.
-
-Four typed image slots preserve future layout positions. Their sources remain
-`null`; approved descriptive alt text is ready for later real project images.
-Until then, the public page renders decorative architectural schematics rather
-than fake photography.
+No invented address, phone, email, service radius, license, insurance, years,
+staff, customers, reviews, projects, awards, certifications, dealer status,
+manufacturer approval, warranty, price, turnaround time, capacity, geographic
+coverage, or guaranteed outcome.

@@ -176,3 +176,13 @@ names, and camera-generated names.
 5. Confirm both light/dark surfaces and text fallback.
 6. Remove obsolete assets only after references and production deployment are
    verified; record the brand decision.
+
+## Simulator-first project-photo gate
+
+- Use founder-owned simulator-room photography only.
+- Do not use AI-generated, stock, staged, or fictional project imagery.
+- Do not publish the secured upcoming project before actual construction begins.
+- Keep typed image sources `null` until publication rights, project context,
+  crop, dimensions, and alt text are approved.
+- Preserve planning, construction-progress, impact-environment, and completed-room
+  slots so approved photography can replace schematics without component rewrites.

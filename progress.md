@@ -1,6 +1,6 @@
 # Progress
 
-**Current phase:** Phase 2 - focused simulator construction increment
+**Current phase:** Phase 2 — simulator-room-builder strategic repositioning
 
 **Canonical production URL:** <https://www.zarkaconstruction.com>
 
@@ -10,85 +10,91 @@
 
 **Last updated:** August 4, 2026
 
-## Current production status
+## Production status
 
-Phase 1 and the Phase 1.5 readiness work remain live. Redirects, contact
-delivery and visitor Reply-To, Cloudflare Turnstile, contact rate limiting,
-search indexing, canonical metadata, and the existing public routes are
-confirmed. No database, CMS, authentication, or Supabase is present.
+The existing production release remains live and unchanged. Redirects, contact
+delivery, visitor Reply-To, Cloudflare Turnstile, rate limiting, canonical
+metadata, and search indexing were already verified. This repositioning has not
+been merged, promoted, or connected to production. DNS, nameservers, email
+records, GoDaddy products, and Vercel domain settings were not changed.
 
-Before Phase 2 implementation, the previously empty GitHub repository was
-configured as `origin` and the complete local `main` history was pushed. Local
-and remote `main` matched at `53ff306bd7ed59df7e10a6b82553f943db657a41`
-before the feature branch was created.
+## Accepted positioning decision
 
-## Focused Phase 2 implementation
+Zarka Construction is now positioned publicly as a **Golf Simulator Room
+Builder**.
 
-- Added the static `/simulator-construction` route.
-- Covered room feasibility, player clearances, framing/finish scope, impact
-  screen and enclosure context, wall/ceiling protection, turf and hitting area,
-  projector/lighting/technology coordination, maintenance access, process, FAQ,
-  Precision Impact Screens context, and consultation CTA.
-- Kept Zarka positioned as the room-construction and specialty-installation
-  expert without claiming equipment manufacturing, sales, certification,
-  warranty, dealer, or manufacturer relationships.
-- Added four typed, configuration-driven image slots with approved future alt
-  text. All sources remain `null`; the page renders decorative architectural
-  schematics and no fake project photography.
-- Added canonical/Open Graph/Twitter metadata, factual Service and FAQ JSON-LD,
-  and sitemap inclusion.
-- Updated primary navigation, footer navigation, and the homepage simulator
-  section to link to the dedicated route.
-- Reused the existing contact route and backend with
-  `?service=simulator-construction` safely preselecting the configured service.
-- Added regression coverage for the new sitemap route, service query guard, and
-  null photography configuration.
-- Added no dependencies, database, Supabase, CMS, authentication, new backend,
-  or unrelated Phase 2 features.
+Approved position:
 
-## Verification
+> Zarka Construction plans and builds custom indoor golf simulator rooms for
+> residential and commercial spaces.
 
-- `npm run lint`: pass
-- `npm run typecheck`: pass
-- `npm run test`: 23 tests pass across eight files
-- Production build with indexing enabled: pass
-- `/simulator-construction`: static route, HTTP 200
-- `/contact?service=simulator-construction`: HTTP 200 and simulator option
-  selected in server-rendered markup
-- Sitemap: five canonical public URLs including the simulator route
-- Metadata: canonical `www` URL, Open Graph/Twitter values, one H1, factual
-  Service JSON-LD, visible-content FAQ JSON-LD
-- Photography audit: only approved shared brand-mark images render; simulator
-  image slots remain null
-- Lighthouse mobile: Performance 98, Accessibility 100, Best Practices 100,
-  SEO 100; FCP 0.8 s, LCP 2.4 s, TBT 20 ms, CLS 0
-- Responsive Lighthouse captures reviewed at 320, 375, 768, 1024, and 1440 CSS
-  pixels; header, hero, CTAs, and breakpoint changes fit without visible
-  horizontal overflow
-- In-app interactive browser was unavailable in this environment; Lighthouse
-  artifacts and route/markup checks were used instead. A final human preview
-  review remains part of deployment acceptance.
-- Implementation commit: `dc6a796` (`Add simulator construction service page`)
-- Documentation commit: `3d3983b` (`Document focused Phase 2 simulator increment`)
-- Feature branch pushed to GitHub and confirmed to track
-  `origin/phase-2/simulator-construction`.
-- Vercel preview deployment `dpl_8Zsg6dGVS9Weiq4ZtKxjBudNixDY`: ready at
-  <https://zarka-construction-ng22g9wkb-matthews-projects-7e2a9d39.vercel.app>
-- Authenticated preview assertions passed for the simulator route, canonical
-  metadata, preview noindex behavior, Service/FAQ structured data, homepage
-  internal link, sitemap entry, and simulator contact preselection.
-- Production was not promoted or changed during this focused increment.
+The website represents the business Zarka intends to build. Construction,
+carpentry, renovation, painting, commercial maintenance, estimating, and
+documentation experience support simulator-room credibility rather than compete
+as equal primary services.
 
-## Missing founder content
+ADR-021 records the strategy change.
 
-- Approved real simulator project photography and publication rights
-- Final crop choices and context-specific alt text after images are selected
-- Confirmed service-area language, if it should be published
-- Any future manufacturer, product, warranty, or equipment relationship facts;
-  none are currently claimed
+## Implementation completed on the feature branch
+
+- Rebuilt homepage hierarchy around simulator-room planning and construction.
+- Implemented the approved hero: “We Build the Room Around the Technology.”
+- Reorganized public solutions into residential rooms, commercial bays, room
+  conversions, impact environments, finish integration, planning, and
+  construction coordination.
+- Added detailed room-geometry education and a four-step planning process.
+- Added on-site consultation and guided remote room review paths.
+- Added a required, server-validated `consultationPreference` to the existing
+  contact form and Resend HTML/plain-text email without adding a backend.
+- Preserved the detailed `/simulator-construction` route and replaced its former
+  external-product section with room-review guidance.
+- Added configuration-driven, null project-photo slots and truthful project
+  stages; no AI, stock, fake, or premature project imagery is public.
+- Kept CapProof to one documentation-process sentence with no card or link.
+- Removed all public Precision Impact Screens and Bid Desk references, links,
+  cards, footer entries, metadata, structured data, analytics, and SEO paths.
+- Updated header, footer, legal copy, Open Graph image, organization data,
+  metadata, navigation, CTAs, and internal linking.
+- Added no CMS, Supabase, database, authentication, uploads, scheduler,
+  configurator, estimator, store, catalog, equipment sales, or new route.
+
+## Verification completed
+
+- `npm run check`: pass
+  - ESLint: pass
+  - TypeScript: pass
+  - Vitest: 24 tests pass across 8 files
+  - Production build: pass
+- Routes return HTTP 200: `/`, `/simulator-construction`, simulator-preselected
+  `/contact`, `/privacy`, `/terms`, `/sitemap.xml`, and `/robots.txt`.
+- Rendered public-page audit: no Precision Impact Screens or Bid Desk text;
+  CapProof appears only as documentation-process context.
+- Contact markup: simulator service preselected; both approved room-review
+  options present.
+- Canonical URLs and simulator sitemap entry: pass.
+- Homepage and dedicated simulator page each contain one H1.
+- Responsive captures reviewed at 320, 375, 768, 1024, and 1440 CSS pixels with
+  no visible overflow, clipped CTAs, or broken hero layout.
+- Contrast audit passes at every reviewed width.
+- Lighthouse homepage: Performance 100, Accessibility 100, Best Practices 100,
+  SEO 100; FCP 0.8 s, LCP 1.9 s, TBT 20 ms, CLS 0.
+- Dedicated simulator route: Accessibility 100, SEO 100.
+- Contact route after contrast correction: Accessibility 100, SEO 100.
+- Lighthouse emits a Windows temporary-folder cleanup EPERM after writing valid
+  reports; report generation and scores are complete.
+
+## Remaining founder content
+
+- Founder approval of the protected repositioning preview
+- Founder-owned simulator project photography and publication rights
+- Approved project titles, scope facts, broad locations if publishable, crops,
+  and alt text after real construction begins
+- Confirmed public service-area wording, if any
+- Any verified equipment, manufacturer, dealer, certification, or warranty
+  relationships; none are currently claimed
 
 ## Immediate next action
 
-Complete a human review of the protected Vercel preview, then merge or promote
-only after approval. Do not begin portfolio, CMS, database, authentication, or
-unrelated Phase 2 work.
+Commit and push the repositioning on the existing feature branch, deploy a new
+protected Vercel preview, verify its rendered public routes, and wait for founder
+approval. Do not merge or promote to production.

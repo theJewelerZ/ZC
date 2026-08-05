@@ -65,15 +65,15 @@ visual checks, missing-asset test.
 3. Render approved services and visually distinguish conservative scope copy.
 4. Give simulator construction a full section with spatial/build considerations.
 5. Add Why Zarka and capability-led work without fictional projects.
-6. Render the ecosystem from configuration; Bid Desk remains valid without a
-   link.
+6. Render the planning process, room-review paths, and future real-project
+   image slots; do not render public software or product cards.
 7. Add approved company context and final contact CTA.
 8. Optimize responsive layout, section rhythm, images, and anchor offsets.
 
 **Dependencies:** content approval, configuration, shell.
 
-**Acceptance:** visitor can identify company, simulator specialty, field-derived
-ecosystem, and consultation path in one mobile scan; no unsupported claims.
+**Acceptance:** visitor can identify Zarka as a golf simulator room builder, understand the
+room-planning difference, and reach the consultation path in one mobile scan; no unsupported claims.
 
 **Verify:** content claim review; all internal/external links; headings and
 landmarks; responsive screenshots; no horizontal overflow at 320px; image

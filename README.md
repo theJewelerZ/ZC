@@ -2,53 +2,73 @@
 
 ## Project purpose
 
-The official website for Zarka Construction LLC: a Michigan-based construction
-and specialty installation company connecting decades of field experience with
-modern estimating, documentation, and construction technology.
+The official website for Zarka Construction LLC, positioned publicly as a
+**Golf Simulator Room Builder**.
+
+Zarka Construction plans and builds custom indoor golf simulator rooms for
+residential and commercial spaces. Construction, carpentry, renovation,
+painting, maintenance, estimating, and documentation experience support that
+specialty rather than compete with it.
 
 **Canonical production domain:** <https://www.zarkaconstruction.com>
 
-## Immediate goal
+## Current objective
 
-Ship a polished, fast, mobile-first marketing website that can be shared with
-prospects, contractors, vendors, and partners immediately. The first release is
-a focused professional front door, not a construction management application.
+The active Phase 2 branch repositions the existing production-quality website
+around simulator-room planning and construction. The customer journey begins
+with room feasibility and leads to either an on-site consultation or guided
+remote room review.
 
-## Implemented stack
+This is a conversation-generating marketing website. It is not an equipment
+store, configurator, estimator, portal, or software-product directory.
+
+## Stack
 
 - Next.js 16 App Router with React 19 and strict TypeScript
 - Tailwind CSS 4 with project-owned accessible components
 - Static or server-rendered marketing pages on Vercel
-- Environment-driven Resend contact email through a Next.js route handler
-- Optional Cloudflare Turnstile, honeypot/timing checks, and rate limiting
-- Vercel Analytics with PII-free conversion events
-- Supabase only after a real persistence requirement is approved
+- Resend contact delivery through `POST /api/contact`
+- Cloudflare Turnstile, honeypot/timing checks, and rate limiting
+- Vercel Analytics with PII-free events
+- No database, Supabase, CMS, authentication, uploads, or product catalog
 
-Use the current stable compatible versions when implementation begins. Pin
-resolved versions in the package lockfile and record material version choices
-in `docs/DECISIONS.md`.
+## Public routes
 
-## Current status
+- `/` — simulator-room-builder homepage
+- `/simulator-construction` — detailed planning and construction page
+- `/contact` — simulator project inquiry and room-review selection
+- `/privacy`
+- `/terms`
+- generated `/sitemap.xml` and `/robots.txt`
 
-Phase 1.5 production readiness is deployed on the canonical production site:
-<https://www.zarkaconstruction.com>.
+## Current branch status
 
-Founder-supplied raster brand artwork is integrated through the
-configuration-driven logo component and browser icons; the narrow header keeps
-the legible text wordmark paired with the approved icon. A professionally
-recreated SVG and approved project photography remain future replacements.
+Work continues on `phase-2/simulator-construction`. The branch is based on the
+existing simulator feature and must not be merged or promoted until founder
+approval of a protected Vercel preview.
 
-The linked Vercel Production project contains the server-only Resend recipient,
-sender, API key, and rate-limit configuration. The
-`zarkaconstruction.com` sender domain and its DKIM/SPF records are verified by
-Resend. A real production submission returned HTTP 200 and produced a
-privacy-safe `contact_delivery_accepted` event with a provider ID. Turnstile
-remains inactive until both credentials are configured. GoDaddy remains the
-registrar and DNS host; future DNS work must preserve unrelated website and
-email records.
+The production domain remains live with the prior approved release. DNS,
+GoDaddy, Vercel domain settings, and production deployment are not changed by
+the repositioning work.
 
-Production indexing is enabled on the canonical deployment. Preview and local
-builds remain non-indexable by default.
+## Strategic boundaries
+
+- Lead with “Golf Simulator Room Builder.”
+- Keep approximately 80% of homepage emphasis on simulator rooms, 15% on
+  construction credibility, and 5% on supporting systems.
+- Organize services around residential rooms, commercial bays, conversions,
+  impact environments, finish integration, room planning, and coordination.
+- Explain why dimensions, player position, screen geometry, projection,
+  protection, turf, lighting, and construction must be coordinated.
+- Use founder-owned project photography only after work begins and publication
+  is approved.
+- CapProof may appear only as part of the field-documentation process.
+- Bid Desk is not named publicly; organized estimates, scopes, and documented
+  assumptions express its operational value.
+- Precision Impact Screens has no public copy, link, card, footer entry,
+  metadata, structured data, sitemap, analytics, or SEO role.
+- Do not invent service area, address, phone, email, licensing, insurance,
+  certifications, dealer status, warranties, prices, timing, counts, or projects.
 
 ## Documentation
 
@@ -66,9 +86,9 @@ builds remain non-indexable by default.
 - [Launch checklist](docs/LAUNCH_CHECKLIST.md)
 - [Asset inventory](docs/ASSET_INVENTORY.md)
 - [Current progress](progress.md)
-- [Agent operating instructions](AGENTS.md)
+- [Agent instructions](AGENTS.md)
 
-## Development setup
+## Development
 
 Requirements: Node.js 24.x and npm.
 
@@ -78,11 +98,9 @@ Copy-Item .env.example .env.local
 npm run dev
 ```
 
-Open <http://localhost:3000>. Configure only the environment values available
-to you; the site remains operational with contact delivery and Turnstile
-disabled.
+Open <http://localhost:3000>.
 
-Quality and production commands:
+Quality commands:
 
 ```powershell
 npm run lint
@@ -90,54 +108,31 @@ npm run typecheck
 npm test
 npm run build
 npm run check
-npm run start
 ```
 
-Never commit `.env.local`, Resend credentials, Turnstile secrets, or private DNS
-exports.
+Never commit `.env.local`, Resend credentials, Turnstile secrets, private DNS
+exports, or customer/project photographs without approved publication rights.
 
-### Production environment
+## Environment configuration
 
-Required for contact delivery:
+Contact delivery requires:
 
 - `RESEND_API_KEY`
 - `CONTACT_RECIPIENT_EMAIL`
 - `CONTACT_FROM_EMAIL`
 
-The domain used by `CONTACT_FROM_EMAIL` must also be verified in the configured
-Resend account. Environment variables alone do not establish sender
-authorization.
-
-Optional Turnstile hardening:
+Production abuse protection uses:
 
 - `NEXT_PUBLIC_TURNSTILE_SITE_KEY`
 - `TURNSTILE_SECRET_KEY`
+- `CONTACT_RATE_LIMIT_SECRET`
+- optional rate-window overrides documented in `.env.example`
 
-Set `NEXT_PUBLIC_SEARCH_INDEXING_ENABLED=true` only in the canonical Vercel
-Production environment. Leave it absent or `false` in Preview and local
-environments so non-canonical deployments remain non-indexable. See
-[.env.example](.env.example) for the complete safe template.
+Set `NEXT_PUBLIC_SEARCH_INDEXING_ENABLED=true` only in canonical Vercel
+Production. Protected previews and local builds remain non-indexable.
 
-## Scope constraints
+## Deployment safeguard
 
-- MVP routes are `/`, `/contact`, `/privacy`, and `/terms`.
-- The homepage carries the primary marketing narrative.
-- Do not invent contact details, address, service radius, licensing, insurance,
-  team size, years in business, reviews, certifications, or metrics.
-- Do not imply that Zarka Construction performs every licensed trade or acts as
-  a full-service general contractor without founder approval.
-- Indoor golf simulator construction is a major specialty, not a minor card.
-- CapProof and Precision Impact Screens may link to their confirmed sites. Bid
-  Desk must have no public link until its URL is supplied.
-- Business data, external links, and logo paths must be configuration-driven.
-- No authentication, CMS, CRM, portal, database, scheduling platform, AI chat,
-  or product-to-product integration belongs in the MVP.
-- Do not change DNS or cancel a GoDaddy product until the production deployment,
-  domain records, mail records, SSL, redirects, and rollback plan have been
-  verified.
-## Focused Phase 2 route
-
-`/simulator-construction` is the first bounded Phase 2 improvement. It is a
-static, configuration-led indoor golf simulator construction page that reuses
-the existing contact backend with the simulator service preselected. It adds no
-CMS, database, authentication, Supabase, or unrelated Phase 2 functionality.
+Deploy and review a protected preview first. Do not merge, promote, alter DNS,
+change nameservers, transfer the domain, modify email records, or cancel a
+GoDaddy product without explicit founder authorization.

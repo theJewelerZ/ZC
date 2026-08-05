@@ -2,114 +2,100 @@
 
 ## Phase 0 — Foundation and Decisions
 
-**Objective:** Create a canonical, implementation-ready baseline and resolve
-the minimum launch inputs.
+**Objective:** Establish the canonical product, brand, technical, deployment,
+and DNS baseline.
 
-**Scope and deliverables:** Product/brand/content/architecture documentation;
-decision log; prioritized questions; asset plan; launch/cutover procedures;
-GitHub, Vercel, contact, and DNS ownership decisions.
+**Deliverables:** Documentation set, decision log, asset strategy, contact and
+hosting architecture, launch checklist, and cutover safeguards.
 
-**Exclusions:** Application code, production logo recreation, DNS changes,
-deployment, GoDaddy cancellation.
+**Exclusions:** Application implementation, DNS mutation, product integrations.
 
-**Dependencies:** Founder review and account/asset access.
+**Exit criteria:** Baseline approved and implementation can proceed without
+inventing business facts.
 
-**Exit criteria:** Baseline accepted; true launch gates have owners; current DNS
-zone and GoDaddy products can be inventoried; Phase 1 can begin without product
-strategy reinterpretation.
+**Status:** Complete.
 
 ## Phase 1 — Professional Launch MVP
 
-**Objective:** Launch a fast, credible official site and safely replace the
-GoDaddy-hosted website.
+**Objective:** Launch a fast, credible production website with reliable inquiry
+delivery.
 
-**Scope and deliverables:** Responsive header/navigation; approved colors and
-temporary logo/fallback; polished homepage hero, services, prominent simulator,
-Why Zarka, capability/work, ecosystem, about, contact CTA, and footer; `/contact`
-with protected email delivery; `/privacy`; `/terms`; metadata, sitemap, robots,
-factual structured data, analytics; Vercel deployment; apex/`www` configuration;
-production smoke test and monitoring.
+**Deliverables:** Responsive shell, approved raster branding, homepage, contact,
+privacy, terms, metadata, sitemap, robots, analytics, protected Resend delivery,
+Vercel deployment, canonical domain, and production verification.
 
-**Exclusions:** CMS, authentication, database, scheduling, uploads, customer
-portal, online estimating, AI chat, full portfolio, product integrations,
-domain transfer, nameserver migration.
+**Exclusions:** CMS, database, authentication, portal, uploads, estimator,
+configurator, store, or equipment sales.
 
-**Dependencies:** Approved launch copy; form recipient/sender; temporary logo or
-fallback approval; GitHub/Vercel/GoDaddy access; complete DNS inventory.
+**Exit criteria:** Production routes, redirects, HTTPS, contact delivery,
+Turnstile, rate limiting, indexing, accessibility, and performance verified.
 
-**Exit criteria:** All required routes and checks pass at the canonical domain;
-form delivery is verified; apex redirects once to `www`; mail/external DNS services
-still work; unwanted GoDaddy website product is eligible for separate
-cancellation.
+**Status:** Complete.
 
-## Phase 2 — Portfolio and Conversion Upgrade
+## Phase 2 — Simulator-Room-Builder Repositioning
 
-**Objective:** Add proof and improve inquiry quality using real launch evidence.
+**Objective:** Transform public perception so Zarka Construction is understood
+first as a custom golf simulator room builder.
 
-**Scope and deliverables:** Approved project photography and case studies;
-dedicated work/service/simulator content where justified; improved form
-qualification such as budget or preferred contact method when useful; stronger
-local content; Search Console/Business Profile alignment; conversion and
-performance iteration.
+**Scope:**
 
-**Exclusions:** Customer portal, automated estimates, deep software integration,
-publishing platform without an editorial owner.
+- Simulator-first homepage and navigation
+- Dedicated `/simulator-construction` route retained and strengthened
+- Residential and commercial simulator solutions
+- Room feasibility and geometry education
+- On-site consultation and guided remote review paths
+- Simulator-focused contact categories and email formatting
+- Future founder-owned photography slots
+- Construction credibility as supporting evidence
+- CapProof limited to documentation-process context
+- Removal of all public Precision Impact Screens and software-product cards
 
-**Dependencies:** Image rights and project facts; inquiry baseline; confirmed
-service areas and operational capacity; content owner.
+**Exclusions:** New routes beyond the simulator page, CMS, Supabase, database,
+authentication, uploads, scheduling, configurator, estimator, store, catalog,
+equipment sales, fake projects, or unrelated Phase 2 features.
 
-**Exit criteria:** Portfolio is factual and maintainable; qualified inquiry rate
-can be compared with Phase 1; new pages earn distinct content and search intent;
-Core Web Vitals/accessibility remain healthy.
+**Dependencies:** Founder approval of positioning; existing production
+infrastructure; approved photography only when real work begins.
 
-## Phase 3 — Ecosystem Integration
+**Exit criteria:** Protected preview passes copy, SEO, accessibility, responsive,
+performance, route, and no-prohibited-reference reviews; founder approves before
+production promotion.
 
-**Objective:** Create useful handoffs between Zarka Construction and its related
-tools without confusing the customer journey.
+**Status:** In progress on `phase-2/simulator-construction`. Do not merge or
+promote without founder approval.
 
-**Scope and deliverables:** Approved deep links or structured handoffs to
-CapProof, Bid Desk, and Precision Impact Screens; optional durable lead storage;
-photo upload or consultation scheduling only when operationally owned; shared
-brand/analytics conventions where appropriate.
+## Phase 3 — Project Proof and Local Authority
 
-**Exclusions:** Automatic cross-product data sharing without consent, a single
-forced account system, speculative CRM/platform work, integrations without
-stable APIs and owners.
+**Objective:** Add factual evidence and improve qualified simulator-room demand.
 
-**Dependencies:** Confirmed product URLs/APIs, privacy/security review, support
-ownership, data model and retention decisions, measured workflow demand.
+**Scope:** Founder-owned project photography, approved case studies, residential
+and commercial proof, Search Console/Business Profile alignment, confirmed
+service-area language, and conversion iteration based on actual inquiries.
 
-**Exit criteria:** Each integration solves a documented user/operations problem,
-has consent and failure handling, is observable, and does not weaken the core
-construction-site experience.
+**Exclusions:** Fictional case studies, stock/AI project imagery, thin SEO pages,
+publishing platform without an owner, or self-service quoting.
 
-## Phase 4 — Construction Intelligence Platform
+**Dependencies:** Construction underway, image rights, approved project facts,
+confirmed service boundaries, and a content owner.
 
-**Objective:** Evaluate a connected platform spanning opportunity, estimating,
-execution evidence, reporting, and specialized construction delivery.
+**Exit criteria:** Project proof is accurate, permissioned, maintainable, and
+supports distinct search and customer questions without weakening performance.
 
-**Scope and deliverables:** Validated platform strategy; interoperable identity
-and data boundaries if needed; governed workflow from opportunity through proof;
-role-based experiences; operational/security/compliance model; staged migration
-plan from the independent products.
+## Phase 4 — Operational Refinement
 
-**Exclusions:** Premature monolith, unvalidated AI automation, universal data
-collection, replacement of effective product boundaries without evidence.
+**Objective:** Improve internal delivery only where measured operating needs
+justify it.
 
-**Dependencies:** Demonstrated product-market demand, stable product APIs,
-dedicated team/operations, security and legal review, data governance, funding
-and support capacity.
+**Potential scope:** Privacy-reviewed lead persistence, workflow handoffs,
+controlled photo exchange, or scheduling after ownership and failure behavior
+are defined.
 
-**Exit criteria:** A separately approved business and technical case defines
-customers, value, ownership, data policy, architecture, rollout, and measurable
-outcomes. This phase is not implied by completing earlier phases.
+**Exclusions:** Automatic cross-product sharing, speculative platform work,
+customer accounts without a validated use case, or public software ecosystem
+positioning.
 
-## Phase 2 current focused increment
+**Dependencies:** Measured volume, stable operating process, data-retention and
+security decisions, and explicit founder approval.
 
-The first Phase 2 increment is limited to `/simulator-construction`: a factual,
-static, configuration-led service page with room planning, construction,
-protection, enclosure, turf, technology coordination, process, FAQ, and
-Precision Impact Screens context. It reuses the Phase 1 contact backend with the
-simulator service preselected. Photography remains configuration-driven and
-unpublished until approved assets and usage rights exist. Portfolio, CMS,
-database, authentication, and unrelated Phase 2 work remain excluded.
+**Exit criteria:** Each addition solves a documented operational problem and has
+clear ownership, consent, security, observability, and rollback.
