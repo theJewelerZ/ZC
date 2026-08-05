@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Zarka Construction — Golf Simulator Room Builder";
+  "Zarka Construction — Golf Simulator Construction Specialist";
 export const size = {
   width: 1200,
   height: 630,
@@ -81,7 +81,7 @@ export default function OpenGraphImage() {
                 marginTop: 24,
               }}
             >
-              Spaces designed for the way you practice, play, and enjoy golf
+              Premium simulator environments built around the space and the game
             </span>
           </div>
         </div>

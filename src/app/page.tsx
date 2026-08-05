@@ -12,9 +12,9 @@ import { WhySection } from "@/components/home/why-section";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Golf Simulator Room Builders",
+  title: "Golf Simulator Construction Specialist",
   description:
-    "Custom indoor golf simulator rooms designed for the way you practice, play, gather, and enjoy the game.",
+    "Specialty construction for premium golf simulator environments, from room evaluation and planning through protection, turf, carpentry, and finish details.",
   path: "/",
 });
 

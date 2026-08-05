@@ -30,17 +30,17 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <p className="footer-heading">Plan a room</p>
+          <p className="footer-heading">Plan an environment</p>
           <ul className="footer-links">
             <li>
-              <Link href="/simulator-construction">Simulator room construction</Link>
+              <Link href="/simulator-construction">Simulator environment construction</Link>
             </li>
             <li>
               <Link href="/#planning-process">Planning process</Link>
             </li>
             <li>
               <Link href="/contact?service=simulator-construction">
-                Start a room review
+                Request a consultation
               </Link>
             </li>
           </ul>
@@ -62,7 +62,7 @@ export function SiteFooter() {
           © {new Date().getFullYear()} {businessConfig.legalName}. All rights
           reserved.
         </p>
-        <p>Custom simulator rooms. Planned and built around the space.</p>
+        <p>Golf simulator construction specialists. Every project begins with a defined scope.</p>
       </div>
     </footer>
   );

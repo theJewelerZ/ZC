@@ -15,7 +15,7 @@ function BrandArtwork() {
         <div className="diagram-label diagram-label-b">ROOM TO PLAY</div>
         <div className="diagram-coordinate">BUILT AROUND THE GAME</div>
       </div>
-      <p>A custom room designed for the way you want to experience golf.</p>
+      <p>A simulator environment considered around the space and the way it will be used.</p>
     </div>
   );
 }
@@ -26,35 +26,22 @@ export function Hero() {
       <div className="hero-grid-overlay" />
       <div className="site-container hero-grid">
         <div className="hero-copy">
-          <p className="hero-kicker">Golf Simulator Room Builder</p>
-          <h1>
-            We Build the Room
-            <span>Around the Game.</span>
-          </h1>
+          <p className="hero-kicker">Golf Simulator Construction Specialist</p>
+          <h1>We Build the Room<span>Around the Game.</span></h1>
           <p className="hero-description">
-            Every great simulator begins with a room designed to play beautifully.
+            Premium golf simulator environments begin with a careful understanding
+            of the space, the people who will play, and the experience they want.
           </p>
           <p className="hero-credibility">
-            Zarka Construction plans and builds custom indoor golf simulator
-            environments where craftsmanship, construction, and technology come
-            together as one seamless experience.
+            Zarka&apos;s specialty includes room evaluation, construction
+            planning, simulator framing, impact and protection systems, turf,
+            finish carpentry, and coordination within a clearly defined scope.
           </p>
           <div className="hero-actions">
-            <TrackedLink
-              className="button button-primary"
-              eventName="consultation_cta_click"
-              eventProperties={{ placement: "hero" }}
-              href="/contact?service=simulator-construction"
-            >
-              Request a Simulator Consultation
-              <ArrowRightIcon />
+            <TrackedLink className="button button-primary" eventName="consultation_cta_click" eventProperties={{ placement: "hero" }} href="/contact?service=simulator-construction">
+              Request a Simulator Consultation <ArrowRightIcon />
             </TrackedLink>
-            <TrackedLink
-              className="button button-secondary"
-              eventName="what_we_build_click"
-              eventProperties={{ placement: "hero" }}
-              href="/#what-we-build"
-            >
+            <TrackedLink className="button button-secondary" eventName="what_we_build_click" eventProperties={{ placement: "hero" }} href="/#what-we-build">
               See What We Build
             </TrackedLink>
           </div>

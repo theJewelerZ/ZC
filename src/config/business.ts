@@ -53,64 +53,64 @@ export const businessConfig = {
 
 export const services = [
   {
-    slug: "residential-simulator-rooms",
-    title: "Residential Simulator Rooms",
+    slug: "custom-simulator-environments",
+    title: "Custom Simulator Environments",
     description:
-      "A private place to practice, play, and enjoy golf at home—planned around the people, the space, and the way the room should feel.",
+      "Defined specialty-construction scopes that bring the playing area, impact environment, protection, turf, and finished details together for the individual space.",
     deliveryMode: "coordinated",
   },
   {
-    slug: "commercial-simulator-bays",
-    title: "Commercial Simulator Bays",
+    slug: "simulator-room-preparation",
+    title: "Room Preparation & Framing",
     description:
-      "Welcoming simulator spaces built for repeated play, comfortable gatherings, and the practical demands of a commercial environment.",
-    deliveryMode: "coordinated",
-  },
-  {
-    slug: "room-conversions",
-    title: "Room Conversions",
-    description:
-      "Existing space transformed into a room that feels intentional, comfortable, and ready for the way you want to play.",
-    deliveryMode: "coordinated",
-  },
-  {
-    slug: "impact-environments",
-    title: "Impact Environments",
-    description:
-      "Screen, enclosure, and protective surfaces integrated so every shot feels natural and the room remains visually resolved.",
-    deliveryMode: "coordinated",
-  },
-  {
-    slug: "finish-integration",
-    title: "Finish Integration",
-    description:
-      "Craftsmanship, trim, turf transitions, and finish details that make the golf environment feel like it truly belongs in the space.",
+      "Room preparation and framing for simulator environments, including screen structures, attachment needs, clearances, and approved finish conditions.",
     deliveryMode: "direct",
   },
   {
-    slug: "room-planning",
-    title: "Room Planning",
+    slug: "impact-screen-environments",
+    title: "Impact Screen Environments",
     description:
-      "Thoughtful planning that creates room to swing confidently, see the shot clearly, and enjoy the space comfortably.",
+      "Impact-screen structures, custom layered impact screens, curtains, and related enclosure details planned for the room and intended use.",
     deliveryMode: "direct",
   },
   {
-    slug: "construction-coordination",
-    title: "Construction Coordination",
+    slug: "wall-ceiling-protection",
+    title: "Wall & Ceiling Protection",
     description:
-      "Organized scopes and coordinated decisions that keep the experience at the center while the technical details come together.",
+      "Protective wall and ceiling systems developed around missed-shot coverage, durability, access, and integration with adjacent finishes.",
+    deliveryMode: "direct",
+  },
+  {
+    slug: "turf-hitting-surfaces",
+    title: "Turf & Hitting Surfaces",
+    description:
+      "Turf, stance areas, hitting surfaces, seams, and floor transitions coordinated with player position and the finished room.",
+    deliveryMode: "direct",
+  },
+  {
+    slug: "finish-carpentry-detailing",
+    title: "Finish Carpentry & Detailing",
+    description:
+      "Finish carpentry, trim, curtains, transitions, and final detailing that help the simulator environment feel considered and complete.",
+    deliveryMode: "direct",
+  },
+  {
+    slug: "planning-trade-coordination",
+    title: "Planning & Trade Coordination",
+    description:
+      "Construction planning, documented assumptions, and coordination with equipment providers or qualified trades when the agreed scope requires it.",
     deliveryMode: "coordinated",
   },
 ] as const satisfies ReadonlyArray<Service>;
 
 export const serviceOptions = [
-  { value: "simulator-construction", label: "Complete simulator room construction" },
-  { value: "residential-simulator-room", label: "Residential simulator room" },
-  { value: "commercial-simulator-space", label: "Commercial simulator space" },
-  { value: "simulator-room-conversion", label: "Existing room conversion" },
-  { value: "simulator-planning", label: "Room feasibility and planning" },
-  { value: "simulator-room-improvement", label: "Existing simulator room improvement" },
-  { value: "other-construction-inquiry", label: "Other construction inquiry" },
+  { value: "simulator-construction", label: "Custom simulator environment construction" },
+  { value: "residential-simulator-room", label: "Residential simulator environment" },
+  { value: "commercial-simulator-space", label: "Commercial simulator environment" },
+  { value: "simulator-room-conversion", label: "Existing room preparation or conversion" },
+  { value: "simulator-planning", label: "Room evaluation and construction planning" },
+  { value: "simulator-room-improvement", label: "Existing simulator environment improvement" },
+  { value: "other-construction-inquiry", label: "Other simulator-environment inquiry" },
 ] as const;
 
 export type ServiceOptionValue = (typeof serviceOptions)[number]["value"];
@@ -120,15 +120,8 @@ export function isServiceOptionValue(value: string): value is ServiceOptionValue
 }
 
 export const consultationOptions = [
-  {
-    value: "on-site-consultation",
-    label: "On-site consultation",
-  },
-  {
-    value: "guided-remote-review",
-    label: "Guided remote room review",
-  },
-
+  { value: "on-site-consultation", label: "On-site consultation" },
+  { value: "guided-remote-review", label: "Guided remote room review" },
 ] as const;
 
 export type ConsultationOptionValue =

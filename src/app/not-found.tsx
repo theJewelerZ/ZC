@@ -15,7 +15,7 @@ export default function NotFound() {
             Return home
           </Link>
           <Link className="button button-outline" href="/contact?service=simulator-construction">
-            Plan a Simulator Room
+            Request a Consultation
           </Link>
         </div>
       </div>

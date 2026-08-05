@@ -15,7 +15,7 @@ const experiences = [
   },
   {
     title: "Enjoy the game all year",
-    copy: "Build a lasting space where improvement, competition, and the simple pleasure of playing can continue indoors.",
+    copy: "Create a lasting space where improvement, competition, and the simple pleasure of playing can continue indoors.",
   },
 ] as const;
 

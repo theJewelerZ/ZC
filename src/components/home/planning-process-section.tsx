@@ -6,19 +6,19 @@ export function PlanningProcessSection() {
     <section className="section ecosystem-section planning-process-section" id="planning-process">
       <div className="site-container">
         <div className="builder-difference">
-          <p className="eyebrow">The room-builder difference</p>
-          <h2>We Don&apos;t Install Golf Simulators.<br />We Build Golf Simulator Rooms.</h2>
+          <p className="eyebrow">The specialist difference</p>
+          <h2>We Don&apos;t Simply Install Equipment.<br />We Prepare the Environment for Great Simulator Experiences.</h2>
           <div>
             <p>
-              Equipment can be assembled. A room has to be understood. A
-              simulator room builder plans the environment around how you will
-              swing, see the shot, move through the space, and enjoy it with
-              other people.
+              Equipment alone does not resolve the room. Zarka evaluates how
+              player position, impact systems, protection, surfaces, access, and
+              finish details need to work within the actual space.
             </p>
             <p>
-              The room is designed before construction begins. Construction
-              supports the golf experience. Technology fits into the room—not
-              the other way around.
+              The simulator environment is planned before specialty construction
+              begins. Equipment purchasing, permits, professional design services,
+              and work by licensed trades remain separate unless a written scope
+              explicitly assigns a responsibility.
             </p>
           </div>
         </div>
@@ -26,13 +26,14 @@ export function PlanningProcessSection() {
         <SectionHeading
           description={
             <p>
-              Every serious project begins with an on-site consultation or a
-              guided remote room review. That early work establishes what the
-              space can support and creates a clear path from idea to finished room.
+              A project can begin with an on-site consultation or a guided
+              remote room review. The purpose is to understand the space,
+              identify constraints, and define what Zarka may reasonably include
+              before any construction commitment is made.
             </p>
           }
-          eyebrow="How we build it"
-          title="A thoughtful process, from the first conversation to the first round."
+          eyebrow="How we approach the work"
+          title="A careful process, from the first conversation to a defined scope."
         />
 
         <ol className="planning-process-grid">
@@ -48,11 +49,11 @@ export function PlanningProcessSection() {
         <div className="review-paths" id="review-options">
           <article>
             <p className="eyebrow">On-site consultation</p>
-            <h3>Experience the room together.</h3>
+            <h3>Understand the room in person.</h3>
             <p>
-              When the location and scope make it appropriate, an on-site review
-              lets Zarka understand the room, its constraints, and the way you
-              hope to use it firsthand.
+              When the location and potential scope make it appropriate, an
+              on-site review helps document existing conditions, intended use,
+              constraints, and the simulator-environment work under consideration.
             </p>
           </article>
           <article>
@@ -61,14 +62,14 @@ export function PlanningProcessSection() {
             <p>
               A guided review uses measurements, room photographs, intended
               players, and known equipment information shared during follow-up.
-              This website does not accept uploads.
+              A remote review is an initial evaluation, not a final construction determination.
             </p>
           </article>
         </div>
 
         <p className="documentation-note">
-          Zarka uses CapProof within its professional field-documentation
-          process to support organized evidence and clearer project communication.
+          Zarka uses CapProof within its field-documentation process to support
+          organized evidence and clearer project communication.
         </p>
       </div>
     </section>

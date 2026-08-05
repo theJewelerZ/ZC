@@ -6,7 +6,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = createPageMetadata({
   title: "Website Terms",
   description:
-    "Website terms for information and simulator-room inquiries submitted through the Zarka Construction website.",
+    "Website terms for information and golf simulator environment inquiries submitted through the Zarka Construction website.",
   path: "/terms",
 });
 
@@ -23,16 +23,26 @@ export default function TermsPage() {
       <article className="site-container legal-content">
         <p className="legal-intro">
           These terms explain the intended use of the Zarka Construction
-          marketing website. They are not presented as attorney-reviewed legal
-          advice.
+          marketing website. They are not presented as attorney-reviewed legal advice.
         </p>
 
         <h2>Informational purpose</h2>
         <p>
-          This website provides general information about custom indoor golf
-          simulator room planning, construction, specialty installation, and
-          supporting construction capabilities. Content may be updated as
-          services and operating scope are confirmed.
+          This website provides general information about room evaluation,
+          construction planning, and specialty construction for golf simulator
+          environments. Content may be updated as services and operating scope
+          are confirmed.
+        </p>
+
+        <h2>Business scope and qualifications</h2>
+        <p>
+          Zarka Construction is presented on this website as a Golf Simulator
+          Construction Specialist. Website content does not represent Zarka as
+          an equipment dealer or manufacturer, an architectural or engineering
+          provider, the general contractor for an entire home or commercial
+          facility, or the party automatically responsible for permits or every
+          licensed trade. Actual responsibilities depend on the individual
+          project and written scope.
         </p>
 
         <h2>No project agreement</h2>
@@ -47,19 +57,29 @@ export default function TermsPage() {
         <h2>Room review and project scope</h2>
         <p>
           Website descriptions and preliminary room-review discussions do not
-          establish final feasibility or scope. Dimensions, player clearances,
-          equipment requirements, structure, access, and other constraints must
-          be reviewed for the individual space. Exact responsibilities and any
-          qualified trade coordination are established for each project.
+          establish final feasibility or scope. Existing conditions, dimensions,
+          player clearances, equipment requirements, structure, access, permits,
+          and other constraints must be considered for the individual space.
+          Zarka&apos;s work, customer and equipment-provider responsibilities,
+          and any qualified-trade coordination are established in writing.
         </p>
 
-        <h2>Equipment and trade responsibilities</h2>
+        <h2>Equipment, permits, and professional responsibilities</h2>
         <p>
-          The website does not represent Zarka Construction as the manufacturer
-          or seller of every simulator technology component. Equipment
-          selection, purchasing, manufacturer requirements, electrical work,
-          and other licensed trade responsibilities are confirmed separately
-          unless explicitly included in a written project scope.
+          Equipment selection, purchasing, manufacturer requirements,
+          warranties, permits, architectural or engineering work, electrical
+          work, mechanical work, and other professional or licensed-trade
+          responsibilities remain separate unless explicitly assigned in a
+          written project scope by an appropriately authorized party.
+        </p>
+
+        <h2>Commercial settings</h2>
+        <p>
+          References to teaching studios, commercial golf spaces,
+          entertainment venues, simulator businesses, country clubs, or
+          training environments describe settings in which simulator-environment
+          work may be considered. They do not state that Zarka constructs or
+          assumes responsibility for an entire commercial facility.
         </p>
 
         <h2>Accuracy and availability</h2>
@@ -73,17 +93,17 @@ export default function TermsPage() {
 
         <h2>Website materials</h2>
         <p>
-          Website text, layout, project photography, and brand materials may not
-          be copied or represented as another business&apos;s work except as allowed
-          by law or written permission. Third-party names and marks remain the
-          property of their respective owners.
+          Website text, layout, approved project photography, and brand
+          materials may not be copied or represented as another business&apos;s
+          work except as allowed by law or written permission. Third-party names
+          and marks remain the property of their respective owners.
         </p>
 
         <h2>Updates</h2>
         <p>
-          These terms may change when business policies or website functions
-          materially change. The effective date above identifies the current
-          published version.
+          These terms may change when business policies, scope, or website
+          functions materially change. The effective date above identifies the
+          current published version.
         </p>
       </article>
     </main>

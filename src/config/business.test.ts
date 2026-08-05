@@ -25,14 +25,17 @@ describe("public business configuration", () => {
     expect(businessConfig.insuranceLanguage).toBeNull();
   });
 
-  it("keeps the public service model focused on simulator rooms", () => {
+  it("keeps the public service model focused on current simulator-environment work", () => {
     expect(services).toHaveLength(7);
     expect(services.map((service) => service.slug)).toEqual(
       expect.arrayContaining([
-        "residential-simulator-rooms",
-        "commercial-simulator-bays",
-        "room-planning",
-        "construction-coordination",
+        "custom-simulator-environments",
+        "simulator-room-preparation",
+        "impact-screen-environments",
+        "wall-ceiling-protection",
+        "turf-hitting-surfaces",
+        "finish-carpentry-detailing",
+        "planning-trade-coordination",
       ]),
     );
   });

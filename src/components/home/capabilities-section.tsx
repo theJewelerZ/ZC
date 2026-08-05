@@ -19,7 +19,7 @@ export function CapabilitiesSection() {
         <div className="project-proof-grid">
           {projectStages.map((stage, index) => (
             <article className="project-proof-card" key={stage.label}>
-              <SimulatorMedia label={`${stage.label.toUpperCase()} / ${String(index + 1).padStart(2, "0")}`} slot={simulatorImageSlots[index]} />
+              <SimulatorMedia label={`${stage.label.toUpperCase()} / ${String(index + 1).padStart(2, "0")}`} slot={simulatorImageSlots[index === 2 ? 3 : index]} />
               <div><p className="capability-label">{stage.label}</p><h3>{stage.title}</h3><p>{stage.copy}</p></div>
             </article>
           ))}

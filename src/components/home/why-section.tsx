@@ -1,10 +1,10 @@
 import { SectionHeading } from "@/components/section-heading";
 
 const principles = [
-  { number: "01", title: "A room planned for golf", copy: "The player and the way the room will be enjoyed guide decisions before finishes or equipment positions are fixed." },
-  { number: "02", title: "Craft you can feel", copy: "Carpenter-led thinking brings structure, protection, trim, and finish details together without distracting from the game." },
-  { number: "03", title: "A clear path forward", copy: "Organized scopes make assumptions, responsibilities, and required coordination visible before work advances." },
-  { number: "04", title: "Care beyond the surface", copy: "Professional field documentation supports clearer communication and preserves the thinking behind important decisions." },
+  { number: "01", title: "Start with the actual space", copy: "Existing conditions, intended players, and known equipment requirements are considered before a specialty-construction scope is proposed." },
+  { number: "02", title: "Craft with a clear purpose", copy: "Framing, impact systems, protection, turf, curtains, trim, and finish details are approached as parts of one simulator environment." },
+  { number: "03", title: "Define responsibilities early", copy: "Scopes identify Zarka's work, customer or equipment-provider responsibilities, and any qualified-trade coordination the project may require." },
+  { number: "04", title: "Communicate as the work develops", copy: "Organized assumptions and field documentation help customers and project participants understand decisions, progress, and remaining responsibilities." },
 ] as const;
 
 export function WhySection() {
@@ -13,9 +13,9 @@ export function WhySection() {
       <div className="site-container">
         <SectionHeading
           align="center"
-          description={<p>Decades of hands-on construction, finish carpentry, renovation, painting, and field work inform every simulator room. That experience matters because the best golf environments are built, not assembled.</p>}
-          eyebrow="Construction experience behind every simulator room"
-          title="The details disappear. The quality remains."
+          description={<p>Decades of hands-on construction, finish carpentry, renovation, painting, and field work inform the way Zarka approaches simulator environments. That experience supports careful specialty work without implying responsibility for an entire building project.</p>}
+          eyebrow="Construction experience behind the specialty"
+          title="Specific work. Clear responsibilities. Careful execution."
         />
         <div className="principles-grid">
           {principles.map((principle) => (

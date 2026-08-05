@@ -7,7 +7,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = createPageMetadata({
   title: "Request a Simulator Consultation",
   description:
-    "Tell Zarka Construction about the golf experience you want to create and begin an on-site consultation or guided remote room review.",
+    "Start a conversation about the space, intended use, and potential specialty-construction scope for a golf simulator environment.",
   path: "/contact",
 });
 
@@ -36,11 +36,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
     console.warn(
       JSON.stringify({
         event: "contact_delivery_configuration_missing",
-        required: [
-          "RESEND_API_KEY",
-          "CONTACT_RECIPIENT_EMAIL",
-          "CONTACT_FROM_EMAIL",
-        ],
+        required: ["RESEND_API_KEY", "CONTACT_RECIPIENT_EMAIL", "CONTACT_FROM_EMAIL"],
       }),
     );
   }
@@ -60,11 +56,13 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
         <div className="site-container contact-hero-grid">
           <div>
             <p className="eyebrow">Request a simulator consultation</p>
-            <h1>Tell us about the room you want to create.</h1>
+            <h1>Every project begins with understanding the space.</h1>
           </div>
           <p>
-            Begin with how you want to practice, play, and enjoy the space.
-            Then choose the review approach that best fits the room and the project.
+            Tell us how the simulator environment will be used, who will play,
+            what conditions already exist, and what equipment is being
+            considered. The purpose is to begin a practical conversation—not to
+            sell a package or quote equipment.
           </p>
         </div>
       </section>
@@ -72,22 +70,23 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
       <section className="section contact-form-section" id="review-options">
         <div className="site-container contact-layout">
           <aside className="contact-aside">
-            <p className="contact-aside-number">01 / ROOM REVIEW</p>
-            <h2>Two ways to begin</h2>
+            <p className="contact-aside-number">01 / INITIAL ROOM REVIEW</p>
+            <h2>Two ways a conversation can begin</h2>
             <div className="contact-review-option">
               <h3>On-site consultation</h3>
               <p>
-                Walk through the room, how you hope to use it, and the conditions
-                that will shape the finished golf experience when the location
-                and scope make an on-site visit appropriate.
+                When location and potential scope make a visit appropriate,
+                Zarka can review existing conditions, intended use, constraints,
+                and the simulator-environment work being considered.
               </p>
             </div>
             <div className="contact-review-option">
               <h3>Guided remote room review</h3>
               <p>
-                Begin with the room, intended players, and the experience you want.
-                Zarka will explain which measurements and photographs are needed
-                during follow-up; this website does not accept uploads.
+                A remote review can begin with guided measurements, photographs,
+                intended players, and known equipment information shared during
+                follow-up. It is an initial evaluation, not a final feasibility
+                or construction commitment.
               </p>
             </div>
             <p id="contact-disabled-context">

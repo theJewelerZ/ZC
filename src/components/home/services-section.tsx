@@ -10,28 +10,25 @@ export function ServicesSection() {
           <SectionHeading
             description={
               <p>
-                From a private place to practice to a commercial space built
-                around repeat play, every project begins with the experience the
-                room needs to create.
+                Zarka&apos;s work is centered on the simulator environment: the
+                preparation, impact area, protection, playing surface, carpentry,
+                and finish details that allow the room to work as intended.
               </p>
             }
             eyebrow="What we build"
-            title="Complete rooms, shaped around how you play."
+            title="Specialty construction, shaped around the way the space will be used."
           />
           <p className="section-side-note">
-            Residential and commercial projects begin with feasibility. Scope,
-            equipment responsibilities, and trade coordination are confirmed
-            for the individual room.
+            Work may be considered in homes, teaching studios, commercial golf
+            spaces, entertainment venues, simulator businesses, country clubs,
+            and training environments. Zarka&apos;s responsibility is limited to
+            the scope agreed for the simulator environment.
           </p>
         </div>
-
         <div className="services-grid simulator-services-grid">
           {services.map((service, index) => (
             <article className="service-card" key={service.slug}>
-              <div className="service-card-top">
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <ArrowRightIcon />
-              </div>
+              <div className="service-card-top"><span>{String(index + 1).padStart(2, "0")}</span><ArrowRightIcon /></div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
             </article>
