@@ -262,10 +262,12 @@ an approved private location, not the public repository.
 - [ ] Configure ADMIN_ALLOWED_EMAILS for branch Preview.
 - [ ] Create/invite matching Supabase Auth founder user.
 - [ ] Add protected Preview Auth callback URL.
-- [ ] Verify bucket restrictions and anonymous/authenticated denial behavior.
-- [ ] Submit a no-photo Preview inquiry and verify both emails/database.
-- [ ] Submit a photo Preview inquiry and verify private Storage/metadata.
-- [ ] Verify unauthorized authenticated and anonymous dashboard denial.
+- [x] Verify bucket restrictions and anonymous table/storage denial behavior.
+- [x] Submit a no-photo Preview inquiry and verify durable storage and both notification acceptances.
+- [x] Submit a photo Preview inquiry and verify signed upload, private Storage, metadata, and notification acceptance.
+- [x] Verify anonymous dashboard access renders no consultation data.
+- [ ] Verify an authenticated but non-allowlisted user is denied in Preview.
 - [ ] Verify five-minute signed image access and refresh behavior.
-- [ ] Run responsive/accessibility/Lighthouse review on protected Preview.
+- [x] Run Lighthouse/accessibility review on homepage, contact, and founder login.
+- [ ] Complete manual responsive review; browser connection was unavailable during implementation.
 - [ ] Obtain founder approval before merge or production promotion.

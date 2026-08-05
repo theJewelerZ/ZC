@@ -1,6 +1,6 @@
 # Progress
 
-**Current phase:** Phase 3 — consultation system implementation
+**Current phase:** Phase 3 — protected consultation-system review
 
 **Canonical production URL:** <https://www.zarkaconstruction.com>
 
@@ -12,61 +12,78 @@
 
 ## Production status
 
-Production remains on the prior approved release. This branch has not been
-merged or promoted. DNS, nameservers, GoDaddy products, production email DNS,
-and the canonical Vercel domain were not changed.
+Production remains on the prior approved release. This branch is not merged or
+promoted. DNS, nameservers, GoDaddy products, production email DNS, and the
+canonical Vercel domain were not changed.
 
-## Completed
+## Implemented
 
-- Updated local main to origin/main at 4a5a1ef and created the feature branch.
-- Added official Supabase SSR/browser/server clients with strict secret
-  separation.
-- Created and applied additive migration 20260805000100 to the confirmed Zarka
-  Construction project.
-- Created consultations and consultation_photos with constraints, indexes,
-  updated_at trigger, forced RLS, revoked browser privileges, transactional
+- Supabase SSR/browser/server clients with strict service-secret separation.
+- Additive migration 20260805000100 applied to the confirmed Zarka project.
+- consultations and consultation_photos constraints, indexes, updated-at
+  trigger, forced RLS, revoked browser privileges, service-only transactional
   finalization, and private consultation-photos bucket.
-- Replaced the public form flow with pending durable records, direct one-object
-  signed uploads, stored-object/signature checks, atomic finalization, and
-  cancellation/expiration cleanup.
-- Added optional JPEG/PNG/WebP room photos: 10 files, 15 MiB each, 75 MiB total,
-  thumbnails, captions, remove controls, progress states, errors, and retry.
-- Added Resend founder notification and customer confirmation after persistence.
-  Partial/failed notification state remains visible without losing the lead.
-- Added Supabase magic-link Auth, no public registration, server email allowlist,
-  private /admin list/detail, short-lived signed images, status, and notes.
-- Updated privacy, robots, CSP, no-store/noindex behavior, environment template,
-  and backend/admin/data/retention/setup documentation.
-- TypeScript and production build pass. Vitest: 47 tests pass across 16 files.
-- Remote migration history and table creation verified. Both new tables are
-  empty pending preview testing.
+- Validated pending consultation sessions, one-object signed direct uploads,
+  stored-object/signature checks, atomic completion, cancellation, and 24-hour
+  abandoned-session cleanup.
+- Optional JPEG/PNG/WebP photos: 10 files, 15 MiB each, 75 MiB combined,
+  thumbnails, captions, remove controls, progress, errors, and retry.
+- Resend founder notification and customer confirmation after persistence.
+  Failed or partial notification state preserves the lead.
+- Supabase magic-link Auth, no public registration, server email allowlist,
+  private /admin list/detail, five-minute signed images, status, and notes.
+- Accurate privacy, robots, CSP, private cache/noindex, environment, setup, data,
+  retention, and operating documentation.
+- Legacy email-only POST endpoint retired so it cannot bypass persistence.
 
-## Security decisions
+## Verification
 
-- Supabase is the consultation system of record; Resend is notification only.
-- Direct anonymous table and storage access is denied.
-- Public writes use server validation and a server-only service credential.
-- Founder access requires both a valid Supabase session and
-  ADMIN_ALLOWED_EMAILS membership on every page and mutation.
-- Private photos use generated paths, one-object signed uploads, and five-minute
-  signed dashboard reads.
-- No consultation PII is sent to analytics or routine logs.
+- Full npm run check passes: ESLint, TypeScript, 41 Vitest tests across 15 files,
+  and Next.js 16.3.0 production build.
+- npm audit: zero known vulnerabilities after targeted stable security updates.
+- Supabase db lint: no schema errors.
+- Remote local/history match; exactly the two expected empty tables exist.
+- Publishable key gets 401 for table reads; service credential gets 200.
+- Anonymous private-bucket listing exposes no objects; server bucket access works.
+- Controlled no-photo and signed-photo Preview submissions stored successfully;
+  both notification pairs were accepted as sent.
+- The two synthetic records and generated test object were removed; database and
+  private bucket returned to an empty state and metadata cascade was verified.
+- Anonymous /admin renders no consultation table; /admin/login shows the
+  magic-link form and no-registration copy.
+- Lighthouse:
+  - homepage: Performance 98, Accessibility 100, Best Practices 100, SEO 100
+  - contact: Performance 98, Accessibility 100, Best Practices 100, SEO 100
+  - founder login: Performance 98, Accessibility 100, Best Practices 100;
+    private-route SEO 69 is intentional because the route is noindex
+  - CLS 0 on all audited routes
+- Lighthouse reports completed despite the known Windows temporary-folder
+  cleanup EPERM warning.
 
-## Current blockers
+## Protected Preview
 
-- Founder must supply the exact ADMIN_ALLOWED_EMAILS value.
-- The same email must exist as a Supabase Auth user.
-- Supabase Auth redirect URL must include the final protected preview callback.
-- Branch-specific Vercel Preview variables can be added after this branch is
-  pushed; the first attempt correctly failed because the branch did not yet
-  exist remotely.
-- A real no-photo/photo submission and both email deliveries require the
-  configured preview and founder Auth setup.
-- Lighthouse and responsive browser review remain to be completed on the
-  protected preview.
+Deployment ID: dpl_ADDDhWM8Rd3rmVpqnAwNYtpWTdae
+
+URL:
+<https://zarka-construction-kxeshnmj3-matthews-projects-7e2a9d39.vercel.app>
+
+Status: Ready; target: Preview. Branch-scoped Supabase and rate-limit variables
+are configured without exposing values. Production variables were not changed.
+
+## Remaining founder setup and review
+
+- Supply the exact email for ADMIN_ALLOWED_EMAILS.
+- Create or invite that same Supabase Auth user.
+- Add the protected Preview /auth/callback URL in Supabase Auth.
+- Complete authenticated list/detail/photo/status/notes review.
+- Verify an authenticated but non-allowlisted account is denied.
+- Complete manual responsive review at 320, 375, 768, 1024, and 1440px. The
+  connected browser runtime was unavailable during implementation; automated
+  accessibility and Lighthouse checks passed.
+- Confirm received Preview founder/customer emails if desired.
+- Approve or request changes. Do not merge or promote without explicit approval.
 
 ## Immediate next action
 
-Complete documentation/quality checks, commit and push this branch, configure
-branch-scoped Preview variables without exposing values, deploy a protected
-preview, then perform authenticated founder review. Do not merge or promote.
+Founder supplies the admin email and completes the exact protected-preview review
+in docs/SUPABASE_SETUP.md. Do not merge or promote.
