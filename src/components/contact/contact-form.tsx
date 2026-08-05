@@ -12,6 +12,7 @@ import {
 } from "react";
 
 import {
+  consultationOptions,
   serviceOptions,
   timelineOptions,
   type ServiceOptionValue,
@@ -74,6 +75,9 @@ export function ContactForm({
       phone: String(formData.get("phone") || ""),
       location: String(formData.get("location") || ""),
       service,
+      consultationPreference: String(
+        formData.get("consultationPreference") || "",
+      ),
       timeline: String(formData.get("timeline") || ""),
       description: String(formData.get("description") || ""),
       referralSource: String(formData.get("referralSource") || ""),
@@ -269,7 +273,7 @@ export function ContactForm({
                 />
               </FormField>
 
-              <FormField error={errors.service} label="Service needed" required>
+              <FormField error={errors.service} label="Simulator project" required>
                 <select
                   defaultValue={initialService}
                   id="service"
@@ -277,7 +281,7 @@ export function ContactForm({
                   required
                 >
                   <option disabled value="">
-                    Choose a service
+                    Choose a project type
                   </option>
                   {serviceOptions.map((option) => (
                     <option key={option.value} value={option.value}>
@@ -287,6 +291,27 @@ export function ContactForm({
                 </select>
               </FormField>
 
+              <FormField
+                error={errors.consultationPreference}
+                label="Preferred first room review"
+                required
+              >
+                <select
+                  defaultValue=""
+                  id="consultationPreference"
+                  name="consultationPreference"
+                  required
+                >
+                  <option disabled value="">
+                    Choose a review approach
+                  </option>
+                  {consultationOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </FormField>
               <FormField
                 error={errors.timeline}
                 label="Approximate timeline"
@@ -315,7 +340,7 @@ export function ContactForm({
                   maxLength={2_000}
                   minLength={20}
                   name="description"
-                  placeholder="Tell us about the space, the work you are considering, and any important constraints."
+                  placeholder="Tell us about the room, approximate dimensions, intended players, known equipment, and important constraints."
                   required
                   rows={7}
                 />

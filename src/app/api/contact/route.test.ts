@@ -23,7 +23,8 @@ const validPayload = {
   email: "test@example.com",
   phone: "",
   location: "Michigan",
-  service: "business-inquiry",
+  service: "simulator-construction",
+  consultationPreference: "guided-remote-review",
   timeline: "planning",
   description:
     "This is a controlled test of the consultation request delivery workflow.",

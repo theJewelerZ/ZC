@@ -10,18 +10,12 @@ function BrandArtwork() {
         <div className="brand-artwork-halo" />
         <div className="diagram-axis diagram-axis-x" />
         <div className="diagram-axis diagram-axis-y" />
-        <BrandMark
-          className="hero-brand-mark"
-          format="icon"
-          surface="dark"
-        />
-        <div className="diagram-label diagram-label-a">ENGINEERED FORM</div>
-        <div className="diagram-label diagram-label-b">FIELD / SYSTEM</div>
-        <div className="diagram-coordinate">ZARKA CONSTRUCTION</div>
+        <BrandMark className="hero-brand-mark" format="icon" surface="dark" />
+        <div className="diagram-label diagram-label-a">ROOM GEOMETRY</div>
+        <div className="diagram-label diagram-label-b">PLAYER / SCREEN / SYSTEM</div>
+        <div className="diagram-coordinate">CUSTOM SIMULATOR ENVIRONMENTS</div>
       </div>
-      <p>
-        Integrated thinking for the room, the finish, and the work behind it.
-      </p>
+      <p>Room planning and construction organized around the technology.</p>
     </div>
   );
 }
@@ -32,33 +26,37 @@ export function Hero() {
       <div className="hero-grid-overlay" />
       <div className="site-container hero-grid">
         <div className="hero-copy">
-          <p className="hero-kicker">Construction · Specialty installation</p>
+          <p className="hero-kicker">Golf Simulator Room Builder</p>
           <h1>
-            Construction experience.
-            <span>Modern project execution.</span>
+            We Build the Room
+            <span>Around the Technology.</span>
           </h1>
           <p className="hero-description">
-            Zarka Construction combines hands-on craftsmanship, specialty
-            installation, and modern construction tools to plan, document, and
-            deliver better projects.
+            Custom indoor golf simulator rooms designed around your space, your
+            equipment, and the way you play.
+          </p>
+          <p className="hero-credibility">
+            From room feasibility and framing to impact protection, finish work,
+            turf, lighting, and installation coordination, Zarka Construction
+            delivers the complete build environment.
           </p>
           <div className="hero-actions">
             <TrackedLink
               className="button button-primary"
               eventName="consultation_cta_click"
               eventProperties={{ placement: "hero" }}
-              href="/contact"
+              href="/contact?service=simulator-construction"
             >
-              Request a Consultation
+              Plan Your Simulator Room
               <ArrowRightIcon />
             </TrackedLink>
             <TrackedLink
               className="button button-secondary"
-              eventName="explore_work_click"
+              eventName="planning_process_click"
               eventProperties={{ placement: "hero" }}
-              href="/#work"
+              href="/#planning-process"
             >
-              Explore Our Work
+              How Room Planning Works
             </TrackedLink>
           </div>
           <p className="hero-tagline">{businessConfig.tagline}</p>

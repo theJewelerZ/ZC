@@ -2,8 +2,8 @@ import { describe, expect, it } from "vitest";
 
 import {
   businessConfig,
+  consultationOptions,
   isServiceOptionValue,
-  relatedProjects,
   services,
 } from "@/config/business";
 
@@ -25,15 +25,15 @@ describe("public business configuration", () => {
     expect(businessConfig.insuranceLanguage).toBeNull();
   });
 
-  it("keeps Bid Desk unlinked while preserving confirmed project URLs", () => {
-    const projects = Object.fromEntries(
-      relatedProjects.map((project) => [project.slug, project]),
-    );
-
-    expect(projects["bid-desk"].href).toBeNull();
-    expect(projects.capproof.href).toBe("https://capproof.com");
-    expect(projects["precision-impact-screens"].href).toBe(
-      "https://precisionimpactscreens.com",
+  it("keeps the public service model focused on simulator rooms", () => {
+    expect(services).toHaveLength(7);
+    expect(services.map((service) => service.slug)).toEqual(
+      expect.arrayContaining([
+        "residential-simulator-rooms",
+        "commercial-simulator-bays",
+        "room-planning",
+        "construction-coordination",
+      ]),
     );
   });
 
@@ -41,6 +41,14 @@ describe("public business configuration", () => {
     expect(isServiceOptionValue("simulator-construction")).toBe(true);
     expect(isServiceOptionValue("not-a-service")).toBe(false);
   });
+
+  it("offers only the two approved room-review approaches", () => {
+    expect(consultationOptions.map((option) => option.value)).toEqual([
+      "on-site-consultation",
+      "guided-remote-review",
+    ]);
+  });
+
   it("contains only documented service delivery modes", () => {
     const allowedModes = new Set([
       "direct",

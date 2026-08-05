@@ -9,6 +9,7 @@ const payload: ContactPayload = {
   phone: "",
   location: "Michigan",
   service: "simulator-construction",
+  consultationPreference: "guided-remote-review",
   timeline: "planning",
   description: "<script>alert('unsafe')</script>",
   referralSource: "",
@@ -38,11 +39,12 @@ describe("buildContactEmail", () => {
     const result = buildContactEmail(payload, "test-correlation");
 
     expect(result.text).toContain(
-      "Contact and project details\nName: <strong>Alex</strong>",
+      "Contact and room details\nName: <strong>Alex</strong>",
     );
-    expect(result.text).toContain("\n\nProject description\n");
+    expect(result.text).toContain("\n\nRoom and project description\n");
     expect(result.html).toContain("<table");
     expect(result.html).toContain("Submitted");
+    expect(result.html).toContain("Guided remote room review");
   });
 });
 

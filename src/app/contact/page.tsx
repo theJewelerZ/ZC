@@ -5,9 +5,9 @@ import { isServiceOptionValue } from "@/config/business";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Request a Consultation",
+  title: "Plan Your Golf Simulator Room",
   description:
-    "Share your construction, specialty installation, or indoor golf simulator project with Zarka Construction.",
+    "Start an on-site consultation or guided remote room review for a custom residential or commercial golf simulator room.",
   path: "/contact",
 });
 
@@ -20,7 +20,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
   const initialService =
     typeof requestedService === "string" && isServiceOptionValue(requestedService)
       ? requestedService
-      : "";
+      : "simulator-construction";
   const deliveryEnabled = Boolean(
     process.env.RESEND_API_KEY &&
       process.env.CONTACT_RECIPIENT_EMAIL &&
@@ -59,28 +59,38 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
       <section className="contact-hero">
         <div className="site-container contact-hero-grid">
           <div>
-            <p className="eyebrow">Request a consultation</p>
-            <h1>Start with the space, the work, and the constraints.</h1>
+            <p className="eyebrow">Plan your simulator room</p>
+            <h1>Start with a review of the actual space.</h1>
           </div>
           <p>
-            Share enough context to begin a useful conversation. Zarka
-            Construction will review the project type, general location,
-            timeline, and scope before discussing fit or next steps.
+            Every simulator room depends on dimensions, player position, screen
+            geometry, protection, projection, and construction constraints.
+            Choose the review approach that best fits the project.
           </p>
         </div>
       </section>
 
-      <section className="section contact-form-section">
+      <section className="section contact-form-section" id="review-options">
         <div className="site-container contact-layout">
           <aside className="contact-aside">
-            <p className="contact-aside-number">01 / PROJECT CONTEXT</p>
-            <h2>What helps at the start</h2>
-            <ul>
-              <li>The kind of space or project</li>
-              <li>The general project location</li>
-              <li>Your approximate timing</li>
-              <li>The result or problem you are working toward</li>
-            </ul>
+            <p className="contact-aside-number">01 / ROOM REVIEW</p>
+            <h2>Two ways to begin</h2>
+            <div className="contact-review-option">
+              <h3>On-site consultation</h3>
+              <p>
+                Review the dimensions, structure, access, obstructions, and
+                existing finishes in person when the location and scope make an
+                on-site visit appropriate.
+              </p>
+            </div>
+            <div className="contact-review-option">
+              <h3>Guided remote room review</h3>
+              <p>
+                Begin with guided measurements and room photographs. Zarka will
+                explain what is needed after the initial inquiry; this website
+                does not accept uploads.
+              </p>
+            </div>
             <p id="contact-disabled-context">
               Do not include payment information, account credentials, or other
               highly sensitive information.
@@ -98,4 +108,3 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
     </main>
   );
 }
-

@@ -8,7 +8,7 @@ export function getOrganizationStructuredData() {
     alternateName: businessConfig.displayName,
     url: businessConfig.canonicalUrl,
     description:
-      "Construction, specialty installation, indoor golf simulator environments, and modern project support.",
+      "Zarka Construction plans and builds custom indoor golf simulator rooms for residential and commercial spaces.",
   };
 }
 

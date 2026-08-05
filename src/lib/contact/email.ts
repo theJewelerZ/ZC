@@ -1,5 +1,9 @@
 import type { ContactPayload } from "@/lib/contact/schema";
-import { serviceOptions, timelineOptions } from "@/config/business";
+import {
+  consultationOptions,
+  serviceOptions,
+  timelineOptions,
+} from "@/config/business";
 
 type SendEmailInput = {
   payload: ContactPayload;
@@ -25,28 +29,33 @@ export function buildContactEmail(
   const serviceLabel =
     serviceOptions.find((option) => option.value === payload.service)?.label ||
     payload.service;
+  const consultationLabel =
+    consultationOptions.find(
+      (option) => option.value === payload.consultationPreference,
+    )?.label || payload.consultationPreference;
   const timelineLabel =
     timelineOptions.find((option) => option.value === payload.timeline)?.label ||
     payload.timeline;
   const submittedAt = new Date().toISOString();
-  const subject = `New Zarka Construction inquiry — ${correlationId.slice(0, 8)}`;
+  const subject = `New simulator room inquiry — ${correlationId.slice(0, 8)}`;
   const text = [
-    "New consultation request",
+    "New simulator room consultation request",
     `Reference: ${correlationId}`,
     `Submitted: ${submittedAt}`,
     "",
-    "Contact and project details",
+    "Contact and room details",
     `Name: ${payload.name}`,
     `Email: ${payload.email}`,
     ...(payload.phone ? [`Phone: ${payload.phone}`] : []),
     `General location: ${payload.location}`,
-    `Service: ${serviceLabel}`,
+    `Project type: ${serviceLabel}`,
+    `Preferred room review: ${consultationLabel}`,
     `Timeline: ${timelineLabel}`,
     ...(payload.referralSource
       ? [`Referral source: ${payload.referralSource}`]
       : []),
     "",
-    "Project description",
+    "Room and project description",
     payload.description,
   ].join("\n");
 
@@ -57,7 +66,8 @@ export function buildContactEmail(
     ["Email", payload.email],
     ...(payload.phone ? [["Phone", payload.phone]] : []),
     ["General location", payload.location],
-    ["Service", serviceLabel],
+    ["Project type", serviceLabel],
+    ["Preferred room review", consultationLabel],
     ["Timeline", timelineLabel],
     ...(payload.referralSource
       ? [["Referral source", payload.referralSource]]
@@ -66,7 +76,7 @@ export function buildContactEmail(
 
   const html = `
     <div style="font-family:Arial,sans-serif;color:#121820;line-height:1.55;max-width:720px;margin:0 auto">
-      <h1 style="color:#0B1F33;font-size:24px;margin:0 0 20px">New consultation request</h1>
+      <h1 style="color:#0B1F33;font-size:24px;margin:0 0 20px">New simulator room consultation request</h1>
       <table style="border-collapse:collapse;width:100%;max-width:680px">
         ${rows
           .map(
@@ -78,7 +88,7 @@ export function buildContactEmail(
           )
           .join("")}
       </table>
-      <h2 style="color:#0B1F33;font-size:18px;margin-top:28px">Project description</h2>
+      <h2 style="color:#0B1F33;font-size:18px;margin-top:28px">Room and project description</h2>
       <p style="white-space:pre-wrap;margin-bottom:0">${escapeHtml(payload.description)}</p>
     </div>`;
 

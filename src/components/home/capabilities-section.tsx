@@ -1,56 +1,59 @@
 import { SectionHeading } from "@/components/section-heading";
+import { SimulatorMedia } from "@/components/simulator/simulator-media";
+import { simulatorImageSlots } from "@/config/simulator";
 
-const capabilities = [
+const projectStages = [
   {
-    label: "Specialty environments",
-    title: "Simulator rooms built as complete spaces",
-    copy: "Spatial planning, protection, enclosure, finish, and installation decisions coordinated around the room.",
+    label: "Feasibility",
+    title: "The room before construction",
+    copy: "Dimensions, player position, screen geometry, projection, access, and constraints documented before scope decisions are finalized.",
   },
   {
-    label: "Finish + installation",
-    title: "Details that make the work feel resolved",
-    copy: "Carpentry, custom-built elements, interior improvements, and specialty installations handled with care.",
+    label: "Construction",
+    title: "The build environment in progress",
+    copy: "Framing, protection, enclosure support, finish details, and coordinated systems recorded as real work advances.",
   },
   {
-    label: "Project support",
-    title: "Better decisions before and during the work",
-    copy: "Estimating support, opportunity review, field documentation, and communication practices grounded in construction.",
+    label: "Integration",
+    title: "The completed room as one system",
+    copy: "Approved finished-room photography will show how the playing surface, impact environment, lighting, trim, and technology plan come together.",
   },
-];
+] as const;
 
 export function CapabilitiesSection() {
   return (
-    <section className="section capabilities-section" id="work">
+    <section className="section capabilities-section project-proof-section" id="projects">
       <div className="site-container">
         <div className="section-intro-grid">
           <SectionHeading
             description={
               <p>
-                A capability-led view of the practical skill, coordination, and
-                project thinking Zarka Construction brings to the work.
+                Project work will be presented with founder-owned photography
+                only after construction is underway and publication is approved.
+                No stock scenes, AI rooms, or fictional case studies.
               </p>
             }
-            eyebrow="Selected capabilities"
-            title="Practical skill. Connected thinking."
+            eyebrow="Projects"
+            title="Real rooms. Real constraints. Real construction."
           />
-          <div className="capability-statement">
-            <span>PLAN</span>
-            <span>BUILD</span>
-            <span>DOCUMENT</span>
-          </div>
+          <p className="section-side-note">
+            The project framework is ready for field photography without
+            inventing proof before the work exists.
+          </p>
         </div>
 
-        <div className="capabilities-list">
-          {capabilities.map((capability, index) => (
-            <article className="capability-row" key={capability.label}>
-              <p className="capability-number">
-                {String(index + 1).padStart(2, "0")}
-              </p>
+        <div className="project-proof-grid">
+          {projectStages.map((stage, index) => (
+            <article className="project-proof-card" key={stage.label}>
+              <SimulatorMedia
+                label={`${stage.label.toUpperCase()} / ${String(index + 1).padStart(2, "0")}`}
+                slot={simulatorImageSlots[index]}
+              />
               <div>
-                <p className="capability-label">{capability.label}</p>
-                <h3>{capability.title}</h3>
+                <p className="capability-label">{stage.label}</p>
+                <h3>{stage.title}</h3>
+                <p>{stage.copy}</p>
               </div>
-              <p className="capability-copy">{capability.copy}</p>
             </article>
           ))}
         </div>

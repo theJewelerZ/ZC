@@ -3,40 +3,41 @@ import { SectionHeading } from "@/components/section-heading";
 const principles = [
   {
     number: "01",
-    title: "Field-tested judgment",
-    copy: "Decisions informed by decades of real construction, carpentry, installation, renovation, and field conditions.",
+    title: "Room-first judgment",
+    copy: "Feasibility and geometry are reviewed before finishes or equipment positions become expensive constraints.",
   },
   {
     number: "02",
-    title: "Precision in the details",
-    copy: "Spatial, material, finish, and handoff details considered before they become project problems.",
+    title: "Carpenter-led execution",
+    copy: "Framing, finish carpentry, protection, trim, and room integration are considered as connected construction details.",
   },
   {
     number: "03",
-    title: "Clearer project proof",
-    copy: "Modern documentation and communication practices that support better decisions and cleaner client handoffs.",
+    title: "Organized scopes",
+    copy: "Project assumptions, responsibilities, and coordinated trade needs are made visible before the work advances.",
   },
   {
     number: "04",
-    title: "Craft and technology together",
-    copy: "Construction tools serve the work. They strengthen practical judgment rather than replacing it.",
+    title: "Documented decisions",
+    copy: "Professional field documentation supports clearer communication, progress visibility, and project handoffs.",
   },
 ];
 
 export function WhySection() {
   return (
-    <section className="section why-section" id="why-zarka">
+    <section className="section why-section" id="capabilities">
       <div className="site-container">
         <SectionHeading
           align="center"
           description={
             <p>
-              Carpenter-led thinking, disciplined execution, and modern project
-              systems—applied where they create real value.
+              Simulator-room expertise is reinforced by practical construction,
+              finish carpentry, renovation, painting, and commercial maintenance
+              experience—not diluted by a list of unrelated services.
             </p>
           }
-          eyebrow="Why Zarka Construction"
-          title="Built around how projects actually happen."
+          eyebrow="Construction credibility"
+          title="The room builder matters as much as the equipment plan."
         />
         <div className="principles-grid">
           {principles.map((principle) => (
@@ -51,4 +52,3 @@ export function WhySection() {
     </section>
   );
 }
-

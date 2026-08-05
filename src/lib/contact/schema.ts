@@ -1,4 +1,8 @@
-import { serviceOptions, timelineOptions } from "@/config/business";
+import {
+  consultationOptions,
+  serviceOptions,
+  timelineOptions,
+} from "@/config/business";
 
 export type ContactPayload = {
   name: string;
@@ -6,6 +10,7 @@ export type ContactPayload = {
   phone: string;
   location: string;
   service: string;
+  consultationPreference: string;
   timeline: string;
   description: string;
   referralSource: string;
@@ -20,6 +25,7 @@ export type ContactField =
   | "phone"
   | "location"
   | "service"
+  | "consultationPreference"
   | "timeline"
   | "description"
   | "referralSource";
@@ -38,6 +44,7 @@ const allowedKeys = new Set([
   "phone",
   "location",
   "service",
+  "consultationPreference",
   "timeline",
   "description",
   "referralSource",
@@ -47,6 +54,9 @@ const allowedKeys = new Set([
 ]);
 
 const serviceValues = new Set(serviceOptions.map((option) => option.value));
+const consultationValues = new Set(
+  consultationOptions.map((option) => option.value),
+);
 const timelineValues = new Set(timelineOptions.map((option) => option.value));
 
 function asTrimmedString(value: unknown) {
@@ -82,6 +92,7 @@ export function validateContactPayload(
     phone: asTrimmedString(raw.phone),
     location: asTrimmedString(raw.location).replace(/\s+/g, " "),
     service: asTrimmedString(raw.service),
+    consultationPreference: asTrimmedString(raw.consultationPreference),
     timeline: asTrimmedString(raw.timeline),
     description: asTrimmedString(raw.description),
     referralSource: asTrimmedString(raw.referralSource),
@@ -115,7 +126,7 @@ export function validateContactPayload(
   const errors: Partial<Record<ContactField | "form", string>> = {};
 
   if (!hasValidLength(data.name, 2, 100)) {
-    errors.name = "Enter your name using 2–100 characters.";
+    errors.name = "Enter your name using 2-100 characters.";
   }
 
   if (
@@ -125,7 +136,10 @@ export function validateContactPayload(
     errors.email = "Enter a valid email address.";
   }
 
-  if (data.phone && (!hasValidLength(data.phone, 7, 30) || !/^[0-9+().\-\s]+$/.test(data.phone))) {
+  if (
+    data.phone &&
+    (!hasValidLength(data.phone, 7, 30) || !/^[0-9+().\-\s]+$/.test(data.phone))
+  ) {
     errors.phone = "Enter a valid phone number or leave this field blank.";
   }
 
@@ -134,7 +148,12 @@ export function validateContactPayload(
   }
 
   if (!serviceValues.has(data.service as never)) {
-    errors.service = "Choose the service that best fits your inquiry.";
+    errors.service = "Choose the simulator project that best fits your inquiry.";
+  }
+
+  if (!consultationValues.has(data.consultationPreference as never)) {
+    errors.consultationPreference =
+      "Choose an on-site consultation or guided remote room review.";
   }
 
   if (!timelineValues.has(data.timeline as never)) {
@@ -154,4 +173,3 @@ export function validateContactPayload(
     ? { success: false, errors }
     : { success: true, data };
 }
-

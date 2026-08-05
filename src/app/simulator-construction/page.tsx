@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { ArrowRightIcon, ArrowUpRightIcon, CheckIcon } from "@/components/icons";
+import { ArrowRightIcon, CheckIcon } from "@/components/icons";
 import { SimulatorMedia } from "@/components/simulator/simulator-media";
 import { TrackedLink } from "@/components/tracked-link";
-import { businessConfig, relatedProjects } from "@/config/business";
+import { businessConfig } from "@/config/business";
 import {
   simulatorFaqs,
   simulatorImageSlots,
@@ -13,23 +13,20 @@ import {
 import { createPageMetadata } from "@/lib/metadata";
 
 const contactHref = "/contact?service=simulator-construction";
-const precisionImpactScreens = relatedProjects.find(
-  (project) => project.slug === "precision-impact-screens",
-);
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Indoor Golf Simulator Construction",
+  title: "Custom Golf Simulator Room Builder",
   description:
-    "Plan and build a custom indoor golf simulator room with coordinated clearances, framing, protection, enclosure, turf, lighting, projection, and finish details.",
+    "Plan a custom residential or commercial golf simulator room around clearances, screen geometry, construction, protection, turf, lighting, projection, and finish details.",
   path: "/simulator-construction",
 });
 
 const serviceStructuredData = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Indoor golf simulator construction",
+  name: "Custom indoor golf simulator room construction",
   description:
-    "Room construction and specialty installation for coordinated indoor golf simulator environments.",
+    "Planning and construction for coordinated residential and commercial indoor golf simulator rooms.",
   url: new URL("/simulator-construction", businessConfig.canonicalUrl).toString(),
   provider: {
     "@type": "Organization",
@@ -74,12 +71,12 @@ export default function SimulatorConstructionPage() {
         <div className="simulator-page-grid" />
         <div className="site-container simulator-page-hero-inner">
           <div>
-            <p className="eyebrow">Indoor golf simulator construction</p>
-            <h1>The room is part of the system.</h1>
+            <p className="eyebrow">Golf Simulator Room Builder</p>
+            <h1>We build the room around the technology.</h1>
             <p className="simulator-page-hero-copy">
-              Zarka Construction brings the room-construction, protection, and
-              finish decisions together around the player, the equipment plan,
-              and the way the space needs to work.
+              Zarka Construction plans and builds custom indoor golf simulator
+              rooms around the space, intended players, equipment requirements,
+              and the way the finished room needs to work.
             </p>
             <div className="hero-actions">
               <TrackedLink
@@ -88,7 +85,7 @@ export default function SimulatorConstructionPage() {
                 eventProperties={{ placement: "simulator_page_hero" }}
                 href={contactHref}
               >
-                Request a Consultation
+                Start Your Room Review
                 <ArrowRightIcon />
               </TrackedLink>
               <Link className="button button-secondary" href="#planning">
@@ -247,33 +244,22 @@ export default function SimulatorConstructionPage() {
         </div>
       </section>
 
-      <section className="section simulator-precision-section">
+      <section className="section simulator-precision-section" id="room-review">
         <div className="site-container simulator-detail-grid">
-          <SimulatorMedia label="SCREEN / ENCLOSURE / FINISH" slot={simulatorImageSlots[3]} />
+          <SimulatorMedia label="REVIEW / MEASURE / PLAN" slot={simulatorImageSlots[3]} />
           <div>
-            <p className="eyebrow">Related simulator business</p>
-            <h2>Precision Impact Screens</h2>
+            <p className="eyebrow">Two ways to begin</p>
+            <h2>Every room is evaluated before the build is defined.</h2>
             <p>
-              Precision Impact Screens focuses on impact screens, enclosure
-              solutions, room construction, and installation support for
-              purpose-built simulator environments. It complements Zarka
-              Construction’s room-construction and specialty-installation
-              perspective without suggesting unsupported equipment
-              partnerships or manufacturer relationships.
+              An on-site consultation documents the room directly when the
+              location and scope make that appropriate. A guided remote review
+              begins with measurements, photographs, intended players, and
+              known equipment information shared during the follow-up process.
             </p>
-            {precisionImpactScreens?.href ? (
-              <TrackedLink
-                className="simulator-external-link simulator-external-link-dark"
-                eventName="ecosystem_link_click"
-                eventProperties={{ project: precisionImpactScreens.slug, placement: "simulator_page" }}
-                href={precisionImpactScreens.href}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Visit Precision Impact Screens <ArrowUpRightIcon />
-                <span className="sr-only"> (opens another website)</span>
-              </TrackedLink>
-            ) : null}
+            <p>
+              The website does not accept uploads. Zarka will explain what to
+              measure and photograph after the initial inquiry.
+            </p>
           </div>
         </div>
       </section>
@@ -298,12 +284,12 @@ export default function SimulatorConstructionPage() {
       <section className="simulator-page-cta">
         <div className="site-container simulator-page-cta-inner">
           <div>
-            <p className="eyebrow">Start with the room</p>
-            <h2>Plan the space before the details compete.</h2>
+            <p className="eyebrow">Start with a room review</p>
+            <h2>Find out what the room can support before construction begins.</h2>
             <p>
-              Share the room, intended users, general location, equipment plan,
-              and current project stage. Zarka Construction will review the
-              context before discussing fit or next steps.
+              Share the room, intended players, general location, known
+              equipment, and current project stage. Choose an on-site
+              consultation or guided remote room review as the preferred first step.
             </p>
           </div>
           <TrackedLink
@@ -312,7 +298,7 @@ export default function SimulatorConstructionPage() {
             eventProperties={{ placement: "simulator_page_final" }}
             href={contactHref}
           >
-            Request a Consultation <ArrowRightIcon />
+            Start Your Room Review <ArrowRightIcon />
           </TrackedLink>
         </div>
       </section>

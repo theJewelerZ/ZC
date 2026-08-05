@@ -6,7 +6,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata: Metadata = createPageMetadata({
   title: "Website Terms",
   description:
-    "Website terms for information and inquiries submitted through the Zarka Construction website.",
+    "Website terms for information and simulator-room inquiries submitted through the Zarka Construction website.",
   path: "/terms",
 });
 
@@ -29,52 +29,54 @@ export default function TermsPage() {
 
         <h2>Informational purpose</h2>
         <p>
-          This website provides general information about Zarka Construction,
-          potential project capabilities, specialty simulator environments, and
-          related tools or businesses. Content may be updated as services and
-          operating scope are confirmed.
+          This website provides general information about custom indoor golf
+          simulator room planning, construction, specialty installation, and
+          supporting construction capabilities. Content may be updated as
+          services and operating scope are confirmed.
         </p>
 
         <h2>No project agreement</h2>
         <p>
-          A consultation request, email, phone conversation, website visit, or
-          preliminary discussion does not create a construction contract,
-          professional-services relationship, price commitment, schedule
-          commitment, warranty, or obligation to accept work. Project terms must
-          be documented separately by authorized parties.
+          A consultation request, remote room review, on-site discussion,
+          email, phone conversation, or website visit does not create a
+          construction contract, professional-services relationship, price
+          commitment, schedule commitment, warranty, or obligation to accept
+          work. Project terms must be documented separately by authorized parties.
         </p>
 
-        <h2>Scope and trade coordination</h2>
+        <h2>Room review and project scope</h2>
         <p>
-          Service descriptions are intentionally broad. The exact scope,
-          responsibility, availability, and use of qualified trade partners are
-          established for each project. This website does not represent that
-          Zarka Construction self-performs every trade or service described.
+          Website descriptions and preliminary room-review discussions do not
+          establish final feasibility or scope. Dimensions, player clearances,
+          equipment requirements, structure, access, and other constraints must
+          be reviewed for the individual space. Exact responsibilities and any
+          qualified trade coordination are established for each project.
+        </p>
+
+        <h2>Equipment and trade responsibilities</h2>
+        <p>
+          The website does not represent Zarka Construction as the manufacturer
+          or seller of every simulator technology component. Equipment
+          selection, purchasing, manufacturer requirements, electrical work,
+          and other licensed trade responsibilities are confirmed separately
+          unless explicitly included in a written project scope.
         </p>
 
         <h2>Accuracy and availability</h2>
         <p>
           Reasonable care is taken with website content, but the site may not
           always be complete, current, or uninterrupted. Do not rely on website
-          content as a substitute for a written project scope, site review,
+          content as a substitute for a written project scope, room review,
           manufacturer documentation, or advice from an appropriately qualified
           professional.
         </p>
 
-        <h2>Related websites</h2>
-        <p>
-          Links to CapProof, Precision Impact Screens, and other external sites
-          are provided for context. Those websites operate under their own
-          content, availability, privacy, and terms. A link does not add an
-          unlisted warranty, certification, dealer relationship, or approval.
-        </p>
-
         <h2>Website materials</h2>
         <p>
-          Website text, layout, and brand materials may not be copied or
-          represented as another business&apos;s work except as allowed by law
-          or written permission. Third-party names and marks remain the property
-          of their respective owners.
+          Website text, layout, project photography, and brand materials may not
+          be copied or represented as another business&apos;s work except as allowed
+          by law or written permission. Third-party names and marks remain the
+          property of their respective owners.
         </p>
 
         <h2>Updates</h2>

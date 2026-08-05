@@ -2295,3 +2295,197 @@ a {
 .simulator-page-cta .eyebrow {
   color: var(--orange);
 }
+/* Simulator-room-builder strategic positioning */
+.hero-credibility {
+  max-width: 68ch;
+  color: rgba(247, 249, 251, 0.76);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.simulator-services-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.simulator-services-grid .service-card:first-child,
+.simulator-services-grid .service-card:nth-child(2) {
+  border-top-color: var(--orange);
+}
+
+.planning-process-section {
+  background: var(--structural);
+}
+
+.planning-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin: clamp(2.5rem, 6vw, 4.5rem) 0 0;
+  padding: 0;
+  list-style: none;
+  background: rgba(102, 113, 125, 0.24);
+  border: 1px solid rgba(102, 113, 125, 0.24);
+}
+
+.planning-process-grid li {
+  min-height: 18rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: var(--structural);
+}
+
+.planning-process-grid li > span {
+  display: inline-block;
+  color: var(--navy);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.planning-process-grid h3 {
+  margin: 3.5rem 0 0.85rem;
+  color: var(--navy);
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+}
+
+.planning-process-grid p {
+  margin: 0;
+  color: #43505c;
+  line-height: 1.7;
+}
+
+.review-paths {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: clamp(2rem, 5vw, 3.5rem);
+}
+
+.review-paths article {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background: var(--navy);
+  color: var(--structural);
+  border-top: 3px solid var(--orange);
+}
+
+.review-paths h3 {
+  margin: 0.75rem 0 1rem;
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+}
+
+.review-paths article > p:last-child {
+  margin: 0;
+  color: rgba(247, 249, 251, 0.9);
+  line-height: 1.75;
+}
+
+.documentation-note {
+  max-width: 72ch;
+  margin: 1.5rem 0 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--orange);
+  color: var(--steel);
+  line-height: 1.7;
+}
+
+.project-proof-section {
+  background: #eef2f5;
+}
+
+.project-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.project-proof-card {
+  min-width: 0;
+  background: var(--structural);
+  border: 1px solid rgba(102, 113, 125, 0.2);
+}
+
+.project-proof-card .simulator-media {
+  min-height: 16rem;
+  border: 0;
+  border-bottom: 1px solid rgba(102, 113, 125, 0.2);
+}
+
+.project-proof-card > div:last-child {
+  padding: 1.5rem;
+}
+
+.project-proof-card h3 {
+  margin: 0.45rem 0 0.75rem;
+  color: var(--navy);
+  font-size: 1.3rem;
+}
+
+.project-proof-card > div:last-child > p:last-child {
+  margin: 0;
+  color: var(--steel);
+  line-height: 1.65;
+}
+
+.contact-review-option {
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(102, 113, 125, 0.28);
+}
+
+.contact-review-option h3 {
+  margin: 0 0 0.55rem;
+  color: var(--navy);
+  font-size: 1.05rem;
+}
+
+.contact-review-option p {
+  margin: 0;
+  color: var(--steel);
+  line-height: 1.65;
+}
+
+.simulator-precision-section .simulator-detail-grid > div > p + p {
+  margin-top: 1rem;
+}
+
+@media (max-width: 1100px) {
+  .simulator-services-grid,
+  .project-proof-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .planning-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .simulator-services-grid,
+  .project-proof-grid,
+  .planning-process-grid,
+  .review-paths {
+    grid-template-columns: 1fr;
+  }
+
+  .planning-process-grid li {
+    min-height: 0;
+  }
+
+  .planning-process-grid h3 {
+    margin-top: 1.75rem;
+  }
+
+  .project-proof-card .simulator-media {
+    min-height: 14rem;
+  }
+}
+.review-paths .eyebrow,
+.review-paths h3 {
+  color: var(--structural);
+}
+
+.project-proof-card > div:last-child > p:last-child {
+  color: #4d5965;
+}
+.contact-hero .eyebrow {
+  color: var(--structural);
+}

@@ -7,15 +7,6 @@ export type Service = {
   deliveryMode: DeliveryMode;
 };
 
-export type RelatedProject = {
-  slug: "capproof" | "bid-desk" | "precision-impact-screens";
-  name: string;
-  category: string;
-  description: string;
-  href: string | null;
-  status?: string;
-};
-
 export type LogoAssets = {
   horizontalOnLight: string | null;
   horizontalOnDark: string | null;
@@ -62,86 +53,64 @@ export const businessConfig = {
 
 export const services = [
   {
-    slug: "construction-renovation",
-    title: "Construction and renovation support",
+    slug: "residential-simulator-rooms",
+    title: "Residential Simulator Rooms",
     description:
-      "Practical planning and hands-on support for interior construction, renovation, and improvement work.",
+      "Custom rooms planned around the available space, intended players, equipment requirements, and finished-home environment.",
     deliveryMode: "coordinated",
   },
   {
-    slug: "finish-carpentry",
-    title: "Finish carpentry and specialty installation",
+    slug: "commercial-simulator-bays",
+    title: "Commercial Simulator Bays",
     description:
-      "Detail-driven finish work, custom-built elements, and specialty installation shaped to the space.",
+      "Purpose-built simulator spaces coordinated for repeated use, durable protection, clear circulation, and maintainable systems.",
+    deliveryMode: "coordinated",
+  },
+  {
+    slug: "room-conversions",
+    title: "Room Conversions",
+    description:
+      "Existing rooms evaluated and adapted around swing clearance, enclosure depth, projection, access, and finish constraints.",
+    deliveryMode: "coordinated",
+  },
+  {
+    slug: "impact-environments",
+    title: "Impact Environments",
+    description:
+      "Impact-screen, enclosure, netting, blackout, and protective wall and ceiling details integrated with the room construction.",
+    deliveryMode: "coordinated",
+  },
+  {
+    slug: "finish-integration",
+    title: "Finish Integration",
+    description:
+      "Framing, finish carpentry, trim, turf transitions, and built details that make the simulator feel part of the room.",
     deliveryMode: "direct",
   },
   {
-    slug: "painting-interiors",
-    title: "Painting and interior improvements",
+    slug: "room-planning",
+    title: "Room Planning",
     description:
-      "Careful preparation, painting, and interior upgrades delivered within the approved project scope.",
+      "Feasibility, player position, screen geometry, projector path, lighting, and maintenance access considered before construction begins.",
     deliveryMode: "direct",
   },
   {
-    slug: "simulator-construction",
-    title: "Indoor golf simulator construction",
+    slug: "construction-coordination",
+    title: "Construction Coordination",
     description:
-      "Room planning, enclosure environments, protection systems, finish integration, and installation coordination.",
-    deliveryMode: "coordinated",
-  },
-  {
-    slug: "estimating-support",
-    title: "Construction estimating and project support",
-    description:
-      "Organized opportunity review, estimating support, and practical coordination for better project decisions.",
-    deliveryMode: "coordinated",
-  },
-  {
-    slug: "field-documentation",
-    title: "Field documentation and project reporting",
-    description:
-      "Clear field evidence, organized project records, and professional reporting built around the work.",
+      "Organized scopes, documented assumptions, and coordination with required technology providers and qualified trades.",
     deliveryMode: "coordinated",
   },
 ] as const satisfies ReadonlyArray<Service>;
 
-export const relatedProjects = [
-  {
-    slug: "capproof",
-    name: "CapProof",
-    category: "Field documentation software",
-    description:
-      "Field evidence capture, project documentation, professional reporting, and proof of completed work.",
-    href: "https://capproof.com",
-  },
-  {
-    slug: "bid-desk",
-    name: "Bid Desk",
-    category: "Estimating and bid workflow",
-    description:
-      "A construction opportunity review and estimating workflow designed to make bid decisions more organized.",
-    href: null,
-    status: "Coming soon",
-  },
-  {
-    slug: "precision-impact-screens",
-    name: "Precision Impact Screens",
-    category: "Simulator environments",
-    description:
-      "Indoor golf simulator screens, enclosure solutions, room construction, and installation support.",
-    href: "https://precisionimpactscreens.com",
-  },
-] as const satisfies ReadonlyArray<RelatedProject>;
-
 export const serviceOptions = [
-  { value: "construction-renovation", label: "Construction and renovation support" },
-  { value: "finish-carpentry", label: "Finish carpentry and specialty installation" },
-  { value: "painting-interiors", label: "Painting and interior improvements" },
-  { value: "simulator-construction", label: "Indoor golf simulator construction" },
-  { value: "estimating-support", label: "Estimating and project support" },
-  { value: "field-documentation", label: "Field documentation and reporting" },
-  { value: "business-inquiry", label: "Business or partnership inquiry" },
-  { value: "other", label: "Something else" },
+  { value: "simulator-construction", label: "Complete simulator room construction" },
+  { value: "residential-simulator-room", label: "Residential simulator room" },
+  { value: "commercial-simulator-space", label: "Commercial simulator space" },
+  { value: "simulator-room-conversion", label: "Existing room conversion" },
+  { value: "simulator-planning", label: "Room feasibility and planning" },
+  { value: "simulator-room-improvement", label: "Existing simulator room improvement" },
+  { value: "other-construction-inquiry", label: "Other construction inquiry" },
 ] as const;
 
 export type ServiceOptionValue = (typeof serviceOptions)[number]["value"];
@@ -150,10 +119,25 @@ export function isServiceOptionValue(value: string): value is ServiceOptionValue
   return serviceOptions.some((option) => option.value === value);
 }
 
+export const consultationOptions = [
+  {
+    value: "on-site-consultation",
+    label: "On-site consultation",
+  },
+  {
+    value: "guided-remote-review",
+    label: "Guided remote room review",
+  },
+
+] as const;
+
+export type ConsultationOptionValue =
+  (typeof consultationOptions)[number]["value"];
+
 export const timelineOptions = [
   { value: "asap", label: "As soon as practical" },
-  { value: "one-three-months", label: "Within 1–3 months" },
-  { value: "three-six-months", label: "Within 3–6 months" },
+  { value: "one-three-months", label: "Within 1-3 months" },
+  { value: "three-six-months", label: "Within 3-6 months" },
   { value: "six-plus-months", label: "More than 6 months out" },
   { value: "planning", label: "Early planning / not sure yet" },
 ] as const;

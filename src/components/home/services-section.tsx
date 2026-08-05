@@ -4,27 +4,28 @@ import { services } from "@/config/business";
 
 export function ServicesSection() {
   return (
-    <section className="section services-section" id="services">
+    <section className="section services-section" id="simulator-rooms">
       <div className="site-container">
         <div className="section-intro-grid">
           <SectionHeading
             description={
               <p>
-                Practical construction support shaped around the space, the
-                finish, and the work required to deliver it well.
+                The room, impact environment, playing surface, projection path,
+                lighting, and finish details must work together. Zarka plans the
+                construction as one complete environment.
               </p>
             }
-            eyebrow="Construction + installation"
-            title="Capability grounded in the work."
+            eyebrow="Custom simulator solutions"
+            title="Built as a room. Coordinated as a system."
           />
           <p className="section-side-note">
-            Scope is established project by project. Specialized or licensed
-            trade work may be coordinated with qualified partners as the work
-            requires.
+            Residential and commercial projects begin with feasibility. Exact
+            scope, equipment responsibilities, and required trade coordination
+            are established for each room.
           </p>
         </div>
 
-        <div className="services-grid">
+        <div className="services-grid simulator-services-grid">
           {services.map((service, index) => (
             <article className="service-card" key={service.slug}>
               <div className="service-card-top">
@@ -40,4 +41,3 @@ export function ServicesSection() {
     </section>
   );
 }
-
