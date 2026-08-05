@@ -11,11 +11,11 @@ function BrandArtwork() {
         <div className="diagram-axis diagram-axis-x" />
         <div className="diagram-axis diagram-axis-y" />
         <BrandMark className="hero-brand-mark" format="icon" surface="dark" />
-        <div className="diagram-label diagram-label-a">ROOM GEOMETRY</div>
-        <div className="diagram-label diagram-label-b">PLAYER / SCREEN / SYSTEM</div>
-        <div className="diagram-coordinate">CUSTOM SIMULATOR ENVIRONMENTS</div>
+        <div className="diagram-label diagram-label-a">SPACE TO PRACTICE</div>
+        <div className="diagram-label diagram-label-b">ROOM TO PLAY</div>
+        <div className="diagram-coordinate">BUILT AROUND THE GAME</div>
       </div>
-      <p>Room planning and construction organized around the technology.</p>
+      <p>A custom room designed for the way you want to experience golf.</p>
     </div>
   );
 }
@@ -29,16 +29,15 @@ export function Hero() {
           <p className="hero-kicker">Golf Simulator Room Builder</p>
           <h1>
             We Build the Room
-            <span>Around the Technology.</span>
+            <span>Around the Game.</span>
           </h1>
           <p className="hero-description">
-            Custom indoor golf simulator rooms designed around your space, your
-            equipment, and the way you play.
+            Every great simulator begins with a room designed to play beautifully.
           </p>
           <p className="hero-credibility">
-            From room feasibility and framing to impact protection, finish work,
-            turf, lighting, and installation coordination, Zarka Construction
-            delivers the complete build environment.
+            Zarka Construction plans and builds custom indoor golf simulator
+            environments where craftsmanship, construction, and technology come
+            together as one seamless experience.
           </p>
           <div className="hero-actions">
             <TrackedLink
@@ -47,16 +46,16 @@ export function Hero() {
               eventProperties={{ placement: "hero" }}
               href="/contact?service=simulator-construction"
             >
-              Plan Your Simulator Room
+              Request a Simulator Consultation
               <ArrowRightIcon />
             </TrackedLink>
             <TrackedLink
               className="button button-secondary"
-              eventName="planning_process_click"
+              eventName="what_we_build_click"
               eventProperties={{ placement: "hero" }}
-              href="/#planning-process"
+              href="/#what-we-build"
             >
-              How Room Planning Works
+              See What We Build
             </TrackedLink>
           </div>
           <p className="hero-tagline">{businessConfig.tagline}</p>

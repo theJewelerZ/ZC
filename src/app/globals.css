@@ -2489,3 +2489,160 @@ a {
 .contact-hero .eyebrow {
   color: var(--structural);
 }
+
+/* Experience-first simulator storytelling */
+.experience-section {
+  background: #eef2f5;
+}
+
+.experience-heading {
+  align-items: end;
+  display: grid;
+  gap: clamp(2rem, 6vw, 5.5rem);
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+}
+
+.experience-philosophy {
+  border-left: 3px solid var(--orange);
+  color: var(--navy);
+  font-size: clamp(1.3rem, 2.4vw, 2rem);
+  font-weight: 720;
+  letter-spacing: -0.025em;
+  line-height: 1.35;
+  margin: 0 0 0.35rem;
+  padding-left: clamp(1.25rem, 3vw, 2rem);
+}
+
+.experience-grid {
+  border-left: 1px solid rgba(102, 113, 125, 0.25);
+  border-top: 1px solid rgba(102, 113, 125, 0.25);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: clamp(3rem, 7vw, 5.5rem);
+}
+
+.experience-grid article {
+  background: rgba(247, 249, 251, 0.7);
+  border-bottom: 1px solid rgba(102, 113, 125, 0.25);
+  border-right: 1px solid rgba(102, 113, 125, 0.25);
+  min-height: 17rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.experience-grid article > span {
+  color: var(--orange-ink);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.experience-grid h3 {
+  color: var(--navy);
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  margin: 3.4rem 0 0.85rem;
+}
+
+.experience-grid p {
+  color: #4f5e6b;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.simulator-capabilities li {
+  align-items: flex-start;
+}
+
+.simulator-capabilities li strong,
+.simulator-capabilities li small {
+  display: block;
+}
+
+.simulator-capabilities li strong {
+  color: var(--structural);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.simulator-capabilities li small {
+  color: #92a2ae;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  margin-top: 0.2rem;
+}
+
+.builder-difference {
+  background: var(--navy);
+  color: var(--structural);
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  margin-bottom: clamp(4rem, 9vw, 7rem);
+  padding: clamp(2rem, 6vw, 5rem);
+  position: relative;
+}
+
+.builder-difference::before {
+  background: var(--orange);
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: min(14rem, 36%);
+}
+
+.builder-difference > .eyebrow {
+  color: #ff9a63;
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.builder-difference h2 {
+  font-size: clamp(2rem, 4.4vw, 4rem);
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+  margin: 0;
+}
+
+.builder-difference > div {
+  align-self: end;
+}
+
+.builder-difference > div p {
+  color: #c2ccd4;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.builder-difference > div p + p {
+  margin-top: 1rem;
+}
+
+@media (max-width: 960px) {
+  .experience-heading,
+  .builder-difference {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-grid article {
+    min-height: 0;
+  }
+
+  .experience-grid h3 {
+    margin-top: 1.75rem;
+  }
+
+  .builder-difference {
+    margin-inline: calc(var(--page-gutter) * -1);
+  }
+}

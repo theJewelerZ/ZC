@@ -4,31 +4,44 @@ import { ArrowRightIcon, CheckIcon } from "@/components/icons";
 import { SectionHeading } from "@/components/section-heading";
 
 const planningFactors = [
-  "Room width, depth, and finished ceiling height",
-  "Right- and left-handed player position and swing clearance",
-  "Screen size, aspect ratio, setback, and enclosure depth",
-  "Projector throw path, mounting location, and obstructions",
-  "Impact protection across walls, ceiling, and adjacent openings",
-  "Turf, hitting-surface thickness, and finished floor transitions",
-  "Lighting, power, data, ventilation, and future service access",
-];
+  {
+    title: "Swing freely with confidence",
+    copy: "Player position, handedness, and the finished room dimensions shape the usable swing area.",
+  },
+  {
+    title: "See a natural, immersive image",
+    copy: "Screen proportions, viewing distance, and projection geometry need to work as one.",
+  },
+  {
+    title: "Stay focused on the shot",
+    copy: "Impact protection and enclosure details should feel integrated rather than added afterward.",
+  },
+  {
+    title: "Move comfortably through the room",
+    copy: "The stance area, turf transitions, doors, and circulation all affect how the space feels in use.",
+  },
+  {
+    title: "Enjoy a finished environment",
+    copy: "Lighting, trim, controlled surfaces, and concealed services help the technology recede into the room.",
+  },
+] as const;
 
 function RoomDiagram() {
   return (
     <div aria-hidden="true" className="room-diagram">
       <div className="room-perspective">
-        <div className="room-screen">IMPACT PLANE</div>
-        <div className="room-player">PLAYER POSITION</div>
+        <div className="room-screen">THE GAME</div>
+        <div className="room-player">YOUR POSITION</div>
         <div className="room-line room-line-one" />
         <div className="room-line room-line-two" />
-        <span className="room-measure room-measure-a">SWING ENVELOPE</span>
-        <span className="room-measure room-measure-b">PROJECTION PATH</span>
-        <span className="room-measure room-measure-c">ROOM DEPTH</span>
+        <span className="room-measure room-measure-a">SWING FREELY</span>
+        <span className="room-measure room-measure-b">SEE EVERY SHOT</span>
+        <span className="room-measure room-measure-c">ENJOY THE ROOM</span>
       </div>
       <div className="room-diagram-footer">
         <span>PLAYER</span>
-        <span>SCREEN</span>
-        <span>ROOM</span>
+        <span>GAME</span>
+        <span>SPACE</span>
       </div>
     </div>
   );
@@ -42,14 +55,13 @@ export function SimulatorSection() {
           <SectionHeading
             description={
               <p>
-                Screen size cannot be selected independently from the room.
-                Player position changes the swing envelope. Enclosure depth
-                affects usable room depth. Construction decisions made first
-                can either protect the technology plan or constrain it.
+                A room plays beautifully when its dimensions, player position,
+                screen, surfaces, lighting, and technology have been considered
+                together before construction begins.
               </p>
             }
             eyebrow="Room feasibility and planning"
-            title="The right simulator starts with the room geometry."
+            title="Why every great room starts with good planning."
             tone="dark"
           />
           <p className="simulator-index">PLANNING / 01</p>
@@ -59,25 +71,28 @@ export function SimulatorSection() {
           <RoomDiagram />
           <div className="simulator-capabilities">
             <p className="simulator-lead">
-              Zarka Construction evaluates the space before the build scope is
-              locked, bringing the player, screen, technology, protection, and
-              finished room into one coordinated plan.
+              Good planning makes the technical decisions feel invisible. The
+              result is a room where you can step in, settle over the ball, and
+              focus on the game.
             </p>
             <ul>
               {planningFactors.map((factor) => (
-                <li key={factor}>
+                <li key={factor.title}>
                   <CheckIcon />
-                  <span>{factor}</span>
+                  <span>
+                    <strong>{factor.title}</strong>
+                    <small>{factor.copy}</small>
+                  </span>
                 </li>
               ))}
             </ul>
             <p className="simulator-qualifier">
               Equipment purchasing and licensed trade work remain separate
-              unless they are explicitly included in the confirmed project scope.
+              unless explicitly included in the confirmed project scope.
             </p>
             <div className="simulator-section-actions">
               <Link className="simulator-detail-link" href="/simulator-construction">
-                Explore simulator room construction
+                Explore how the room comes together
                 <ArrowRightIcon />
               </Link>
             </div>

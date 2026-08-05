@@ -46,7 +46,7 @@ export function SiteHeader() {
             eventProperties={{ placement: "header" }}
             href="/contact?service=simulator-construction"
           >
-            Plan a Simulator Room
+            Request a Consultation
           </TrackedLink>
         </nav>
 
@@ -87,7 +87,7 @@ export function SiteHeader() {
             href="/contact?service=simulator-construction"
             onClick={() => setIsOpen(false)}
           >
-            Plan a Simulator Room
+            Request a Consultation
           </TrackedLink>
         </div>
       </nav>

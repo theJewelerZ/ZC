@@ -5,24 +5,11 @@ export function ContactCtaSection() {
   return (
     <section className="contact-cta-section" id="contact-cta">
       <div className="site-container contact-cta-inner">
-        <div>
-          <p className="eyebrow">Start with a room review</p>
-          <h2>Every simulator room needs to be evaluated before it is built.</h2>
-        </div>
+        <div><p className="eyebrow">Imagine the room. Then understand the space.</p><h2>Start with the golf experience you want to create.</h2></div>
         <div className="contact-cta-action">
-          <p>
-            Choose an on-site consultation or guided remote room review. Share
-            the space, intended players, known equipment, general location, and
-            timing so the first conversation can focus on feasibility.
-          </p>
-          <TrackedLink
-            className="button button-primary"
-            eventName="consultation_cta_click"
-            eventProperties={{ placement: "final_cta" }}
-            href="/contact?service=simulator-construction"
-          >
-            Start Your Room Review
-            <ArrowRightIcon />
+          <p>Tell us how you want to use the room, who will play, and what space you have in mind. An on-site consultation or guided remote room review can turn that vision into a practical first plan.</p>
+          <TrackedLink className="button button-primary" eventName="consultation_cta_click" eventProperties={{ placement: "final_cta" }} href="/contact?service=simulator-construction">
+            Request a Simulator Consultation <ArrowRightIcon />
           </TrackedLink>
         </div>
       </div>

@@ -5,9 +5,9 @@ import { isServiceOptionValue } from "@/config/business";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Plan Your Golf Simulator Room",
+  title: "Request a Simulator Consultation",
   description:
-    "Start an on-site consultation or guided remote room review for a custom residential or commercial golf simulator room.",
+    "Tell Zarka Construction about the golf experience you want to create and begin an on-site consultation or guided remote room review.",
   path: "/contact",
 });
 
@@ -59,13 +59,12 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
       <section className="contact-hero">
         <div className="site-container contact-hero-grid">
           <div>
-            <p className="eyebrow">Plan your simulator room</p>
-            <h1>Start with a review of the actual space.</h1>
+            <p className="eyebrow">Request a simulator consultation</p>
+            <h1>Tell us about the room you want to create.</h1>
           </div>
           <p>
-            Every simulator room depends on dimensions, player position, screen
-            geometry, protection, projection, and construction constraints.
-            Choose the review approach that best fits the project.
+            Begin with how you want to practice, play, and enjoy the space.
+            Then choose the review approach that best fits the room and the project.
           </p>
         </div>
       </section>
@@ -78,17 +77,17 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
             <div className="contact-review-option">
               <h3>On-site consultation</h3>
               <p>
-                Review the dimensions, structure, access, obstructions, and
-                existing finishes in person when the location and scope make an
-                on-site visit appropriate.
+                Walk through the room, how you hope to use it, and the conditions
+                that will shape the finished golf experience when the location
+                and scope make an on-site visit appropriate.
               </p>
             </div>
             <div className="contact-review-option">
               <h3>Guided remote room review</h3>
               <p>
-                Begin with guided measurements and room photographs. Zarka will
-                explain what is needed after the initial inquiry; this website
-                does not accept uploads.
+                Begin with the room, intended players, and the experience you want.
+                Zarka will explain which measurements and photographs are needed
+                during follow-up; this website does not accept uploads.
               </p>
             </div>
             <p id="contact-disabled-context">

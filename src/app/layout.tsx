@@ -8,7 +8,7 @@ import { businessConfig } from "@/config/business";
 import { getOrganizationStructuredData } from "@/lib/structured-data";
 
 const description =
-  "Zarka Construction plans and builds custom indoor golf simulator rooms for residential and commercial spaces.";
+  "Zarka Construction creates custom indoor golf simulator rooms designed around the way people practice, play, gather, and enjoy the game.";
 
 const searchIndexingEnabled =
   process.env.NEXT_PUBLIC_SEARCH_INDEXING_ENABLED === "true";

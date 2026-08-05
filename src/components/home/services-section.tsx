@@ -4,24 +4,24 @@ import { services } from "@/config/business";
 
 export function ServicesSection() {
   return (
-    <section className="section services-section" id="simulator-rooms">
+    <section className="section services-section" id="what-we-build">
       <div className="site-container">
         <div className="section-intro-grid">
           <SectionHeading
             description={
               <p>
-                The room, impact environment, playing surface, projection path,
-                lighting, and finish details must work together. Zarka plans the
-                construction as one complete environment.
+                From a private place to practice to a commercial space built
+                around repeat play, every project begins with the experience the
+                room needs to create.
               </p>
             }
-            eyebrow="Custom simulator solutions"
-            title="Built as a room. Coordinated as a system."
+            eyebrow="What we build"
+            title="Complete rooms, shaped around how you play."
           />
           <p className="section-side-note">
-            Residential and commercial projects begin with feasibility. Exact
-            scope, equipment responsibilities, and required trade coordination
-            are established for each room.
+            Residential and commercial projects begin with feasibility. Scope,
+            equipment responsibilities, and trade coordination are confirmed
+            for the individual room.
           </p>
         </div>
 

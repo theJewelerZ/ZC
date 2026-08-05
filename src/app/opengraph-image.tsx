@@ -72,7 +72,7 @@ export default function OpenGraphImage() {
             >
               We Build the Room
               <br />
-              Around the Technology.
+              Around the Game.
             </span>
             <span
               style={{
@@ -81,7 +81,7 @@ export default function OpenGraphImage() {
                 marginTop: 24,
               }}
             >
-              Custom residential and commercial golf simulator rooms
+              Spaces designed for the way you practice, play, and enjoy golf
             </span>
           </div>
         </div>

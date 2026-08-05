@@ -56,49 +56,49 @@ export const services = [
     slug: "residential-simulator-rooms",
     title: "Residential Simulator Rooms",
     description:
-      "Custom rooms planned around the available space, intended players, equipment requirements, and finished-home environment.",
+      "A private place to practice, play, and enjoy golf at home—planned around the people, the space, and the way the room should feel.",
     deliveryMode: "coordinated",
   },
   {
     slug: "commercial-simulator-bays",
     title: "Commercial Simulator Bays",
     description:
-      "Purpose-built simulator spaces coordinated for repeated use, durable protection, clear circulation, and maintainable systems.",
+      "Welcoming simulator spaces built for repeated play, comfortable gatherings, and the practical demands of a commercial environment.",
     deliveryMode: "coordinated",
   },
   {
     slug: "room-conversions",
     title: "Room Conversions",
     description:
-      "Existing rooms evaluated and adapted around swing clearance, enclosure depth, projection, access, and finish constraints.",
+      "Existing space transformed into a room that feels intentional, comfortable, and ready for the way you want to play.",
     deliveryMode: "coordinated",
   },
   {
     slug: "impact-environments",
     title: "Impact Environments",
     description:
-      "Impact-screen, enclosure, netting, blackout, and protective wall and ceiling details integrated with the room construction.",
+      "Screen, enclosure, and protective surfaces integrated so every shot feels natural and the room remains visually resolved.",
     deliveryMode: "coordinated",
   },
   {
     slug: "finish-integration",
     title: "Finish Integration",
     description:
-      "Framing, finish carpentry, trim, turf transitions, and built details that make the simulator feel part of the room.",
+      "Craftsmanship, trim, turf transitions, and finish details that make the golf environment feel like it truly belongs in the space.",
     deliveryMode: "direct",
   },
   {
     slug: "room-planning",
     title: "Room Planning",
     description:
-      "Feasibility, player position, screen geometry, projector path, lighting, and maintenance access considered before construction begins.",
+      "Thoughtful planning that creates room to swing confidently, see the shot clearly, and enjoy the space comfortably.",
     deliveryMode: "direct",
   },
   {
     slug: "construction-coordination",
     title: "Construction Coordination",
     description:
-      "Organized scopes, documented assumptions, and coordination with required technology providers and qualified trades.",
+      "Organized scopes and coordinated decisions that keep the experience at the center while the technical details come together.",
     deliveryMode: "coordinated",
   },
 ] as const satisfies ReadonlyArray<Service>;
