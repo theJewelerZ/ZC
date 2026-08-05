@@ -1,6 +1,6 @@
 # Progress
 
-**Current phase:** Phase 2 — experience-first simulator-room positioning
+**Current phase:** Phase 2 — final specialist-positioning review
 
 **Canonical production URL:** <https://www.zarkaconstruction.com>
 
@@ -12,52 +12,80 @@
 
 ## Production status
 
-The existing production release remains live and unchanged. This experience-led
-refinement has not been merged, promoted, or connected to production. DNS,
-nameservers, email records, GoDaddy products, and Vercel domain settings were
-not changed.
+The existing production release remains live and unchanged. This final trust and
+positioning pass has not been merged, promoted, or connected to production.
+DNS, nameservers, email records, GoDaddy products, and Vercel domain settings
+were not changed.
 
 ## Accepted positioning
 
-Zarka Construction remains positioned as a **Golf Simulator Room Builder**, now
-with the finished golf experience as the emotional center of the website.
+Zarka Construction is positioned as a **Golf Simulator Construction Specialist
+focused on creating premium simulator environments while accurately
+representing its present capabilities**.
 
-Protected philosophy:
-
-> We don't build golf simulators. We build the spaces where great golf happens.
-
-Hero direction:
+The website preserves the experience-led idea:
 
 > We Build the Room Around the Game.
 
-Golf, practice, play, gathering, and lasting enjoyment lead the narrative.
-Construction, planning, craftsmanship, and technology coordination explain how
-Zarka creates the result. ADR-022 records this refinement.
+It now defines Zarka's work through specific simulator-environment scope rather
+than broad room or facility claims. ADR-023 records this decision.
 
-## Implementation completed
+## Present public scope
 
-- Replaced the equipment-led hero with “We Build the Room Around the Game.”
-- Standardized the primary action as “Request a Simulator Consultation.”
-- Added an understated “It's More Than a Simulator” storytelling section around
-  practice, family and friends, clients, improvement, and year-round enjoyment.
-- Added the primary differentiator: “We Don't Install Golf Simulators. We Build
-  Golf Simulator Rooms.”
-- Reframed planning detail around confident swings, natural sightlines,
-  comfortable movement, and a resolved room.
-- Rewrote solution cards around complete residential and commercial room
-  experiences rather than a trade list.
-- Reframed the project area around honest founder-owned proof without publishing
-  fake, stock, AI-generated, or premature project imagery.
-- Rewrote construction credibility and About copy so field experience supports
-  the simulator-room philosophy.
-- Reworked the dedicated simulator page from checklist-led headings to
-  golfer-led outcomes while retaining technical and trade-scope boundaries.
-- Refocused the contact page on the room and golf experience the prospect wants
-  to create; the existing backend and review options remain unchanged.
-- Updated metadata, Open Graph messaging, structured-data descriptions, typed
-  service/process copy, and header CTAs.
-- Added no routes, products, CMS, Supabase, database, authentication, uploads,
-  store, estimator, animations, or production changes.
+Depending on room review and written scope, work may include:
+
+- room evaluation and simulator construction planning;
+- simulator-room preparation and framing;
+- impact-screen structures and custom layered impact screens;
+- curtains and enclosure details;
+- wall and ceiling protection;
+- turf, stance areas, and hitting surfaces;
+- finish carpentry, trim, transitions, and detailing;
+- coordination with equipment providers or qualified trades when required.
+
+The site does not claim equipment sales, manufacturer or dealer relationships,
+architectural or engineering services, permit authority, complete facility
+construction, or responsibility outside the written scope.
+
+## Trust refinements completed
+
+- Replaced “Golf Simulator Room Builder” with “Golf Simulator Construction
+  Specialist” in public category, metadata, Open Graph, structured data, and documentation.
+- Replaced broad residential/commercial room cards with seven specific,
+  currently performed simulator-environment service categories.
+- Added careful commercial settings: teaching studios, commercial golf spaces,
+  entertainment venues, simulator businesses, country clubs, and training
+  environments.
+- Clarified that commercial references concern the simulator environment within
+  a facility, not construction of the complete facility.
+- Strengthened the differentiator to: “We Don't Simply Install Equipment. We
+  Prepare the Environment for Great Simulator Experiences.”
+- Rewrote the process around initial evaluation, defined scope, agreed specialty
+  work, and remaining responsibilities.
+- Rewrote About with a humble emphasis on experience, love of golf,
+  craftsmanship, listening, clear communication, and identifying outside scope.
+- Reframed Contact as a conversation about the space, not an equipment package
+  or quote.
+- Added direct Terms language for business scope, equipment, permits,
+  architectural or engineering work, licensed trades, commercial settings, and
+  no website-created warranty or agreement.
+- Documented every current photography placeholder by intended image, story,
+  construction state, residential/commercial relevance, and framing.
+- Added no route, layout, feature, animation, database, CMS, Supabase,
+  authentication, upload, store, estimator, or production change.
+
+## Three-audience accuracy review
+
+- **Homeowner:** sees a specialist who begins with the room, explains the work
+  that may be included, and invites a practical conversation without selling equipment.
+- **Golf facility owner:** sees relevant commercial simulator settings and
+  specialty capability without a claim to construct the entire facility.
+- **Licensed general contractor:** sees a defined simulator-environment scope,
+  written responsibilities, and explicit separation of permits, professional
+  design, equipment, and licensed trades.
+
+All three audiences should leave with an accurate understanding of Zarka's
+present role.
 
 ## Verification completed
 
@@ -66,51 +94,48 @@ Zarka creates the result. ADR-022 records this refinement.
   - TypeScript: pass
   - Vitest: 24 tests pass across 8 files
   - Production build: pass; all 13 routes generated
-- HTTP 200 verified locally for `/`, `/simulator-construction`, simulator-
-  preselected `/contact`, `/privacy`, `/terms`, `/sitemap.xml`, and
-  `/robots.txt`.
-- Public copy checks: protected philosophy present on homepage and simulator
-  page; no Precision Impact Screens or Bid Desk references.
-- Canonical metadata remains `https://www.zarkaconstruction.com`; protected
-  preview remains noindex.
-- Responsive review completed at 320, 375, 768, 1024, and 1440 CSS pixels.
-  True 320px Lighthouse emulation confirms correct wrapping and fully visible
-  CTAs; tablet and desktop captures show the intended hierarchy.
-- An initial low-contrast eyebrow in the new navy differentiator panel was
-  corrected before commit.
-- Final Lighthouse:
-  - Homepage: Performance 100, Accessibility 100, Best Practices 100, SEO 100
+- HTTP 200 verified for `/`, `/simulator-construction`, simulator-preselected
+  `/contact`, `/privacy`, `/terms`, `/sitemap.xml`, and `/robots.txt`.
+- Public trust assertions pass for specialist category, present services,
+  custom layered impact screens, commercial settings, complete-facility
+  boundary, equipment boundary, permit boundary, professional-design boundary,
+  contact framing, canonical metadata, and prohibited-reference removal.
+- Responsive review completed at true 320px, 768px, 1024px, and 1440px.
+  Long specialist and scope language wraps without clipped CTAs or overflow.
+- Lighthouse:
+  - Homepage: Performance 99, Accessibility 100, Best Practices 100, SEO 100
+  - True 320px homepage: Performance 100, Accessibility 100, Best Practices 100, SEO 100
   - Simulator page: Performance 100, Accessibility 100, Best Practices 100, SEO 100
   - Contact page: Performance 100, Accessibility 100, Best Practices 100, SEO 100
-  - True 320px homepage: Performance 100, Accessibility 100, Best Practices 100, SEO 100
-- Lighthouse occasionally reports Windows temporary-folder cleanup `EPERM`
-  after writing a valid report; saved report results are complete.
+  - CLS: 0 on every audited route
+- Lighthouse can emit a Windows temporary-folder cleanup `EPERM` after writing
+  valid reports; the reports and scores above are complete.
 
-## Git and preview
+## Git and protected preview
 
-- Application commit: `ed5122b` — Center simulator site on the golf experience
-- Strategy documentation commit: `c28a14b` — Document experience-first
-  simulator positioning
+- Application commit: `a98c069` — Clarify simulator construction specialist scope
+- Documentation commit: `c3519f1` — Document accurate specialist positioning
 - Both commits are pushed to `origin/phase-2/simulator-construction`.
-- Protected preview deployment: `dpl_3eFavDdhHEf9LaNdYBQBU2qxY89A`
+- Protected preview deployment: `dpl_EgYXk2SUoKxanqJ98j5o2JDR6vok`
 - Preview URL:
-  <https://zarka-construction-fqh2vmkmw-matthews-projects-7e2a9d39.vercel.app>
+  <https://zarka-construction-qcl16xk68-matthews-projects-7e2a9d39.vercel.app>
 - Deployment target: preview; status: Ready.
-- Authenticated preview checks passed for the hero, protected philosophy,
-  dedicated simulator page, contact entry, canonical metadata, preview noindex,
-  and prohibited-reference removal.
+- Authenticated preview assertions pass for public category, current services,
+  commercial and legal boundaries, contact positioning, canonical metadata,
+  preview noindex, and removal of prohibited product references.
 
-## Remaining founder content
+## Remaining founder review
 
-- Approval of the experience-first protected preview
-- Founder-owned simulator project photography and publication rights
-- Approved project titles, verified scope facts, broad locations if publishable,
-  crops, and alt text after real construction begins
-- Confirmed public service-area wording, if any
-- Any verified equipment, manufacturer, dealer, certification, or warranty
-  relationships; none are claimed
+- Approve or request changes to the final specialist positioning.
+- Confirm that every service listed reflects work presently offered.
+- Confirm the wording “custom layered impact screens.”
+- Confirm the intended commercial settings.
+- Approve founder-owned project photography and publication rights when real
+  project images become available.
+- Provide any future verified licensing, permit, insurance, equipment,
+  manufacturer, dealer, warranty, or service-area information before it is claimed.
 
 ## Immediate next action
 
 Founder review of the protected preview. Do not merge or promote to production
-until the founder explicitly approves this experience-first direction.
+until explicit founder approval is received.
