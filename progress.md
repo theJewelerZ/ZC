@@ -67,7 +67,13 @@ Branch URL:
 Founder login:
 <https://zarka-construction-git-phase-9e8031-matthews-projects-7e2a9d39.vercel.app/admin/login>
 
-The next Git push will update this stable alias without changing its hostname.
+Current verified code deployment: `dpl_4QCVexPcfuWT9znzXTY18hVdsJbi`.
+The stable alias updates on every branch push without changing its hostname.
+
+Live route checks returned 200 for `/`, `/simulator-construction`, `/contact`,
+`/privacy`, `/terms`, and `/admin/login`. The live shell contains the Founder
+Login link and responsive Menu label. A commit-host callback is rejected as a
+callback mismatch; the stable callback reports a missing verifier distinctly.
 
 ## Merge blockers
 
