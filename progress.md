@@ -93,8 +93,19 @@ ADR-021 records the strategy change.
 - Any verified equipment, manufacturer, dealer, certification, or warranty
   relationships; none are currently claimed
 
+## Git and preview deployment
+
+- Application commit: `b9a0187` — Reposition site around simulator room building
+- Documentation commit: `1a77f2a` — Document simulator-room-builder strategy
+- Both commits are pushed to `origin/phase-2/simulator-construction`.
+- Protected preview deployment: `dpl_6kq4LmyJhrgrh1EABAJ2D8GoVH3Y`
+- Preview URL:
+  <https://zarka-construction-6d1azpg3r-matthews-projects-7e2a9d39.vercel.app>
+- Authenticated preview assertions passed for category copy, hero, dedicated
+  simulator content, canonical metadata, preview noindex, contact preselection,
+  both review options, sitemap, and prohibited-reference removal.
+
 ## Immediate next action
 
-Commit and push the repositioning on the existing feature branch, deploy a new
-protected Vercel preview, verify its rendered public routes, and wait for founder
-approval. Do not merge or promote to production.
+Complete founder review of the protected preview. Do not merge or promote to
+production until the founder explicitly approves the repositioned experience.

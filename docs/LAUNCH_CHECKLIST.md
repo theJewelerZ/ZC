@@ -239,7 +239,7 @@ an approved private location, not the public repository.
 ### Verification and release
 
 - [x] Pass lint, TypeScript, 24 tests, and production build.
-- [ ] Verify all public routes and metadata in a protected Vercel preview.
+- [x] Verify all public routes and metadata in protected preview `dpl_6kq4LmyJhrgrh1EABAJ2D8GoVH3Y`.
 - [x] Verify no prohibited public product references in rendered output.
 - [x] Review 320, 375, 768, 1024, and 1440 layouts.
 - [x] Run accessibility and Lighthouse reviews; homepage, simulator, and contact score 100 for accessibility, and the homepage scores 100 in all four Lighthouse categories.
