@@ -5,7 +5,7 @@ describe("private dashboard security boundary", () => {
   it("authorizes before list and detail data access and signed URL creation", () => {
     const list = readFileSync("src/app/admin/page.tsx", "utf8");
     const detail = readFileSync("src/app/admin/consultations/[id]/page.tsx", "utf8");
-    expect(list.indexOf("await requireAdmin()")).toBeLessThan(list.indexOf("createSupabaseAdminClient()"));
+    expect(list.indexOf("await requireAdmin()")).toBeLessThan(list.indexOf("getMissionControlData()"));
     expect(detail.indexOf("await requireAdmin()")).toBeLessThan(detail.indexOf("createSupabaseAdminClient()"));
     expect(detail.indexOf("await requireAdmin()")).toBeLessThan(detail.indexOf("createSignedUrl"));
   });

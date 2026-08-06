@@ -1,8 +1,15 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+﻿import type { Metadata } from "next";
 import { AdminNav } from "@/components/admin/admin-nav";
+import { MissionControl } from "@/components/admin/mission-control";
 import { requireAdmin } from "@/lib/admin/auth";
-import { createSupabaseAdminClient } from "@/lib/supabase/admin";
-export const dynamic="force-dynamic";
-export const metadata:Metadata={title:"Founder dashboard",robots:{index:false,follow:false,nocache:true}};
-export default async function AdminDashboard(){await requireAdmin();const client=createSupabaseAdminClient();const[projects,consultations]=await Promise.all([client.from("projects").select("id,publication_status",{count:"exact"}).limit(100),client.from("consultations").select("id",{count:"exact"}).eq("submission_state","complete").limit(1)]);const published=(projects.data||[]).filter((item)=>item.publication_status==="published").length;return <main className="admin-shell" id="main-content"><AdminNav/><div className="admin-heading"><div><p className="eyebrow">Founder dashboard</p><h1>Build operations</h1><p>Projects are the source for private documentation and approved public stories.</p></div><form action="/auth/signout" method="post"><button className="button button-outline" type="submit">Sign out</button></form></div><div className="admin-summary-grid"><Link className="admin-card" href="/admin/projects"><strong>{projects.count||0}</strong><span>Projects</span><small>{published} published</small></Link><Link className="admin-card" href="/admin/consultations"><strong>{consultations.count||0}</strong><span>Consultations</span><small>System of record</small></Link></div><div className="admin-card"><h2>Start the next build story</h2><p>Create the private project first. Nothing appears publicly until you explicitly publish it.</p><Link className="button button-primary" href="/admin/projects/new">Create project</Link></div></main>}
+import { getMissionControlData } from "@/lib/admin/mission-control";
+
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+export const metadata: Metadata = { title: "Mission Control", robots: { index: false, follow: false, nocache: true } };
+
+export default async function AdminDashboard() {
+  await requireAdmin();
+  const data = await getMissionControlData();
+  return <main className="admin-shell mission-shell" id="main-content"><AdminNav/><MissionControl data={data}/></main>;
+}
