@@ -110,6 +110,7 @@ export function validateConsultationStartPayload(input: unknown, now = Date.now(
     timeline: raw.timeline, description: raw.description,
     referralSource: raw.referralSource, website: raw.website,
     startedAt: raw.startedAt, turnstileToken: raw.turnstileToken,
+    sourceBuildSlug: raw.sourceBuildSlug,
   }, now);
   if (!base.success) return base;
 

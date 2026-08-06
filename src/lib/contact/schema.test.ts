@@ -32,6 +32,13 @@ describe("validateContactPayload", () => {
     }
   });
 
+  it("accepts only a normalized Build slug as optional context", () => {
+    const valid = validateContactPayload({ ...validPayload, sourceBuildSlug: "albatross-golf-mason" }, now);
+    const invalid = validateContactPayload({ ...validPayload, sourceBuildSlug: "../../private" }, now);
+    expect(valid.success && valid.data.sourceBuildSlug).toBe("albatross-golf-mason");
+    expect(invalid.success && invalid.data.sourceBuildSlug).toBe("");
+  });
+
   it("rejects a honeypot value as abuse", () => {
     const result = validateContactPayload(
       { ...validPayload, website: "https://spam.example" },

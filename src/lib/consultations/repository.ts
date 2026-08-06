@@ -33,7 +33,7 @@ export async function cleanupExpiredConsultations(client: AdminClient, now = new
   }
 }
 
-export async function createPendingConsultation(client: AdminClient, payload: ConsultationStartPayload) {
+export async function createPendingConsultation(client: AdminClient, payload: ConsultationStartPayload, sourceProjectId: string | null = null) {
   const id = randomUUID();
   const submissionToken = createSubmissionToken();
   const uploadManifest = payload.photos.map((photo, sortOrder) => ({
@@ -65,7 +65,8 @@ export async function createPendingConsultation(client: AdminClient, payload: Co
     project_description: payload.description,
     referral_source: payload.referralSource || null,
     privacy_consent_at: new Date().toISOString(),
-    source: "website",
+    source: sourceProjectId ? "inside_the_build" : "website",
+    source_project_id: sourceProjectId,
   });
   if (error) throw error;
 

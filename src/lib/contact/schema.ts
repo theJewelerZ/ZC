@@ -17,6 +17,7 @@ export type ContactPayload = {
   website: string;
   startedAt: string;
   turnstileToken: string;
+  sourceBuildSlug: string;
 };
 
 export type ContactField =
@@ -51,6 +52,7 @@ const allowedKeys = new Set([
   "website",
   "startedAt",
   "turnstileToken",
+  "sourceBuildSlug",
 ]);
 
 const serviceValues = new Set(serviceOptions.map((option) => option.value));
@@ -86,6 +88,7 @@ export function validateContactPayload(
     };
   }
 
+  const requestedBuildSlug = asTrimmedString(raw.sourceBuildSlug).toLowerCase();
   const data: ContactPayload = {
     name: asTrimmedString(raw.name).replace(/\s+/g, " "),
     email: asTrimmedString(raw.email).toLowerCase(),
@@ -99,6 +102,7 @@ export function validateContactPayload(
     website: asTrimmedString(raw.website),
     startedAt: asTrimmedString(raw.startedAt),
     turnstileToken: asTrimmedString(raw.turnstileToken),
+    sourceBuildSlug: /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(requestedBuildSlug) && requestedBuildSlug.length <= 120 ? requestedBuildSlug : "",
   };
 
   if (data.website) {

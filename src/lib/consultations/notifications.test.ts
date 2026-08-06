@@ -12,7 +12,7 @@ const consultation = {
   ceiling_height: null, handedness: null, simulator_system: null, desired_timeline: "planning",
   project_description: "A room with <careful> requirements.", referral_source: null,
   status: "new", internal_notes: null, privacy_consent_at: new Date().toISOString(),
-  source: "website", notification_status: "pending", notification_error: null,
+  source: "website", source_project_id: null, notification_status: "pending", notification_error: null,
 } satisfies Database["public"]["Tables"]["consultations"]["Row"];
 
 describe("consultation emails", () => {

@@ -5,7 +5,7 @@ import { simulatorImageSlots } from "@/config/simulator";
 const projectStages = [
   { label: "Planning", title: "The idea takes shape", copy: "The room, the people who will play, and the experience they want guide the earliest decisions." },
   { label: "Craft", title: "The room comes together", copy: "Real construction progress reveals the care behind the surfaces, transitions, protection, and finish details." },
-  { label: "Play", title: "The finished experience", copy: "Approved project photography will show completed spaces ready for practice, a round with friends, and time well spent." },
+  { label: "Play", title: "The finished experience", copy: "Completed rooms become places for focused practice, a round with friends, and time well spent." },
 ] as const;
 
 export function CapabilitiesSection() {

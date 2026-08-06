@@ -6,6 +6,7 @@ import { verifyTurnstile } from "@/lib/contact/turnstile";
 import { consultationError, logConsultationEvent, readJsonRequest, requestAddress } from "@/lib/consultations/http";
 import { cleanupExpiredConsultations, createPendingConsultation } from "@/lib/consultations/repository";
 import { validateConsultationStartPayload } from "@/lib/consultations/schema";
+import { getPublishedBuildContext } from "@/lib/projects/repository";
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import { isConsultationBackendConfigured } from "@/lib/supabase/config";
 
@@ -53,8 +54,14 @@ export async function POST(request: NextRequest) {
     cleanupExpiredConsultations(client).catch(() => {
       logConsultationEvent("consultation_cleanup_deferred", correlationId);
     });
-    const result = await createPendingConsultation(client, validation.data);
-    logConsultationEvent("consultation_pending_created", correlationId, { photoCount: result.uploads.length });
+    const sourceBuild = validation.data.sourceBuildSlug
+      ? await getPublishedBuildContext(validation.data.sourceBuildSlug)
+      : null;
+    const result = await createPendingConsultation(client, validation.data, sourceBuild?.id || null);
+    logConsultationEvent("consultation_pending_created", correlationId, {
+      photoCount: result.uploads.length,
+      source: sourceBuild ? "inside_the_build" : "website",
+    });
     return NextResponse.json({ ok: true, correlationId, ...result });
   } catch (error) {
     logConsultationEvent("consultation_create_failed", correlationId, { errorClass: error instanceof Error ? error.name : "UnknownError" });

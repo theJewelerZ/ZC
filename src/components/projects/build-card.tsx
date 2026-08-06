@@ -1,5 +1,30 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import type { PublicBuild } from "@/lib/projects/repository";
 import { label } from "@/lib/projects/schema";
-export function BuildCard({build}:{build:PublicBuild}){return <article className="build-card">{build.coverPhoto?<Image alt={build.coverPhoto.alt_text||""} height={750} sizes="(max-width: 800px) 100vw, 33vw" src={build.coverPhoto.url} width={1200}/>:<div aria-hidden="true" className="build-card-placeholder"><span>Inside the Build</span></div>}<div><p className="eyebrow">{label(build.public_build_status)} Build</p><h3><Link href={`/projects/${build.slug}`}>{build.public_title}</Link></h3>{build.public_location?<p className="build-location">{build.public_location}</p>:null}<p>{build.public_summary}</p><Link className="text-link" href={`/projects/${build.slug}`}>Follow this Build →</Link></div></article>}
+
+function shortDate(value: string) {
+  return new Date(`${value}T12:00:00`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+}
+
+export function BuildCard({ build }: { build: PublicBuild }) {
+  return <article className="build-card">
+    <Link aria-label={`View the Build: ${build.title}`} className="build-card-media" href={`/projects/${build.slug}`}>
+      {build.coverPhoto ? <Image
+        alt={build.coverPhoto.altText}
+        height={build.coverPhoto.height}
+        sizes="(max-width: 800px) 100vw, 33vw"
+        src={build.coverPhoto.url}
+        width={build.coverPhoto.width}
+      /> : <div aria-hidden="true" className="build-card-placeholder"><span>Inside the Build</span></div>}
+    </Link>
+    <div className="build-card-content">
+      <div className="build-card-kicker"><span>{label(build.status)} Build</span>{build.location ? <span>{build.location}</span> : null}</div>
+      <h3><Link href={`/projects/${build.slug}`}>{build.title}</Link></h3>
+      <p>{build.summary}</p>
+      {build.latestMilestone ? <p className="build-card-progress"><span>Latest progress</span><strong>{build.latestMilestone.title}</strong><time dateTime={build.latestMilestone.occurredOn}>{shortDate(build.latestMilestone.occurredOn)}</time></p> : null}
+      <Link className="text-link" href={`/projects/${build.slug}`}>View the Build <span aria-hidden="true">→</span></Link>
+    </div>
+  </article>;
+}

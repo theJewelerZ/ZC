@@ -15,6 +15,7 @@ type ContactFormProps = {
   initialService?: ServiceOptionValue | "";
   turnstileSiteKey: string | null;
   supabaseConfig: { url: string; publishableKey: string } | null;
+  sourceBuild: { slug: string; title: string } | null;
 };
 
 type FormStatus =
@@ -34,7 +35,7 @@ type PhotoItem = {
 
 const initialStatus: FormStatus = { state: "idle", message: "" };
 
-export function ContactForm({ deliveryEnabled, initialService = "", turnstileSiteKey, supabaseConfig }: ContactFormProps) {
+export function ContactForm({ deliveryEnabled, initialService = "", turnstileSiteKey, supabaseConfig, sourceBuild }: ContactFormProps) {
   const [status, setStatus] = useState<FormStatus>(initialStatus);
   const [errors, setErrors] = useState<Partial<Record<ContactField | "form" | "photos" | "privacyConsent", string>>>({});
   const [photos, setPhotos] = useState<PhotoItem[]>([]);
@@ -48,7 +49,7 @@ export function ContactForm({ deliveryEnabled, initialService = "", turnstileSit
   function trackStart() {
     if (!trackedStart.current && process.env.NEXT_PUBLIC_ANALYTICS_ENABLED !== "false") {
       trackedStart.current = true;
-      track("contact_form_start", { source: "contact_page" });
+      track("contact_form_start", { source: sourceBuild ? "inside_the_build" : "contact_page" });
     }
   }
 
@@ -115,6 +116,7 @@ export function ContactForm({ deliveryEnabled, initialService = "", turnstileSit
       roomDepth: String(data.get("roomDepth") || ""), ceilingHeight: String(data.get("ceilingHeight") || ""),
       handedness: String(data.get("handedness") || ""), simulatorSystem: String(data.get("simulatorSystem") || ""),
       privacyConsent: data.get("privacyConsent") === "yes",
+      sourceBuildSlug: sourceBuild?.slug || "",
       photos: photos.map((photo) => ({
         clientId: photo.id, originalFilename: photo.file.name, mimeType: photo.file.type,
         byteSize: photo.file.size, caption: photo.caption,
@@ -124,7 +126,7 @@ export function ContactForm({ deliveryEnabled, initialService = "", turnstileSit
     setErrors({});
     setPhotos((current) => current.map((photo) => ({ ...photo, state: "ready", error: undefined })));
     setStatus({ state: "submitting", message: photos.length ? "Saving your request and preparing secure photo uploads…" : "Saving your consultation request…" });
-    if (process.env.NEXT_PUBLIC_ANALYTICS_ENABLED !== "false") track("contact_form_submit", { service_category: service || "unknown" });
+    if (process.env.NEXT_PUBLIC_ANALYTICS_ENABLED !== "false") track("contact_form_submit", { service_category: service || "unknown", source: sourceBuild ? "inside_the_build" : "contact_page" });
 
     let session: { consultationId: string; submissionToken: string } | null = null;
     try {
@@ -172,7 +174,7 @@ export function ContactForm({ deliveryEnabled, initialService = "", turnstileSit
       if (!finalResponse.ok || !final.ok) throw Object.assign(new Error(final.message), { reference: final.correlationId });
 
       setStatus({ state: "success", message: final.message, reference: final.correlationId || session.consultationId });
-      if (process.env.NEXT_PUBLIC_ANALYTICS_ENABLED !== "false") track("contact_form_success", { service_category: service || "unknown" });
+      if (process.env.NEXT_PUBLIC_ANALYTICS_ENABLED !== "false") track("contact_form_success", { service_category: service || "unknown", source: sourceBuild ? "inside_the_build" : "contact_page" });
       form.reset();
       photos.forEach((photo) => URL.revokeObjectURL(photo.preview));
       setPhotos([]);
