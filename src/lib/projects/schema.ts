@@ -1,4 +1,11 @@
-import type { ProjectOperationalStatus, ProjectStage, PublicationStatus, PublicBuildStatus } from "@/lib/supabase/database.types";
+import type {
+  ProjectOperationalStatus,
+  ProjectStage,
+  PublicationPermissionMethod,
+  PublicationPermissionStatus,
+  PublicationStatus,
+  PublicBuildStatus,
+} from "@/lib/supabase/database.types";
 
 export const PROJECT_PRIVATE_BUCKET = "project-media-private";
 export const PROJECT_PUBLIC_BUCKET = "project-media-public";
@@ -10,6 +17,8 @@ export const operationalStatuses: ProjectOperationalStatus[] = ["planning", "act
 export const publicationStatuses: PublicationStatus[] = ["private", "draft", "published", "unpublished"];
 export const projectStages: ProjectStage[] = ["consultation", "planning", "preparation", "framing", "protection", "finish_work", "technology_coordination", "final_details", "complete"];
 export const publicBuildStatuses: PublicBuildStatus[] = ["upcoming", "current", "completed"];
+export const permissionStatuses: PublicationPermissionStatus[] = ["not_recorded", "granted", "withdrawn"];
+export const permissionMethods: PublicationPermissionMethod[] = ["written", "contract", "email", "other"];
 
 export function projectSlug(value: string) {
   return value.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 120);
@@ -21,4 +30,12 @@ export function isUuid(value: string) {
 
 export function label(value: string) {
   return value.replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
+export function isIsoDate(value: string) {
+  return /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(`${value}T12:00:00Z`));
+}
+
+export function optionalDate(value: string) {
+  return value && isIsoDate(value) ? value : null;
 }

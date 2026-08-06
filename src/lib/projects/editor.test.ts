@@ -21,12 +21,12 @@ describe("founder project editor", () => {
     expect(editor).toContain("ProjectPhotoEditor");
     expect(photoEditor).toContain("Save photo details");
     expect(editor.indexOf("Project photography")).toBeLessThan(
-      editor.indexOf("Progress updates"),
+      editor.indexOf("Milestones"),
     );
   });
 
   it("shows explicit confirmation after saving", () => {
-    expect(editor).toContain("Project saved.");
+    expect(editor).toContain("Build saved.");
     expect(actions).toContain('?saved=1');
   });
 

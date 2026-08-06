@@ -9,6 +9,8 @@ export type ProjectOperationalStatus = "planning" | "active" | "on_hold" | "comp
 export type PublicationStatus = "private" | "draft" | "published" | "unpublished";
 export type ProjectStage = "consultation" | "planning" | "preparation" | "framing" | "protection" | "finish_work" | "technology_coordination" | "final_details" | "complete";
 export type PublicBuildStatus = "upcoming" | "current" | "completed";
+export type PublicationPermissionStatus = "not_recorded" | "granted" | "withdrawn";
+export type PublicationPermissionMethod = "written" | "contract" | "email" | "other";
 
 type ConsultationRow = {
   id: string; created_at: string; updated_at: string;
@@ -22,7 +24,7 @@ type ConsultationRow = {
   simulator_system: string | null; desired_timeline: string | null;
   project_description: string; referral_source: string | null;
   status: ConsultationStatus; internal_notes: string | null;
-  privacy_consent_at: string; source: string;
+  privacy_consent_at: string; source: string; source_project_id: string | null;
   notification_status: "pending" | "sent" | "partial" | "failed" | null;
   notification_error: string | null;
 };
@@ -42,6 +44,17 @@ export type ProjectRow = {
   publication_status: PublicationStatus; project_stage: ProjectStage;
   public_build_status: PublicBuildStatus; featured_on_homepage: boolean;
   started_on: string | null; completed_on: string | null; published_at: string | null;
+  planned_start_on: string | null; planned_completion_on: string | null;
+  actual_started_on: string | null; actual_completed_on: string | null;
+  publication_permission_status: PublicationPermissionStatus;
+  publication_permission_method: PublicationPermissionMethod | null;
+  publication_permission_recorded_at: string | null;
+  publication_permission_withdrawn_at: string | null;
+  publication_permission_reference: string | null;
+  publication_permission_notes: string | null;
+  public_starting_point: string | null; public_zarka_role: string | null;
+  public_outcome: string | null; public_planning_takeaways: string | null;
+  cover_photo_id: string | null; social_photo_id: string | null;
   created_by: string | null; updated_by: string | null;
 };
 
@@ -60,6 +73,9 @@ export type ProjectPhotoRow = {
   upload_expires_at: string | null; sort_order: number; published_at: string | null;
   created_by: string | null; updated_by: string | null;
   capture_session_id: string | null; publication_candidate: boolean;
+  public_mime_type: "image/jpeg" | null; public_byte_size: number | null;
+  public_width: number | null; public_height: number | null;
+  public_generated_at: string | null;
 };
 
 export type FieldCaptureSessionRow = {
