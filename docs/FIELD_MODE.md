@@ -44,3 +44,7 @@ server, and reject cancelled or archived projects.
 No offline writes, background sync, customer accounts, crew roles, analytics,
 CRM behavior, public auto-publishing, CapProof/Bid Desk sync, or native mobile
 application is included.
+
+## Phase 3 presentation refinement
+
+Field Mode keeps the same online-first capture architecture. Direct Mission Control actions can preselect the intended Build through a validated existing project identifier; server capture authorization remains authoritative. Candidate/private wording, completion feedback, touch targets, and high-contrast surfaces follow the shared premium experience tokens. No offline synchronization or background queue was added.

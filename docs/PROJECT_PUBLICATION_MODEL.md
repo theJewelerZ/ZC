@@ -37,3 +37,6 @@ Publication failures preserve the private original and saved metadata.
 ## Field candidate lifecycle
 
 `publication_candidate` is not a public state. Field Mode may set only private or candidate. Both remain `visibility = private` and `approval_status = pending`. Full admin review requires caption and alt text, clears candidate status, marks approval, and creates the separate public media object. The database constraint prevents candidate media from also being public or approved.
+## Mission Control publication summaries
+
+Mission Control may count and link to candidate photos, unpublished updates, and published Builds, but it cannot publish content by itself. Candidate remains private. Existing guarded project, photo, and update actions remain the only publication mutations. The dashboard therefore changes visibility of operational work, not public visibility of data.

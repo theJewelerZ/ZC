@@ -650,3 +650,21 @@ Technical deployment does not complete Phase 1. Exit still requires real operati
 ## Phase 2 operating note - August 6, 2026
 
 Phase 1 Projects and Inside the Build is operational, including the first public Albatross Golf Mason Build. Phase 2 Field Mode has begun as an online-first PWA. Software completion does not satisfy the Phase 2 exit gate: the founder must use it during active work, document every relevant capture, avoid lost photos, and collect real failure evidence before offline synchronization is reconsidered.
+
+## Phase 3 status - Founder Mission Control
+
+**State:** Implementation and production verification in progress.
+
+Mission Control replaces the former two-count admin landing page with bounded operational summaries, actionable review queues, active and upcoming Builds, publication work, consultation state, derived recent activity, quick actions, and safe provider-availability indicators. Reliable metrics come from Supabase operational records. Vercel page views are deferred because there is no approved application-side reporting interface in the current integration.
+
+### Phase 3 success criteria
+
+- The founder can identify the most important next action from `/admin` without opening multiple areas.
+- Active and upcoming Builds match the operational records.
+- Candidate photos, unpublished updates, notification failures, and incomplete captures surface only when actionable.
+- Founder navigation, Field Mode, and public Build stories share a calm, precise interaction system.
+- Private/public boundaries and Field Mode speed remain unchanged.
+
+### Phase 3 exit criteria
+
+Do not move to Phase 4 Site Controls until the founder confirms Mission Control is accurate and useful on desktop and Android, Field Mode remains fast, public Build pages feel intentionally editorial, and no privacy or performance regression is present.

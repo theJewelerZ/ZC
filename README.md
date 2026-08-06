@@ -156,3 +156,10 @@ Founder routes now include `/admin`, `/admin/consultations`, `/admin/projects`, 
 ## Field Mode
 
 Phase 2 Field Mode is a founder-only, online-first PWA at `/field`. It reuses the existing Supabase Auth session and private project-media storage. Captures may include an existing project stage, a short private note, and up to 20 photos. A photo may be marked as a public candidate, but Field Mode cannot publish it. See [Field Mode](docs/FIELD_MODE.md), [PWA installation](docs/PWA_INSTALLATION.md), and [offline decision record](docs/FIELD_FAILURE_AND_OFFLINE_DECISION.md).
+## Phase 3 Founder Mission Control
+
+Phase 3 makes `/admin` the founder's operational starting point. It derives bounded, actionable summaries from existing consultations, Builds, updates, photos, and field captures. Mission Control uses no new database table, no background job, and no custom analytics infrastructure.
+
+The shared experience system now defines project-owned layout, surface, typography, status, focus, button, and touch-target tokens. Public Build stories use a more editorial hierarchy while Field Mode remains optimized for speed and outdoor legibility.
+
+See [Mission Control](docs/MISSION_CONTROL.md), [Premium Experience System](docs/PREMIUM_EXPERIENCE_SYSTEM.md), and [Design Tokens](docs/DESIGN_TOKENS.md). Site Controls remain Phase 4; no CMS has been added.

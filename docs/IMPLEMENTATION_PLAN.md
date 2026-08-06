@@ -250,3 +250,13 @@ Implemented the additive project lifecycle foundation: `projects`, `project_upda
 6. Verify migration, RLS, storage privacy, responsive behavior, accessibility, installability, and production use.
 
 Offline synchronization, background queues, crew accounts, analytics, and Site Controls are excluded.
+## Phase 3 implementation sequence
+
+1. Define the Mission Control read model, attention rules, query bounds, security boundary, and premium experience tokens.
+2. Replace the founder landing page with action-first operational sections.
+3. Align private navigation and responsive admin records.
+4. Preserve Field Mode speed while connecting direct Build capture actions.
+5. Refine public Build storytelling and approved-photo social metadata.
+6. Verify authorization, private caching, responsive behavior, accessibility, performance, and provider-data boundaries.
+
+No Phase 3 database migration is expected. If future data volume makes bounded live aggregation measurably slow, evaluate indexed views or summary tables only with observed evidence.

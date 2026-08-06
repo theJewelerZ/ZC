@@ -185,3 +185,7 @@ captions, photo content, status, or notes.
 contact_form_success now means the consultation was durably completed in
 Supabase. Notification acceptance is recorded operationally in the database and
 is not sent as a PII-bearing analytics event.
+
+## Phase 3 analytics boundary
+
+Mission Control displays only reliable operational metrics derived from Supabase: consultations received, completed consultation records, active/upcoming/published Builds, candidate photos, and published updates. The installed Vercel Analytics component remains appropriate for public aggregate analytics, but its data is not queried or mirrored into the private dashboard. No customer PII or private project data is added to analytics events.

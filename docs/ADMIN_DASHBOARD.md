@@ -83,3 +83,9 @@ cookies on its 303 redirect.
 
 The public footer and mobile navigation retain one discreet `Founder Login`
 link. It exposes no dashboard data and creates no customer account.
+
+## Phase 3 Mission Control behavior
+
+`/admin` is the founder's default operational view. It shows actionable attention items, active and upcoming Builds, the Inside the Build publishing queue, consultation state, recent derived activity, quick actions, and safe system health.
+
+All reads are founder-authorized, bounded, dynamic, no-store, and noindex. Recent activity is derived from current record timestamps and is not represented as an audit trail. See `MISSION_CONTROL.md`.

@@ -302,3 +302,14 @@ an approved private location, not the public repository.
 - [ ] Commit and push `main` once only after the controlled auth flow passes.
 - [ ] Verify the resulting Vercel Production deployment immediately; do not
       change DNS, email DNS, Supabase data, consultation records, or Storage.
+
+## Phase 3 production review
+
+- [ ] Founder confirms Mission Control attention items match real operational work.
+- [ ] Founder confirms active/upcoming Build order and direct actions.
+- [ ] Founder confirms candidate photos and unpublished updates reach guarded review workflows.
+- [ ] Verify `/admin` and `/field` remain noindex, no-store, and founder-only.
+- [ ] Verify responsive Mission Control at 320, 375, 390, 414, 768, 1024, 1280, 1440, and 1920 pixels.
+- [ ] Verify Field Mode remains fast on the installed Android PWA.
+- [ ] Verify Inside the Build and the Albatross Golf Mason story use only approved public media.
+- [ ] Confirm Site Controls remain unavailable and no CMS behavior was introduced.

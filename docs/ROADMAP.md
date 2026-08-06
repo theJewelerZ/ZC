@@ -55,3 +55,7 @@ Phase 1 Projects and Inside the Build is now in implementation. The private proj
 ## Active implementation note - August 6, 2026
 
 Phase 1 is operational. Phase 2 adds founder-only, online-first field capture and PWA installation. Offline synchronization, background queues, crew accounts, dashboard analytics, and Site Controls remain deferred. Field photos, notes, and candidates stay private until founder publication through full admin review.
+
+## Phase 3 implementation note
+
+Founder Mission Control is now the active phase. It prioritizes action over analytics and uses bounded reads of existing Supabase data. The premium pass consolidates shared visual rules without redesigning the public site or adding a component framework. Site Controls remain the next phase only after founder acceptance.

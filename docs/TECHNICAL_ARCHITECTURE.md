@@ -315,3 +315,8 @@ SUPABASE_SETUP.md.
 ## Phase 2 Field Mode architecture
 
 `/field` is a dynamic Server Component guarded by the existing allowlisted founder session. A small client capture component manages camera/gallery selections and direct signed uploads. Server-only start, retry, and finalize handlers validate project ownership, operating status, metadata, stored size, and image signatures. `field_capture_sessions` groups one private note, selected existing stage, and associated `project_photos`. Candidate is independent from visibility. All authenticated Field responses use private no-store and noindex headers. The PWA is manifest-only in this phase; no service worker caches private responses and no offline writes exist.
+## Phase 3 Mission Control read architecture
+
+Mission Control uses five bounded, parallel server-side queries for projects, consultations, project photos, project updates, and field capture sessions. A pure read-model function derives ordered Build summaries, actionable attention items, recent activity, publishing counts, consultation counts, and last-known operational timestamps. No schema or migration is required.
+
+The route calls `requireAdmin()` before the read model, exports dynamic/no-store behavior, and remains noindex. Environment health is reduced to availability booleans before rendering. No secrets, raw provider errors, photo paths, private notes, or consultation descriptions are included.

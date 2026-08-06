@@ -33,3 +33,6 @@ publication status. Its note remains operational evidence, not public copy.
 ## Field Mode integration
 
 Field Mode documents an existing project; it never creates a duplicate project record. Capture sessions attach private notes and private project photos to that source of truth. A successful session may update the current internal stage. It cannot change operational status, public Build status, project publication, or formal public update copy. Admin review shows field provenance and candidate state before any editorial decision.
+## Phase 3 editorial refinement
+
+Public Build detail pages use a stronger editorial hierarchy: quiet status and stage metadata, founder-approved photography with contextual captions, progress updates presented as a journal, a purposeful starting state, and a consultation close. Open Graph metadata may use the first approved public photo. No private or candidate media is eligible.

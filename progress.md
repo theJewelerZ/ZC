@@ -1,8 +1,8 @@
 # Progress
 
-**Current phase:** Phase 2 - Field Mode and PWA implementation
+**Current phase:** Phase 3 - Founder Mission Control and Premium Experience Refinement
 
-**Roadmap maturity:** 3/10 (Phase 1 is operational; Phase 2 production evidence pending)
+**Roadmap maturity:** 4/10 (Phase 2 founder-verified; Phase 3 implementation in verification)
 
 **Canonical production URL:** <https://www.zarkaconstruction.com>
 
@@ -10,51 +10,47 @@
 
 **Last updated:** August 6, 2026
 
-## Operational foundation
+## Operational state
 
-- Phase 0 public website, consultation persistence, private consultation photos, Resend notifications, founder authentication, and consultation dashboard are live.
-- Phase 1 Projects and Inside the Build is operational.
-- The first public Build is `/projects/albatross-golf-mason`.
-- Project records, original media, updates, and field notes remain private unless the founder explicitly publishes eligible content through the full admin workflow.
+- Phase 0 marketing, consultation persistence, founder authentication, and consultation review are operational.
+- Phase 1 Projects and Inside the Build is operational; `/projects/albatross-golf-mason` is the first public Build.
+- Phase 2 Field Mode and the Zarka Field PWA are operational and founder-verified on Android.
+- Private notes and original/candidate media remain private until explicit founder publication through the full admin workflow.
 
-## Phase 2 implementation
+## Phase 3 completed locally
 
-- Added founder-only `/field`, dynamically rendered with no-store and noindex controls.
-- Added active, upcoming, and recently updated Build views plus mobile Quick Capture.
-- Added direct private uploads for up to 20 JPEG, PNG, or WebP files at 15 MB each.
-- Added capture sessions, one private note per session, existing-stage assignment, and independent `publication_candidate` classification.
-- Added per-file states and retry authorization; partial success is reported honestly.
-- Added admin review of field sessions, private notes, timestamps, counts, stages, and candidate badges.
-- Added the installable Zarka Field manifest, approved brand icons, `/field` start URL, and phone installation help.
-- Added safe post-login return to `/field`; `ADMIN_ALLOWED_EMAILS` remains authoritative.
-- Kept Field Mode online-first. No service worker, private-response cache, offline write queue, or background synchronization was added.
+- Replaced the minimal `/admin` count view with Founder Mission Control.
+- Added actionable attention rules, active/upcoming Build summaries, publication queues, consultation summaries, recent derived activity, quick actions, and safe system health.
+- Used five bounded parallel Supabase reads and no database migration.
+- Limited analytics to reliable Supabase operational data; Vercel page views are not fabricated or scraped.
+- Consolidated project-owned design tokens for spacing, surfaces, typography, status, focus, buttons, and touch targets.
+- Standardized private navigation around Mission Control, Consultations, Builds, Field Mode, Public Site, and Sign Out.
+- Added mobile admin record layouts without horizontal table scrolling.
+- Connected Build-specific Mission Control actions to Field Mode preselection and exact admin review anchors.
+- Refined public Build pages with editorial metadata, photography context, progress hierarchy, starting state, consultation CTA, and approved-photo Open Graph support.
+- Preserved online-first Field Mode, PWA architecture, RLS, explicit publication, and no-store/noindex boundaries.
 
-## Security and publication boundary
-
-Field Mode never mutates project publication status, public Build status, or photo visibility. Candidate media remains private/pending. Only the full admin photo review may create a separately stored public copy after caption, alt text, and founder approval. Field notes are not selected by public repositories.
-
-## Verification to date
+## Current verification
 
 - Lint: pass.
 - TypeScript: pass.
-- Vitest: 34 files / 120 tests pass.
-- Production build: pass; `/field` and Field APIs are dynamic.
-- Linked migration dry run contained only `20260806000100_create_field_capture_sessions.sql`; it is now applied and local/remote history match.
-- Linked database lint: no schema errors.
-- Live RLS/storage check: anonymous table reads return 401; private-bucket listing exposes zero objects; service-role access succeeds.
-- `npm audit`: zero vulnerabilities.
+- Tests: 36 files / 128 tests pass.
+- Production build: pass; private routes remain dynamic.
+- Linked database lint: no schema errors; local and remote migration history match.
+- Live anonymous RLS checks: operational table reads denied; private storage listing exposes zero objects.
+- Automated public Lighthouse: homepage 97/100/100/100; Inside the Build 93/100/100/100; Albatross Build 94/100/100/100; contact 97/100/100/100.
+- Founder login Lighthouse: 98 performance, 100 accessibility, 100 best practices; SEO 69 is expected for an intentionally noindexed private route.
+- Synthetic Mission Control review: 100 accessibility on mobile and desktop; verified compact private navigation, no logo overlap, and no horizontal overflow at the captured mobile viewport.
+- Production deployment and founder acceptance remain to be completed.
 
-## Remaining production gate
+## Blockers
 
-- Field Mode production deployment `dpl_4RYZJGjzfDcnyLAoZ1uZpRD5APsH` reached Ready and passed unauthenticated route, manifest, robots, icon, public Build, same-origin, and cross-origin smoke checks.
-- Lighthouse after responsive public-project image optimization: homepage 97/100/100/100 locally; deployed Build page 100/100/100/100.
-- Verify `/field`, capture, retry, candidate review, publication boundary, and sign-out on the founder's real phone.
-- Automated 320, 375, and 768 pixel review found no horizontal overflow; visible controls meet the 44-pixel target. Complete PWA installation and real camera capture on the founder phone.
-- Record real field failures before deciding whether Phase 2 needs offline synchronization.
+None currently. Vercel Analytics does not provide a supported application-side reporting source in the current architecture, so public page-view metrics are intentionally deferred.
 
 ## Immediate next action
 
-Verify the final image-optimized production deployment, then perform the founder phone test. Do not begin Phase 3 Founder Dashboard analytics or Phase 4 Site Controls.
-## Mobile founder-header correction - August 6, 2026
+Complete the production build and security/visual verification, commit the bounded Phase 3 changes, deploy main once, and perform the founder acceptance review on desktop and Android.
 
-Corrected an overly broad responsive image selector that enlarged the tall logo icon inside the fallback wordmark. Mobile headers now use a compact 38px mark within a 68px header. Automated checks at 320, 375, 390, and 414 pixels confirm no clipping, overlap, or horizontal overflow.
+## Next recommended implementation prompt
+
+After founder acceptance, define the narrow Phase 4 Site Controls scope from measured publishing needs. Do not add a general CMS.
