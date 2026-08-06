@@ -1,3 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
-import Link from "next/link";import type { PublicBuild } from "@/lib/projects/repository";import { label } from "@/lib/projects/schema";
-export function BuildCard({build}:{build:PublicBuild}){return <article className="build-card">{build.coverPhoto?<img alt={build.coverPhoto.alt_text||""} src={build.coverPhoto.url}/>:<div aria-hidden="true" className="build-card-placeholder"><span>Inside the Build</span></div>}<div><p className="eyebrow">{label(build.public_build_status)} Build</p><h3><Link href={`/projects/${build.slug}`}>{build.public_title}</Link></h3>{build.public_location?<p className="build-location">{build.public_location}</p>:null}<p>{build.public_summary}</p><Link className="text-link" href={`/projects/${build.slug}`}>Follow this Build →</Link></div></article>}
+import Image from "next/image";
+import Link from "next/link";
+import type { PublicBuild } from "@/lib/projects/repository";
+import { label } from "@/lib/projects/schema";
+export function BuildCard({build}:{build:PublicBuild}){return <article className="build-card">{build.coverPhoto?<Image alt={build.coverPhoto.alt_text||""} height={750} sizes="(max-width: 800px) 100vw, 33vw" src={build.coverPhoto.url} width={1200}/>:<div aria-hidden="true" className="build-card-placeholder"><span>Inside the Build</span></div>}<div><p className="eyebrow">{label(build.public_build_status)} Build</p><h3><Link href={`/projects/${build.slug}`}>{build.public_title}</Link></h3>{build.public_location?<p className="build-location">{build.public_location}</p>:null}<p>{build.public_summary}</p><Link className="text-link" href={`/projects/${build.slug}`}>Follow this Build →</Link></div></article>}

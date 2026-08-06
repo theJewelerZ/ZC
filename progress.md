@@ -46,12 +46,12 @@ Field Mode never mutates project publication status, public Build status, or pho
 
 ## Remaining production gate
 
-- Push main once and monitor Vercel production.
-- Public Lighthouse: homepage 98/100/100/100; Build page accessibility/best practices/SEO 100 after contrast correction. A repeat Build performance run was 75 because an external project image took 33.7 seconds; the prior run was 99 and FCP/TBT/CLS remained strong.
+- Field Mode production deployment `dpl_4RYZJGjzfDcnyLAoZ1uZpRD5APsH` reached Ready and passed unauthenticated route, manifest, robots, icon, public Build, same-origin, and cross-origin smoke checks.
+- Lighthouse after responsive public-project image optimization: homepage 97/100/100/100 locally; deployed Build page 100/100/100/100.
 - Verify `/field`, capture, retry, candidate review, publication boundary, and sign-out on the founder's real phone.
 - Automated 320, 375, and 768 pixel review found no horizontal overflow; visible controls meet the 44-pixel target. Complete PWA installation and real camera capture on the founder phone.
 - Record real field failures before deciding whether Phase 2 needs offline synchronization.
 
 ## Immediate next action
 
-Commit the completed verification, push/deploy once, and perform the founder phone test. Do not begin Phase 3 Founder Dashboard analytics or Phase 4 Site Controls.
+Verify the final image-optimized production deployment, then perform the founder phone test. Do not begin Phase 3 Founder Dashboard analytics or Phase 4 Site Controls.
