@@ -431,3 +431,13 @@ Statuses:
 - **Decision:** Add a founder-only `/field` PWA using the existing Supabase Auth session, projects, private media bucket, signed direct uploads, and server signature validation. A capture session owns one optional private note, an existing project stage, and up to 20 photos. Field Mode may mark media private or as a publication candidate, but cannot approve or publish it. Use a manifest and approved local icons without a service worker or offline writes.
 - **Consequences:** Field data is online-first, dynamic, no-store, noindex, and server-authorized. Candidate media remains private/pending until full admin review creates a distinct public copy. Expired sessions are failed and abandoned objects are cleaned during later capture starts. Real jobsite failure evidence is required before adding offline synchronization.
 - **Reconsider when:** Measured field use shows unreliable connectivity prevents routine documentation often enough to justify the complexity and privacy risk of a durable offline queue.
+## ADR-036: Mission Control uses a derived, bounded operational read model
+
+**Status:** Accepted
+**Date:** August 6, 2026
+
+**Decision:** `/admin` becomes Founder Mission Control. Its actionable queues, Build summaries, consultation counts, recent activity, and safe system-health indicators are derived on the server from bounded parallel queries against existing Supabase tables. Phase 3 adds no summary table, analytics warehouse, background job, or permanent audit log.
+
+**Rationale:** Current operating volume does not justify denormalized dashboard infrastructure. Existing records are authoritative, and an action-first view creates immediate founder value without introducing another source of truth.
+
+**Boundaries:** Vercel Analytics page views are excluded because the current package integration does not provide a supported application-side reporting source. Missing publication permission is not inferred because the schema has no authoritative permission field. Site Controls remain Phase 4. Premium refinement uses project-owned tokens and adds no UI framework.
