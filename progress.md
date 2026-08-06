@@ -1,92 +1,85 @@
 # Progress
 
-**Current phase:** Phase 3 — protected consultation-system authentication review
+**Current phase:** Phase 3 — founder password-authentication production readiness
 
 **Canonical production URL:** <https://www.zarkaconstruction.com>
 
 **Repository:** <https://github.com/theJewelerZ/ZC>
 
-**Feature branch:** phase-3/consultation-dashboard
+**Branch:** `main`
 
 **Last updated:** August 5, 2026
 
 ## Production status
 
-Production remains on the prior approved release. This branch is not merged or
-promoted. DNS, nameservers, GoDaddy products, production email DNS, and the
-canonical Vercel domain were not changed.
+`main` matched `origin/main` at commit `95cb441d8f3496a2b8768b09c1d0f4d2dd5c8d85`
+before this narrow change began. The password-authentication work is ready for
+its authorized commit and push. Production Supabase and Turnstile variables are
+configured. DNS, nameservers, GoDaddy products, consultation records, Storage
+objects, and Supabase Auth users were not destructively changed.
 
-## Implemented
+## Implemented locally
 
-- Durable Supabase consultation records, private direct photo uploads, Resend
-  notifications, Turnstile/rate limiting, and founder-only dashboard remain in
-  place without widening the CRM scope.
-- Response-bound PKCE callback and sign-out handlers preserve Supabase cookies.
-- Preview founder authentication now uses the stable Git branch hostname instead
-  of deployment-specific Preview hostnames.
-- Branch-scoped `ADMIN_AUTH_ORIGIN` is configured in Vercel Preview; Production
-  remains request-origin based.
-- Privacy-safe callback and admin-guard stages distinguish origin mismatch,
-  missing verifier, expired/used link, configuration, session-cookie, user, and
-  allowlist outcomes without logging PII, codes, tokens, URLs, or cookie values.
-- A discreet `Founder Login` link is present in the public footer and mobile
-  navigation. Responsive navigation now presents a visible Menu/Close label.
-- Login errors provide useful, bounded founder-facing recovery instructions.
+- Replaced routine magic-link access with email-and-password sign-in through a
+  same-origin, rate-limited Route Handler.
+- Preserved response-bound `@supabase/ssr` cookie writes, authoritative
+  `auth.getUser()` verification, and `ADMIN_ALLOWED_EMAILS` authorization.
+- Added authenticated `/admin/set-password` and a 14-character mixed-character
+  password policy with confirmation and accessible show/hide controls.
+- Added generic `/admin/forgot-password`, PKCE `/auth/recovery`, a ten-minute
+  recovery marker, and authenticated `/admin/reset-password`.
+- Recovery signs the founder out after a successful password change and returns
+  to routine password login. Missing, expired, reused, cross-host, and
+  unauthorized recovery states fail safely.
+- Retained `/auth/callback` only for already-issued setup/legacy email links;
+  magic-link login is not presented as the normal interface.
+- Added password/security access from the private dashboard while retaining the
+  discreet public `Founder Login` link.
+- Added same-origin enforcement, bounded in-memory abuse protection layered on
+  Supabase provider rate limits, generic credential/recovery responses, and
+  privacy-safe stage-only diagnostics.
+- No schema migration, user creation, RLS change, consultation mutation, or
+  Storage change is part of this work.
 
-## Root cause confirmed
-
-A server-only Supabase `generateLink` diagnostic requested the stable Preview
-callback without sending or exposing a magic link. Supabase returned the
-Production site root instead of the requested callback. This confirms the stable
-Preview callback is not currently accepted by Auth URL Configuration, or the
-Magic Link template ignores `RedirectTo`. The resulting cross-host return cannot
-carry the Preview PKCE verifier cookie and causes the apparent login loop.
-
-Required exact Supabase Additional Redirect URL:
-
-`https://zarka-construction-git-phase-9e8031-matthews-projects-7e2a9d39.vercel.app/auth/callback`
-
-## Verification
+## Verification completed
 
 - ESLint passes.
-- TypeScript passes.
-- 67 Vitest tests across 21 files pass, including contact-flow regressions.
-- Callback coverage includes stable-origin selection, missing verifier, expired
-  code, session-cookie write, allowlist, host-only cookies, and open redirects.
-- Navigation coverage confirms the shared root header/footer, public routes, one
-  Founder Login utility destination, and visible responsive menu label.
-- Previous controlled Preview checks verified durable no-photo and photo
-  consultations, private Storage metadata, both notification acceptances, and
-  cleanup. Authenticated dashboard/photo review must be repeated after login.
+- Strict TypeScript passes.
+- 94 Vitest tests across 27 files pass.
+- Production build passes.
+- `npm audit` reports zero vulnerabilities.
+- Route coverage includes successful password login, response cookies, generic
+  invalid/unknown-account failures, allowlist rejection, rate limiting,
+  password policy, confirmation mismatch, setup authorization, recovery PKCE,
+  recovery marker enforcement, expired/reused links, sign-out, session guard,
+  host-only cookies, and open-redirect rejection.
+- The founder received a recovery email through Resend SMTP, reset the password
+  with a visible success confirmation, signed out, and successfully signed in
+  with the new password.
+- Required Supabase and Turnstile variable names are configured for both Vercel
+  Preview and Production.
+- The latest configuration-only Production redeployment is Ready; it still
+  contains the prior `origin/main` commit until this change is pushed.
 
-## Stable protected Preview
+## Decisions
 
-Branch URL:
-<https://zarka-construction-git-phase-9e8031-matthews-projects-7e2a9d39.vercel.app>
+- Routine founder access uses Supabase email-and-password authentication.
+- `ADMIN_ALLOWED_EMAILS` remains the independent server-side authorization
+  source after Supabase validates the user.
+- Supabase Auth continues to generate and validate recovery links and sessions.
+  The native Resend SMTP integration delivers Auth recovery email from the
+  verified `zarkaconstruction.com` domain.
+- No public signup, customer login, custom password storage, or schema migration
+  was added.
+- Auth cookies remain host-scoped; no hard-coded cookie domain is introduced.
 
-Founder login:
-<https://zarka-construction-git-phase-9e8031-matthews-projects-7e2a9d39.vercel.app/admin/login>
+## Blockers
 
-Current verified code deployment: `dpl_4QCVexPcfuWT9znzXTY18hVdsJbi`.
-The stable alias updates on every branch push without changing its hostname.
-
-Live route checks returned 200 for `/`, `/simulator-construction`, `/contact`,
-`/privacy`, `/terms`, and `/admin/login`. The live shell contains the Founder
-Login link and responsive Menu label. A commit-host callback is rejected as a
-callback mismatch; the stable callback reports a missing verifier distinctly.
-
-## Merge blockers
-
-- Add and verify the exact stable callback in Supabase Auth URL Configuration.
-- Verify the Magic Link email template honors the requested redirect.
-- Founder completes newest-link login, refresh, second-tab, and sign-out checks.
-- Founder verifies dashboard list/detail, status/notes, and signed photo view.
-- Repeat one no-photo and one photo consultation on the final Preview and confirm
-  durable persistence plus founder/customer notifications.
-- Complete founder responsive review at 320, 375, 768, 1024, and 1440px.
+None. The founder manually verified recovery and routine password login, all
+release checks pass, and required Production configuration is present.
 
 ## Immediate next action
 
-Deploy the current branch through the Vercel Git integration. Add the exact stable
-callback in Supabase, verify it is preserved, then complete the founder login and
-consultation workflow. Do not merge or promote until every merge blocker passes.
+Commit and push `main` once, monitor the automatic Vercel Production deployment,
+then verify password sign-in, dashboard loading, refresh, second-tab session,
+sign-out, recovery delivery, and one durable consultation submission.

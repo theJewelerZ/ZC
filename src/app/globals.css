@@ -3076,3 +3076,79 @@ a {
     text-align: left;
   }
 }
+
+.password-input-wrap {
+  position: relative;
+}
+
+.password-input-wrap input {
+  padding-right: 4.5rem;
+}
+
+.password-toggle {
+  background: transparent;
+  border: 0;
+  color: var(--navy);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  min-height: 2.75rem;
+  padding: 0 0.8rem;
+  position: absolute;
+  right: 0.15rem;
+  top: 0.15rem;
+}
+
+.password-toggle:focus-visible,
+.admin-text-link:focus-visible,
+.admin-back-link a:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+.admin-text-link,
+.admin-back-link a {
+  color: var(--navy);
+  font-weight: 700;
+  text-underline-offset: 0.2em;
+}
+
+.admin-form-note {
+  color: var(--steel);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.admin-back-link {
+  margin-top: 1.5rem;
+}
+
+.admin-security-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.form-success-summary {
+  background: #eef2f5;
+  border-left: 4px solid var(--orange);
+  color: var(--navy);
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+}
+
+.admin-password-success {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.admin-password-success h2,
+.admin-password-success p {
+  margin: 0;
+}
+
+.admin-password-success .button {
+  justify-self: start;
+}

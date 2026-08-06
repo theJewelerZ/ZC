@@ -15,13 +15,25 @@ describe("private dashboard security boundary", () => {
     expect(actions).toContain("internal_notes");
     expect(actions).not.toContain(".delete()");
   });
-  it("keeps Preview magic links on the server-selected stable auth origin", () => {
+  it("uses password login without public signup and retains allowlisted server authorization", () => {
     const form = readFileSync("src/components/admin/login-form.tsx", "utf8");
-    const login = readFileSync("src/app/admin/login/page.tsx", "utf8");
-    expect(form).toContain("emailRedirectTo: callbackUrl");
-    expect(form).toContain("window.location.replace");
-    expect(form).toContain("window.location.origin !== authOrigin");
-    expect(login).toContain("getAdminAuthOrigin");
-    expect(login).toContain("/auth/callback");
+    const route = readFileSync("src/app/api/admin/auth/login/route.ts", "utf8");
+    expect(form).toContain("/api/admin/auth/login");
+    expect(form).not.toContain("signInWithOtp");
+    expect(route).toContain("signInWithPassword");
+    expect(route).toContain("isAllowedAdminEmail");
+    expect(route).not.toContain("signUp");
+  });
+  it("guards password setup and does not log credentials or tokens", () => {
+    const setup = readFileSync("src/app/admin/set-password/page.tsx", "utf8");
+    const sources = [
+      readFileSync("src/app/api/admin/auth/login/route.ts", "utf8"),
+      readFileSync("src/app/api/admin/auth/password/route.ts", "utf8"),
+      readFileSync("src/app/auth/recovery/route.ts", "utf8"),
+    ];
+    expect(setup).toContain("await requireAdmin()");
+    for (const source of sources) {
+      expect(source).not.toMatch(/console\.(?:log|info|warn|error)\([\s\S]*?(?:password|token|cookie|email)/i);
+    }
   });
 });

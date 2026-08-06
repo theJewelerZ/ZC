@@ -14,11 +14,18 @@ type AdminAuthStage =
   | "allowlist_rejected"
   | "redirecting_admin"
   | "admin_guard_authenticated"
-  | "admin_guard_no_session";
+  | "admin_guard_no_session"
+  | "password_login_success"
+  | "password_login_failed"
+  | "password_update_success"
+  | "password_update_failed"
+  | "recovery_callback_received"
+  | "recovery_exchange_success"
+  | "recovery_exchange_failed";
 
 type SafeAuthDetails = {
   host?: string;
-  reason?: "configuration" | "expired_or_used" | "origin_mismatch" | "pkce" | "session" | "unauthorized";
+  reason?: "configuration" | "credentials" | "expired_or_used" | "origin_mismatch" | "mismatch" | "pkce" | "policy" | "provider" | "rate_limit" | "reauthentication" | "same_password" | "session" | "unauthorized" | "weak_password";
 };
 
 export function logAdminAuthStage(stage: AdminAuthStage, details: SafeAuthDetails = {}) {

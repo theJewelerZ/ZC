@@ -7,13 +7,14 @@ Construction Specialist.
 
 ## Current objective
 
-The active Phase 3 branch adds a narrow durable consultation system, optional
-private room-photo intake, and a founder-only review dashboard. It preserves the
-simulator-focused marketing experience and is not a CRM, customer portal,
-estimator, scheduler, equipment store, or project-management platform.
+The production application includes a narrow durable consultation system,
+optional private room-photo intake, and a founder-only review dashboard. The
+current production-readiness change replaces routine magic-link access with
+founder email-and-password sign-in while preserving Supabase SSR sessions and
+the server-only email allowlist.
 
-Production remains on its prior approved release. Do not merge or promote this
-branch until the protected preview and founder workflow are approved.
+This is not a CRM, customer portal, estimator, scheduler, equipment store, or
+project-management platform. There is no public signup or customer login.
 
 ## Stack
 
@@ -21,28 +22,34 @@ branch until the protected preview and founder workflow are approved.
 - Vercel hosting and privacy-conscious Analytics
 - Supabase Postgres as consultation system of record
 - Private Supabase Storage for optional room photographs
-- Supabase Auth magic links plus server-enforced founder email allowlist
+- Supabase Auth email/password plus server-enforced founder email allowlist
+- Email-based password recovery delivered through Resend SMTP; magic links are
+  not routine login
 - Resend founder notification and customer confirmation after persistence
 - Cloudflare Turnstile, honeypot/timing checks, and rate limiting
-- No CMS, customer accounts, Supabase customer portal, CRM, proposals, invoices,
-  scheduling, CapProof/Bid Desk sync, or product catalog
+- No CMS, customer accounts, CRM, proposals, invoices, scheduling,
+  CapProof/Bid Desk sync, or product catalog
 
 ## Routes
 
 Public:
 
-- /
-- /simulator-construction
-- /contact
-- /privacy
-- /terms
-- /sitemap.xml and /robots.txt
+- `/`
+- `/simulator-construction`
+- `/contact`
+- `/privacy`
+- `/terms`
+- `/sitemap.xml` and `/robots.txt`
 
 Private/system:
 
-- /admin and /admin/consultations/[id]
-- /admin/login and /auth/callback
-- /api/consultations/start, /finalize, and /cancel
+- `/admin` and `/admin/consultations/[id]`
+- `/admin/login`, `/admin/forgot-password`, `/admin/set-password`, and
+  `/admin/reset-password`
+- `/auth/recovery`, `/auth/callback` (legacy/setup compatibility), and
+  `/auth/signout`
+- `/api/admin/auth/login`, `/recovery-request`, and `/password`
+- `/api/consultations/start`, `/finalize`, and `/cancel`
 
 Private routes are dynamic, no-store, noindex, and server-authorized.
 
@@ -62,36 +69,39 @@ Quality commands:
     npm run build
     npm run check
 
-Do not commit .env.local, Supabase/Resend/Turnstile credentials, private DNS
-exports, consultation records, or customer photographs.
+Do not commit `.env.local`, Supabase/Resend/Turnstile credentials, private DNS
+exports, consultation records, customer photographs, passwords, or recovery
+links.
 
 ## Environment
 
 Public site controls:
 
-- NEXT_PUBLIC_SITE_URL
-- NEXT_PUBLIC_ANALYTICS_ENABLED
-- NEXT_PUBLIC_SEARCH_INDEXING_ENABLED
+- `NEXT_PUBLIC_SITE_URL`
+- `NEXT_PUBLIC_ANALYTICS_ENABLED`
+- `NEXT_PUBLIC_SEARCH_INDEXING_ENABLED`
 
 Consultation persistence and Auth:
 
-- NEXT_PUBLIC_SUPABASE_URL
-- NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
-- SUPABASE_SERVICE_ROLE_KEY (server only)
-- ADMIN_ALLOWED_EMAILS (server only)
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY` (server only)
+- `ADMIN_ALLOWED_EMAILS` (server only, authoritative dashboard allowlist)
+- `ADMIN_AUTH_ORIGIN` (optional Preview email-callback origin)
+- `ADMIN_AUTH_RATE_LIMIT_MAX` and `ADMIN_AUTH_RATE_LIMIT_WINDOW_MS` (optional)
 
 Email and abuse protection:
 
-- RESEND_API_KEY
-- CONTACT_RECIPIENT_EMAIL
-- CONTACT_FROM_EMAIL
-- NEXT_PUBLIC_TURNSTILE_SITE_KEY
-- TURNSTILE_SECRET_KEY
-- CONTACT_RATE_LIMIT_SECRET
-- CONTACT_RATE_LIMIT_MAX
-- CONTACT_RATE_LIMIT_WINDOW_MS
+- `RESEND_API_KEY`
+- `CONTACT_RECIPIENT_EMAIL`
+- `CONTACT_FROM_EMAIL`
+- `NEXT_PUBLIC_TURNSTILE_SITE_KEY`
+- `TURNSTILE_SECRET_KEY`
+- `CONTACT_RATE_LIMIT_SECRET`
+- `CONTACT_RATE_LIMIT_MAX`
+- `CONTACT_RATE_LIMIT_WINDOW_MS`
 
-See .env.example and docs/SUPABASE_SETUP.md. Never print or document values.
+See `.env.example` and `docs/SUPABASE_SETUP.md`. Never print or document values.
 
 ## Documentation
 
@@ -117,7 +127,8 @@ See .env.example and docs/SUPABASE_SETUP.md. Never print or document values.
 
 ## Deployment safeguard
 
-Deploy only a protected branch preview. Do not merge, promote, alter DNS,
-nameservers, GoDaddy services, or production email DNS without explicit founder
-authorization. Database rollback must preserve stored consultation data; never
-use a linked remote reset.
+`main` deploys production. Push it only after lint, TypeScript, tests, production
+build, and controlled authentication verification pass. Never alter DNS,
+nameservers, GoDaddy services, production email DNS, or Supabase data as part of
+an authentication UI change. Database rollback must preserve consultation data;
+never use a linked remote reset.

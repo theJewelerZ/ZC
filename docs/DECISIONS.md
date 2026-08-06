@@ -291,47 +291,75 @@ Statuses:
 
 ## ADR-025 — Founder magic-link access plus server allowlist
 
-- **Status:** Accepted
+- **Status:** Superseded by ADR-028
 - **Decision:** Use Supabase magic-link Auth for a pre-created founder user and
-  check ADMIN_ALLOWED_EMAILS server-side on every admin route and mutation.
-  Direct anon/authenticated table/storage privileges remain denied; a separate
-  server-only service client runs only after authorization.
-- **Consequences:** There is no registration or customer login. /admin is
-  dynamic, private, no-store, noindex, and intentionally limited to list,
-  detail, signed photos, status, and notes.
+  check `ADMIN_ALLOWED_EMAILS` server-side on every admin route and mutation.
+- **Retained:** No public registration/customer login, the server allowlist, and
+  the narrow private dashboard boundary remain accepted. Routine magic-link
+  login is replaced by password login; email links remain recovery/setup only.
 
 ## ADR-026 — Response-bound Supabase auth cookies
 
 - **Status:** Accepted
-- **Context:** The PKCE callback exchanged a valid magic-link code through a
+- **Context:** The PKCE callback exchanged a valid email-link code through a
   generic Server Component cookie helper and then created a separate redirect.
   Cookie-write failures were swallowed, so the redirect to `/admin` could arrive
   without a server-readable session and immediately return to `/admin/login`.
-- **Decision:** Route Handlers that establish or clear authentication create one
-  redirect response and bind the `@supabase/ssr` cookie adapter directly to that
-  response. Preserve Supabase cookie options, use host-only cookies without a
-  hard-coded Domain, verify the user and server allowlist after exchange, and
-  expose only fixed, non-sensitive login error states.
-- **Consequences:** Preview and production authentication remain isolated by
-  hostname; `/admin` can read the session on the request immediately following
-  callback; unauthorized users and sign-out clear cookies on the response that
-  actually reaches the browser. The generic Server Component client no longer
-  silently catches mutation failures.
+- **Decision:** Route Handlers that establish or clear authentication explicitly
+  bind the `@supabase/ssr` cookie adapter to the response returned to the browser.
+  Preserve Supabase cookie options, use host-only cookies without a hard-coded
+  Domain, verify the authoritative user and server allowlist, and expose only
+  fixed, non-sensitive errors.
+- **Consequences:** Password sign-in, recovery, Preview, and Production sessions
+  remain server-readable and isolated by hostname. Unauthorized users and
+  sign-out clear cookies on the actual response.
 
-## ADR-027 — Stable branch origin for Preview magic links
+## ADR-027 — Stable origin for Preview email callbacks
 
 - **Status:** Accepted
 - **Context:** Commit-specific Vercel Preview hostnames change after every
-  deployment. Supabase was substituting the production Site URL when asked to
-  redirect to the unallowlisted stable Preview callback, so the callback arrived
-  on a host that did not own the browser's PKCE verifier cookie.
-- **Decision:** Use the Vercel Git branch alias as the single Preview auth origin.
-  Redirect `/admin/login` from commit hosts to that alias before requesting a
-  link, pass its exact callback to Supabase, configure it through the
-  branch-scoped `ADMIN_AUTH_ORIGIN`, and require that exact callback in Supabase
-  Auth URL Configuration. Keep Production request-origin based. Add bounded,
-  stage-only diagnostics and one discreet public `Founder Login` utility link.
-- **Consequences:** Preview deployments may change without changing the auth
-  hostname. Callback failures become actionable without exposing credentials or
-  PII. The branch cannot merge or promote until the exact redirect is allowlisted
-  and the founder completes authentication and consultation review.
+  deployment. PKCE verifier cookies cannot move between a commit host and a
+  stable branch host.
+- **Decision:** Use one stable branch origin for Preview password-recovery and
+  legacy/setup callbacks. Redirect `/admin/forgot-password` to that origin before
+  requesting recovery, configure it with `ADMIN_AUTH_ORIGIN`, and allow its exact
+  `/auth/recovery` and `/auth/callback` URLs in Supabase. Password login itself
+  does not require an email callback.
+- **Consequences:** Recovery begins and ends on the host that owns the verifier
+  cookie. Production remains request-origin based.
+
+## ADR-028 — Founder password authentication with recovery-only email links
+
+- **Status:** Accepted
+- **Context:** Routine magic-link access created cross-host PKCE friction and
+  required the founder to use email for every session. The existing pre-created
+  founder Auth account can use Supabase-managed password credentials without a
+  custom credential store or database migration.
+- **Decision:** Use `signInWithPassword` for normal founder login. Keep
+  `ADMIN_ALLOWED_EMAILS` as an independent server-side authorization check after
+  Supabase identifies the user. Provide authenticated `/admin/set-password` and
+  PKCE email recovery through `/admin/forgot-password`, `/auth/recovery`, and
+  `/admin/reset-password`. Require 14 characters plus uppercase, lowercase,
+  number, and symbol. Expose no signup or customer login.
+- **Consequences:** Supabase remains responsible for credential hashing and
+  verification. Passwords never enter application storage, logs, analytics,
+  environment variables, or documentation. Recovery requires a verified
+  allowlisted session plus a short-lived HttpOnly marker, and signs out after a
+  successful reset. Same-origin checks, bounded rate limiting, generic errors,
+  host-only cookies, and response-bound SSR writes reduce abuse and leakage.
+- **Reconsider when:** The founder explicitly adopts phishing-resistant MFA or a
+  managed identity provider and a separately reviewed migration plan exists.
+
+## ADR-029 — Resend SMTP for Supabase Auth recovery delivery
+
+- **Status:** Accepted
+- **Context:** Supabase's built-in demonstration mailer imposed a restrictive
+  recovery-email limit during founder password setup.
+- **Decision:** Keep Supabase Auth responsible for recovery-token generation,
+  PKCE exchange, sessions, and password updates, while using the native Resend
+  SMTP integration to deliver Auth recovery messages from the verified
+  `zarkaconstruction.com` domain.
+- **Consequences:** Auth delivery is observable in Resend and is no longer bound
+  to the built-in demonstration mailer. Supabase, Resend, and application abuse
+  limits remain active. No SMTP credential enters application code or Vercel
+  application variables.

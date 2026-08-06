@@ -275,3 +275,30 @@ an approved private location, not the public repository.
 - [x] Run Lighthouse/accessibility review on homepage, contact, and founder login.
 - [ ] Complete manual responsive review; browser connection was unavailable during implementation.
 - [ ] Obtain founder approval before merge or production promotion.
+## Founder password-authentication production gate
+
+- [x] Replace routine magic-link UI with email-and-password sign-in.
+- [x] Keep `ADMIN_ALLOWED_EMAILS` authoritative after Supabase user verification.
+- [x] Add no signup, automatic user creation, or customer login.
+- [x] Add authenticated `/admin/set-password` with the approved password policy.
+- [x] Add generic Forgot Password, PKCE recovery callback, short-lived recovery
+      marker, and authenticated reset page.
+- [x] Attach sign-in/recovery/sign-out cookies to the actual Route Handler response.
+- [x] Keep cookies host-scoped with no hard-coded Domain.
+- [x] Add same-origin checks, rate limiting, generic errors, and secret-safe logs.
+- [x] Add tests for credentials, allowlist, setup/reset, recovery, cookies,
+      sessions, sign-out, and open redirects.
+- [x] Confirm Email password authentication is enabled in Supabase; project-level
+      signup is disabled.
+- [x] Confirm Supabase preserves the exact Production recovery redirect
+      `https://www.zarkaconstruction.com/auth/recovery`.
+- [x] Configure Supabase Auth custom SMTP through the native Resend integration.
+- [x] Confirm a received recovery email returns to the exact Production callback.
+- [x] Complete lint, TypeScript, tests, production build, and dependency audit.
+- [x] Deploy an unpromoted configured Preview from local `main`.
+- [x] Complete the founder first-password, login, sign-out, and recovery sequence.
+- [x] Confirm the required Supabase and Turnstile variable names exist in both
+      Vercel Preview and Production without exposing their values.
+- [ ] Commit and push `main` once only after the controlled auth flow passes.
+- [ ] Verify the resulting Vercel Production deployment immediately; do not
+      change DNS, email DNS, Supabase data, consultation records, or Storage.
