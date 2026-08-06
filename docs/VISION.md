@@ -49,6 +49,7 @@ The protected public philosophy remains:
 9. The project is the operational source; public proof is derived from it.
 10. Every phase must improve the business, not merely expand the software.
 11. The software should gradually disappear. Customers should remember the rooms, the clarity of the documentation, and the confidence they felt—not the software used to deliver it.
+12. Sharing distributes approved proof. It must never turn the project journal into a social platform.
 
 ## Identity boundaries
 

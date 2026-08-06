@@ -50,3 +50,11 @@ Planned dates and actual dates are separate. Public pages label planned dates ho
 ## Mission Control publication summaries
 
 Mission Control may count and link to candidate photos, unpublished updates, and published Builds, but it cannot publish content by itself. Candidate remains private. Existing guarded project, photo, and update actions remain the only publication mutations. The dashboard therefore changes visibility of operational work, not public visibility of data.
+
+## Public Build sharing boundary
+
+Sharing is a distribution feature for the approved public projection. Build cards and public Build pages may share only the founder-approved title, public summary, and canonical `https://www.zarkaconstruction.com/projects/{slug}` URL. Native device sharing is preferred; copy link and a standard X Web Intent are the only explicit fallbacks.
+
+The sharing client receives no internal project identifier, customer information, storage path, signed URL, permission evidence, operational state, or private media. Share cancellation is neutral. Clipboard failure reveals a selectable canonical URL. No analytics, engagement count, account, comment, like, follow, notification, subscription, Meta SDK, or social API is part of this boundary.
+
+Future Build publication requires founder-selected cover and social-preview images. Existing published Builds retain the branded Open Graph fallback until the founder makes those selections; the application never chooses project photography on the founder's behalf.

@@ -452,3 +452,13 @@ Statuses:
 **Rationale:** Customers should encounter a timeless account of what changed, why it mattered, and what the finished environment enables—not operational workflow or a database timeline. Authentic proof must not expose private originals, location metadata, customer data, or internal approval language.
 
 **Consequences:** Existing private originals remain untouched. A permission withdrawal unpublishes public content and deletes public copies while retaining operational history. Comments, likes, profiles, subscriptions, and sharing remain outside this refinement. The software should gradually disappear behind the quality of the Build story.
+## ADR-038 — Build sharing is distribution, not social interaction
+
+**Status:** Accepted
+**Date:** August 6, 2026
+
+**Decision:** Add native device sharing, canonical-link copying, and a standard X Web Intent to approved public Builds. Use only public title, public summary, and configuration-derived canonical URL. Require founder-selected cover and social-preview images for future Build publication while retaining the branded fallback for already-published Builds awaiting selection.
+
+**Rationale:** Owners, friends, customers, and business contacts should be able to distribute authentic project proof without accounts or platform-style engagement. Native sharing reaches installed messaging and social applications without adding vendor SDKs or account linking.
+
+**Consequences:** Share cancellation is not an error; clipboard failure presents a selectable URL. No analytics infrastructure, private identifier, signed media URL, engagement count, comment, like, follow, subscription, notification, Meta integration, or social profile is added. Inside the Build remains a curated editorial journal.

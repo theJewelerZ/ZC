@@ -674,3 +674,8 @@ Do not move to Phase 4 Site Controls until the founder confirms Mission Control 
 Inside the Build has moved from functional project publication to a premium editorial journal. Public updates are presented as Milestones; photographs are intentionally grouped and ordered; planned and actual dates are distinct; publication permission is recorded; and only metadata-stripped public derivatives may be rendered. Founder-selected cover and social images replace automatic image choice.
 
 The project remains the single source. Completion may later yield a case study, portfolio presentation, or planning guide, but those products remain derived views rather than parallel truth. Comments, likes, profiles, subscriptions, sharing mechanics, and social-style engagement remain intentionally deferred. The software should recede behind clear documentation, authentic photography, and confidence in the work.
+## Phase 3.5 status — Premium Build Sharing
+
+Inside the Build adds a restrained distribution layer between editorial proof and future consultation. Public Build cards offer View the Build and Share. Build detail pages offer native Share, Copy Link, Post to X, and the existing Build-context consultation path. Canonical URLs come from trusted site configuration; no private identifiers or deployment hostnames enter sharing.
+
+This does not change the product into a social platform. Comments, likes, followers, public counts, profiles, notifications, subscriptions, Meta APIs, and analytics infrastructure remain excluded. Site Controls remain Phase 4 and do not begin as part of Phase 3.5.
