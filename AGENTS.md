@@ -15,11 +15,11 @@ with rationale before proceeding.
 
 ## Architecture boundaries
 
-- Phase 1 routes: `/`, `/contact`, `/privacy`, `/terms`.
+- Public routes include `/`, `/simulator-construction`, `/projects`, `/projects/[slug]`, `/contact`, `/privacy`, and `/terms`.
+- Private operations include `/admin` and founder-only `/field`; both require server authorization, no-store, and noindex.
 - Prefer Server Components/static rendering; add client code only for required
   interaction.
-- Keep dependencies small. No CMS, authentication, CRM, portal, scheduling,
-  uploads, AI chat, online estimating, or Supabase without explicit approval.
+- Keep dependencies small. Supabase Auth, consultation/project persistence, private media, and Field Mode are approved. No CMS, customer accounts, CRM, portal, scheduling, AI chat, online estimating, offline synchronization, or native app without explicit approval.
 - Business facts, services, navigation, related projects, and asset paths are
   typed configuration—not scattered literals.
 - Bid Desk has no link until a confirmed URL is supplied.
@@ -92,3 +92,11 @@ estimate, proposal, invoice, scheduler, employee-role system, or cross-product
 integration. Keep all consultation reads and mutations server-authorized, keep
 the service credential out of browser/SSR clients, preserve forced RLS/private
 Storage, and never place PII in analytics or routine logs.
+
+## Field Mode boundaries
+
+- Field Mode is online-first and founder-only. Never cache authenticated data publicly.
+- Field photos and notes are private by default. Candidate is not published.
+- Only full admin review may approve and publish a separate public media copy.
+- Reuse signed private-upload validation; never accept arbitrary storage paths.
+- Do not add offline queues, background sync, crew accounts, analytics, or Site Controls during Phase 2.

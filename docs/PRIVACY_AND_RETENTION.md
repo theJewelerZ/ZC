@@ -18,3 +18,7 @@ Correction/deletion requests require reasonable identity verification and may
 be limited by legitimate legal or business obligations. Operational logs,
 screenshots, analytics, documentation, and public issue trackers must not contain
 consultation content, credentials, file contents, or signed URLs.
+
+## Field captures
+
+Field capture notes, project stages, timestamps, original files, filenames, and candidate classifications are private operational records. They are available only through founder-authorized server paths. Public repositories do not read capture sessions. Originals remain in the private project-media bucket; publication creates a separate approved copy. Expired incomplete sessions are marked failed and their pending objects are removed during bounded cleanup. Retention follows project, business, legal, and documentation needs.

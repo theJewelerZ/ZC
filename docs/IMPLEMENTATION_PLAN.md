@@ -239,3 +239,14 @@ consultations; no automatic schema/bucket destruction is allowed.
 ## Operating-system Phase 1 implementation — August 5, 2026
 
 Implemented the additive project lifecycle foundation: `projects`, `project_updates`, `project_photos`, separate lifecycle dimensions, forced RLS, private originals, approved public copies, founder project administration, direct private uploads, update/media approval, public Inside the Build routes, conditional homepage inclusion, and dynamic sitemap entries. Phase 2 Field Mode, analytics, site controls, CRM behavior, and customer accounts remain explicitly excluded.
+
+## Active Phase 2 implementation
+
+1. Add additive capture-session and candidate schema with forced RLS.
+2. Add server-authorized capture start, direct private upload, retry, verification, and finalize endpoints.
+3. Add mobile `/field` active/upcoming/recent Build selection and Quick Capture.
+4. Show field sessions, private notes, candidate media, and stage in full admin review.
+5. Add a manifest-only installable Zarka Field PWA starting at `/field`.
+6. Verify migration, RLS, storage privacy, responsive behavior, accessibility, installability, and production use.
+
+Offline synchronization, background queues, crew accounts, analytics, and Site Controls are excluded.

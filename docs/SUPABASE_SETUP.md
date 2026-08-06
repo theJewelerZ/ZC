@@ -105,3 +105,7 @@ Supabase, delete the founder Auth user, drop tables, remove Storage objects, or
 alter consultation data. Existing sessions can be invalidated through Supabase
 only as a separate, deliberate security action. DNS and email DNS are outside
 this change.
+
+## Phase 2 migration and verification
+
+Apply `20260806000100_create_field_capture_sessions.sql` with the existing linked CLI workflow. It is additive: one table, two project-photo columns, constraints, indexes, trigger, forced RLS, and deny policies. It does not reset data or recreate the existing Albatross Golf Mason record. Verify the `project-media-private` bucket remains private, direct public listing is denied, service-role credentials remain server-only, and authenticated browser roles cannot read `field_capture_sessions` directly.

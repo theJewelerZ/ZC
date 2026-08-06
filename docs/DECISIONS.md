@@ -423,3 +423,11 @@ Statuses:
 - **Status:** Accepted
 - **Decision:** Upload project originals directly to the private `project-media-private` bucket using short-lived signed upload authorization. Publishing requires caption, alt text, approval, and creates a separate object in `project-media-public`. Unpublishing removes that public copy.
 - **Consequences:** Public URLs never expose original storage. Founder approval remains reversible. Supported images are JPEG, PNG, and WebP up to 15 MB each, ten per batch.
+
+## ADR-035 - Online-first Field Mode and candidate-only field publishing
+
+- **Status:** Accepted
+- **Context:** Jobsite documentation must be faster and more organized than a camera roll while preserving the Phase 1 private/public boundary.
+- **Decision:** Add a founder-only `/field` PWA using the existing Supabase Auth session, projects, private media bucket, signed direct uploads, and server signature validation. A capture session owns one optional private note, an existing project stage, and up to 20 photos. Field Mode may mark media private or as a publication candidate, but cannot approve or publish it. Use a manifest and approved local icons without a service worker or offline writes.
+- **Consequences:** Field data is online-first, dynamic, no-store, noindex, and server-authorized. Candidate media remains private/pending until full admin review creates a distinct public copy. Expired sessions are failed and abandoned objects are cleaned during later capture starts. Real jobsite failure evidence is required before adding offline synchronization.
+- **Reconsider when:** Measured field use shows unreliable connectivity prevents routine documentation often enough to justify the complexity and privacy risk of a durable offline queue.

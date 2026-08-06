@@ -24,13 +24,13 @@ founder-approved decision changing it.
 | Private consultation photos | Operational |
 | Founder authentication | Operational and production-verified |
 | Founder consultation dashboard | Operational |
-| Project management | Planned |
-| Inside the Build | Planned |
-| Field Mode | Planned |
+| Project management | Operational |
+| Inside the Build | Operational; first public Build live |
+| Field Mode | Implementation complete; production field proof pending |
 | Portfolio | Not yet populated |
 | Active projects | Two; names intentionally omitted from the public repository |
 | Business stage | Transitioning from marketing website to operational platform |
-| Roadmap maturity | Phase 0 complete; entering Phase 1 â€” 1/10 |
+| Roadmap maturity | Phase 2 implementation - 3/10 |
 
 The existing consultation and dashboard systems provide valuable foundations.
 They do not yet manage the full project lifecycle, so their presence does not
@@ -646,3 +646,7 @@ work begins.
 The project/update/media schema, founder project workspace, publication workflow, public Inside the Build routes, direct private media upload, and conditional homepage feature are implemented. New records remain private. Mason Simulator Environment and Social Golfer Simulator Environment are not seeded or published automatically.
 
 Technical deployment does not complete Phase 1. Exit still requires real operating use: founder-created Builds, approved authentic photography, published progress, and proof that a completed project can feed the portfolio/case-study flywheel. Phase 2 remains blocked until those outcomes are demonstrated.
+
+## Phase 2 operating note - August 6, 2026
+
+Phase 1 Projects and Inside the Build is operational, including the first public Albatross Golf Mason Build. Phase 2 Field Mode has begun as an online-first PWA. Software completion does not satisfy the Phase 2 exit gate: the founder must use it during active work, document every relevant capture, avoid lost photos, and collect real failure evidence before offline synchronization is reconsidered.

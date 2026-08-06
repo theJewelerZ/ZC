@@ -33,3 +33,7 @@ timestamps, and internal stage changes are not public metadata.
 
 Unpublishing removes the public copy while retaining the private original.
 Publication failures preserve the private original and saved metadata.
+
+## Field candidate lifecycle
+
+`publication_candidate` is not a public state. Field Mode may set only private or candidate. Both remain `visibility = private` and `approval_status = pending`. Full admin review requires caption and alt text, clears candidate status, marks approval, and creates the separate public media object. The database constraint prevents candidate media from also being public or approved.

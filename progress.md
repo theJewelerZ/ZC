@@ -1,60 +1,57 @@
 # Progress
 
-**Current phase:** Phase 1 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Projects and Inside the Build implementation
+**Current phase:** Phase 2 - Field Mode and PWA implementation
 
-**Roadmap maturity:** 2/10 (implementation in progress; operating evidence still required)
+**Roadmap maturity:** 3/10 (Phase 1 is operational; Phase 2 production evidence pending)
 
 **Canonical production URL:** <https://www.zarkaconstruction.com>
 
-**Repository:** <https://github.com/theJewelerZ/ZC>
+**Repository / branch:** <https://github.com/theJewelerZ/ZC> / `main`
 
-**Branch:** `main`
+**Last updated:** August 6, 2026
 
-**Last updated:** August 5, 2026
+## Operational foundation
 
-## Completed in this implementation
+- Phase 0 public website, consultation persistence, private consultation photos, Resend notifications, founder authentication, and consultation dashboard are live.
+- Phase 1 Projects and Inside the Build is operational.
+- The first public Build is `/projects/albatross-golf-mason`.
+- Project records, original media, updates, and field notes remain private unless the founder explicitly publishes eligible content through the full admin workflow.
 
-- Added the additive project lifecycle schema for projects, updates, and photos.
-- Separated operational status, project stage, public Build status, and publication state.
-- Added private-original and approved-public project media buckets.
-- Enforced forced RLS and denied direct anonymous/authenticated table access.
-- Added founder Dashboard, Consultations, Projects, project creation, editing, updates, media review, and explicit publish/unpublish controls.
-- Added direct-to-private-storage founder photo uploads with generated object paths.
-- Added public `/projects` and `/projects/[slug]` Inside the Build routes.
-- Added conditional homepage Inside the Build content; it renders only when founder-featured published Builds exist.
-- Added published Build URLs to the sitemap while excluding all admin routes.
-- Kept customer-facing language as Builds while retaining projects internally.
+## Phase 2 implementation
 
-## Publication boundary
+- Added founder-only `/field`, dynamically rendered with no-store and noindex controls.
+- Added active, upcoming, and recently updated Build views plus mobile Quick Capture.
+- Added direct private uploads for up to 20 JPEG, PNG, or WebP files at 15 MB each.
+- Added capture sessions, one private note per session, existing-stage assignment, and independent `publication_candidate` classification.
+- Added per-file states and retry authorization; partial success is reported honestly.
+- Added admin review of field sessions, private notes, timestamps, counts, stages, and candidate badges.
+- Added the installable Zarka Field manifest, approved brand icons, `/field` start URL, and phone installation help.
+- Added safe post-login return to `/field`; `ADMIN_ALLOWED_EMAILS` remains authoritative.
+- Kept Field Mode online-first. No service worker, private-response cache, offline write queue, or background synchronization was added.
 
-Every project, update, and photo begins private. Public project summaries require explicit founder publication. Updates are individually published. A public photograph requires a completed private upload, founder approval, caption, alt text, and a separate public storage copy. Exact addresses, internal scope, notes, consultation data, and private originals are never selected by public repositories.
+## Security and publication boundary
 
-## Verification
+Field Mode never mutates project publication status, public Build status, or photo visibility. Candidate media remains private/pending. Only the full admin photo review may create a separately stored public copy after caption, alt text, and founder approval. Field notes are not selected by public repositories.
 
-Application lint, TypeScript, 94 existing tests, 3 new migration tests, and production build pass. Linked Supabase lint reports no schema errors. The migration dry run contains only `20260805000200_create_project_lifecycle.sql`.
+## Verification to date
 
-## Remaining launch work
+- Lint: pass.
+- TypeScript: pass.
+- Vitest: 34 files / 120 tests pass.
+- Production build: pass; `/field` and Field APIs are dynamic.
+- Linked migration dry run contained only `20260806000100_create_field_capture_sessions.sql`; it is now applied and local/remote history match.
+- Linked database lint: no schema errors.
+- Live RLS/storage check: anonymous table reads return 401; private-bucket listing exposes zero objects; service-role access succeeds.
+- `npm audit`: zero vulnerabilities.
 
-- Apply the reviewed additive migration to the linked Supabase project.
-- Exercise create/upload/approve/publish/unpublish against production as founder.
-- Complete responsive, accessibility, and Lighthouse browser review after deployment.
-- Add Mason Simulator Environment and Social Golfer Simulator Environment privately when the founder is ready; neither is seeded or published automatically.
-- Establish documented media-rights confirmation before publishing real customer photography.
+## Remaining production gate
 
-## Phase 1 exit criteria
-
-Phase 1 is not complete until real Builds are documented, founder publishing is proven, approved photography is operating, and a completed Build produces reusable proof. Phase 2 Field Mode remains deferred.
+- Push main once and monitor Vercel production.
+- Public Lighthouse: homepage 98/100/100/100; Build page accessibility/best practices/SEO 100 after contrast correction. A repeat Build performance run was 75 because an external project image took 33.7 seconds; the prior run was 99 and FCP/TBT/CLS remained strong.
+- Verify `/field`, capture, retry, candidate review, publication boundary, and sign-out on the founder's real phone.
+- Automated 320, 375, and 768 pixel review found no horizontal overflow; visible controls meet the 44-pixel target. Complete PWA installation and real camera capture on the founder phone.
+- Record real field failures before deciding whether Phase 2 needs offline synchronization.
 
 ## Immediate next action
 
-Apply the additive migration, push the verified commit, monitor Vercel production, and complete the founder publication smoke test.
-## Founder editor production follow-up Ã¢â‚¬â€ August 6, 2026
-
-- Removed corrupted breadcrumb/separator characters from the project editor.
-- Added explicit save/publication/photo confirmation messages.
-- Moved Project photography directly below Project information and gave the private uploader a clear upload control treatment.
-- Confirmed the founder-created project remains private and is not homepage-featured unless separately published and selected.## Photo approval follow-up â€” August 6, 2026
-
-Production logs confirmed that publication correctly rejected a photo missing required alt text, but the original workflow discarded the entered caption and surfaced a consultation-specific error. Photo metadata can now be saved independently, entered values persist before publication validation, missing caption/alt text produces an inline explanation, and public-copy failures preserve both the private original and saved details.## In-place photo editing follow-up — August 6, 2026
-
-The founder photo editor now saves and publishes through an authenticated same-origin API without a page redirect. Per-photo controlled fields and inline status messages prevent scroll resets. Publication validates caption and alt text before writing, so a failed approval cannot erase previously saved metadata. Regression tests cover in-place save, failed-publish preservation, and cross-origin rejection.
+Commit the completed verification, push/deploy once, and perform the founder phone test. Do not begin Phase 3 Founder Dashboard analytics or Phase 4 Site Controls.

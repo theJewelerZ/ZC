@@ -1,7 +1,7 @@
 # Zarka Field PWA Installation
 
 The existing web application is installable as **Zarka Field** and launches at
-`/field`. It reuses the approved Zarka icon, navy background, and orange theme.
+`/field`. It reuses the approved Zarka icon, navy background and approved brand colors.
 
 ## iPhone
 

@@ -6,7 +6,7 @@ The canonical long-term roadmap is
 
 ## Current maturity
 
-**Phase 0 complete; entering Phase 1 â€” maturity 1/10.**
+**Phase 1 operational; Phase 2 implementation - maturity 3/10.**
 
 Phase numbering was reset on August 5, 2026 so the live website, durable
 consultation system, private photo intake, founder authentication, and
@@ -15,8 +15,8 @@ consultation dashboard form the completed operating foundation.
 | Phase | Name | Classification | Status |
 | --- | --- | --- | --- |
 | 0 | Operating Foundation | Complete | Production-verified |
-| 1 | Projects and Inside the Build | Build now after approval | Next |
-| 2 | Field Mode | Build later | Planned |
+| 1 | Projects and Inside the Build | Build now | Operational; business exit evidence continuing |
+| 2 | Field Mode and PWA | Build now | Implementation and production verification |
 | 3 | Founder Dashboard | Build later | Planned |
 | 4 | Site Controls | Build later | Planned |
 | 5 | Portfolio | Build later | Planned |
@@ -51,3 +51,7 @@ identity boundaries, and strategic risks are defined in
 ## Active implementation note — August 5, 2026
 
 Phase 1 Projects and Inside the Build is now in implementation. The private project lifecycle, approval-gated updates/media, founder project workspace, and public Build storytelling routes are implemented pending migration/deployment verification and real-project operating evidence. Phase 2 Field Mode has not begun.
+
+## Active implementation note - August 6, 2026
+
+Phase 1 is operational. Phase 2 adds founder-only, online-first field capture and PWA installation. Offline synchronization, background queues, crew accounts, dashboard analytics, and Site Controls remain deferred. Field photos, notes, and candidates stay private until founder publication through full admin review.

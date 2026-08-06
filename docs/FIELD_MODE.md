@@ -30,7 +30,7 @@ Selections remain in the current browser session while the page is open.
 Per-file states distinguish ready, uploading, uploaded, and failed. A failed
 file can request fresh upload authorization and retry. Partial completion is
 recorded honestly. Closing the page before finalization can abandon a pending
-session; bounded cleanup removes expired pending rows and objects.
+session; bounded cleanup removes abandoned objects and marks expired sessions/photos failed for operational evidence.
 
 ## Security
 

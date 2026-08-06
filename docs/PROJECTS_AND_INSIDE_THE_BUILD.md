@@ -29,3 +29,7 @@ Inside the Build never reads field notes or candidate-only media.
 Field Mode adds private capture sessions. A session can update the internal
 project stage after successful persistence, but never changes public Build or
 publication status. Its note remains operational evidence, not public copy.
+
+## Field Mode integration
+
+Field Mode documents an existing project; it never creates a duplicate project record. Capture sessions attach private notes and private project photos to that source of truth. A successful session may update the current internal stage. It cannot change operational status, public Build status, project publication, or formal public update copy. Admin review shows field provenance and candidate state before any editorial decision.

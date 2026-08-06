@@ -11,10 +11,7 @@ Zarka Construction is evolving from a production marketing and consultation
 website into a focused operating system for the Golf Simulator Construction
 Specialist business.
 
-Phase 0 is complete: the public website, durable consultation system, optional
-private room-photo intake, Resend notifications, Turnstile, founder
-authentication, and consultation dashboard are operational. Phase 1 Projects
-and Inside the Build is the next planned implementation phase.
+Phase 0 is complete. Phase 1 Projects and Inside the Build is operational. Phase 2 adds an online-first, installable private Field Mode for organized jobsite documentation.
 
 The system is not a generic CRM, SaaS platform, customer portal, scheduler,
 equipment store, or project-management product. Every addition must follow the
@@ -34,7 +31,8 @@ equipment store, or project-management product. Every addition must follow the
 - Next.js 16 App Router, React 19, strict TypeScript, Tailwind CSS 4
 - Vercel hosting and privacy-conscious Analytics
 - Supabase Postgres as consultation system of record
-- Private Supabase Storage for optional room photographs
+- Private Supabase Storage for consultation and project originals
+- Online-first Zarka Field PWA for founder-only jobsite capture
 - Supabase Auth email/password plus server-enforced founder email allowlist
 - Email-based password recovery delivered through Resend SMTP; magic links are
   not routine login
@@ -63,6 +61,7 @@ Private/system:
   `/auth/signout`
 - `/api/admin/auth/login`, `/recovery-request`, and `/password`
 - `/api/consultations/start`, `/finalize`, and `/cancel`
+- `/field` and `/api/field/captures/start`, `/finalize`, and `/retry`
 
 Private routes are dynamic, no-store, noindex, and server-authorized.
 
@@ -153,3 +152,7 @@ never use a linked remote reset.
 Phase 1 adds private projects, progress updates, original project photography, explicit publication controls, and public Inside the Build storytelling at `/projects` and `/projects/[slug]`. Public language uses **Builds**; internal code and database names remain **projects**.
 
 Founder routes now include `/admin`, `/admin/consultations`, `/admin/projects`, `/admin/projects/new`, and `/admin/projects/[id]`. All project records, updates, and photos default to private. Public photographs are separate approved copies and require caption and alt text.
+
+## Field Mode
+
+Phase 2 Field Mode is a founder-only, online-first PWA at `/field`. It reuses the existing Supabase Auth session and private project-media storage. Captures may include an existing project stage, a short private note, and up to 20 photos. A photo may be marked as a public candidate, but Field Mode cannot publish it. See [Field Mode](docs/FIELD_MODE.md), [PWA installation](docs/PWA_INSTALLATION.md), and [offline decision record](docs/FIELD_FAILURE_AND_OFFLINE_DECISION.md).

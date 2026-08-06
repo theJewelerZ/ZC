@@ -311,3 +311,7 @@ the ADMIN_ALLOWED_EMAILS server allowlist before any query, mutation, or signed
 photo URL. Private routes are dynamic, no-store, and noindex. See
 CONSULTATION_BACKEND.md, DATA_MODEL.md, ADMIN_DASHBOARD.md, and
 SUPABASE_SETUP.md.
+
+## Phase 2 Field Mode architecture
+
+`/field` is a dynamic Server Component guarded by the existing allowlisted founder session. A small client capture component manages camera/gallery selections and direct signed uploads. Server-only start, retry, and finalize handlers validate project ownership, operating status, metadata, stored size, and image signatures. `field_capture_sessions` groups one private note, selected existing stage, and associated `project_photos`. Candidate is independent from visibility. All authenticated Field responses use private no-store and noindex headers. The PWA is manifest-only in this phase; no service worker caches private responses and no offline writes exist.
