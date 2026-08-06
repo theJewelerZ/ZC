@@ -1,0 +1,31 @@
+# Projects and Inside the Build
+
+Projects are the operational source of truth. Public-facing pages call them
+Builds, but code and database objects retain the `project` name.
+
+## Lifecycle
+
+Consultation -> Project -> Updates and media -> Completion -> Case study ->
+Portfolio -> Future referral.
+
+Operational status, project stage, public Build status, and publication status
+are independent. Changing one never implies a change to another.
+
+## Private records
+
+Private records include exact addresses, internal scope, notes, capture
+sessions, original media, customer information, and unapproved updates. Browser
+clients cannot query project tables directly. Founder operations use
+server-authorized service-role calls behind the authenticated allowlist.
+
+## Public projection
+
+`/projects` and `/projects/[slug]` read only projects and updates explicitly
+marked published, plus approved photos copied into the public media bucket.
+Inside the Build never reads field notes or candidate-only media.
+
+## Phase 2 extension
+
+Field Mode adds private capture sessions. A session can update the internal
+project stage after successful persistence, but never changes public Build or
+publication status. Its note remains operational evidence, not public copy.
