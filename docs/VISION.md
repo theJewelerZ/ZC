@@ -48,6 +48,7 @@ The protected public philosophy remains:
 8. Stay simple until complexity creates measurable value.
 9. The project is the operational source; public proof is derived from it.
 10. Every phase must improve the business, not merely expand the software.
+11. The software should gradually disappear. Customers should remember the rooms, the clarity of the documentation, and the confidence they felt—not the software used to deliver it.
 
 ## Identity boundaries
 
@@ -89,3 +90,40 @@ The operating system succeeds when it makes Zarka easier to hire, easier to work
 with, and better at delivering documented simulator environments. Every project
 should leave behind organized knowledge and authentic proof that strengthens the
 next consultation, the next project, and the next referral.
+
+## The Story We Preserve
+
+The software is never the product.
+
+The completed room is the product.
+
+The software exists to preserve the story of how that room came to life.
+
+Every project should leave behind more knowledge than it consumed.
+
+Each completed Build should produce:
+
+- Better documentation.
+- Better photography.
+- Better planning knowledge.
+- Better customer education.
+- Better portfolio content.
+- Better search visibility.
+- Better referrals.
+- Better future consultations.
+
+The project is the source.
+
+Everything else is derived from it.
+
+The private Project records what happened.
+
+Inside the Build explains what matters publicly.
+
+The goal is not simply to document construction.
+
+The goal is to preserve craftsmanship, decisions, lessons, and proof in a way that helps the next customer make a more confident hiring decision.
+
+Every Build should still be worth reading three years after it was published.
+
+If a future homeowner can learn something valuable from a completed Build years later, then it continues creating value long after construction has ended.

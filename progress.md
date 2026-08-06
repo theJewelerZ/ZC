@@ -2,7 +2,7 @@
 
 **Current phase:** Phase 3 - Founder Mission Control and Premium Experience Refinement
 
-**Roadmap maturity:** 4/10 (Phase 2 founder-verified; Phase 3 implementation in verification)
+**Roadmap maturity:** 4/10 (Phase 3 operational; Inside the Build editorial refinement in verification)
 
 **Canonical production URL:** <https://www.zarkaconstruction.com>
 
@@ -29,19 +29,24 @@
 - Connected Build-specific Mission Control actions to Field Mode preselection and exact admin review anchors.
 - Refined public Build pages with editorial metadata, photography context, progress hierarchy, starting state, consultation CTA, and approved-photo Open Graph support.
 - Preserved online-first Field Mode, PWA architecture, RLS, explicit publication, and no-store/noindex boundaries.
+- Reframed public Build updates as editorial Milestones with ordered, intentionally grouped photography.
+- Added recorded publication permission, separate planned/actual dates, editorial starting-point/role/outcome/takeaway fields, and founder-selected cover/social image roles.
+- Added metadata-stripped, normalized public image derivatives while preserving private originals; reprocessed and verified the three current Albatross public images.
+- Connected Build-specific consultation context without exposing internal project data.
+- Preserved the founder-authored Story We Preserve and adopted the principle that the software should gradually disappear behind the work.
 
 ## Current verification
 
 - Lint: pass.
 - TypeScript: pass.
-- Tests: 36 files / 128 tests pass.
+- Tests: 39 files / 138 tests pass.
 - Production build: pass; private routes remain dynamic.
-- Linked database lint: no schema errors; local and remote migration history match.
+- Linked database lint: no schema errors; local and remote migration history match through `20260806000200`.
 - Live anonymous RLS checks: operational table reads denied; private storage listing exposes zero objects.
-- Automated public Lighthouse: homepage 97/100/100/100; Inside the Build 93/100/100/100; Albatross Build 94/100/100/100; contact 97/100/100/100.
+- Local production Lighthouse after editorial refinement: homepage 98/100/100/100; Inside the Build 100/100/100/100; Albatross Build 100/100/100/100.
 - Founder login Lighthouse: 98 performance, 100 accessibility, 100 best practices; SEO 69 is expected for an intentionally noindexed private route.
 - Synthetic Mission Control review: 100 accessibility on mobile and desktop; verified compact private navigation, no logo overlap, and no horizontal overflow at the captured mobile viewport.
-- Production deployment and founder acceptance remain to be completed.
+- Editorial production deployment and founder acceptance remain to be completed.
 
 ## Blockers
 
@@ -49,7 +54,7 @@ None currently. Vercel Analytics does not provide a supported application-side r
 
 ## Immediate next action
 
-Complete the production build and security/visual verification, commit the bounded Phase 3 changes, deploy main once, and perform the founder acceptance review on desktop and Android.
+Complete editorial verification, commit the Inside the Build refinement, deploy main once, and perform founder review of Milestones, photography roles, consultation context, and public Build presentation.
 
 ## Next recommended implementation prompt
 

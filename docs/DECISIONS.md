@@ -441,3 +441,14 @@ Statuses:
 **Rationale:** Current operating volume does not justify denormalized dashboard infrastructure. Existing records are authoritative, and an action-first view creates immediate founder value without introducing another source of truth.
 
 **Boundaries:** Vercel Analytics page views are excluded because the current package integration does not provide a supported application-side reporting source. Missing publication permission is not inferred because the schema has no authoritative permission field. Site Controls remain Phase 4. Premium refinement uses project-owned tokens and adds no UI framework.
+
+## ADR-037 — Inside the Build is an editorial journal with sanitized public media
+
+**Status:** Accepted
+**Date:** August 6, 2026
+
+**Decision:** Present public project updates as ordered editorial Milestones while retaining `projects` and `project_updates` internally. Require explicit recorded publication permission, keep planned and actual dates separate, generate metadata-stripped public image derivatives, and require founder selection for cover and Open Graph roles. Derive future completion products from the project instead of duplicating content.
+
+**Rationale:** Customers should encounter a timeless account of what changed, why it mattered, and what the finished environment enables—not operational workflow or a database timeline. Authentic proof must not expose private originals, location metadata, customer data, or internal approval language.
+
+**Consequences:** Existing private originals remain untouched. A permission withdrawal unpublishes public content and deletes public copies while retaining operational history. Comments, likes, profiles, subscriptions, and sharing remain outside this refinement. The software should gradually disappear behind the quality of the Build story.

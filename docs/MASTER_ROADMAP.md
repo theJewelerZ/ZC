@@ -26,11 +26,11 @@ founder-approved decision changing it.
 | Founder consultation dashboard | Operational |
 | Project management | Operational |
 | Inside the Build | Operational; first public Build live |
-| Field Mode | Implementation complete; production field proof pending |
+| Field Mode | Operational and founder-verified on Android |
 | Portfolio | Not yet populated |
 | Active projects | Two; names intentionally omitted from the public repository |
 | Business stage | Transitioning from marketing website to operational platform |
-| Roadmap maturity | Phase 2 implementation - 3/10 |
+| Roadmap maturity | Phase 3 operational refinement - 4/10 |
 
 The existing consultation and dashboard systems provide valuable foundations.
 They do not yet manage the full project lifecycle, so their presence does not
@@ -668,3 +668,9 @@ Mission Control replaces the former two-count admin landing page with bounded op
 ### Phase 3 exit criteria
 
 Do not move to Phase 4 Site Controls until the founder confirms Mission Control is accurate and useful on desktop and Android, Field Mode remains fast, public Build pages feel intentionally editorial, and no privacy or performance regression is present.
+
+## Inside the Build editorial transition — August 6, 2026
+
+Inside the Build has moved from functional project publication to a premium editorial journal. Public updates are presented as Milestones; photographs are intentionally grouped and ordered; planned and actual dates are distinct; publication permission is recorded; and only metadata-stripped public derivatives may be rendered. Founder-selected cover and social images replace automatic image choice.
+
+The project remains the single source. Completion may later yield a case study, portfolio presentation, or planning guide, but those products remain derived views rather than parallel truth. Comments, likes, profiles, subscriptions, sharing mechanics, and social-style engagement remain intentionally deferred. The software should recede behind clear documentation, authentic photography, and confidence in the work.
