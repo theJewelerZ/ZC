@@ -5,8 +5,6 @@ import { redirect } from "next/navigation";
 
 import { requireAdmin } from "@/lib/admin/auth";
 import {
-  PROJECT_PRIVATE_BUCKET,
-  PROJECT_PUBLIC_BUCKET,
   isUuid,
   operationalStatuses,
   projectSlug,
@@ -156,108 +154,4 @@ export async function setUpdatePublicationAction(form: FormData) {
     .eq("project_id", projectId);
   if (error) throw new Error("Update publication could not be changed.");
   refreshProject(projectId);
-}
-
-export async function updatePhotoPublicationAction(form: FormData) {
-  const user = await requireAdmin();
-  const id = text(form, "id", 36);
-  const projectId = text(form, "projectId", 36);
-  const intent = text(form, "intent");
-  const caption = text(form, "caption", 300);
-  const altText = text(form, "altText", 300);
-  if (
-    !isUuid(id) ||
-    !isUuid(projectId) ||
-    !["save", "publish", "unpublish"].includes(intent)
-  ) {
-    throw new Error("Photo request is invalid.");
-  }
-
-  const client = createSupabaseAdminClient();
-  const { data: photo } = await client
-    .from("project_photos")
-    .select("*")
-    .eq("id", id)
-    .eq("project_id", projectId)
-    .single();
-  if (!photo) throw new Error("Photo was not found.");
-
-  if (intent === "unpublish") {
-    if (photo.public_storage_path) {
-      await client.storage.from(PROJECT_PUBLIC_BUCKET).remove([photo.public_storage_path]);
-    }
-    const { error } = await client
-      .from("project_photos")
-      .update({
-        visibility: "private",
-        public_storage_path: null,
-        published_at: null,
-        caption: caption || photo.caption,
-        alt_text: altText || photo.alt_text,
-        updated_by: user.id,
-      })
-      .eq("id", id);
-    if (error) throw new Error("Photo visibility could not be updated.");
-    refreshProject(projectId);
-    redirect("/admin/projects/" + projectId + "?photo=private");
-  }
-
-  const metadataUpdate = {
-    caption: caption || null,
-    alt_text: altText || null,
-    updated_by: user.id,
-  };
-  const { error: metadataError } = await client
-    .from("project_photos")
-    .update(metadataUpdate)
-    .eq("id", id);
-  if (metadataError) throw new Error("Photo details could not be saved.");
-
-  if (intent === "save") {
-    refreshProject(projectId);
-    redirect("/admin/projects/" + projectId + "?photo=saved");
-  }
-
-  if (!caption || !altText || photo.upload_state !== "complete") {
-    refreshProject(projectId);
-    redirect("/admin/projects/" + projectId + "?photoError=details");
-  }
-
-  const { data: file, error: downloadError } = await client.storage
-    .from(PROJECT_PRIVATE_BUCKET)
-    .download(photo.private_storage_path);
-  if (downloadError || !file) {
-    refreshProject(projectId);
-    redirect("/admin/projects/" + projectId + "?photoError=storage");
-  }
-
-  const publicPath =
-    "projects/" + projectId + "/" + photo.id + "." + photo.mime_type.split("/")[1];
-  const { error: uploadError } = await client.storage
-    .from(PROJECT_PUBLIC_BUCKET)
-    .upload(publicPath, file, { contentType: photo.mime_type, upsert: true });
-  if (uploadError) {
-    refreshProject(projectId);
-    redirect("/admin/projects/" + projectId + "?photoError=storage");
-  }
-
-  const { error: publishError } = await client
-    .from("project_photos")
-    .update({
-      caption,
-      alt_text: altText,
-      approval_status: "approved",
-      visibility: "public",
-      public_storage_path: publicPath,
-      published_at: new Date().toISOString(),
-      updated_by: user.id,
-    })
-    .eq("id", id);
-  if (publishError) {
-    await client.storage.from(PROJECT_PUBLIC_BUCKET).remove([publicPath]);
-    throw new Error("Photo publication could not be completed.");
-  }
-
-  refreshProject(projectId);
-  redirect("/admin/projects/" + projectId + "?photo=published");
 }
