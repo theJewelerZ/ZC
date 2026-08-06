@@ -189,7 +189,7 @@ export async function setProjectPublicationAction(form: FormData) {
   const client = createSupabaseAdminClient();
   const { data } = await client
     .from("projects")
-    .select("slug,public_summary,public_build_status,actual_completed_on,publication_permission_status")
+    .select("slug,public_summary,public_build_status,actual_completed_on,publication_permission_status,cover_photo_id,social_photo_id")
     .eq("id", id)
     .single();
   if (intent === "publish") {
@@ -198,6 +198,9 @@ export async function setProjectPublicationAction(form: FormData) {
     }
     if (!data.public_summary || data.public_summary.trim().length < 20) {
       throw new Error("Add a public summary before publishing.");
+    }
+    if (!data.cover_photo_id || !data.social_photo_id) {
+      throw new Error("Select a cover image and social preview image before publishing.");
     }
     if (data.public_build_status === "completed" && !data.actual_completed_on) {
       throw new Error("Add the actual completion date before publishing a completed Build.");

@@ -61,6 +61,7 @@ export default async function ProjectDetail({
   const milestoneOptions = (updates || []).map((update) => ({ id: update.id, title: update.title, occurredOn: update.occurred_on }));
   const completionReadiness = {
     livingProject: project.publication_status === "published",
+    sharing: Boolean(project.cover_photo_id && project.social_photo_id),
     caseStudy: project.public_build_status === "completed" && Boolean(project.public_starting_point && project.public_outcome && updates?.some((update) => update.publication_status === "published")),
     portfolio: project.public_build_status === "completed" && Boolean(project.public_outcome && project.cover_photo_id),
     planningGuide: project.public_build_status === "completed" && Boolean(project.public_planning_takeaways),
@@ -200,6 +201,7 @@ export default async function ProjectDetail({
       <div className="admin-section-heading"><div><p className="eyebrow">Derived, not duplicated</p><h2>Completion readiness</h2></div><p>The project remains the source. Future presentations derive from the approved record.</p></div>
       <dl className="admin-readiness-grid">
         <div><dt>Living project journal</dt><dd>{completionReadiness.livingProject ? "Ready" : "Publish the Build"}</dd></div>
+        <div><dt>Sharing preview</dt><dd>{completionReadiness.sharing ? "Ready" : "Select cover and social preview images"}</dd></div>
         <div><dt>Case study candidate</dt><dd>{completionReadiness.caseStudy ? "Ready" : "Needs completion, starting point, outcome, and a milestone"}</dd></div>
         <div><dt>Portfolio candidate</dt><dd>{completionReadiness.portfolio ? "Ready" : "Needs completion, outcome, and cover image"}</dd></div>
         <div><dt>Planning guide candidate</dt><dd>{completionReadiness.planningGuide ? "Ready" : "Needs completion and planning takeaways"}</dd></div>

@@ -30,6 +30,11 @@ describe("founder project editor", () => {
     expect(actions).toContain('?saved=1');
   });
 
+  it("requires founder-selected cover and social images for future publication", () => {
+    expect(editor).toContain("Sharing preview");
+    expect(actions).toContain("Select a cover image and social preview image before publishing.");
+  });
+
   it("contains no mojibake in the editor", () => {
     expect(editor).not.toMatch(/ÃƒÆ’|Ãƒâ€š|ÃƒÂ¢/);
   });

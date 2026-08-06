@@ -5,8 +5,10 @@ import { notFound } from "next/navigation";
 
 import { businessConfig } from "@/config/business";
 import { BuildCard } from "@/components/projects/build-card";
+import { BuildShare } from "@/components/projects/build-share";
 import { getPublishedBuild, getPublishedBuilds } from "@/lib/projects/repository";
 import { label } from "@/lib/projects/schema";
+import { getBuildShareData } from "@/lib/projects/share";
 
 export const revalidate = 300;
 
@@ -36,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       type: "article",
       publishedTime: result.project.publishedAt || undefined,
       modifiedTime: result.lastModified,
-      images: image ? [{ url: image.url, alt: image.altText, width: image.width, height: image.height }] : [{ url: fallbackImage, alt: `${businessConfig.displayName} golf simulator room builder` }],
+      images: image ? [{ url: image.url, alt: image.altText, width: image.width, height: image.height }] : [{ url: fallbackImage, alt: `${businessConfig.displayName} golf simulator room builder`, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
@@ -55,6 +57,11 @@ export default async function BuildDetail({ params }: { params: Promise<{ slug: 
   const related = publishedBuilds.filter((build) => build.id !== project.id).slice(0, 2);
   const latestMilestone = milestones.at(-1);
   const canonical = new URL(`/projects/${project.slug}`, businessConfig.canonicalUrl).toString();
+  const shareData = getBuildShareData({
+    slug: project.slug,
+    title: project.title,
+    description: project.summary,
+  });
   const dates = project.status === "completed"
     ? [{ label: "Started", value: displayDate(project.actualStartedOn) }, { label: "Completed", value: displayDate(project.actualCompletedOn) }]
     : project.status === "current"
@@ -99,6 +106,7 @@ export default async function BuildDetail({ params }: { params: Promise<{ slug: 
               {latestMilestone ? <a className="button button-primary" href={`#milestone-${latestMilestone.id}`}>Latest Progress</a> : null}
               <Link className="button button-outline-light" href={`/contact?service=simulator-construction&build=${encodeURIComponent(project.slug)}`}>Ask About a Build Like This</Link>
             </div>
+            <BuildShare data={shareData} />
             <dl className="build-detail-meta"><div><dt>Build status</dt><dd>{label(project.status)}</dd></div>{dates.filter((date) => date.value).map((date) => <div key={date.label}><dt>{date.label}</dt><dd>{date.value}</dd></div>)}</dl>
           </div>
           {project.coverPhoto ? <figure className="build-cover"><Image alt={project.coverPhoto.altText} height={project.coverPhoto.height} priority sizes="(max-width: 900px) 100vw, 50vw" src={project.coverPhoto.url} width={project.coverPhoto.width} /><figcaption>{project.coverPhoto.caption}</figcaption></figure> : null}

@@ -23,7 +23,24 @@
 .build-card-progress span { color: var(--steel); font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .build-card-progress strong { color: var(--navy); font-size: .9rem; }
 .build-card-progress time { color: var(--steel); font-size: .75rem; }
-.build-card .text-link { margin-top: auto; }
+.build-card-actions { align-items: center; display: flex; gap: .75rem; justify-content: space-between; margin-top: auto; }
+.build-card-actions .text-link { margin-top: 0; }
+
+.build-share { min-width: 0; }
+.build-share-actions { align-items: center; display: flex; flex-wrap: wrap; gap: .4rem; }
+.build-share-action { align-items: center; background: transparent; border: 1px solid #8a969f; border-radius: var(--radius-sm); color: var(--navy); cursor: pointer; display: inline-flex; font: inherit; font-size: .76rem; font-weight: 800; justify-content: center; min-height: 44px; padding: .65rem .8rem; text-decoration: none; }
+.build-share-action:hover { border-color: var(--orange); color: var(--navy); }
+.build-share-action:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+.build-share-status { color: var(--steel); font-size: .76rem; line-height: 1.45; margin: .45rem 0 0; min-height: 1.1em; }
+.build-share-manual { display: grid; gap: .4rem; margin-top: .5rem; max-width: 34rem; }
+.build-share-manual span { font-size: .72rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.build-share-manual input { border: 1px solid #8a969f; border-radius: var(--radius-sm); color: var(--carbon); font: inherit; min-height: 44px; padding: .65rem .75rem; width: 100%; }
+.build-share-card[data-state="idle"] .build-share-status { height: 0; margin: 0; min-height: 0; overflow: hidden; }
+.build-share-detail { border-top: 1px solid rgb(255 255 255 / 18%); margin-top: 1.25rem; padding-top: 1rem; }
+.build-share-detail .build-share-action { border-color: rgb(255 255 255 / 42%); color: #fff; }
+.build-share-detail .build-share-action:hover { border-color: var(--orange); color: #fff; }
+.build-share-detail .build-share-status,
+.build-share-detail .build-share-manual span { color: #cbd4db; }
 
 .build-journal { background: var(--white); }
 .build-journal-hero { background: var(--navy); color: #fff; overflow: hidden; padding-block: clamp(4rem, 9vw, 8rem); position: relative; }
@@ -142,6 +159,8 @@
   .build-journal-hero { padding-top: 3rem; }
   .build-journal-actions { display: grid; }
   .build-journal-actions .button { width: 100%; }
+  .build-share-detail .build-share-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .build-share-detail .build-share-action { padding-inline: .5rem; width: 100%; }
   .build-detail-meta { grid-template-columns: 1fr 1fr; }
   .build-milestone-photos,
   .build-detail-gallery,
@@ -157,6 +176,12 @@
   .admin-section-heading { align-items: start; display: grid; gap: .5rem; }
   .admin-milestone-footer > form { margin-left: 0; width: 100%; }
   .admin-milestone-footer .button { width: 100%; }
+}
+
+@media (max-width: 390px) {
+  .build-card-actions { align-items: stretch; flex-direction: column; }
+  .build-share-card .build-share-action { width: 100%; }
+  .build-share-detail .build-share-actions { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
