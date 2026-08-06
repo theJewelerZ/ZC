@@ -1,6 +1,6 @@
 # Progress
 
-**Current phase:** Phase 1 — Projects and Inside the Build implementation
+**Current phase:** Phase 1 â€” Projects and Inside the Build implementation
 
 **Roadmap maturity:** 2/10 (implementation in progress; operating evidence still required)
 
@@ -48,3 +48,9 @@ Phase 1 is not complete until real Builds are documented, founder publishing is 
 ## Immediate next action
 
 Apply the additive migration, push the verified commit, monitor Vercel production, and complete the founder publication smoke test.
+## Founder editor production follow-up — August 6, 2026
+
+- Removed corrupted breadcrumb/separator characters from the project editor.
+- Added explicit save/publication/photo confirmation messages.
+- Moved Project photography directly below Project information and gave the private uploader a clear upload control treatment.
+- Confirmed the founder-created project remains private and is not homepage-featured unless separately published and selected.
