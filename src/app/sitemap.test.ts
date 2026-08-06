@@ -1,15 +1,1 @@
-import { describe, expect, it } from "vitest";
-
-import sitemap from "@/app/sitemap";
-
-describe("sitemap", () => {
-  it("contains the canonical public routes", () => {
-    expect(sitemap().map((item) => item.url)).toEqual([
-      "https://www.zarkaconstruction.com/",
-      "https://www.zarkaconstruction.com/simulator-construction",
-      "https://www.zarkaconstruction.com/contact",
-      "https://www.zarkaconstruction.com/privacy",
-      "https://www.zarkaconstruction.com/terms",
-    ]);
-  });
-});
+import { describe,expect,it,vi } from "vitest";vi.mock("@/lib/projects/repository",()=>({getPublishedBuilds:vi.fn().mockResolvedValue([])}));import sitemap from "@/app/sitemap";describe("sitemap",()=>{it("contains canonical public routes",async()=>{expect((await sitemap()).map(item=>item.url)).toEqual(["https://www.zarkaconstruction.com/","https://www.zarkaconstruction.com/simulator-construction","https://www.zarkaconstruction.com/projects","https://www.zarkaconstruction.com/contact","https://www.zarkaconstruction.com/privacy","https://www.zarkaconstruction.com/terms"])})});
