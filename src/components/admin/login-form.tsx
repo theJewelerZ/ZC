@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 
-export function AdminLoginForm() {
+export function AdminLoginForm({ returnTo = "/admin" }: { returnTo?: "/admin" | "/field" }) {
   const [pending, setPending] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [message, setMessage] = useState("");
@@ -20,6 +20,7 @@ export function AdminLoginForm() {
         body: JSON.stringify({
           email: String(form.get("email") || "").trim(),
           password: String(form.get("password") || ""),
+          returnTo,
         }),
       });
       const result = await response.json() as { ok?: boolean; message?: string; redirectTo?: string };
@@ -27,7 +28,7 @@ export function AdminLoginForm() {
         setMessage(result.message || "Email or password is incorrect.");
         return;
       }
-      window.location.assign(result.redirectTo === "/admin" ? result.redirectTo : "/admin");
+      window.location.assign(result.redirectTo === "/field" ? "/field" : "/admin");
     } catch {
       setMessage("Sign-in could not be completed. Check your connection and try again.");
     } finally {

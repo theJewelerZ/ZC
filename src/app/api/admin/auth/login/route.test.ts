@@ -31,6 +31,12 @@ describe("password login route", () => {
     expect(response.cookies.get("sb-test-auth-token")?.value).toBe("session");
     expect(response.headers.get("set-cookie")).not.toMatch(/domain=/i);
   });
+  it("returns to Field Mode only for the exact safe destination", async () => {
+    const field = await POST(request({ email: "founder@example.com", password: "private-password", returnTo: "/field" }));
+    expect(await field.json()).toMatchObject({ ok: true, redirectTo: "/field" });
+    const unsafe = await POST(request({ email: "founder@example.com", password: "private-password", returnTo: "https://attacker.example" }));
+    expect(await unsafe.json()).toMatchObject({ ok: true, redirectTo: "/admin" });
+  });
   it("uses the same generic error for an invalid password or unknown email", async () => {
     state.signInError = true;
     const invalid = await POST(request({ email: "founder@example.com", password: "wrong" }));

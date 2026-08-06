@@ -25,9 +25,10 @@ export async function POST(request: NextRequest) {
 
   const parsed = await readJsonRequest(request, "admin-login", 8_192);
   if ("response" in parsed) return reply("Email or password is incorrect.", 401);
-  const body = parsed.body as { email?: unknown; password?: unknown };
+  const body = parsed.body as { email?: unknown; password?: unknown; returnTo?: unknown };
   const email = typeof body?.email === "string" ? body.email.trim().toLowerCase() : "";
   const password = typeof body?.password === "string" ? body.password : "";
+  const returnTo = body?.returnTo === "/field" ? "/field" : "/admin";
   if (!email || !password) return reply("Email or password is incorrect.", 401);
 
   const routeClient = createSupabaseRouteClient(request);
@@ -48,5 +49,5 @@ export async function POST(request: NextRequest) {
     return applyCookies(reply("Email or password is incorrect.", 401));
   }
   logAdminAuthStage("password_login_success");
-  return applyCookies(NextResponse.json({ ok: true, redirectTo: "/admin" }));
+  return applyCookies(NextResponse.json({ ok: true, redirectTo: returnTo }));
 }
