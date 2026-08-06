@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
   const indexingEnabled = process.env.NEXT_PUBLIC_SEARCH_INDEXING_ENABLED === "true";
   return {
     rules: indexingEnabled
-      ? { userAgent: "*", allow: "/", disallow: ["/admin", "/auth", "/api"] }
+      ? { userAgent: "*", allow: "/", disallow: ["/admin", "/field", "/auth", "/api"] }
       : { userAgent: "*", disallow: "/" },
     sitemap: `${businessConfig.canonicalUrl}/sitemap.xml`,
     host: businessConfig.canonicalUrl,
