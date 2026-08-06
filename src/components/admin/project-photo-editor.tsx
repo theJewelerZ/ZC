@@ -6,6 +6,7 @@ import { useState } from "react";
 type Props = {
   altText: string;
   caption: string;
+  candidate: boolean;
   photoId: string;
   projectId: string;
   signedUrl: string | null;
@@ -45,6 +46,7 @@ export function ProjectPhotoEditor(props: Props) {
   }
 
   return <section className="admin-photo-review">
+    {props.candidate ? <span className="field-candidate-badge">Public candidate — review required</span> : null}
     {props.signedUrl ? <img alt="Private project preview" src={props.signedUrl} /> : <div className="photo-unavailable">Secure preview unavailable.</div>}
     <label>Caption<input disabled={busy} maxLength={300} onChange={(event) => setCaption(event.target.value)} value={caption} /><small>Visible beneath the photograph.</small></label>
     <label>Alt text<input disabled={busy} maxLength={300} onChange={(event) => setAltText(event.target.value)} value={altText} /><small>Briefly describe what the image shows for screen-reader users.</small></label>

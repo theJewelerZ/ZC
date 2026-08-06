@@ -104,6 +104,7 @@ export async function PATCH(
     caption,
     alt_text: altText,
     approval_status: "approved",
+    publication_candidate: false,
     visibility: "public",
     public_storage_path: publicPath,
     published_at: new Date().toISOString(),
