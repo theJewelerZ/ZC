@@ -25,9 +25,17 @@ describe("founder project editor", () => {
     );
   });
 
-  it("shows explicit confirmation after saving", () => {
-    expect(editor).toContain("Build saved.");
-    expect(actions).toContain('?saved=1');
+  it("shows an inline, accessible confirmation after saving", () => {
+    const toast = readFileSync(
+      join(process.cwd(), "src/components/admin/save-build-toast.tsx"),
+      "utf8",
+    );
+
+    expect(editor).toContain("<SaveBuildToast />");
+    expect(toast).toContain('role="status"');
+    expect(toast).toContain('aria-live="polite"');
+    expect(toast).toContain('url.searchParams.delete("saved")');
+    expect(actions.match(/\?saved=1/g)).toHaveLength(1);
   });
 
   it("requires founder-selected cover and social images for future publication", () => {

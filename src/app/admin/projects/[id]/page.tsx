@@ -12,6 +12,7 @@ import {
 import { AdminNav } from "@/components/admin/admin-nav";
 import { ProjectPhotoEditor } from "@/components/admin/project-photo-editor";
 import { ProjectPhotoUploader } from "@/components/admin/project-photo-uploader";
+import { SaveBuildToast } from "@/components/admin/save-build-toast";
 import { requireAdmin } from "@/lib/admin/auth";
 import {
   PROJECT_PRIVATE_BUCKET,
@@ -69,7 +70,7 @@ export default async function ProjectDetail({
 
   return <main className="admin-shell" id="main-content">
     <AdminNav />
-    {query.saved === "1" ? <div className="admin-save-confirmation" role="status"><strong>Build saved.</strong><span>Project information and editorial settings are up to date.</span></div> : null}
+    {query.saved === "1" ? <SaveBuildToast /> : null}
     {query.publication === "1" ? <div className="admin-save-confirmation" role="status"><strong>Publication updated.</strong></div> : null}
 
     <Link className="admin-back" href="/admin/projects">Back to Builds</Link>

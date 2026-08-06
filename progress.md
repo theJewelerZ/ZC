@@ -43,6 +43,7 @@
 - Native cancellation is neutral, clipboard denial exposes a selectable URL, and status changes are announced accessibly.
 - Future Build publication requires founder-selected cover and social-preview images; existing Builds retain the branded fallback until the founder selects both.
 - Added no database migration, social SDK, Meta integration, analytics infrastructure, account, comment, like, follow, notification, or subscription.
+- Added an accessible, dismissible toast after Save Build; the one-time success state remains visible regardless of scroll position and does not replay on refresh.
 
 ## Current verification
 
