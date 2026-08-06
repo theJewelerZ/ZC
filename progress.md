@@ -2,7 +2,7 @@
 
 **Current phase:** Phase 3.5 - Premium Build Sharing
 
-**Roadmap maturity:** 4/10 (Phase 3 operational; Phase 3.5 implementation in verification)
+**Roadmap maturity:** 4/10 (Phase 3 operational; Phase 3.5 deployed, founder acceptance pending)
 
 **Canonical production URL:** <https://www.zarkaconstruction.com>
 
@@ -58,6 +58,7 @@
 - Founder login Lighthouse: 98 performance, 100 accessibility, 100 best practices; SEO 69 is expected for an intentionally noindexed private route.
 - Synthetic Mission Control review: 100 accessibility on mobile and desktop; verified compact private navigation, no logo overlap, and no horizontal overflow at the captured mobile viewport.
 - Editorial production deployment `dpl_Enmm7nKfxqbWbtewq5dnMixyuQjc` is Ready and production smoke checks pass; founder editorial acceptance remains.
+- Phase 3.5 production sharing is deployed; live cards, Build actions, canonical metadata, X intent, privacy boundaries, and apex redirect pass smoke testing.
 
 ## Blockers
 
@@ -65,7 +66,7 @@ None currently. Vercel Analytics does not provide a supported application-side r
 
 ## Immediate next action
 
-Deploy Phase 3.5 once the full quality suite passes, then verify native sharing on Android and select the Albatross cover and social-preview images.
+Founder verifies native sharing on Android, then selects the Albatross cover and social-preview images in the Build workspace.
 
 ## Next recommended implementation prompt
 
