@@ -9,11 +9,12 @@ import type { ProjectOperationalStatus, ProjectStage } from "@/lib/supabase/data
 
 type FieldProject = { id:string; internalName:string; location:string|null; startedOn:string|null; completedOn:string|null; operationalStatus:ProjectOperationalStatus; projectStage:ProjectStage; updatedAt:string; latestCaptureAt:string|null; privatePhotoCount:number; candidatePhotoCount:number };
 type SelectedPhoto = { key:string; file:File; url:string; caption:string; candidate:boolean; state:"ready"|"uploading"|"saved"|"failed"; message?:string; photoId?:string };
-type Props = { projects:FieldProject[]; publishableKey:string; supabaseUrl:string };
+type Props = { projects:FieldProject[]; publishableKey:string; supabaseUrl:string; initialProjectId?:string };
 const formatDate=(value:string|null)=>value?new Intl.DateTimeFormat("en-US",{month:"short",day:"numeric",year:"numeric"}).format(new Date(value)):"Not scheduled";
 
-export function FieldCapture({projects,publishableKey,supabaseUrl}:Props){
-  const [selectedProjectId,setSelectedProjectId]=useState(projects[0]?.id||""); const project=projects.find(item=>item.id===selectedProjectId);
+export function FieldCapture({projects,publishableKey,supabaseUrl,initialProjectId}:Props){
+  const initialProject = projects.find((item) => item.id === initialProjectId) ?? projects[0];
+  const [selectedProjectId,setSelectedProjectId]=useState(initialProject?.id||""); const project=projects.find(item=>item.id===selectedProjectId);
   const [stage,setStage]=useState<ProjectStage>(project?.projectStage||"consultation"); const [note,setNote]=useState(""); const [photos,setPhotos]=useState<SelectedPhoto[]>([]);
   const [saving,setSaving]=useState(false); const [message,setMessage]=useState<{kind:"success"|"error"|"partial";text:string}|null>(null); const [sessionId,setSessionId]=useState<string|null>(null);
   const [installed,setInstalled]=useState(false); const captureRef=useRef<HTMLDivElement>(null);

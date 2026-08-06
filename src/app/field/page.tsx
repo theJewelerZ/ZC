@@ -10,8 +10,9 @@ export const dynamic = "force-dynamic";
 export const revalidate = 0;
 export const metadata: Metadata = { title: "Field Mode", description: "Private field documentation for Zarka Construction.", robots: { index: false, follow: false, nocache: true } };
 
-export default async function FieldPage() {
+export default async function FieldPage({ searchParams }: { searchParams: Promise<{ project?: string }> }) {
   const user = await getAdminUser(); if (!user) redirect("/admin/login?next=/field");
+  const requestedProjectId = (await searchParams).project;
   const config = getSupabasePublicConfig(); if (!config) return <main className="field-shell"><div className="field-empty"><h1>Field Mode is unavailable</h1><p>Supabase public configuration is missing in this environment.</p></div></main>;
   const client = createSupabaseAdminClient();
   const { data: rows } = await client.from("projects").select("*").not("operational_status", "in", '("cancelled","archived")');
@@ -30,5 +31,5 @@ export default async function FieldPage() {
     privatePhotoCount: photos?.filter((item) => item.project_id === project.id && !item.publication_candidate).length || 0,
     candidatePhotoCount: photos?.filter((item) => item.project_id === project.id && item.publication_candidate).length || 0,
   }));
-  return <FieldCapture projects={fieldProjects} publishableKey={config.publishableKey} supabaseUrl={config.url} />;
+  return <FieldCapture initialProjectId={requestedProjectId} projects={fieldProjects} publishableKey={config.publishableKey} supabaseUrl={config.url} />;
 }
