@@ -1,6 +1,6 @@
 # Progress
 
-**Current phase:** Phase 1 â€” Projects and Inside the Build implementation
+**Current phase:** Phase 1 Ã¢â‚¬â€ Projects and Inside the Build implementation
 
 **Roadmap maturity:** 2/10 (implementation in progress; operating evidence still required)
 
@@ -48,9 +48,11 @@ Phase 1 is not complete until real Builds are documented, founder publishing is 
 ## Immediate next action
 
 Apply the additive migration, push the verified commit, monitor Vercel production, and complete the founder publication smoke test.
-## Founder editor production follow-up — August 6, 2026
+## Founder editor production follow-up â€” August 6, 2026
 
 - Removed corrupted breadcrumb/separator characters from the project editor.
 - Added explicit save/publication/photo confirmation messages.
 - Moved Project photography directly below Project information and gave the private uploader a clear upload control treatment.
-- Confirmed the founder-created project remains private and is not homepage-featured unless separately published and selected.
+- Confirmed the founder-created project remains private and is not homepage-featured unless separately published and selected.## Photo approval follow-up — August 6, 2026
+
+Production logs confirmed that publication correctly rejected a photo missing required alt text, but the original workflow discarded the entered caption and surfaced a consultation-specific error. Photo metadata can now be saved independently, entered values persist before publication validation, missing caption/alt text produces an inline explanation, and public-copy failures preserve both the private original and saved details.

@@ -14,6 +14,8 @@ const actions = readFileSync(
 describe("founder project editor", () => {
   it("keeps the project photo uploader visible before progress updates", () => {
     expect(editor).toContain("ProjectPhotoUploader");
+    expect(editor).toContain("Save photo details");
+    expect(editor).toContain("Photo details saved, but the photo was not published.");
     expect(editor.indexOf("Project photography")).toBeLessThan(
       editor.indexOf("Progress updates"),
     );
@@ -25,6 +27,6 @@ describe("founder project editor", () => {
   });
 
   it("contains no mojibake in the editor", () => {
-    expect(editor).not.toMatch(/Ã|Â|â/);
+    expect(editor).not.toMatch(/Ãƒ|Ã‚|Ã¢/);
   });
 });
