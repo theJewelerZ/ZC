@@ -1,8 +1,8 @@
 # Implementation Plan
 
-## Phase 1 implementation record — July 23, 2026
+## Phase 1 implementation record â€” July 23, 2026
 
-Workstreams 0–5 are implemented and verified, except for founder-controlled
+Workstreams 0â€“5 are implemented and verified, except for founder-controlled
 GitHub remote setup, approved logo/photography, real Resend delivery, Turnstile
 credentials, and attorney/founder legal review. Workstream 6 is complete through
 temporary Vercel production deployment and smoke testing at
@@ -13,7 +13,7 @@ The temporary deployment is intentionally non-indexable and the contact form is
 in honest disabled mode until production credentials are supplied. See
 `progress.md` and `LAUNCH_CHECKLIST.md` for the exact open gates.
 
-## Workstream 0 — Inputs and repository foundation
+## Workstream 0 â€” Inputs and repository foundation
 
 1. Resolve or explicitly omit launch-blocking business values in
    `OPEN_QUESTIONS.md`.
@@ -35,7 +35,7 @@ working tree.
 
 **Commit:** `chore: initialize website foundation`
 
-## Workstream 1 — Configuration and visual foundation
+## Workstream 1 â€” Configuration and visual foundation
 
 1. Implement brand tokens for all five approved colors, typography, spacing,
    radii, focus rings, and container widths.
@@ -58,7 +58,7 @@ visual checks, missing-asset test.
 
 **Commit:** `feat: establish brand and site shell`
 
-## Workstream 2 — Homepage
+## Workstream 2 â€” Homepage
 
 1. Implement the approved section order and stable anchor IDs.
 2. Build the hero with one primary and one secondary action.
@@ -81,7 +81,7 @@ dimensions/alt text; Lighthouse baseline.
 
 **Commit:** `feat: build launch homepage`
 
-## Workstream 3 — Contact experience
+## Workstream 3 â€” Contact experience
 
 1. Implement the fields and enums specified in the architecture.
 2. Add client affordances while retaining server-owned validation.
@@ -105,7 +105,7 @@ and screen-reader check; real production inbox delivery and reply test.
 
 **Commit:** `feat: add secure consultation form`
 
-## Workstream 4 — Legal, SEO, and analytics
+## Workstream 4 â€” Legal, SEO, and analytics
 
 1. Add `/privacy` and `/terms` using clearly reviewable content that reflects
    actual form, analytics, hosting, and anti-spam processing.
@@ -126,7 +126,7 @@ requests, analytics debug view, no PII in event payloads.
 
 **Commit:** `feat: add legal pages metadata and analytics`
 
-## Workstream 5 — Quality gate
+## Workstream 5 â€” Quality gate
 
 1. Run formatting check, lint, typecheck, unit/integration tests, and production
    build from a clean install.
@@ -147,7 +147,7 @@ checklist.
 
 **Commit:** `test: complete launch readiness checks`
 
-## Workstream 6 — Vercel deployment
+## Workstream 6 â€” Vercel deployment
 
 1. Import the GitHub repository into the confirmed Vercel scope.
 2. Configure framework/build settings and Preview/Production variables.
@@ -167,7 +167,7 @@ Turnstile host configuration, analytics, headers, mobile smoke test.
 **Commit:** normally none; record configuration evidence in the launch record
 without committing secrets.
 
-## Workstream 7 — GoDaddy cutover
+## Workstream 7 â€” GoDaddy cutover
 
 Follow `DEPLOYMENT_AND_DOMAIN_CUTOVER.md` exactly:
 
@@ -218,7 +218,7 @@ mail send/receive, form delivery, and at least one post-propagation recheck.
 - GoDaddy subscription: do not cancel it until rollback is no longer needed.
 
 
-## Phase 3 — Narrow consultation operations
+## Phase 3 â€” Narrow consultation operations
 
 1. Version and dry-run the additive consultation schema, forced RLS, least
    privileges, transaction function, and private bucket.
@@ -235,3 +235,7 @@ mail send/receive, form delivery, and at least one post-propagation recheck.
 
 Rollback keeps Production on its prior Vercel deployment and preserves stored
 consultations; no automatic schema/bucket destruction is allowed.
+
+## Operating-system Phase 1 implementation — August 5, 2026
+
+Implemented the additive project lifecycle foundation: `projects`, `project_updates`, `project_photos`, separate lifecycle dimensions, forced RLS, private originals, approved public copies, founder project administration, direct private uploads, update/media approval, public Inside the Build routes, conditional homepage inclusion, and dynamic sitemap entries. Phase 2 Field Mode, analytics, site controls, CRM behavior, and customer accounts remain explicitly excluded.

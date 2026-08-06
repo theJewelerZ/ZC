@@ -2,13 +2,13 @@
 
 Statuses:
 
-- **Accepted:** established by the founder’s project brief or required to keep
+- **Accepted:** established by the founderâ€™s project brief or required to keep
   the launch safe.
 - **Proposed:** recommended architecture awaiting implementation validation or
   founder acceptance.
 - **Superseded:** retained for history with a link to the replacement.
 
-## ADR-001 — Next.js and Vercel
+## ADR-001 â€” Next.js and Vercel
 
 - **Status:** Accepted
 - **Context:** The site needs rapid delivery, static/server-rendered marketing
@@ -20,7 +20,7 @@ Statuses:
 - **Reconsider when:** An approved platform constraint or operating requirement
   cannot be met without disproportionate complexity.
 
-## ADR-002 — Canonical apex domain
+## ADR-002 â€” Canonical apex domain
 
 - **Status:** Superseded by ADR-020
 - **Context:** The founder has designated the official domain.
@@ -30,7 +30,7 @@ Statuses:
   absolute URLs use the apex.
 - **Reconsider when:** Only through an explicit founder-approved domain strategy.
 
-## ADR-003 — Keep GoDaddy as registrar during launch
+## ADR-003 â€” Keep GoDaddy as registrar during launch
 
 - **Status:** Accepted
 - **Context:** The domain is founder-owned and managed through GoDaddy; domain
@@ -41,7 +41,7 @@ Statuses:
 - **Reconsider when:** After launch, as a separate operational decision with
   transfer-lock, renewal, privacy, and ownership review.
 
-## ADR-004 — Record-level DNS update, no nameserver change
+## ADR-004 â€” Record-level DNS update, no nameserver change
 
 - **Status:** Accepted
 - **Context:** Existing email and verification records are active.
@@ -52,7 +52,7 @@ Statuses:
 - **Reconsider when:** A later DNS-host migration has a separately approved
   inventory, test, rollback, and operational rationale.
 
-## ADR-005 — Landing-page-first information architecture
+## ADR-005 â€” Landing-page-first information architecture
 
 - **Status:** Accepted
 - **Context:** The immediate need is a professional site that can launch quickly.
@@ -62,7 +62,7 @@ Statuses:
   and service pages wait for approved content.
 - **Reconsider when:** Real content and visitor/search evidence justify a route.
 
-## ADR-006 — No CMS in the MVP
+## ADR-006 â€” No CMS in the MVP
 
 - **Status:** Accepted
 - **Context:** Four pages and configuration-driven content do not justify a
@@ -72,7 +72,7 @@ Statuses:
   operations burden.
 - **Reconsider when:** A non-developer publishing owner has a regular workflow.
 
-## ADR-007 — No authentication
+## ADR-007 â€” No authentication
 
 - **Status:** Superseded by ADR-025 and ADR-028
 - **Context:** The launch is public marketing and contact, not a customer product.
@@ -81,7 +81,7 @@ Statuses:
 - **Reconsider when:** A separately approved portal/integration use case defines
   users, authorization, support, and security.
 
-## ADR-008 — No Supabase without an accepted persistence requirement
+## ADR-008 â€” No Supabase without an accepted persistence requirement
 
 - **Status:** Superseded by ADR-024
 - **Context:** Contact email does not inherently require a database.
@@ -91,7 +91,7 @@ Statuses:
 - **Reconsider when:** Lead retention, uploads, portal data, or integration
   requirements define ownership, schema, access, and retention.
 
-## ADR-009 — Related project links are configuration-driven
+## ADR-009 â€” Related project links are configuration-driven
 
 - **Status:** Accepted
 - **Context:** CapProof and Precision Impact Screens have confirmed URLs; Bid
@@ -101,7 +101,7 @@ Statuses:
 - **Consequences:** No fabricated Bid Desk URL; later activation is a data change.
 - **Reconsider when:** The ecosystem develops a shared navigation/API contract.
 
-## ADR-010 — Logo assets remain replaceable
+## ADR-010 â€” Logo assets remain replaceable
 
 - **Status:** Accepted
 - **Context:** The approved concept is not yet a verified production vector.
@@ -111,7 +111,7 @@ Statuses:
 - **Reconsider when:** Final vectors and their usage system are formally approved;
   the configuration seam should remain.
 
-## ADR-011 — No unsupported business claims
+## ADR-011 â€” No unsupported business claims
 
 - **Status:** Accepted
 - **Context:** Contact, service, licensing, insurance, and operating facts remain
@@ -121,7 +121,7 @@ Statuses:
 - **Consequences:** Some launch content may be intentionally concise.
 - **Reconsider when:** Founder-supplied facts and evidence are approved.
 
-## ADR-012 — Signal Orange is a controlled accent
+## ADR-012 â€” Signal Orange is a controlled accent
 
 - **Status:** Accepted
 - **Context:** The approved identity is navy-dominant and disciplined.
@@ -131,7 +131,7 @@ Statuses:
   decorative color.
 - **Reconsider when:** Only as a documented brand-system revision.
 
-## ADR-013 — Server-side email contact with layered abuse protection
+## ADR-013 â€” Server-side email contact with layered abuse protection
 
 - **Status:** Accepted
 - **Context:** The MVP needs reliable inquiries without a CRM/database.
@@ -143,7 +143,7 @@ Statuses:
   the privacy page must reflect processors.
 - **Reconsider when:** Delivery/operations require durable queueing or a CRM.
 
-## ADR-014 — Privacy-conscious first-party measurement
+## ADR-014 â€” Privacy-conscious first-party measurement
 
 - **Status:** Accepted
 - **Context:** Launch needs basic conversion and performance feedback.
@@ -152,7 +152,7 @@ Statuses:
   privacy behavior must be verified against current product terms.
 - **Reconsider when:** A defined reporting question requires another tool.
 
-## ADR-015 — Conservative structured-data type
+## ADR-015 â€” Conservative structured-data type
 
 - **Status:** Accepted
 - **Context:** Local-business details and general-contractor language are not
@@ -162,7 +162,7 @@ Statuses:
 - **Consequences:** Rich-result scope may be smaller but remains accurate.
 - **Reconsider when:** Public contact/service/licensing facts are confirmed.
 
-## ADR-016 — System font and text-only temporary brand assets
+## ADR-016 â€” System font and text-only temporary brand assets
 
 - **Status:** Superseded by ADR-019 for logo artwork; system-font decision remains
   accepted
@@ -176,7 +176,7 @@ Statuses:
 - **Reconsider when:** Professionally approved logo exports and image rights are
   supplied.
 
-## ADR-017 — Temporary production URL remains non-indexable
+## ADR-017 â€” Temporary production URL remains non-indexable
 
 - **Status:** Accepted
 - **Context:** The site is live at a temporary `vercel.app` production alias
@@ -188,7 +188,7 @@ Statuses:
 - **Reconsider when:** Immediately before the approved domain cutover, set the
   value to `true`, redeploy, and verify canonical/robots behavior.
 
-## ADR-018 — In-process rate limiting is defense in depth
+## ADR-018 â€” In-process rate limiting is defense in depth
 
 - **Status:** Accepted
 - **Context:** The MVP has no database or durable rate-limit store, and Vercel
@@ -200,12 +200,12 @@ Statuses:
   is not represented as globally durable.
 - **Reconsider when:** Inquiry volume or abuse justifies a shared store.
 
-## ADR-019 — Founder-supplied raster artwork as the temporary production mark
+## ADR-019 â€” Founder-supplied raster artwork as the temporary production mark
 
 - **Status:** Accepted
 - **Context:** The founder supplied transparent raster exports of the approved
   impossible-geometry mark, stacked lockup, and favicon concept. The supplied
-  “horizontal” file is visually stacked and is not suitable for a narrow header.
+  â€œhorizontalâ€ file is visually stacked and is not suitable for a narrow header.
 - **Decision:** Preserve source files under `assets/brand-source`, publish
   lossless trimmed derivatives under `public/brand`, use the approved mark with
   the typeset wordmark in the shared shell and hero, and derive metadata icons
@@ -217,7 +217,7 @@ Statuses:
 - **Reconsider when:** Professionally recreated and rights-confirmed SVG
   deliverables are approved.
 
-## ADR-020 — Canonical www domain with Vercel-owned hostname redirect
+## ADR-020 â€” Canonical www domain with Vercel-owned hostname redirect
 
 - **Status:** Accepted
 - **Context:** The founder designated `https://www.zarkaconstruction.com` as the
@@ -234,7 +234,7 @@ Statuses:
 - **Reconsider when:** Only through an explicit founder-approved canonical-host
   change accompanied by coordinated Vercel, application, SEO, and test updates.
 
-## ADR-021 — Simulator-room-builder-first public positioning
+## ADR-021 â€” Simulator-room-builder-first public positioning
 
 - **Status:** Accepted
 - **Context:** The founder approved a deliberate change from broad construction
@@ -258,26 +258,26 @@ Statuses:
   remain secondary evidence. No product catalog, equipment sales, uploads,
   database, CMS, authentication, estimator, or customer portal is added.
 - **Reconsider when:** Only after founder approval supported by qualified-lead
-  evidence or a material change to the company’s intended business model.
+  evidence or a material change to the companyâ€™s intended business model.
 
-## ADR-022 — Experience-first simulator-room storytelling
+## ADR-022 â€” Experience-first simulator-room storytelling
 
 - **Status:** Accepted
 - **Context:** Simulator-room-builder positioning established the correct category, but construction tasks and equipment relationships still carried too much of the public narrative. Prospects are ultimately creating a place to practice, play, gather, entertain, and enjoy golf throughout the year.
-- **Decision:** Sell the experience of a professionally built golf simulator room. Golf and the life around the room lead the story; construction, planning, and technical coordination serve as evidence of how Zarka delivers it. Protect the philosophy: “We don't build golf simulators. We build the spaces where great golf happens.” Use technical details to explain why the room plays and feels right, without presenting Zarka as an equipment seller or reducing the offer to an installation checklist.
+- **Decision:** Sell the experience of a professionally built golf simulator room. Golf and the life around the room lead the story; construction, planning, and technical coordination serve as evidence of how Zarka delivers it. Protect the philosophy: â€œWe don't build golf simulators. We build the spaces where great golf happens.â€ Use technical details to explain why the room plays and feels right, without presenting Zarka as an equipment seller or reducing the offer to an installation checklist.
 - **Consequences:** Homepage hierarchy, service descriptions, simulator-page copy, contact language, metadata, and social imagery must emphasize the finished experience while preserving truthful scope boundaries. Project imagery remains founder-owned only, and missing photography remains an intentional editorial state rather than fabricated proof.
 - **Reconsider when:** Only through an explicit founder-approved positioning change supported by customer evidence.
 
-## ADR-023 — Golf Simulator Construction Specialist scope
+## ADR-023 â€” Golf Simulator Construction Specialist scope
 
 - **Status:** Accepted
-- **Context:** Premium residential and commercial prospects need a precise understanding of Zarka's present role. Broad phrases such as “complete room” can unintentionally imply general-contracting, permit, architectural, engineering, equipment-dealer, or complete-facility responsibility.
+- **Context:** Premium residential and commercial prospects need a precise understanding of Zarka's present role. Broad phrases such as â€œcomplete roomâ€ can unintentionally imply general-contracting, permit, architectural, engineering, equipment-dealer, or complete-facility responsibility.
 - **Decision:** Position Zarka Construction as a **Golf Simulator Construction Specialist focused on creating premium simulator environments while accurately representing its present capabilities**. Public scope may include room evaluation, simulator and construction planning, simulator-environment framing, impact-screen structures and custom layered screens, curtains, wall and ceiling protection, turf and hitting surfaces, finish carpentry, trim, finish detailing, room preparation, and coordination with qualified trades where required. Every project has a defined written scope. Do not imply equipment sales, manufacturer or dealer relationships, architectural or engineering services, permit authority, licensed-general-contractor status, complete commercial-facility construction, or responsibility outside that scope.
 - **Consequences:** Residential and commercial settings remain welcome, but commercial language describes simulator environments within facilities rather than complete facility construction. Confidence comes from specificity, careful planning, craftsmanship, honest boundaries, and professional communication.
 - **Reconsider when:** Founder-verified licenses, services, partnerships, or operating responsibilities materially change.
 
 
-## ADR-024 — Supabase consultation system of record
+## ADR-024 â€” Supabase consultation system of record
 
 - **Status:** Accepted
 - **Decision:** Persist validated simulator consultations in Supabase Postgres
@@ -289,7 +289,7 @@ Statuses:
   preserves the consultation and is visible to the founder. Privacy disclosures
   now include Supabase and private photographs.
 
-## ADR-025 — Founder magic-link access plus server allowlist
+## ADR-025 â€” Founder magic-link access plus server allowlist
 
 - **Status:** Superseded by ADR-028
 - **Decision:** Use Supabase magic-link Auth for a pre-created founder user and
@@ -298,7 +298,7 @@ Statuses:
   the narrow private dashboard boundary remain accepted. Routine magic-link
   login is replaced by password login; email links remain recovery/setup only.
 
-## ADR-026 — Response-bound Supabase auth cookies
+## ADR-026 â€” Response-bound Supabase auth cookies
 
 - **Status:** Accepted
 - **Context:** The PKCE callback exchanged a valid email-link code through a
@@ -314,7 +314,7 @@ Statuses:
   remain server-readable and isolated by hostname. Unauthorized users and
   sign-out clear cookies on the actual response.
 
-## ADR-027 — Stable origin for Preview email callbacks
+## ADR-027 â€” Stable origin for Preview email callbacks
 
 - **Status:** Accepted
 - **Context:** Commit-specific Vercel Preview hostnames change after every
@@ -328,7 +328,7 @@ Statuses:
 - **Consequences:** Recovery begins and ends on the host that owns the verifier
   cookie. Production remains request-origin based.
 
-## ADR-028 — Founder password authentication with recovery-only email links
+## ADR-028 â€” Founder password authentication with recovery-only email links
 
 - **Status:** Accepted
 - **Context:** Routine magic-link access created cross-host PKCE friction and
@@ -350,7 +350,7 @@ Statuses:
 - **Reconsider when:** The founder explicitly adopts phishing-resistant MFA or a
   managed identity provider and a separately reviewed migration plan exists.
 
-## ADR-029 — Resend SMTP for Supabase Auth recovery delivery
+## ADR-029 â€” Resend SMTP for Supabase Auth recovery delivery
 
 - **Status:** Accepted
 - **Context:** Supabase's built-in demonstration mailer imposed a restrictive
@@ -364,7 +364,7 @@ Statuses:
   limits remain active. No SMTP credential enters application code or Vercel
   application variables.
 
-## ADR-030 — Operating-system North Star and canonical master roadmap
+## ADR-030 â€” Operating-system North Star and canonical master roadmap
 
 - **Status:** Accepted
 - **Context:** The project now includes a production website, durable
@@ -374,15 +374,15 @@ Statuses:
 - **Decision:** Adopt `docs/VISION.md` as the governing philosophy and
   `docs/MASTER_ROADMAP.md` as the canonical future-feature roadmap. Reset the
   roadmap so the existing live system is Phase 0 and Projects/Inside the Build
-  is Phase 1. Apply this mandatory North Star: “Every feature must either help a
+  is Phase 1. Apply this mandatory North Star: â€œEvery feature must either help a
   customer make a confident hiring decision or help Zarka Construction deliver
-  a better project. If it does neither, it does not belong.”
+  a better project. If it does neither, it does not belong.â€
 - **Consequences:** Old phase labels become historical implementation context.
   Every future phase requires business-success evidence and exit criteria, not
   merely deployed software. Strategy or sequencing changes require founder
   approval and an ADR.
 
-## ADR-031 — Public-first, approval-gated project publishing
+## ADR-031 â€” Public-first, approval-gated project publishing
 
 - **Status:** Accepted
 - **Context:** Active projects can create meaningful trust before completion,
@@ -398,7 +398,7 @@ Statuses:
   and unpublish. Exact addresses, customer contact data, internal notes, costs,
   contracts, private schedules, and unapproved identities remain private.
 
-## ADR-032 — Native founder controls instead of a general CMS
+## ADR-032 â€” Native founder controls instead of a general CMS
 
 - **Status:** Accepted
 - **Context:** Future homepage, SEO, availability, featured-project, messaging,
@@ -411,3 +411,15 @@ Statuses:
   publication, preview, and rollback rules. A separate CMS may be reconsidered
   only when measured publishing volume and a defined owner prove the native
   controls insufficient.
+
+## ADR-033 — Project source of truth and separate lifecycle dimensions
+
+- **Status:** Accepted
+- **Decision:** Store operational projects, updates, and original media privately. Keep operational status, project stage, public Build status, and publication status independent. Public pages use filtered server reads and only approved public media copies.
+- **Consequences:** Nothing publishes automatically. Exact addresses, internal scope, notes, consultation data, and private originals cannot enter the public projection. Customer-facing UI says Builds; database and code retain projects.
+
+## ADR-034 — Private originals and approved public media copies
+
+- **Status:** Accepted
+- **Decision:** Upload project originals directly to the private `project-media-private` bucket using short-lived signed upload authorization. Publishing requires caption, alt text, approval, and creates a separate object in `project-media-public`. Unpublishing removes that public copy.
+- **Consequences:** Public URLs never expose original storage. Founder approval remains reversible. Supported images are JPEG, PNG, and WebP up to 15 MB each, ten per batch.

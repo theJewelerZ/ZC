@@ -147,3 +147,9 @@ build, and controlled authentication verification pass. Never alter DNS,
 nameservers, GoDaddy services, production email DNS, or Supabase data as part of
 an authentication UI change. Database rollback must preserve consultation data;
 never use a linked remote reset.
+
+## Phase 1 Projects and Inside the Build
+
+Phase 1 adds private projects, progress updates, original project photography, explicit publication controls, and public Inside the Build storytelling at `/projects` and `/projects/[slug]`. Public language uses **Builds**; internal code and database names remain **projects**.
+
+Founder routes now include `/admin`, `/admin/consultations`, `/admin/projects`, `/admin/projects/new`, and `/admin/projects/[id]`. All project records, updates, and photos default to private. Public photographs are separate approved copies and require caption and alt text.

@@ -6,7 +6,7 @@ The canonical long-term roadmap is
 
 ## Current maturity
 
-**Phase 0 complete; entering Phase 1 — maturity 1/10.**
+**Phase 0 complete; entering Phase 1 â€” maturity 1/10.**
 
 Phase numbering was reset on August 5, 2026 so the live website, durable
 consultation system, private photo intake, founder authentication, and
@@ -47,3 +47,7 @@ identity boundaries, and strategic risks are defined in
 - Strategy or sequencing changes require founder approval and an ADR.
 - Update this summary, the master roadmap, the decision log, and `progress.md`
   together when phase status changes.
+
+## Active implementation note — August 5, 2026
+
+Phase 1 Projects and Inside the Build is now in implementation. The private project lifecycle, approval-gated updates/media, founder project workspace, and public Build storytelling routes are implemented pending migration/deployment verification and real-project operating evidence. Phase 2 Field Mode has not begun.

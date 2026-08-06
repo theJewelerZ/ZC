@@ -30,7 +30,7 @@ founder-approved decision changing it.
 | Portfolio | Not yet populated |
 | Active projects | Two; names intentionally omitted from the public repository |
 | Business stage | Transitioning from marketing website to operational platform |
-| Roadmap maturity | Phase 0 complete; entering Phase 1 — 1/10 |
+| Roadmap maturity | Phase 0 complete; entering Phase 1 â€” 1/10 |
 
 The existing consultation and dashboard systems provide valuable foundations.
 They do not yet manage the full project lifecycle, so their presence does not
@@ -120,17 +120,17 @@ Once a project exists, it becomes the canonical operational source:
 
 ```text
 Consultation
-└── Project
-    ├── Stages
-    ├── Updates
-    ├── Original media
-    ├── Published media
-    └── Completion record
-        ├── Final gallery
-        ├── Case study
-        ├── Portfolio entry
-        ├── Educational content
-        └── Social and marketing assets
+â””â”€â”€ Project
+    â”œâ”€â”€ Stages
+    â”œâ”€â”€ Updates
+    â”œâ”€â”€ Original media
+    â”œâ”€â”€ Published media
+    â””â”€â”€ Completion record
+        â”œâ”€â”€ Final gallery
+        â”œâ”€â”€ Case study
+        â”œâ”€â”€ Portfolio entry
+        â”œâ”€â”€ Educational content
+        â””â”€â”€ Social and marketing assets
 ```
 
 - A consultation remains linked provenance; it is not copied into uncontrolled
@@ -173,18 +173,18 @@ feature tables, business measures, and exit evidence follow.
 
 | Phase | Purpose and business value | Technical scope | Dependencies | Future considerations | Success and exit evidence | Recommended order |
 | --- | --- | --- | --- | --- | --- | --- |
-| 0 — Operating Foundation | Establish trustworthy discovery and durable inquiry operations | Public site, consultation persistence, private photos, founder Auth/dashboard | Launch providers, domain, security, founder verification | Maintain foundations; do not hide later features here | Production and founder workflow verified | Complete: launch → persistence → dashboard → Auth |
-| 1 — Projects and Inside the Build | Turn active delivery into organized operations and proof | Projects, updates, media, publication, public pages | Lifecycle, consent, rights, redaction, retention, additive security plan | Preserve seams for Field Mode; no customer accounts or auto-publishing | Two current projects documented; 25 approved photos; one live sequence and project-to-proof cycle | Rules → private source → media/drafts → approval/publication → completion proof |
-| 2 — Field Mode | Make jobsite documentation natural and reliable | Mobile capture, stages, voice notes, PWA; offline only after proof | Phase 1 data/media model and real field observation | Native app and background sync remain evidence-gated | One complete project uses Field Mode with no known lost photos | Online mobile flow → media/stages → voice → PWA → offline decision |
-| 3 — Founder Dashboard | Create one actionable operating view | Today, upcoming work, consultations, updates, quick actions, health, simple analytics | Reliable project/field data and repeated daily decisions | No decorative charts, forecasting, or employee views without need | Founder uses it through a full project cycle without a competing tracker | Observe decisions → summaries → unified views → actions → measured signals |
-| 4 — Site Controls | Keep approved public information current without code | Bounded settings for homepage, SEO, availability, features, messaging, brand | Stable publishing, repeated changes, preview and rollback | Headless CMS only if native controls prove insufficient | Routine changes completed safely with preview, validation, and rollback | Inventory changes → typed controls → preview → guarded publish |
-| 5 — Portfolio | Turn completed work into durable hiring evidence | Case studies, galleries, comparisons, education, later search/filtering | Completed approved projects, rights, consistent completion facts | Add filters only when content volume creates a real problem | Two factual stories and first proof-referenced qualified inquiry | Completion template → initial portfolio → measure use → expand discovery |
-| 6 — Marketing | Use real expertise to create qualified demand | Articles, guides, lead magnets, GBP/social support, media library | Sustainable portfolio, repeated questions, ownership, attribution | Paid media, sequences, and auto-posting remain evidence-gated | Sustainable cadence and one asset that produces or assists a qualified inquiry | Mine questions → create proof-backed content → measure → expand channels |
-| 7 — Operations | Remove proven handoff and follow-up failures | Consultation conversion, archive, notifications, reminders, audit, templates | Proven manual workflow, stable lifecycle, retention, ownership | No generic CRM, accounting system, or broad campaigns | No lost handoff through a full cycle; actions and changes traceable | Map handoffs → conversion → archive/audit → targeted reminders → templates |
-| 8 — Business Growth | Support larger opportunities without duplicate work or overstated authority | CapProof/Bid Desk adapters, proposals, changes, warranties, verified expansion | Stable operations, contracts, approvals, licensing/warranty facts, demand | Accounting/payroll and full-facility management stay separate by default | Each activated capability proves value on a real project | Pick one measured problem → pilot → verify → expand |
-| 9 — Long-Term Capabilities | Support a larger organization and longer customer relationship | Crew, subcontractors, portal, service, maintenance, BI, analytics, AI | Real users, mature permissions, clean data, support ownership | Each item is independent; native apps/automation remain optional | Each program has adoption, security, support, and business evidence | Validate one user/problem → secure pilot → measure burden/value |
-| 10 — Sustainable Business Platform | Sustain a business flywheel that compounds proof and confidence | Governed operation of proven earlier capabilities; no fixed feature bundle | Adopted workflows, recovery, export, security, ownership, measurable value | Providers may change; principles and accountability remain | Lead-to-referral loop works without fragmented systems or avoidable workarounds | Improve the weakest proven flywheel point; do not manufacture scope |
-## Phase 0 — Operating Foundation
+| 0 â€” Operating Foundation | Establish trustworthy discovery and durable inquiry operations | Public site, consultation persistence, private photos, founder Auth/dashboard | Launch providers, domain, security, founder verification | Maintain foundations; do not hide later features here | Production and founder workflow verified | Complete: launch â†’ persistence â†’ dashboard â†’ Auth |
+| 1 â€” Projects and Inside the Build | Turn active delivery into organized operations and proof | Projects, updates, media, publication, public pages | Lifecycle, consent, rights, redaction, retention, additive security plan | Preserve seams for Field Mode; no customer accounts or auto-publishing | Two current projects documented; 25 approved photos; one live sequence and project-to-proof cycle | Rules â†’ private source â†’ media/drafts â†’ approval/publication â†’ completion proof |
+| 2 â€” Field Mode | Make jobsite documentation natural and reliable | Mobile capture, stages, voice notes, PWA; offline only after proof | Phase 1 data/media model and real field observation | Native app and background sync remain evidence-gated | One complete project uses Field Mode with no known lost photos | Online mobile flow â†’ media/stages â†’ voice â†’ PWA â†’ offline decision |
+| 3 â€” Founder Dashboard | Create one actionable operating view | Today, upcoming work, consultations, updates, quick actions, health, simple analytics | Reliable project/field data and repeated daily decisions | No decorative charts, forecasting, or employee views without need | Founder uses it through a full project cycle without a competing tracker | Observe decisions â†’ summaries â†’ unified views â†’ actions â†’ measured signals |
+| 4 â€” Site Controls | Keep approved public information current without code | Bounded settings for homepage, SEO, availability, features, messaging, brand | Stable publishing, repeated changes, preview and rollback | Headless CMS only if native controls prove insufficient | Routine changes completed safely with preview, validation, and rollback | Inventory changes â†’ typed controls â†’ preview â†’ guarded publish |
+| 5 â€” Portfolio | Turn completed work into durable hiring evidence | Case studies, galleries, comparisons, education, later search/filtering | Completed approved projects, rights, consistent completion facts | Add filters only when content volume creates a real problem | Two factual stories and first proof-referenced qualified inquiry | Completion template â†’ initial portfolio â†’ measure use â†’ expand discovery |
+| 6 â€” Marketing | Use real expertise to create qualified demand | Articles, guides, lead magnets, GBP/social support, media library | Sustainable portfolio, repeated questions, ownership, attribution | Paid media, sequences, and auto-posting remain evidence-gated | Sustainable cadence and one asset that produces or assists a qualified inquiry | Mine questions â†’ create proof-backed content â†’ measure â†’ expand channels |
+| 7 â€” Operations | Remove proven handoff and follow-up failures | Consultation conversion, archive, notifications, reminders, audit, templates | Proven manual workflow, stable lifecycle, retention, ownership | No generic CRM, accounting system, or broad campaigns | No lost handoff through a full cycle; actions and changes traceable | Map handoffs â†’ conversion â†’ archive/audit â†’ targeted reminders â†’ templates |
+| 8 â€” Business Growth | Support larger opportunities without duplicate work or overstated authority | CapProof/Bid Desk adapters, proposals, changes, warranties, verified expansion | Stable operations, contracts, approvals, licensing/warranty facts, demand | Accounting/payroll and full-facility management stay separate by default | Each activated capability proves value on a real project | Pick one measured problem â†’ pilot â†’ verify â†’ expand |
+| 9 â€” Long-Term Capabilities | Support a larger organization and longer customer relationship | Crew, subcontractors, portal, service, maintenance, BI, analytics, AI | Real users, mature permissions, clean data, support ownership | Each item is independent; native apps/automation remain optional | Each program has adoption, security, support, and business evidence | Validate one user/problem â†’ secure pilot â†’ measure burden/value |
+| 10 â€” Sustainable Business Platform | Sustain a business flywheel that compounds proof and confidence | Governed operation of proven earlier capabilities; no fixed feature bundle | Adopted workflows, recovery, export, security, ownership, measurable value | Providers may change; principles and accountability remain | Lead-to-referral loop works without fragmented systems or avoidable workarounds | Improve the weakest proven flywheel point; do not manufacture scope |
+## Phase 0 â€” Operating Foundation
 
 **Status:** Complete
 **Maturity:** 1/10
@@ -213,7 +213,7 @@ Production, canonical redirects, indexing, inquiry persistence, private storage,
 email delivery, founder login, cross-tab sessions, sign-out, tests, and security
 boundaries are verified. Phase 0 is closed.
 
-## Phase 1 — Projects and Inside the Build
+## Phase 1 â€” Projects and Inside the Build
 
 **Classification:** Build now
 **Estimated complexity:** Large
@@ -304,7 +304,7 @@ Do not add customer accounts, subscriptions, live jobsite tracking, automatic
 publishing, or a CMS. Preserve seams for Field Mode and later operational
 conversion without building them early.
 
-## Phase 2 — Field Mode
+## Phase 2 â€” Field Mode
 
 **Classification:** Build later
 **Estimated complexity:** Extra Large
@@ -345,11 +345,11 @@ connection failures create real operational loss.
 
 ### Recommended implementation order
 
-Mobile task analysis → compact online field interface → camera/media flow →
-stage updates → voice-note handling → PWA/installability → measured offline
+Mobile task analysis â†’ compact online field interface â†’ camera/media flow â†’
+stage updates â†’ voice-note handling â†’ PWA/installability â†’ measured offline
 decision.
 
-## Phase 3 — Founder Dashboard
+## Phase 3 â€” Founder Dashboard
 
 **Classification:** Build later
 **Estimated complexity:** Medium
@@ -378,11 +378,11 @@ targets are set from the Phase 3 kickoff baseline.
 
 ### Recommended implementation order
 
-Observe daily decisions → define actionable summaries → unify consultations and
-projects → add recent/upcoming views → add proven quick actions → introduce only
+Observe daily decisions â†’ define actionable summaries â†’ unify consultations and
+projects â†’ add recent/upcoming views â†’ add proven quick actions â†’ introduce only
 decision-relevant health and analytics.
 
-## Phase 4 — Site Controls
+## Phase 4 â€” Site Controls
 
 **Classification:** Build later
 **Estimated complexity:** Large
@@ -410,10 +410,10 @@ native controls insufficient.
 
 ### Recommended implementation order
 
-Inventory recurring changes → define typed settings → add preview/validation →
-add guarded publishing/rollback → move only proven controls out of code.
+Inventory recurring changes â†’ define typed settings â†’ add preview/validation â†’
+add guarded publishing/rollback â†’ move only proven controls out of code.
 
-## Phase 5 — Portfolio
+## Phase 5 â€” Portfolio
 
 **Classification:** Build later
 **Estimated complexity:** Large
@@ -439,11 +439,11 @@ a browsing problem. Phase 6 waits until portfolio production is sustainable.
 
 ### Recommended implementation order
 
-Approve completion template → derive case-study data → publish initial portfolio
-→ measure customer use → add comparisons/education → add search/filtering only
+Approve completion template â†’ derive case-study data â†’ publish initial portfolio
+â†’ measure customer use â†’ add comparisons/education â†’ add search/filtering only
 when justified.
 
-## Phase 6 — Marketing
+## Phase 6 â€” Marketing
 
 **Classification:** Build later
 **Estimated complexity:** Large
@@ -470,11 +470,11 @@ produces business value without weakening project delivery.
 
 ### Recommended implementation order
 
-Mine repeated customer questions → create project-backed guidance → establish
-measurement and consent → publish consistently → add lead capture/social/GBP
+Mine repeated customer questions â†’ create project-backed guidance â†’ establish
+measurement and consent â†’ publish consistently â†’ add lead capture/social/GBP
 support only where ownership is clear.
 
-## Phase 7 — Operations
+## Phase 7 â€” Operations
 
 **Classification:** Build later
 **Estimated complexity:** Extra Large
@@ -500,11 +500,11 @@ The result remains a focused construction workflow, not a generic CRM.
 
 ### Recommended implementation order
 
-Map handoffs → implement explicit conversion → formalize archive/retention → add
-audit history → add targeted notifications/reminders → template only stable,
+Map handoffs â†’ implement explicit conversion â†’ formalize archive/retention â†’ add
+audit history â†’ add targeted notifications/reminders â†’ template only stable,
 repeated documents.
 
-## Phase 8 — Business Growth
+## Phase 8 â€” Business Growth
 
 **Classification:** Build later
 **Estimated complexity:** Extra Large
@@ -533,10 +533,10 @@ capability, but no feature ships merely to complete the list.
 
 ### Recommended implementation order
 
-Measure duplicate work → choose one integration/workflow → define ownership and
-contract → pilot on one project → verify business value → expand deliberately.
+Measure duplicate work â†’ choose one integration/workflow â†’ define ownership and
+contract â†’ pilot on one project â†’ verify business value â†’ expand deliberately.
 
-## Phase 9 — Long-Term Capabilities
+## Phase 9 â€” Long-Term Capabilities
 
 **Classification:** Build much later
 **Estimated complexity:** Multi-program / XXL
@@ -565,10 +565,10 @@ as a speculative monolith.
 
 ### Recommended implementation order
 
-Validate one user/problem → define permissions/support → pilot narrowly →
-measure adoption and burden → retain, revise, or remove before the next program.
+Validate one user/problem â†’ define permissions/support â†’ pilot narrowly â†’
+measure adoption and burden â†’ retain, revise, or remove before the next program.
 
-## Phase 10 — Sustainable Business Platform
+## Phase 10 â€” Sustainable Business Platform
 
 **Classification:** Long-term maturity benchmark
 **Estimated complexity:** Continuous business maturity, not a release estimate
@@ -638,3 +638,11 @@ work begins.
   whenever strategy, sequencing, or phase status changes.
 - If a feature does not strengthen hiring confidence or project delivery, reject
   it even if it appears elsewhere on an old wish list.
+
+## Phase 1 implementation status — August 5, 2026
+
+**Status:** Implementation begun on `main`; exit criteria not yet achieved.
+
+The project/update/media schema, founder project workspace, publication workflow, public Inside the Build routes, direct private media upload, and conditional homepage feature are implemented. New records remain private. Mason Simulator Environment and Social Golfer Simulator Environment are not seeded or published automatically.
+
+Technical deployment does not complete Phase 1. Exit still requires real operating use: founder-created Builds, approved authentic photography, published progress, and proof that a completed project can feed the portfolio/case-study flywheel. Phase 2 remains blocked until those outcomes are demonstrated.
