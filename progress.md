@@ -2,7 +2,7 @@
 
 **Current phase:** Phase 3 - Founder Mission Control and Premium Experience Refinement
 
-**Roadmap maturity:** 4/10 (Phase 3 operational; Inside the Build editorial refinement in verification)
+**Roadmap maturity:** 4/10 (Phase 3 operational; Inside the Build editorial refinement deployed)
 
 **Canonical production URL:** <https://www.zarkaconstruction.com>
 
@@ -46,7 +46,7 @@
 - Local production Lighthouse after editorial refinement: homepage 98/100/100/100; Inside the Build 100/100/100/100; Albatross Build 100/100/100/100.
 - Founder login Lighthouse: 98 performance, 100 accessibility, 100 best practices; SEO 69 is expected for an intentionally noindexed private route.
 - Synthetic Mission Control review: 100 accessibility on mobile and desktop; verified compact private navigation, no logo overlap, and no horizontal overflow at the captured mobile viewport.
-- Editorial production deployment and founder acceptance remain to be completed.
+- Editorial production deployment `dpl_Enmm7nKfxqbWbtewq5dnMixyuQjc` is Ready and production smoke checks pass; founder editorial acceptance remains.
 
 ## Blockers
 
@@ -54,7 +54,7 @@ None currently. Vercel Analytics does not provide a supported application-side r
 
 ## Immediate next action
 
-Complete editorial verification, commit the Inside the Build refinement, deploy main once, and perform founder review of Milestones, photography roles, consultation context, and public Build presentation.
+Founder reviews the live Albatross Build on phone and desktop, selects a cover and social image if desired, and confirms the milestone narrative and consultation path.
 
 ## Next recommended implementation prompt
 
