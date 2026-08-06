@@ -1,122 +1,49 @@
 # Roadmap
 
-## Phase 0 — Foundation and Decisions
+The canonical long-term roadmap is
+[MASTER_ROADMAP.md](MASTER_ROADMAP.md). The guiding business philosophy is
+[VISION.md](VISION.md).
 
-**Objective:** Establish the canonical product, brand, technical, deployment,
-and DNS baseline.
+## Current maturity
 
-**Deliverables:** Documentation set, decision log, asset strategy, contact and
-hosting architecture, launch checklist, and cutover safeguards.
+**Phase 0 complete; entering Phase 1 — maturity 1/10.**
 
-**Exclusions:** Application implementation, DNS mutation, product integrations.
+Phase numbering was reset on August 5, 2026 so the live website, durable
+consultation system, private photo intake, founder authentication, and
+consultation dashboard form the completed operating foundation.
 
-**Exit criteria:** Baseline approved and implementation can proceed without
-inventing business facts.
+| Phase | Name | Classification | Status |
+| --- | --- | --- | --- |
+| 0 | Operating Foundation | Complete | Production-verified |
+| 1 | Projects and Inside the Build | Build now after approval | Next |
+| 2 | Field Mode | Build later | Planned |
+| 3 | Founder Dashboard | Build later | Planned |
+| 4 | Site Controls | Build later | Planned |
+| 5 | Portfolio | Build later | Planned |
+| 6 | Marketing | Build later | Planned |
+| 7 | Operations | Build later | Planned |
+| 8 | Business Growth | Build later | Planned |
+| 9 | Long-Term Capabilities | Build much later | Vision |
+| 10 | Sustainable Business Platform | Maturity benchmark | Vision |
 
-**Status:** Complete.
+## Current priority
 
-## Phase 1 — Professional Launch MVP
+Phase 1 will establish Projects and Inside the Build. Active work may become
+public after construction begins, rights and consent are confirmed, the founder
+activates the public project, and each update is individually approved.
+Operational records and original media remain private.
 
-**Objective:** Launch a fast, credible production website with reliable inquiry
-delivery.
+Do not begin implementation from this summary alone. Phase scope, business
+metrics, dependencies, exit criteria, feature classifications, data ownership,
+identity boundaries, and strategic risks are defined in
+[MASTER_ROADMAP.md](MASTER_ROADMAP.md).
 
-**Deliverables:** Responsive shell, approved raster branding, homepage, contact,
-privacy, terms, metadata, sitemap, robots, analytics, protected Resend delivery,
-Vercel deployment, canonical domain, and production verification.
+## Governance
 
-**Exclusions:** CMS, database, authentication, portal, uploads, estimator,
-configurator, store, or equipment sales.
-
-**Exit criteria:** Production routes, redirects, HTTPS, contact delivery,
-Turnstile, rate limiting, indexing, accessibility, and performance verified.
-
-**Status:** Complete.
-
-## Phase 2 — Simulator-Room-Builder Repositioning
-
-**Objective:** Transform public perception so Zarka Construction is understood
-first as a custom golf simulator room builder.
-
-**Scope:**
-
-- Simulator-first homepage and navigation
-- Dedicated `/simulator-construction` route retained and strengthened
-- Residential and commercial simulator solutions
-- Room feasibility and geometry education
-- On-site consultation and guided remote review paths
-- Simulator-focused contact categories and email formatting
-- Future founder-owned photography slots
-- Construction credibility as supporting evidence
-- CapProof limited to documentation-process context
-- Removal of all public Precision Impact Screens and software-product cards
-
-**Exclusions:** New routes beyond the simulator page, CMS, Supabase, database,
-authentication, uploads, scheduling, configurator, estimator, store, catalog,
-equipment sales, fake projects, or unrelated Phase 2 features.
-
-**Dependencies:** Founder approval of positioning; existing production
-infrastructure; approved photography only when real work begins.
-
-**Exit criteria:** Protected preview passes copy, SEO, accessibility, responsive,
-performance, route, and no-prohibited-reference reviews; founder approves before
-production promotion.
-
-**Status:** In progress on `phase-2/simulator-construction`. Do not merge or
-promote without founder approval.
-
-## Phase 3 — Project Proof and Local Authority
-
-**Objective:** Add factual evidence and improve qualified simulator-room demand.
-
-**Scope:** Founder-owned project photography, approved case studies, residential
-and commercial proof, Search Console/Business Profile alignment, confirmed
-service-area language, and conversion iteration based on actual inquiries.
-
-**Exclusions:** Fictional case studies, stock/AI project imagery, thin SEO pages,
-publishing platform without an owner, or self-service quoting.
-
-**Dependencies:** Construction underway, image rights, approved project facts,
-confirmed service boundaries, and a content owner.
-
-**Exit criteria:** Project proof is accurate, permissioned, maintainable, and
-supports distinct search and customer questions without weakening performance.
-
-## Phase 4 — Operational Refinement
-
-**Objective:** Improve internal delivery only where measured operating needs
-justify it.
-
-**Potential scope:** Privacy-reviewed lead persistence, workflow handoffs,
-controlled photo exchange, or scheduling after ownership and failure behavior
-are defined.
-
-**Exclusions:** Automatic cross-product sharing, speculative platform work,
-customer accounts without a validated use case, or public software ecosystem
-positioning.
-
-**Dependencies:** Measured volume, stable operating process, data-retention and
-security decisions, and explicit founder approval.
-
-**Exit criteria:** Each addition solves a documented operational problem and has
-clear ownership, consent, security, observability, and rollback.
-
-## Phase 3A — Consultation System (active)
-
-**Objective:** Make qualified simulator inquiries durable and reviewable without
-building a CRM.
-
-**Scope:** Supabase system of record, private optional room photos, direct signed
-uploads, founder/customer email notifications, magic-link founder access,
-consultation list/detail, status, and private notes.
-
-**Exclusions:** Customer accounts, proposals, estimates, contracts, invoices,
-scheduling, SMS, automation, employee roles, analytics dashboards, project
-management, CapProof/Bid Desk sync, or pipeline boards.
-
-**Dependencies:** Supabase migration, Preview credentials, founder Auth user and
-allowlist, Auth callback URLs, private bucket/RLS verification, and protected
-preview acceptance.
-
-**Exit criteria:** No-photo and photo inquiries persist; notification failure
-does not lose data; anonymous/unauthorized access fails; signed images expire;
-founder status/notes work; privacy/security/quality gates pass.
+- Every feature must pass the North Star in [VISION.md](VISION.md).
+- A successful deployment is not a successful phase; real business use and exit
+  evidence are required.
+- Later-phase work does not move forward merely because it is interesting.
+- Strategy or sequencing changes require founder approval and an ADR.
+- Update this summary, the master roadmap, the decision log, and `progress.md`
+  together when phase status changes.

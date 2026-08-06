@@ -1,6 +1,8 @@
 # Progress
 
-**Current phase:** Phase 3 — founder password-authentication production readiness
+**Current phase:** Phase 0 complete — entering Phase 1 Projects and Inside the Build
+
+**Roadmap maturity:** 1/10
 
 **Canonical production URL:** <https://www.zarkaconstruction.com>
 
@@ -12,74 +14,78 @@
 
 ## Production status
 
-`main` matched `origin/main` at commit `95cb441d8f3496a2b8768b09c1d0f4d2dd5c8d85`
-before this narrow change began. The password-authentication work is ready for
-its authorized commit and push. Production Supabase and Turnstile variables are
-configured. DNS, nameservers, GoDaddy products, consultation records, Storage
-objects, and Supabase Auth users were not destructively changed.
+Production is live and operational. The public website, durable consultation
+system, private optional room-photo intake, Resend notifications, Turnstile,
+founder authentication, and founder consultation dashboard are operating.
 
-## Implemented locally
+Founder authentication was verified in Production:
 
-- Replaced routine magic-link access with email-and-password sign-in through a
-  same-origin, rate-limited Route Handler.
-- Preserved response-bound `@supabase/ssr` cookie writes, authoritative
-  `auth.getUser()` verification, and `ADMIN_ALLOWED_EMAILS` authorization.
-- Added authenticated `/admin/set-password` and a 14-character mixed-character
-  password policy with confirmation and accessible show/hide controls.
-- Added generic `/admin/forgot-password`, PKCE `/auth/recovery`, a ten-minute
-  recovery marker, and authenticated `/admin/reset-password`.
-- Recovery signs the founder out after a successful password change and returns
-  to routine password login. Missing, expired, reused, cross-host, and
-  unauthorized recovery states fail safely.
-- Retained `/auth/callback` only for already-issued setup/legacy email links;
-  magic-link login is not presented as the normal interface.
-- Added password/security access from the private dashboard while retaining the
-  discreet public `Founder Login` link.
-- Added same-origin enforcement, bounded in-memory abuse protection layered on
-  Supabase provider rate limits, generic credential/recovery responses, and
-  privacy-safe stage-only diagnostics.
-- No schema migration, user creation, RLS change, consultation mutation, or
-  Storage change is part of this work.
+- password sign-in succeeds;
+- the session persists across tabs and refresh;
+- sign-out clears the shared browser session;
+- password recovery is delivered through Resend SMTP;
+- the founder allowlist remains authoritative.
 
-## Verification completed
+DNS, nameservers, GoDaddy products, production email DNS, Supabase data,
+consultation records, and Storage objects are outside this documentation change.
 
-- ESLint passes.
-- Strict TypeScript passes.
-- 94 Vitest tests across 27 files pass.
-- Production build passes.
-- `npm audit` reports zero vulnerabilities.
-- Route coverage includes successful password login, response cookies, generic
-  invalid/unknown-account failures, allowlist rejection, rate limiting,
-  password policy, confirmation mismatch, setup authorization, recovery PKCE,
-  recovery marker enforcement, expired/reused links, sign-out, session guard,
-  host-only cookies, and open-redirect rejection.
-- The founder received a recovery email through Resend SMTP, reset the password
-  with a visible success confirmation, signed out, and successfully signed in
-  with the new password.
-- Required Supabase and Turnstile variable names are configured for both Vercel
-  Preview and Production.
-- The latest configuration-only Production redeployment is Ready; it still
-  contains the prior `origin/main` commit until this change is pushed.
+## Current business state
+
+- Brand position: Golf Simulator Construction Specialist.
+- Business stage: transitioning from marketing website to operational platform.
+- Active projects: two; names intentionally omitted from the public repository.
+- Project management: planned.
+- Inside the Build: planned.
+- Field Mode: planned.
+- Portfolio: not yet populated.
+
+## Canonical strategy completed
+
+- Created the operating-system Vision and North Star.
+- Established the business flywheel from discovery through future referral.
+- Reset roadmap numbering so the current live system is Phase 0.
+- Defined the project as the future operational source for updates, media,
+  completion, case studies, portfolio, and marketing derivatives.
+- Classified every roadmap feature as build now, later, much later, or never.
+- Added business-success measures and explicit exit criteria to every phase.
+- Established public-first active-project storytelling with private operational
+  records and founder approval for every published update.
+- Established future site controls as bounded founder-dashboard capabilities,
+  not a general CMS.
+- Established the permanent AI rule: AI may draft; founder approves.
 
 ## Decisions
 
-- Routine founder access uses Supabase email-and-password authentication.
-- `ADMIN_ALLOWED_EMAILS` remains the independent server-side authorization
-  source after Supabase validates the user.
-- Supabase Auth continues to generate and validate recovery links and sessions.
-  The native Resend SMTP integration delivers Auth recovery email from the
-  verified `zarkaconstruction.com` domain.
-- No public signup, customer login, custom password storage, or schema migration
-  was added.
-- Auth cookies remain host-scoped; no hard-coded cookie domain is introduced.
+- [Vision](docs/VISION.md) defines the project philosophy and identity boundaries.
+- [Master roadmap](docs/MASTER_ROADMAP.md) is the canonical future-feature
+  planning reference.
+- [Roadmap](docs/ROADMAP.md) is the concise status/index view.
+- Phase 1 is the only `Build now` product phase, but requires a separate
+  implementation brief and founder authorization before code or migrations.
+- Two current active projects must be documented without publishing their names
+  in repository documentation.
 
 ## Blockers
 
-None. The founder manually verified recovery and routine password login, all
-release checks pass, and required Production configuration is present.
+No blocker exists for the roadmap documentation.
+
+Before Phase 1 implementation, resolve the consent/media-rights process, public
+project naming and location rules, project lifecycle vocabulary, private/public
+media boundary, retention, backup/recovery, and additive schema/RLS plan.
 
 ## Immediate next action
 
-Commit and push `main` once, monitor the automatic Vercel Production deployment,
-then verify password sign-in, dashboard loading, refresh, second-tab session,
-sign-out, recovery delivery, and one durable consultation submission.
+Prepare the decision-complete Phase 1 Projects and Inside the Build implementation
+brief. Do not write Phase 1 production code or migrations until that brief,
+privacy/publication rules, data architecture, rollback plan, and founder approval
+are complete.
+
+## Next recommended implementation prompt
+
+Read `docs/VISION.md`, `docs/MASTER_ROADMAP.md`, `docs/PRODUCT_BRIEF.md`,
+`docs/DECISIONS.md`, and the existing Supabase/security documentation. Plan
+Phase 1 Projects and Inside the Build only. Resolve project lifecycle, consent,
+media rights, publication states, private/public storage, RLS, rollback, and
+success evidence before proposing implementation. Do not implement Field Mode,
+site controls, portfolio expansion, integrations, customer accounts, or later
+roadmap phases.

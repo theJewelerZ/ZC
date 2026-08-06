@@ -7,14 +7,27 @@ Construction Specialist.
 
 ## Current objective
 
-The production application includes a narrow durable consultation system,
-optional private room-photo intake, and a founder-only review dashboard. The
-current production-readiness change replaces routine magic-link access with
-founder email-and-password sign-in while preserving Supabase SSR sessions and
-the server-only email allowlist.
+Zarka Construction is evolving from a production marketing and consultation
+website into a focused operating system for the Golf Simulator Construction
+Specialist business.
 
-This is not a CRM, customer portal, estimator, scheduler, equipment store, or
-project-management platform. There is no public signup or customer login.
+Phase 0 is complete: the public website, durable consultation system, optional
+private room-photo intake, Resend notifications, Turnstile, founder
+authentication, and consultation dashboard are operational. Phase 1 Projects
+and Inside the Build is the next planned implementation phase.
+
+The system is not a generic CRM, SaaS platform, customer portal, scheduler,
+equipment store, or project-management product. Every addition must follow the
+[Vision](docs/VISION.md) and [Master Roadmap](docs/MASTER_ROADMAP.md).
+
+## North Star
+
+> Every feature must either help a customer make a confident hiring decision or
+> help Zarka Construction deliver a better project. If it does neither, it does
+> not belong.
+
+> Every completed project should make the next customer more confident in hiring
+> Zarka Construction.
 
 ## Stack
 
@@ -105,6 +118,8 @@ See `.env.example` and `docs/SUPABASE_SETUP.md`. Never print or document values.
 
 ## Documentation
 
+- [Vision](docs/VISION.md)
+- [Master roadmap](docs/MASTER_ROADMAP.md)
 - [Product brief](docs/PRODUCT_BRIEF.md)
 - [Brand system](docs/BRAND_SYSTEM.md)
 - [Content plan](docs/CONTENT_PLAN.md)

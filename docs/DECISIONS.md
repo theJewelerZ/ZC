@@ -74,7 +74,7 @@ Statuses:
 
 ## ADR-007 — No authentication
 
-- **Status:** Accepted
+- **Status:** Superseded by ADR-025 and ADR-028
 - **Context:** The launch is public marketing and contact, not a customer product.
 - **Decision:** Do not implement accounts, protected routes, or user identity.
 - **Consequences:** Smaller attack surface and scope.
@@ -83,7 +83,7 @@ Statuses:
 
 ## ADR-008 — No Supabase without an accepted persistence requirement
 
-- **Status:** Accepted
+- **Status:** Superseded by ADR-024
 - **Context:** Contact email does not inherently require a database.
 - **Decision:** Do not configure Supabase for Phase 1.
 - **Consequences:** Failed email cannot be described as durably queued; fallback
@@ -363,3 +363,51 @@ Statuses:
   to the built-in demonstration mailer. Supabase, Resend, and application abuse
   limits remain active. No SMTP credential enters application code or Vercel
   application variables.
+
+## ADR-030 — Operating-system North Star and canonical master roadmap
+
+- **Status:** Accepted
+- **Context:** The project now includes a production website, durable
+  consultations, private photos, founder authentication, and an operational
+  dashboard. Overlapping historical phase numbers no longer provide a coherent
+  long-term business sequence.
+- **Decision:** Adopt `docs/VISION.md` as the governing philosophy and
+  `docs/MASTER_ROADMAP.md` as the canonical future-feature roadmap. Reset the
+  roadmap so the existing live system is Phase 0 and Projects/Inside the Build
+  is Phase 1. Apply this mandatory North Star: “Every feature must either help a
+  customer make a confident hiring decision or help Zarka Construction deliver
+  a better project. If it does neither, it does not belong.”
+- **Consequences:** Old phase labels become historical implementation context.
+  Every future phase requires business-success evidence and exit criteria, not
+  merely deployed software. Strategy or sequencing changes require founder
+  approval and an ADR.
+
+## ADR-031 — Public-first, approval-gated project publishing
+
+- **Status:** Accepted
+- **Context:** Active projects can create meaningful trust before completion,
+  but project records, original media, customer information, and field notes are
+  private operations.
+- **Decision:** Treat active-project storytelling as the editorial default while
+  retaining private-by-default data. A project may become public only after
+  construction begins, rights and consent are confirmed, and the founder
+  activates it. Every Inside the Build update begins privately and requires
+  founder approval. Public content uses an explicit publication representation,
+  never direct access to operational records.
+- **Consequences:** The system must support draft, approval, publish, correction,
+  and unpublish. Exact addresses, customer contact data, internal notes, costs,
+  contracts, private schedules, and unapproved identities remain private.
+
+## ADR-032 — Native founder controls instead of a general CMS
+
+- **Status:** Accepted
+- **Context:** Future homepage, SEO, availability, featured-project, messaging,
+  and brand changes need founder ownership without introducing unrestricted
+  publishing complexity.
+- **Decision:** Add only bounded, validated site controls inside the existing
+  founder dashboard when repeated operating use justifies them. Do not adopt a
+  general-purpose CMS by default.
+- **Consequences:** Public settings remain constrained by truth, brand,
+  publication, preview, and rollback rules. A separate CMS may be reconsidered
+  only when measured publishing volume and a defined owner prove the native
+  controls insufficient.
