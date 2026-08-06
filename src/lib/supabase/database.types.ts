@@ -59,6 +59,16 @@ export type ProjectPhotoRow = {
   approval_status: "pending" | "approved" | "rejected"; upload_state: "pending" | "complete" | "failed";
   upload_expires_at: string | null; sort_order: number; published_at: string | null;
   created_by: string | null; updated_by: string | null;
+  capture_session_id: string | null; publication_candidate: boolean;
+};
+
+export type FieldCaptureSessionRow = {
+  id: string; project_id: string; created_at: string; updated_at: string;
+  completed_at: string | null; expires_at: string | null; client_submission_id: string;
+  session_state: "pending" | "complete" | "partial" | "failed";
+  project_stage: ProjectStage; field_note: string | null;
+  expected_photo_count: number; completed_photo_count: number; failed_photo_count: number;
+  captured_by: string | null;
 };
 
 export type Database = {
@@ -96,6 +106,12 @@ export type Database = {
         Row: ProjectPhotoRow;
         Insert: Partial<ProjectPhotoRow> & { project_id: string; private_storage_path: string; original_filename: string; mime_type: ProjectPhotoRow["mime_type"]; byte_size: number };
         Update: Partial<ProjectPhotoRow>;
+        Relationships: [];
+      };
+      field_capture_sessions: {
+        Row: FieldCaptureSessionRow;
+        Insert: Partial<FieldCaptureSessionRow> & { project_id: string; client_submission_id: string; project_stage: ProjectStage };
+        Update: Partial<FieldCaptureSessionRow>;
         Relationships: [];
       };
     };
