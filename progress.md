@@ -55,3 +55,6 @@ Field Mode never mutates project publication status, public Build status, or pho
 ## Immediate next action
 
 Verify the final image-optimized production deployment, then perform the founder phone test. Do not begin Phase 3 Founder Dashboard analytics or Phase 4 Site Controls.
+## Mobile founder-header correction - August 6, 2026
+
+Corrected an overly broad responsive image selector that enlarged the tall logo icon inside the fallback wordmark. Mobile headers now use a compact 38px mark within a 68px header. Automated checks at 320, 375, 390, and 414 pixels confirm no clipping, overlap, or horizontal overflow.
